@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_manage_cluster_overview.html 
+summary: プラグインの NetApp Element Management 拡張ポイントを使用して、ストレージクラスタを管理できます。 
+keywords: netapp, VLANs, drives, nodes, cluster, manage create, delete, view vcp, vcenter, element 
+---
+= クラスタのハードウェアと仮想ネットワークの概要を管理します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Management 拡張ポイントの Cluster タブでは、クラスタ全体の設定を表示および変更したり、ドライブ、ノード、および VLAN に関するクラスタ固有のタスクを実行したりできます。
+
+.オプション（ Options ）
+* link:vcp_task_add_manage_drive.html["ドライブを追加および管理する"]
+* link:vcp_task_add_manage_nodes.html["ノードを追加および管理します"]
+* link:vcp_task_create_manage_vlans.html["仮想ネットワークを作成および管理する"]
+

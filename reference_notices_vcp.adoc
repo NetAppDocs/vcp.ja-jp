@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: reference_notices_vcp.html 
+keywords: copyrights, notice, trademarks, patents, privacy, open source 
+summary: 著作権に関する声明、商標、特許などにアクセスできます。 
+translate: false 
+---
+= 法的通知
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: media/
+
+
+[role="lead"]
+著作権に関する声明、商標、特許などにアクセスできます。
+
+
+
+== 著作権
+
+http://www.netapp.com/us/legal/copyright.aspx[]
+
+
+
+== 商標
+
+NetApp 、 NetApp のロゴ、および NetApp の商標ページに記載されているマークは、 NetApp, Inc. の商標です。その他の会社名および製品名は、それぞれの所有者の商標である場合があります。
+
+http://www.netapp.com/us/legal/netapptmlist.aspx[]
+
+
+
+== 特許
+
+ネットアップが所有する特許の最新リストは、次のサイトで入手できます。
+
+https://www.netapp.com/us/media/patents-page.pdf[]
+
+
+
+== プライバシーポリシー
+
+https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
+
+
+
+== オープンソース
+
+通知ファイルには、サードパーティの著作権およびライセンスに関する情報が記載されています。
+
+* link:media/mgmt_svcs_2.18_notice.pdf["管理サービス 2.18.91 （ VCP 4.7.10 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.17.56_notice.pdf["管理サービス 2.17.56 （ VCP 4.6.32 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.17_notice.pdf["管理サービス 2.17.52 （ VCP 4.6.29 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.16_notice.pdf["管理サービス 2.16 に関する注意事項（ VCP 4.6.29 ）"^]
+* link:media/mgmt_svcs_2.14_notice.pdf["管理サービス 2.14 （ VCP 4.42 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.13_notice.pdf["管理サービス 2.13 の注意事項（ VCP 4.5.42 ）"^]
+* link:media/mgmt_svcs_2.11_notice.pdf["管理サービス 2.11 （ VCP 4.4.72 ）に関する注意事項"^]
+

@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_protection_domains.html 
+summary:  
+keywords: netapp, vcp, element, plugin, plug-in, protection, domain 
+---
+= 保護ドメイン
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+保護ドメインとは、ドメイン内のいずれかのノードまたはすべてのノードに障害が発生し、クラスタのデータ可用性が失われることがあるように、グループ化されたノードまたはノードのセットのことです。保護ドメイン機能を使用すると、クラスタのリソース容量を監視して、障害発生時にもクラスタを修復できる状態にすることができます。監視はノードまたはシャーシのドメインレベルで選択できます。
+
+* * ノードレベル * は、個々のノードごとに保護ドメインを定義します。各ノードは潜在的にシャーシ全体に配置されます。
+* * シャーシレベル * は、シャーシを共有するノードごとに各保護ドメインを定義します。
+
+
+シャーシドメインには、障害への耐障害性を確保するために、ノードドメインよりも多くの容量リソースが必要です。保護ドメインのしきい値を超えると、データの可用性を中断せずに障害から回復するための十分な容量をクラスタで確保できなくなります。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

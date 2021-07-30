@@ -1,0 +1,106 @@
+---
+entries:
+- title: NetApp Element Plug-in for vCenter Server のドキュメント
+  url: "/index.html"
+  entries:
+  - title: NetApp Element Plug-in for vCenter Server の製品概要
+    url: concept_vcp_product_overview.html
+  - title: リリースノート
+    entries:
+    - title: NetApp Element Plug-in for vCenter Server の新機能
+      url: rn_whatsnew_vcp.html
+    - title: その他のリリース情報
+      url: rn_relatedrn_vcp.html
+  - title: 概念
+    entries:
+    - title: NetApp Element Configuration 拡張ポイント
+      url: vcp_concept_config_extension_point.html
+    - title: NetApp Element Management 拡張ポイント
+      url: vcp_concept_management_extension_point.html
+    - title: ユーザアカウント
+      url: vcp_concept_accounts.html
+    - title: 保護ドメイン
+      url: vcp_concept_protection_domains.html
+    - title: リンクモードと vCenter Plug-in
+      url: vcp_concept_linkedmode.html
+    - title: QoSSIOC
+      url: vcp_concept_qossioc.html
+    - title: 仮想ボリューム（ VVOL ）
+      url: vcp_concept_vvols.html
+  - title: 導入前の要件
+    url: reference_requirements_vcp.html
+  - title: NetApp Element Plug-in for vCenter Server をインストールして設定します
+    url: vcp_task_getstarted.html
+  - title: プラグインをアップグレードします
+    url: task_vcp_upgrades.html
+  - title: vCenter Plug-in を使用してストレージを管理します
+    entries:
+    - title: クラスタを管理します
+      url: vcp_task_clusters_manage.html
+    - title: データストアを管理します
+      url: vcp_task_datastores_manage.html
+    - title: ボリュームを管理します
+      url: vcp_task_volumes_manage.html
+    - title: ユーザアカウントを作成および管理します
+      url: vcp_task_create_manage_user_accounts.html
+    - title: アクセスグループを作成および管理します
+      url: vcp_task_create_manage_access_groups.html
+    - title: イニシエータを作成および管理する
+      url: vcp_task_create_manage_initiators.html
+    - title: Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+      url: vcp_task_qossioc.html
+    - title: ボリュームの QoS ポリシーの作成と管理
+      url: vcp_task_qos_policies.html
+  - title: クラスタハードウェアおよび仮想ネットワークを管理します
+    entries:
+    - title: クラスタのハードウェアと仮想ネットワークの概要を管理します
+      url: vcp_task_manage_cluster_overview.html
+    - title: ドライブを追加および管理する
+      url: vcp_task_add_manage_drive.html
+    - title: ノードを追加および管理します
+      url: vcp_task_add_manage_nodes.html
+    - title: 仮想ネットワークを作成および管理する
+      url: vcp_task_create_manage_vlans.html
+  - title: システムパフォーマンスを監視
+    entries:
+    - title: レポートオプションを使用して、システムパフォーマンスを監視します
+      url: vcp_task_reports_intro.html
+    - title: 概要ページでクラスタ全体の健全性を監視します
+      url: vcp_task_reports_overview.html
+    - title: システムアラートを監視する
+      url: vcp_task_reports_alerts.html
+      entries:
+      - title: システムアラートのリスト
+        url: vcp_reference_reports_alert_errors.html
+    - title: イベントログを監視してトラブルシューティングを行う
+      url: vcp_task_reports_event_logs.html
+    - title: ボリュームのパフォーマンスを監視
+      url: vcp_task_reports_volume_performance.html
+    - title: iSCSI セッションを監視して接続ステータスを確認
+      url: vcp_task_reports_iscsi.html
+    - title: QOSSIOC イベントで VM のパフォーマンスを監視する
+      url: vcp_task_reports_qossioc.html
+  - title: vCenter Plug-in を使用してデータを保護します
+    entries:
+    - title: vCenter Plug-in の概要を使用してデータを保護します
+      url: vcp_task_protect_overview.html
+    - title: ボリューム Snapshot を作成および管理します
+      url: vcp_task_protect_snapshots_volume.html
+    - title: グループ Snapshot を作成および管理します
+      url: vcp_task_protect_snapshots_group.html
+    - title: Snapshot スケジュールを作成します
+      url: vcp_task_protect_snapshots_schedules.html
+    - title: クラスタ間でリモートレプリケーションを実行
+      url: vcp_task_protect_remote_replication.html
+  - title: vCenter Plug-in を使用して仮想ボリュームをセットアップおよび管理する
+    url: vcp_task_configure_manage_vvols.html
+  - title: プラグインの登録を解除します
+    url: task_vcp_unregister.html
+  - title: プラグインを削除します
+    url: task_vcp_remove.html
+  - title: プラグインのトラブルシューティングを行います
+    url: vcp_reference_troubleshoot_vcp.html
+  - title: 以前のバージョンの NetApp Element プラグインのドキュメント
+    url: reference_earlier_versions.html
+  - title: 法的通知
+    url: reference_notices_vcp.html

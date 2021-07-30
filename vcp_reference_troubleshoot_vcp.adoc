@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: vcp_reference_troubleshoot_vcp.html 
+summary: このプラグインの一般的な問題の一部と、その解決方法について説明します。 
+keywords: netapp, hci, vcp, vcenter, element, troubleshoot, monitor, report, alert, cluster, performance 
+---
+= vCenter Plug-in のトラブルシューティングを行います
+:hardbreaks:
+:url-peak: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_'Network_Down'_or_'Down'_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server で発生する代表的な問題とその解決方法を理解しておく必要があります。
+
+* <<Plug-in registration successful but icons do not appear in web client>>
+* <<Error registering plug-in using Registration UI>>
+* <<Error updating plug-in using Registration UI>>
+* <<Error message that NetApp extension cannot be upgraded>>
+* <<Removing plug-in completes successfully but icons remain>>
+* <<Plug-in cannot be unregistered or removed after admin password change>>
+* <<Plug-in management tasks fail or volumes are not accessible to ESXi host>>
+* <<Failure occurs during vCenter Plug-in use on Firefox 59.0.2 browsers>>
+* <<Delete datastore operation fails>>
+* <<Cluster pair cannot connect using a pairing key>>
+* <<Error message for QoSSIOC status>>
+* <<QoSSIOC service shown as available but is unavailable>>
+* <<QoSSIOC is enabled for datastore but unavailable>>
+
+
+
+
+== プラグインの登録は成功するが、 Web Client にアイコンが表示されない
+
+登録に成功したと表示されますが、プラグインのアイコンが vSphere Web Client に表示されません。
+
+.対処方法
+* vSphere Web Client からログアウトし、再度ログインします。必要に応じて、ブラウザを閉じて開き直します。
+* ブラウザキャッシュをクリアします。
+* vCenter で、 Windows の管理ツール内のサービスメニューから vSphere Web Client Service を再起動するか、 vCenter をリブートします。
+* 必要なデフォルトの管理者権限がすべて vCenter Administrator ロールに関連付けられていることを確認します。
+* プラグインの ZIP ファイルが vCenter にダウンロードされていることを確認します。
++
+.. vcenter_client_Virgo.log を vCenter で開きますvCenter バージョン 6.5 および 6.7 のログファイルは次の場所にあります。
++
+*** Flash のインストール： /var/log/vmware/vsphere-client/logs/vsphere_client_Virgo.log
+*** HTML5 のインストール： /var/log/vmware/vsphere-ui/logs/vsphere_client_Virgo.log
+
+
+.. ZIP のダウンロードに失敗したことを示すエラーメッセージが表示された場合は、 ZIP をもう一度ダウンロードします。
++
+
+NOTE: URL がアクセス不能または無効な場合は修正する必要があります。修正した URL でプラグインの登録を更新するか、プラグインの登録を解除して登録し直してください。「 allowHTTP 」設定を変更せずに HTTP URL を指定した場合も、 ZIP のダウンロードに失敗することがあります。
+
+
+
+* ネットワークポートを確認します。vCenter から管理ノードに必要なポート経由で双方向にアクセスできることを確認します。
+* vCenter の MOB 拡張レコードを確認します (https://<vcenterIP>/mob/?moid=ExtensionManager&doPath=extensionList["com.solidfire"].server ）プラグインの ZIP のダウンロード場所 URL ：
++
+.. URL をブラウザに貼り付けます。
+.. プラグインの ZIP をダウンロードできることを確認します。
++
+*** プラグインの ZIP をダウンロードできる場合は、次の手順に進みます。
+*** プラグインの ZIP をダウンロードできない場合は、 vCenter Server と管理ノード間のネットワークに問題がないか確認してください。
+
+
+.. プラグインをダウンロードできない場合は、 MOB レコードの「 erverThumbprint 」と、ブラウザに表示されている ZIP URL の証明書 SHA-1 を比較します。
++
+... MOB の登録レコードに含まれている URL または SHA-1 が正しくない場合や古い場合は、プラグインの登録を解除して再登録します。
+... 問題が解決せず、 ZIP に到達できない場合は、 ZIP URL を調べて、使用されている管理ノードアドレスの問題があるかどうかを確認します。場合によっては、 ZIP ファイルをダウンロードできるように、プラグインの登録ユーティリティを使用して URL をカスタマイズする必要があります。
+
+
+
+
+
+
+
+
+== 登録画面からプラグインを登録中にエラーが発生しました
+
+登録ユーティリティを使用してプラグインを vCenter Server に登録する際にエラーが発生する。「 com.solidfire 」キーのプラグインがすでにインストールされています。
+
+登録ユーティリティで、 * Register Plug-in* の代わりに * Update Plug-In * を使用します。
+
+
+
+== 登録画面からプラグインを更新中にエラーが発生しました
+
+登録ユーティリティを使用してプラグインを vCenter Server に対して更新する際にエラーが発生します。アップデートには、「 com.solidfire 」キーのプラグインはインストールされていません。
+
+登録ユーティリティで、 * Update Plug-in * ではなく * Register Plug-in * を使用します。
+
+
+
+== ネットアップの拡張機能をアップグレードできないというエラーメッセージが表示される
+
+.メッセージ
+[listing]
+----
+org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction; nested exception is javax.persistence.PersistenceException: org.hibernate.exception.GenericJDBCException: Could not open connection.
+----
+Windows vCenter Server をバージョン 6.0 から 6.5 にアップグレードしているときに、ネットアップの拡張機能をアップグレードできない、または新しい vCenter Server では動作しない可能性があるという警告が表示されます。アップグレードの完了後に vSphere Web Client にログインし、 vCenter Plug-in の拡張ポイントを選択すると、エラーが発生します。このエラーは、ランタイムデータベースを格納するディレクトリがバージョン 6.0 から 6.5 に変更されたために発生します。vCenter Plug-in が実行時に必要なファイルを作成できません。
+
+.対処方法
+. プラグインの登録を解除します。
+. プラグインファイルを削除します。
+. vCenter をリブートします。
+. プラグインを登録します。
+. vSphere Web Client にログインします。
+
+
+
+
+== プラグインの削除は完了しますが、アイコンは削除されません
+
+vCenter Plug-in パッケージファイルを削除したあとも、 vSphere Web Client にプラグインのアイコンが表示されます。
+
+vSphere Web Client からログアウトし、再度ログインします。必要に応じて、ブラウザを閉じて開き直します。vSphere Web Client からログアウトしても問題が解決しない場合は、必要に応じて vCenter Server Web サービスをリブートします。また、他のユーザが既存のセッションを使用している場合もあります。すべてのユーザセッションを終了する必要があります。
+
+
+
+== 管理者パスワードの変更後にプラグインを登録解除または削除することはできません
+
+プラグインの登録時に使用した vCenter の管理者パスワードを変更すると、 vCenter Plug-in の登録解除や削除ができなくなります。
+
+プラグイン 2.6 の場合は、 vCenter Plug-in * Register * / * Unregister * ページに移動します。vCenter の IP アドレス、ユーザ ID 、およびパスワードを変更するには、 * Update * ボタンをクリックします。
+
+プラグイン 2.7 以降の場合は、プラグインの mNode 設定の vCenter Administrator パスワードを更新します。
+
+プラグイン 4.4 以降の場合は、プラグインの QoSSIOC 設定で vCenter Administrator のパスワードを更新します。
+
+
+
+== プラグインの管理タスクが失敗するか、または ESXi ホストからボリュームにアクセスできません
+
+データストアの作成、クローニング、共有のタスクが失敗する、あるいは ESXi ホストからボリュームにアクセスできない。
+
+.対処方法
+* データストア処理用の ESXi ホストにソフトウェア iSCSI HBA が存在し、有効になっていることを確認します。
+* ボリュームが削除されていないか、または誤ったボリュームアクセスグループに割り当てられていないかを確認します。
+* ボリュームアクセスグループのホスト IQN が正しいことを確認します。
+* 関連付けられているアカウントの CHAP 設定が正しいことを確認します。
+* ボリュームステータスがアクティブで、ボリュームアクセスが「 readWrite 」であり、「 512e 」が true に設定されていることを確認します。
+
+
+
+
+== Firefox 59.0.2 ブラウザで vCenter Plug-in を使用するとエラーが発生する
+
+'Name:HttpErrorResponse Raw Message: の HTTP エラー応答 https://vc6/ui/solidfire-war-4.2.0-SNAPSHOT/rest/vsphere//servers:[] 500 Internal Server Error Return Message ：サーバエラーです。もう一度やり直すか、ネットアップサポートにお問い合わせください
+
+この問題は、 Firefox を使用する vSphere HTML5 Web クライアントで実行されます。vSphere Flash クライアントに影響はありません。
+
+ブラウザの URL に FQDN を使用します。VMware では、 IP 、短縮名、および FQDN の完全なフォワードおよびリバース解決が必要です。
+
+
+
+== データストアの削除処理が失敗する
+
+データストアの削除処理が失敗する。
+
+データストアからすべての VM が削除されていることを確認します。データストアを削除する前に、データストアから VM を削除する必要があります。
+
+
+
+== ペアリングキーを使用してクラスタペアを接続できません
+
+ペアリングキーを使用してクラスタをペアリング中に接続エラーが発生します。「クラスタペアリングの作成 * 」ダイアログボックスのエラーメッセージに、ホストへの経路がないことが示されます。
+
+ローカルクラスタに作成された未設定のクラスタペアを手動で削除し、もう一度クラスタペアリングを実行します。
+
+
+
+== QoSSIOC ステータスに関するエラーメッセージです
+
+プラグインの QoSSIOC ステータスに警告アイコンとエラーメッセージが表示される。
+
+.対処方法
+* IP アドレスに到達できません： IP アドレスが無効であるか、応答がありません。アドレスが正しいこと、および管理ノードがオンラインで使用可能な状態になっていることを確認します。
+* 「通信できません」： IP アドレスに到達できますが、アドレスへの呼び出しは失敗します。指定されたアドレスで QoSSIOC サービスが実行されていないか、ファイアウォールでトラフィックがブロックされている可能性があります。
+* 「 Unable to connect to the SIOC service 」： SIOC サービスが正常に開始されたことを確認するには、管理ノードの「 /opt/solidfire/sioc/data/logs/ 」（ /var/log または古い管理ノードの「 /var/log/solidfire/ 」）にある「 IOC .log 」を開きます。SIOC サービスの起動には 50 秒以上かかることがあります。サービスが正常に開始されなかった場合は、再試行してください。
+
+
+
+
+== QoSSIOC サービスが使用可能と表示されるが使用できない
+
+QoSSIOC サービスの設定には「 UP 」と表示されているが、 QoSSIOC を使用できない。
+
+NetApp Element Configuration 拡張ポイントの * QoSSIOC 設定 * タブで、更新ボタンをクリックします。必要に応じて、 IP アドレスまたはユーザ認証情報を更新します。
+
+
+
+== データストアで QoSSIOC が有効になっているが使用できない
+
+データストアで QoSSIOC が有効になっているが、 QoSSIOC を使用できない。
+
+データストアで VMware SIOC が有効になっていることを確認します。
+
+. 管理ノードの /opt/solidfire/sioc/data/logs/ にある「 IOC .log 」（古い管理ノードの場合は「 /var/log/solidfire/ 」または「 /var/log/solidfire/ 」）を開きます。
+. 次のテキストを検索します。
++
+[listing]
+----
+SIOC is not enabled
+----
+. を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_'Network_Down'_or_'Down'_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)["この記事では"] 問題に固有の対処方法については、を参照してください。
+

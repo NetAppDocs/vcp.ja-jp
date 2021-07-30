@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_accounts.html 
+summary:  
+keywords: netapp, vcp, element, plugin, plug-in, account 
+---
+= ユーザアカウント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+ユーザアカウントは、 NetApp Element ソフトウェアベースのネットワーク上のストレージリソースへのアクセスを制御します。ボリュームを作成するには、ユーザアカウントが少なくとも 1 つ必要です。
+
+ボリュームには、作成時にアカウントが割り当てられます。仮想ボリュームを作成した場合、アカウントはストレージコンテナになります。アカウントには、そのアカウントに割り当てられているボリュームへのアクセスに必要な CHAP 認証が含まれています。
+
+アカウントには最大 2 、 000 個のボリュームを割り当てることができますが、 1 つのボリュームが属することのできるアカウントは 1 つだけです。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

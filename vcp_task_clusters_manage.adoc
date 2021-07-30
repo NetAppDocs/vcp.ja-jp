@@ -1,0 +1,285 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_clusters_manage.html 
+summary: プラグインを使用して、ノードをストレージクラスタに追加できます。 
+keywords: netapp, cluster, vcp, vcenter, element 
+---
+= クラスタを管理します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+Element ソフトウェアを実行しているクラスタを編集して、 SSH の設定の管理、保護ドメインの監視の設定、クラスタのシャットダウンを行うことができます。
+
+.必要なもの
+* クラスタが少なくとも 1 つ必要です link:vcp_task_getstarted.html#add-storage-clusters-for-use-with-the-plug-in["を追加しました"]。
++
+
+NOTE: NetApp Element 管理拡張ポイントの機能を使用するには、クラスタが少なくとも 1 つ追加されている必要があります。
+
+* クラスタに対するフル権限を持つ現在のクラスタ管理者のユーザクレデンシャルが必要です。
+* ファイアウォールルールで、 TCP ポート 443 および 8443 で vCenter とクラスタ MVIP 間のオープンネットワーク通信を有効にします。
+
+
+.オプション（ Options ）
+* <<View cluster details>>
+* <<Edit a cluster profile>>
+* <<Remove a cluster profile>>
+* <<Enable Encryption at Rest>>
+* <<Disable Encryption at Rest>>
+* <<Enable SSH>>
+* <<Change the SSH time limit>>
+* <<Disable SSH>>
+* <<Set protection domain monitoring>>
+* <<Shut down a cluster>>
+* <<Expand your NetApp HCI infrastructure>>
+
+
+
+
+== クラスタの詳細を表示します
+
+. NetApp Element Configuration > Clusters * を選択します。
+. 編集するクラスタを選択します。
+. [ * アクション * ] を選択します。
+. [ * 詳細 * ] を選択します。
+. すべてのクラスタについて、次の情報を確認してください。
++
+** * Cluster Name * ：クラスタの名前。
+** * vCenter IP Address * ：クラスタが割り当てられている vCenter Server の IP アドレスまたは FQDN 。
+** * Unique ID * ：クラスタの一意の ID 。
+** * Management Virtual IP * ：管理仮想 IP アドレス（ MVIP ）。
+** * Storage Virtual * ：ストレージ仮想 IP アドレス（ SVIP ）。
+** * Status * ：クラスタのステータス。
+** * vvols * ：クラスタの VVol 機能のステータス。
+
+
+. 個々のクラスタの詳細を確認します。
++
+** * MVIP Node ID * ：マスター MVIP アドレスを保持するノード。
+** * SVIP Node ID * ：マスター SVIP アドレスを保持するノード。
+** * Element Version * ：クラスタで実行されている NetApp Element ソフトウェアのバージョン。
+** * VASA 2 Status * ： Element クラスタ上の VASA Provider のステータス。
+** * VASA Provider URL * ： Element クラスタで有効になっている VASA Provider の URL （該当する場合）。
+** * 保存データの暗号化ステータス * ：有効な値は次のとおりです。
++
+*** Enabling ：保存データの暗号化を有効にしています。
+*** Enabled ：保存データの暗号化は有効です。
+*** Disabling ：保存データの暗号化を無効にしています。
+*** Disabled ：保存データの暗号化は無効です。
+
+
+** * Ensemble Nodes * ：データベースアンサンブルに参加しているノードの IP 。
+** * paired with * ：ローカルクラスタとペアリングされているその他のクラスタの名前。
+** *SSH ステータス *: セキュアシェルのステータス。有効な場合は残り時間が表示されます。
+
+
+
+
+
+
+== クラスタプロファイルを編集する
+
+NetApp Element Configuration 拡張ポイントを使用して、クラスタのユーザ ID とパスワードを変更できます。
+
+
+NOTE: この手順では、プラグインで使用されるクラスタ管理者のユーザ名とパスワードを変更する方法について説明します。プラグインからクラスタ管理者のクレデンシャルを変更することはできません。を参照してください https://docs.netapp.com/us-en/element-software/storage/concept_system_manage_manage_cluster_administrator_users.html["クラスタ管理者ユーザアカウントの管理"^] クラスタ管理者アカウントのクレデンシャルを変更する手順については、を参照してください。
+
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. 「 * 編集 * 」を選択します。
+. 次のいずれかを変更します。
++
+** User ID ：クラスタ管理者の名前。
+** Password ：クラスタ管理者のパスワード。
++
+
+NOTE: クラスタの追加後にクラスタの IP アドレスまたは FQDN を変更することはできません。また、割り当てられているリンクモードの vCenter Server も追加済みのクラスタについては変更できません。クラスタのアドレスや関連付けられている vCenter Server を変更する場合は、クラスタを削除して追加し直す必要があります。
+
+
+
+. 「 * OK 」を選択します。
+
+
+
+
+== クラスタプロファイルを削除する
+
+NetApp Element Configuration 拡張ポイントを使用して、 vCenter Plug-in での管理対象から除外するクラスタのプロファイルを削除できます。
+
+リンクモードグループを設定している場合にクラスタを別の vCenter Server に再割り当てするには、クラスタプロファイルを削除してから、リンクされている別の vCenter Server の IP で再度追加します。
+
+. NetApp Element Configuration > Clusters * を選択します。
+. 削除するクラスタを選択します。
+. [ * アクション * ] を選択します。
+. 「 * 削除」を選択します。
+. 操作を確定します。
+
+
+
+
+== 保存データの暗号化を有効にします
+
+NetApp Element Configuration 拡張ポイントを使用して、 Encryption At Rest （ EAR ；保存データの暗号化）機能を手動で有効にすることができます。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. 保存データの暗号化を有効にするクラスタを選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、 * EAR を有効にする * をクリックします。
+. 操作を確定します。
+
+
+
+
+== 保存データの暗号化を無効にします
+
+NetApp Element Configuration 拡張ポイントを使用して、 Encryption At Rest （ EAR ；保存データの暗号化）機能を手動で無効にすることができます。
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタのチェックボックスを選択します。
+. [* アクション * ] をクリックします。
+. 表示されたメニューで、 * EAR を無効にする * をクリックします。
+. 操作を確定します。
+
+
+
+
+== SSH を有効にします。
+
+NetApp Element Configuration 拡張ポイントを使用して、 Secure Shell （ SSH ）セッションを手動で有効にすることができます。SSH を有効にすると、ネットアップのテクニカルサポートエンジニアが指定された期間にストレージノードにアクセスしてトラブルシューティングを行うことができます。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. SSH を有効にする * を選択します。
+. SSH セッションを有効にする期間を、最大 720 時間で入力します。
++
+
+NOTE: 続行するには、値を入力する必要があります。
+
+. 「 * はい * 」を選択します。
+
+
+
+
+== SSH の制限時間を変更します
+
+SSH セッションの新しい期間を入力できます。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. SSH の変更 * を選択します。
++
+ダイアログボックスに SSH セッションの残り時間が表示されます。
+
+. SSH セッションの新しい継続時間を、最大 720 時間で数時間で入力します。
++
+
+NOTE: 続行するには、値を入力する必要があります。
+
+. 「 * はい * 」を選択します。
+
+
+
+
+== SSH を無効にする
+
+NetApp Element Configuration 拡張ポイントを使用して、ストレージクラスタ内のノードへの Secure Shell （ SSH ）アクセスを手動で無効にすることができます。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. [SSH を無効にする *] を選択します。
+. 「 * はい * 」を選択します。
+
+
+
+
+== 保護ドメインの監視を設定する
+
+を手動で有効にすることができます link:vcp_concept_protection_domains.html["保護ドメインの監視"] NetApp Element Configuration 拡張ポイントを使用する。ノードドメインまたはシャーシドメインに基づいて保護ドメインのしきい値を選択できます。
+
+.必要なもの
+* 保護ドメインの監視機能を使用するには、 Element 11.0 以降で監視されているクラスタを選択する必要があります。監視されていないクラスタでは保護ドメイン機能を使用できません。
+* 保護ドメイン機能を使用するには、クラスタに複数のノードが必要です。2 ノードクラスタとの互換性はありません。
+
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. [ 保護ドメイン監視の設定 *] を選択します。
+. 障害しきい値を選択します。
++
+** * Node * ：ノードレベルでハードウェア障害が発生するとクラスタが中断なくデータを提供できなくなるしきい値。ノードしきい値はシステムのデフォルトです。
+** * シャーシ * ：シャーシレベルでハードウェア障害が発生すると、クラスタが中断なくデータを提供できなくなるしきい値。
+
+
+. 「 * OK 」を選択します。
+
+
+監視設定を設定したら、で保護ドメインを監視できます link:vcp_task_reports_overview.html#reporting-overview-page-data["レポート作成"] NetApp Element Management 拡張ポイントのタブ。
+
+
+
+== クラスタをシャットダウン
+
+NetApp Element Configuration 拡張ポイントを使用して、ストレージクラスタ内のすべてのアクティブノードを手動でシャットダウンできます。
+
+状況 link:vcp_task_add_manage_nodes.html#restart-a-node["再起動します"] クラスタをシャットダウンする代わりに、 NetApp Element Management 拡張ポイントのクラスタページですべてのノードを選択して、再起動を実行できます。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+I/O を停止し、すべての iSCSI セッションを切断しておきます。
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. 「 * Shutdown * 」を選択します。
+. 操作を確定します。
+
+
+
+
+== NetApp HCI インフラを拡張
+
+NetApp HCI を使用してノードを追加することにより、 NetApp HCI インフラを手動で拡張できます。システムを拡張するための NetApp HCI UI へのリンクには、 NetApp Element 拡張ポイントからアクセスできます。NetApp Element Management 拡張ポイントには、 Getting Started および Cluster のページからアクセスできるリンクもあります。
+
+
+NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. クラスタをチェックしてください。
+. [ * アクション * ] を選択します。
+. 「 * NetApp HCI を展開する * 」を選択します。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

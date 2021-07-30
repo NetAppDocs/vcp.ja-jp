@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_reports_qossioc.html 
+summary: NetApp Element Plug-in for vCenter Server で、選択したクラスタに接続されている iSCSI セッションに関する情報を確認できます。 
+keywords: netapp, hci, vcp, vcenter, element, monitor, report, qossioc, cluster, performance 
+---
+= QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+QoSSIOC に関連するイベントは、 QoS 対応データストアがある VM が再設定された場合、または電源イベントやゲストイベントが発生した場合に表示されます。
+
+QoSSIOC イベントは、 NetApp Element Plug-in for vCenter Server の NetApp Element Configuration 拡張ポイントで確認できます。
+
+QoSSIOC イベントは、ローカルに追加されたクラスタから表示されます。リンクモード環境で、クラスタがローカルに追加されている vSphere Web Client にログインして、そのクラスタの QoSSIOC イベントを表示します。
+
+.必要なもの
+* クラスタが少なくとも 1 つ追加されて実行されている必要があります。
+* プラグインの QoSSIOC 設定ページを使用して、 QoSSIOC サービスの設定と確認を行う必要があります。
+* 少なくとも 1 つのデータストアで QoSSIOC 自動化が有効になっている必要があります。
+
+
+.手順
+. vCenter Plug-in で、 * NetApp Element 構成 * を選択します。
+. [QoSSIOC イベント *] を選択します。
+
+
+
+
+== QoSSIOC イベントデータ
+
+* * 日付 * ： QoSSIOC イベントの日時。
+* * データストア名 * ：ユーザが定義したデータストア名。
+* * Cluster IP * ：イベントの発生元であるデータストアが含まれているクラスタの IP アドレス。
+* * Volume ID * ：システムによって生成された、関連付けられたボリュームの ID 。
+* * Min IOPS * ：ボリュームの QoS 設定 - 現在の最小 IOPS 。
+* * Max IOPS * ：ボリュームの QoS 設定 - 現在の最大 IOPS 。
+* * Burst IOPS * ：ボリュームの現在の最大バースト QoS 設定。
+* * バースト時間 * ：バーストが許可される期間。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

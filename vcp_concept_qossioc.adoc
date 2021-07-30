@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_qossioc.html 
+summary:  
+keywords: netapp, quality of service, volume performance, sioc, storage I/O control, vcp 
+---
+= QoSSIOC
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server では、オプションでサービス品質を自動で設定することができます (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます ）標準データストア上のすべての VM の設定。QoS と SIOC の統合（ QoSSIOC ）は、すべての標準データストアで有効にすることができます。有効にすると、関連するすべての VM のすべての SIOC 設定がスキャンされます。
+
+QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。QoSSIOC サービスは、すべての SIOC リザベーションの合計と IOPS 制限の合計を使用して、各データストアの基盤となるボリュームの最小 QoS と最大 QoS を決定します。バースト係数も設定できます。
+
+QoSSIOC 自動化を使用する前に、次の項目を考慮する必要があります。
+
+* QoSSIOC 自動化と https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html#qos-policies["QoS ポリシー"^] 一緒に使用しないでください。QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
+* QoSSIOC は、仮想デスクトップや専用キオスクタイプの VM など、 1 日に何回か再起動したり、電源をオンにしたり、毎日または何回かオフにしたりする軽量の VM に最適です。
+* QoSSIOC は、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境には適していません。QoS ポリシーはこのような環境に最適です。
+* QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。
+
+
+
+NOTE: VMDK の SIOC 設定がデフォルトの共有レベルである「 Normal 」、デフォルトの IOPS 制限である「 Unlimited 」になっている場合は、基盤となるボリュームの QoS 合計に IOPS 値が加算されます。VMDK の SIOC 設定がデフォルトレベルでない場合は、 SIOC のシェアが基盤となるボリュームの最小 QoS に、 IOPS 制限値が最大 QoS に加算されます。
+
+
+TIP: リザベーション値は vSphere API では設定できません。VMDK に対してリザベーション値が設定されている場合、共有は無視され、代わりにリザベーション値が使用されます。
+
+
+TIP: https://activeiq.solidfire.com["SolidFire Active IQ の略"^] QoS の推奨ページで、最適な構成と QoS 設定に関するアドバイスを確認できます。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

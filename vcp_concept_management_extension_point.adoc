@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_management_extension_point.html 
+summary:  
+keywords: netapp, vcp, element, plugin, plug-in, management, extension point 
+---
+= NetApp Element Management 拡張ポイント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Element Management 拡張ポイントでは、クラスタの追加と管理、リンクモードの vCenter Server へのストレージクラスタの割り当て、管理ノードの QoSSIOC の設定を行うことができます。
+
+
+NOTE: インストールされている vSphere のバージョンによっては、 vSphere Web Client が次のイメージと多少異なる場合があります。
+
+image::vcp_management_extension_point.png[Management 拡張ポイント]
+
+クラスタナビゲーションバーでは、プラグインに追加されたクラスタ間をすばやく切り替えることができます。
+
+* * クラスタ * ：複数のクラスタが追加されている場合は、管理タスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。ドロップダウンリストから追加された他のクラスタを選択します。
+* * MVIP * ：選択したクラスタの管理仮想 IP アドレス。
+* * SVIP * ：選択したクラスタのストレージ仮想 IP アドレス。
+* * vCenter * ：選択したクラスタからアクセスできる vCenter Server 。プラグインに追加されたクラスタには、 vCenter Server へのアクセスが割り当てられています。
+
+
+NetApp Element Management 拡張ポイントからは、次のタブを使用できます。
+
+* * はじめに * ：プラグインの拡張ポイントと実行可能なアクションについて説明します。NetApp Element Management 拡張ポイントの * バージョン情報 * タブでは、各ページの [ はじめに ] ページを非表示にしたり、これらのページを復元したりできます。
+* * Reporting * ：クラスタコンポーネントに関する情報とクラスタのパフォーマンスの概要が表示されます。イベント、アラート、 iSCSI セッション、実行中のタスク、およびボリュームのパフォーマンスに関する情報を検索することもできます。
+* * 管理 * ：データストア、ボリューム、ユーザアカウント、アクセスグループ、イニシエータを作成、管理します。バックアップ処理、クローニング、 Snapshot を実行することもできます。NetApp Element ソフトウェア 10 以降を使用している場合は、 QoS ポリシーの作成と管理も可能です。
+* * 保護 * ：個々の Snapshot とグループ Snapshot を管理します。また、 Snapshot の作成スケジュールの作成、リアルタイムレプリケーションのためのクラスタのペアリング、ボリュームペアの管理も可能です。
+* * クラスタ * ：ドライブとノードを追加、管理します。VLAN の作成と管理も可能です。
+* * vvols * ：仮想ボリュームおよび仮想ボリュームに関連付けられたストレージコンテナ、プロトコルエンドポイント、およびバインドを管理します。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* link:vcp_concept_config_extension_point["NetApp Element Configuration 拡張ポイント"]
+* link:concept_vcp_product_overview.html["NetApp Element Plug-in for vCenter Server の概要を参照してください"]
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

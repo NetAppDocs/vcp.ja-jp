@@ -1,0 +1,288 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_configure_manage_vvols.html 
+summary: クラスタ内にプロビジョニングされたストレージ用の仮想ボリュームを設定できます。 
+keywords: netapp, set up vvol, configure vvol, virtual volume, vcp, vcenter, element 
+---
+= 仮想ボリュームを設定および管理する
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere を有効にすることができます link:vcp_concept_vvols.html["仮想ボリューム（ vVol ）"] NetApp Element ストレージクラスタに仮想ボリューム構成をセットアップする。Element Plug-in for vCenter Server はパフォーマンスを監視し、仮想ボリュームを管理するためのオプションを提供します。 、 、およびホストを NetApp Element Management 拡張ポイントから削除します。
+
+.必要なもの
+* VVOL と互換性がある ESXi 6.5 以降の環境に接続された NetApp Element 10 以降のクラスタを使用している。
+* vCenter 6.5 以降を使用している。
+
+
+
+
+=== セットアップのタスク
+
+NetApp Element Plug-in for vCenter Server で仮想ボリューム（ VVol ）を使用するには、初期設定手順を実行する必要があります。
+
+.手順
+. <<Enable virtual volumes functionality on the NetApp Element cluster>>
+. <<Register the VASA provider with vCenter>>
+. <<Create a storage container and associated VVol datastore>>
+
+
+
+
+=== 管理タスク
+
+* <<Monitor virtual volume resources>>
+* <<Create a VVol datastore for a storage container>>
+* <<Delete a storage container>>
+
+
+
+
+== NetApp Element クラスタで仮想ボリューム機能を有効にします
+
+NetApp Element Configuration 拡張ポイントを使用して、 vSphere Virtual Volumes （ VVol ）機能を手動で有効にする必要があります。Element システムの VVol 機能はデフォルトでは無効になっており、新規インストール時やアップグレード時に自動的に有効になることはありません。VVol 機能の有効化は 1 度だけ実行します。
+
+.手順
+. NetApp Element Configuration > Clusters * を選択します。
+. 有効にするクラスタをリストから選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、 * VVol を有効にする * をクリックします。
++
+
+IMPORTANT: 有効にした VVol 機能をあとから無効にすることはできません。vSphere Virtual Volumes 機能を有効にすると、 NetApp Element ソフトウェアの設定が永続的に変更されます。クラスタが VMware ESXi VVol に対応した環境に接続されている場合にのみ、 VVol 機能を有効にしてください。VVol 機能を無効にしてデフォルト設定に戻すには、クラスタを工場出荷時のイメージに戻す必要があります。
+
+. 仮想ボリュームの構成変更を確認するには、「 * Yes 」を選択します。
++
+
+NOTE: VVol 機能を有効にすると、 Element クラスタは VASA Provider を起動して VASA トラフィック用のポート 8444 を開き、 vCenter およびすべての ESXi ホストから検出可能なプロトコルエンドポイントを作成します。
+
+. 選択したクラスタに対して * Actions * を選択します。
+. 表示されたメニューで、「 * Details （詳細） * 」を選択します。
+. VASA Provider の URL を「 * VASA Provider URL * 」フィールドからコピーします。この URL は、 VASA Provider を vCenter に登録する際に使用します。
+. を参照してください <<Register the VASA provider with vCenter>> 次の手順に進みます。
+
+
+
+
+== VASA Provider を vCenter に登録します
+
+vCenter でクラスタの VVol 機能が認識されるように、 NetApp Element VASA Provider を vCenter に登録する必要があります。vCenter への VASA Provider の登録は 1 度だけ実行します。
+
+.必要なもの
+* クラスタで VVol 機能を有効にしておきます。
+
+
+この手順では、 vSphere 6.7 の場合の手順を説明しています。インストールされている vSphere のバージョンによっては、 vSphere のユーザインターフェイスが多少異なる場合があります。詳細については、 VMware vCenter のドキュメントを参照してください。
+
+
+IMPORTANT: NetApp Element VASA Provider を複数の vCenter インスタンスに登録しないでください。vCenter での SSL の処理に制約があるため、 NetApp Element VASA Provider は 1 つの vCenter にしか登録できません。1 つの vCenter に複数の NetApp Element クラスタを作成できますが、 2 つの vCenter インスタンス間でクラスタを共有することはできません。
+
+
+NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。
+
+.手順
+. vSphere Client Home で、 * Hosts and Clusters * をクリックします。
+. NetApp Element VASA Provider を登録する vCenter インスタンスを選択します。
+. Configure > Storage Providers * の順に選択します。
+. ストレージプロバイダ * で、追加アイコンをクリックします。
+. [ 新しいストレージプロバイダ * ] ダイアログボックスで、次の情報を入力します。
++
+** VASA Provider の名前。
+** VASA Provider の URL 。
++
+
+NOTE: VASA Provider の URL は、 vCenter Plug-in で VVol を有効にすると提供されます。URL は、クラスタの詳細（ * NetApp Element Configuration > Clusters * ）または Element UI （「 https://<MVIP>/cluster` 」）のクラスタ設定で確認できます。
+
+** NetApp Element クラスタの管理用アカウントのユーザ名。
+** NetApp Element クラスタの管理用アカウントのパスワード。
+
+
+. 「 * OK 」を選択して VASA Provider を追加します。
+. プロンプトが表示されたら、 SSL のサムプリントを承認します。これで、 NetApp Element VASA プロバイダが「 Connected 」ステータスで登録されます。
++
+
+NOTE: プロバイダの初回登録後にプロバイダの現在のステータスを表示するには、必要に応じてストレージプロバイダを更新します。プロバイダが有効になっているかどうかは、 * NetApp Element Configuration > Clusters * でも確認できます。有効にするクラスタに対して * Actions * を選択し、 * Details * をクリックします。
+
+. を参照してください <<Create a storage container and associated VVol datastore>> 次の手順に進みます。
+
+
+
+
+== ストレージコンテナおよび関連付ける VVol データストアを作成します
+
+NetApp Element Management 拡張ポイントの VVol タブで、ストレージコンテナを作成できます。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つのストレージコンテナを作成する必要があります。
+
+.作業を開始する前に
+* クラスタで VVol 機能を有効にしておきます。
+* 仮想ボリューム用の NetApp Element VASA Provider を vCenter に登録しておきます。
+
+
+.手順
+. NetApp Element Management > VVOLs * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. [ ストレージコンテナ ] サブタブを選択します。
+. Create Storage Container （ストレージコンテナの作成） * を選択します。
+. Create a New Storage Container * （新しいストレージコンテナの作成）ダイアログボックスで、ストレージコンテナ情報を入力します。
++
+.. ストレージコンテナの名前を入力します。
++
+
+TIP: わかりやすい名前のベストプラクティスを使用してください。これは、環境で複数のクラスタや vCenter Server を使用している場合に特に重要です。
+
+.. CHAP のイニシエータシークレットとターゲットシークレットを設定します。
++
+
+TIP: シークレットを自動的に生成する場合は、 CHAP 設定のフィールドを空白のままにします。
+
+.. データストアの名前を入力します。デフォルトでは、データストアの作成 * チェックボックスが選択されています。
++
+
+NOTE: vSphere でストレージコンテナを使用するには VVol データストアが必要です。
+
+.. データストアのホストを 1 つ以上選択します。
++
+
+NOTE: vCenter リンクモードを使用している場合は、クラスタが割り当てられている vCenter Server で使用可能なホストのみを選択できます。
+
+.. 「 * OK 」を選択します。
+
+
+. 新しいストレージコンテナが「ストレージコンテナ * 」サブタブのリストに表示されていることを確認します。NetApp Element アカウント ID は自動的に作成されてストレージコンテナに割り当てられるため、アカウントを手動で作成する必要はありません。
+. 選択したホストに関連するデータストアが vCenter で作成されていることも確認してください。
+
+
+
+
+== 仮想ボリュームのリソースを監視
+
+プラグインの NetApp Element Management 拡張ポイントから、仮想ボリュームコンポーネントのパフォーマンスと設定を確認できます。
+
+* <<Monitoring VVols>>
+* <<Monitoring storage containers>>
+* <<Monitoring protocol endpoints>>
+
+
+
+
+=== VVol を監視しています
+
+クラスタ上のすべてのアクティブな仮想ボリュームの全般的なデータ、または各仮想ボリュームの詳細なデータを確認できます。このプラグインは、仮想ボリュームの効率性、パフォーマンス、イベント、 QoS 、および関連する Snapshot 、 VM 、およびバインドを追跡します。
+
+.必要なもの
+* 仮想ボリュームの詳細を表示できるように VM の電源をオンにしておきます。
+
+
+.手順
+. NetApp Element Management > VVOLs * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. Virtual Volumes （仮想ボリューム） * タブでは、特定の仮想ボリュームを検索できます。
+. 確認する仮想ボリュームのチェックボックスを選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、「 * Details （詳細） * 」を選択します。
+
+
+
+
+=== ストレージコンテナを監視しています
+
+クラスタ上のすべてのアクティブなストレージコンテナに関する一般的なデータ、または各ストレージコンテナの詳細なデータを確認できます。プラグインは、ストレージコンテナの効率、パフォーマンス、および関連する仮想ボリュームを追跡します。
+
+.手順
+. NetApp Element Management > VVOLs * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. [ ストレージコンテナ ] タブを選択します。
+. 確認するストレージコンテナのチェックボックスを選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、「 * Details （詳細） * 」を選択します。
+
+
+
+
+=== プロトコルエンドポイントの監視
+
+クラスタ上のすべてのプロトコルエンドポイントに関する全般的なデータを確認できます。
+
+.手順
+. NetApp Element Management > VVOLs * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. [* プロトコルエンドポイント * ] タブを選択します。
+. 確認するプロトコルエンドポイントのチェックボックスを選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、「 * Details （詳細） * 」を選択します。
+
+
+
+
+== ストレージコンテナ用の VVol データストアを作成します
+
+ストレージコンテナを作成したら、 vCenter の NetApp Element クラスタでストレージコンテナを表す仮想ボリュームデータストアも作成する必要があります。この手順は、からデータストアを作成する代わりに使用できます <<Create a storage container and associated VVol datastore,ストレージコンテナを作成します>> ウィザード。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つの VVol データストアを作成する必要があります。
+
+.必要なもの
+* 仮想環境にストレージコンテナが存在している必要があります。
++
+
+NOTE: 場合によっては、 vCenter で NetApp Element ストレージを再スキャンし、ストレージコンテナを検出する必要があります。
+
+
+
+.手順
+. vCenter のナビゲータビューでストレージクラスタを右クリックし、 * ストレージ > データストア > 新規データストア * を選択します。
+. New Datastore * ダイアログボックスで、作成するデータストアのタイプとして * Vvol * を選択します。
+. データストア名を * Datastore name * フィールドに入力します。
+. 元のストレージコンテナのリストから NetApp Element ストレージコンテナを選択します。
++
+
+NOTE: プロトコルエンドポイント（ PE ）の LUN を手動で作成する必要はありません。LUN はデータストアが作成されると自動的に ESXi ホストにマッピングされます。
+
+. データストアへのアクセスを必要とするホストを選択します。
+. 「 * 次へ * 」を選択します。
+. 構成を確認し、「完了」を選択して VVol データストアを作成します。
+
+
+
+
+== ストレージコンテナを削除します
+
+NetApp Element Management 拡張ポイントからストレージコンテナを削除できます。
+
+.必要なもの
+* すべてのボリュームをストレージコンテナから削除しておく必要があります。
+
+
+.手順
+. NetApp Element Management > VVOLs * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. [ ストレージコンテナ ] タブを選択します。
+. 削除するストレージコンテナのチェックボックスを選択します。
+. [ * アクション * ] を選択します。
+. 表示されたメニューで、 * 削除 * を選択します。
+. 操作を確定します。
+. ストレージコンテナ * サブタブでストレージコンテナのリストを更新して、ストレージコンテナが削除されたことを確認します。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

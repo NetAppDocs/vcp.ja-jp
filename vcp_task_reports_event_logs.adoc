@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_reports_event_logs.html 
+summary: NetApp Element Plug-in for vCenter Server でイベントログを確認し、クラスタで実行された処理とエラーを示すクラスタエラーを表示します。 
+keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, cluster, performance 
+---
+= イベントログを監視してトラブルシューティングを行う
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+選択したクラスタで実行された処理のイベントログと、発生する可能性があるクラスタ障害を確認できます。ほとんどのエラーはシステムによって自動的に解決されます。それ以外の障害では手動での対応が必要になる場合
+
+.手順
+. vCenter Plug-in で、 * NetApp Element Management* を選択します。
+. *Reporting*>*Event Log* を選択します。
+. 詳細を確認するには、イベントを選択して * Details * をクリックします。
+. 次のイベント情報を確認します。
++
+** * Event Type * ： API イベントやクローンイベントなど、ログに記録されるイベントのタイプ。
+** * Service ID * ：イベントを報告したサービスの ID （該当する場合）。障害がサービスに関連付けられていない場合、値は 0 です。
+** * Node * or * Drive ID * ：イベントを報告したノードまたはドライブの ID （該当する場合）。
+
+
+
+
+
+
+== イベントタイプ
+
+システムからは複数のタイプのイベントが報告されます。各イベントは、システムが完了した処理を表します。イベントには、日常的に発生するイベント、正常なイベント、または管理者による対応が必要なイベントがあります。[ イベントログ ] ページの [ イベントタイプ ] 列には、システムのどの部分でイベントが発生したかが示されます。
+
+
+NOTE: 読み取り専用の API コマンドはイベントログに記録されません。
+
+イベントログに表示されるイベントのタイプは次のとおりです。
+
+* * apiEvent * ：ユーザが API または Web UI から開始した、設定を変更するイベント。
+* *binAssignmentsEvent*: データビンの割り当てに関連するイベント。ビンは基本的にデータを保持するコンテナであり、クラスタ全体にマッピングされます。
+* *binSyncEvent* ：ブロックサービス間でのデータの再割り当てに関連するシステムイベント。
+* *bsCheckEvent*: ブロックサービスチェックに関連するシステムイベント。
+* *bsKillEvent*: ブロックサービスの終了に関連するシステムイベント。
+* * bulkOpEvent * ：バックアップ、リストア、 Snapshot 、クローンなど、ボリューム全体で実行される処理に関連するイベント。
+* * cloneEvent * ：ボリュームクローニングに関連するイベント。
+* * clusterMasterEvent * ：ノードの追加や削除など、クラスタの初期化時またはクラスタの構成変更時に表示されるイベント。
+* *csumEvent*: ディスク上の無効なデータチェックサムに関連するイベント。
+* *DataEvent*: データの読み取りと書き込みに関連するイベント。
+* *dbEvent *: クラスタ内のアンサンブルノードによって管理されているグローバルデータベースに関連するイベント。
+* * driveEvent * ：ドライブの処理に関連するイベント。
+* * encryptionAtRestEvent * ：クラスタでの暗号化プロセスに関連するイベント。
+* * ensembleEvent * ：アンサンブル内のノード数の増減に関連するイベント。
+* * fibreChannelEvent * ：ノードの設定と接続に関連するイベント。
+* *gcEvent* : ブロックドライブ上のストレージを再利用するために 60 分ごとに実行されるプロセスに関連するイベント。このプロセスはガベージコレクションとも呼ばれます。
+* * ieEvent * ：内部システムエラー。
+* *installEvent*: 自動ソフトウェアインストールイベント。保留状態のノードにソフトウェアが自動的にインストールされています。
+* *iSCSIEvent*: システムでの iSCSI の問題に関連するイベント。
+* * limitEvent * ：アカウントまたはクラスタ内で許可されているボリュームまたは仮想ボリュームの最大数に近づいていることを示すイベント。
+* * maintenanceModeEvent * ：ノードの無効化など、ノードのメンテナンスモードに関連するイベント。
+* *networkEvent*: 仮想ネットワークのステータスに関連するイベント。
+* * platformHardwareEvent* ：ハードウェアデバイスで検出された問題に関連するイベント。
+* * remoteClusterEvent * ：リモートクラスタペアリングに関連するイベント。
+* *schedulerEvent* ：スケジュールされた Snapshot に関連するイベント。
+* *serviceEvent* ：システムサービスのステータスに関連するイベント。
+* * sliceEvent* ：メタデータドライブやボリュームの削除など、スライスサーバに関連するイベント。
++
+スライスの再割り当てイベントには、ボリュームが割り当てられているサービスに関する情報を含む 3 種類の再割り当てイベントがあります。
+
+* 反転：プライマリサービスを新しいプライマリサービスに変更します
++
+'sliceIDoldPrimaryServiceID--> newPrimaryServiceID'
+
+* 移動：セカンダリサービスを新しいセカンダリサービスに変更します
++
+'liceID{oldSecondaryServiceID(s)] -> {newSecondaryServiceID(s)] }
+
+* pruning ：一連のサービスからボリュームを削除する
++
+'liceID{oldSecondaryServiceID(s)]
+
+* *snmpTrapEvent*: SNMP トラップに関連するイベント。
+* *statEvent*: システム統計に関連するイベント。
+* *tsEvent*: システム転送サービスに関連するイベント。
+* * unexpectedException * ：予期しないシステム例外に関連するイベント。
+* *ureEvent*: ストレージデバイスからの読み取り中に発生した回復不能な読み取りエラーに関連するイベント。
+* * vasaProviderEvent * ： VASA （ vSphere APIs for Storage Awareness ） Provider に関連するイベント。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

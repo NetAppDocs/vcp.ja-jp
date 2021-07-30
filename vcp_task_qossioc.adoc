@@ -1,0 +1,222 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_qossioc.html 
+summary: クラスタでプロビジョニングされたストレージに対してボリュームの QoS とデータストアの SIOC （ QoSSIOC ）を設定および変更することができます。 
+keywords: netapp, qossioc, quality of service, qos, sioc, vcp, vcenter, element 
+---
+= Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+QoSSIOC 自動化は、プラグインで制御されている個々のボリュームとデータストアに対して設定できます。 link:vcp_concept_qossioc.html["QoSSIOC"] サービス品質を自動化します (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます ）標準データストア上のすべての VM の設定。
+
+管理ノード上の QoSSIOC サービスは vCenter と通信し、データストア上の VM アクティビティを監視します。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。QoSSIOC はオプション機能であり、プラグインを使用してストレージクラスタを管理する場合には必要ありません。
+
+QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。
+
+
+NOTE: QoSSIOC の設定ページでは、仮想ボリューム（ VVol ）機能を有効にしたり、 VVol を vSphere で使用できるようにしたりすることはできません。詳細については、 Element Plug-in for vCenter Server のドキュメントを参照してください。
+
+リンクモードの場合は、 NetApp Element Plug-in for vCenter Server で登録するすべての vCenter Server に、 1 つの vCenter Server で指定した QoSSIOC 設定が使用されます。
+
+vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を設定および管理できます。
+
+
+
+=== セットアップのタスク
+
+* link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["QoSSIOC を設定します"]
+* <<Enabling QoSSIOC automation on datastores>>
+
+
+
+
+=== 管理タスク
+
+* link:vcp_task_reports_qossioc.html["QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します"^]
+* <<Edit QoSSIOC settings>>
+* <<Change the QoSSIOC service password>>
+* <<Disable QoSSIOC automation for a datastore>>
+* <<Clear QoSSIOC settings>>
+
+
+
+
+== データストアでの QoSSIOC 自動化の有効化
+
+プラグインで QoSSIOC サービスを有効にすると、データストアの QoSSIOC の自動化を有効にし、仮想マシンディスク（ VMDK ）のパフォーマンスレベルをカスタマイズできます。
+
+これで完了です link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["QoSSIOC サービスの設定を行いました"] [QoSSIOC の設定 ] ページで、 [*QoSSIOC ステータス *] フィールドには「アップ」と表示されます。
+
+QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。
+
+
+IMPORTANT: QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC はポリシーに関係なく、ボリュームの QoS 設定に対して優先して QoS 値を調整します。
+
+.手順
+. NetApp Element 管理 > 管理 * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. 選択したデータストアの * QoSSIOC 自動化 * 列にあるステータスボタンをクリックします。
++
+
+TIP: QoS の想定外の変更を防止するため、別の vCenter では同じデータストアの QoSSIOC 統合を有効にしないでください。
+
+. 「 QoS と SIOC を有効にする」を選択します。
+. * バースト係数 * を設定します。
++
+バースト係数は、 VMDK の IOPS 制限（ SIOC ）設定を乗算する係数です。デフォルト値を変更する場合は、すべての VMDK について、 IOPS 制限にこの係数を掛けても NetApp Element ソフトウェアベースのボリュームの最大バースト制限を超えない値を指定してください。
+
+. （任意） [*Override default QoS] を選択し、設定を行います。
++
+データストアに対して「デフォルトの QoS 設定を上書き」が無効になっている場合は、各 VM のデフォルトの SIOC 設定に基づいて、共有 IOPS と制限 IOPS の値が自動的に設定されます。
+
++
+
+TIP: SIOC シェア制限をカスタマイズするときは、 SIOC IOPS 制限も必ずカスタマイズしてください。
+
++
+
+TIP: デフォルトでは、 SIOC のディスク共有の最大数は無制限に設定されています。VDI などの大規模な VM 環境では、クラスタの最大 IOPS がオーバーコミットされる可能性があります。QoSSIOC を有効にするときは、常にデフォルト QoS を上書きするオプションをオンにして、 IOPS 制限オプションを適切な値に設定してください。
+
+. [OK] をクリックします。
++
+データストアに対して QoSSIOC 自動化を有効にすると、このボタンは「 Disabled 」から「 Enabled 」に変わります。
+
+
+
+
+
+== QoSSIOC の設定を編集します
+
+アクティブな Element 管理ノードの QoSSIOC と vCenter のクレデンシャルを変更できます。
+
+.手順
+. NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
+. [* アクション * ] をクリックします。
+. 表示されたメニューで、「 * 編集 * 」を選択します。
+. [Edit QoSSIOC Settings] * ダイアログボックスで、次のいずれかを変更します。
++
+** * QoSSIOC ユーザー ID * ： QoSSIOC サービスのユーザー ID です。QoSSIOC サービスのデフォルトのユーザ ID は「 admin 」です。NetApp HCI の場合、 NetApp Deployment Engine を使用したインストールで入力されるユーザ ID と同じです。
+** * QoSSIOC パスワード * ： Element QoSSIOC サービスのパスワードです。QoSSIOC サービスのデフォルトのパスワードは SolidFire です。カスタムパスワードを作成していない場合は、登録ユーティリティの UI （「 https://[management node ip] ： 9443 」）から作成できます。
++
+
+NOTE: NetApp HCI 環境の場合、デフォルトのパスワードはインストール時にランダムに生成されます。パスワードを確認するには、このの「手順 4 」を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)["KB"^] 記事。
+
+** * vCenter User ID * ： Administrator ロールのすべての権限を持つ vCenter 管理者のユーザ名です。
+** * vCenter Password * ： Administrator ロールのすべての権限を持つ vCenter 管理者のパスワードです。
+
+
+. [OK] をクリックします。プラグインがサービスと正常に通信できる場合、 [QoSSIOC Status] フィールドには [Up] と表示されます。
++
+
+NOTE: を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)["KB"^] 次のいずれかのステータスになっている場合のトラブルシューティング : QoSSIOC は有効になっていません。*`Not Configured ( 設定されていません ): QoSSIOC 設定は構成されていません*Network Down: vCenter はネットワーク上の QoSSIOC サービスと通信できません。mNode と SIOC サービスはまだ実行されている可能性があります。
+
++
+
+NOTE: 管理ノードに対して有効な QoSSIOC 設定を行ったあとは、それらの設定がデフォルトになります。新しい管理ノードに対して有効な QoSSIOC 設定を指定するまで、 QoSSIOC の設定は最後に有効な有効な QoSSIOC 設定に戻ります。新しい管理ノードの QoSSIOC クレデンシャルを設定する場合は、先に設定されている管理ノードの QoSSIOC 設定をクリアする必要があります。
+
+
+
+
+
+== QoSSIOC サービスのパスワードを変更します
+
+登録ユーティリティの UI を使用して、管理ノードで QoSSIOC サービスのパスワードを変更できます。
+
+.必要なもの
+* 管理ノードの電源をオンにしておきます。
+
+
+ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます <<Edit QoSSIOC settings,QoSSIOC 設定>> NetApp Element Configuration 拡張ポイントのページ。
+
+.手順
+. NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
+. [* アクション * ] をクリックします。
+. 表示されたメニューで、「 * クリア * 」を選択します。
+. 操作を確定します。
++
+[*QoSSIOC Status*] フィールドには、プロセスの完了後に「 Not Configured 」と表示されます。
+
+. ブラウザに管理ノードの IP アドレスを入力します。登録用の TCP ポート「 https://[management node ip] ： 9443 」を入力します。
++
+登録ユーティリティの UI にプラグインの * QoSSIOC サービスのクレデンシャルの管理 * ページが表示されます。
+
++
+image::vcp_registration_ui_qossioc.png[VCP 登録ユーティリティのメニュー]
+
+. 次の情報を入力します。
++
+.. * Old Password * ： QoSSIOC サービスの現在のパスワード。まだパスワードを割り当てていない場合は、 SolidFire のデフォルトのパスワードを入力します。
++
+
+NOTE: NetApp HCI 環境の場合、デフォルトのパスワードはインストール時にランダムに生成されます。パスワードを確認するには、このの「手順 4 」を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)["KB"^] 記事。
+
+.. * New Password * ： QoSSIOC サービスの新しいパスワード。
+.. * パスワードの確認 * ：新しいパスワードをもう一度入力します。
+
+
+. [Submit Changes] をクリックします。
++
+
+NOTE: 変更を送信すると、 QoSSIOC サービスが自動的に再起動されます。
+
+. vSphere Web Client で、 * NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
+. [* アクション * ] をクリックします。
+. 表示されたメニューで、 * Configure * （設定 * ）を選択します。
+. Configure QoSSIOC Settings * （ QoSSIOC 設定 * ）ダイアログボックスで、 * QoSSIOC パスワード * フィールドに新しいパスワードを入力します。
+. [OK] をクリックします。
++
+プラグインがサービスと正常に通信できる場合は、 [*QoSSIOC ステータス *] フィールドに「アップ」と表示されます。
+
+
+
+
+
+== データストアに対して QoSSIOC 自動化を無効にする
+
+データストアに対する QoSSIOC 統合を無効にできます。
+
+.手順
+. NetApp Element 管理 > 管理 * を選択します。
++
+
+NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+. 選択したデータストアの「 * QoSSIOC 自動化 * 」列のボタンをクリックします。
+. Enable QoS & SIOC * チェックボックスをオフにして統合を無効にします。
++
+Enable QoS & SIOC チェックボックスをオフにすると、デフォルトの QoS は自動的に上書きされます。
+
+. [OK] をクリックします。
+
+
+
+
+== QoSSIOC の設定をクリアします
+
+Element ストレージ管理ノード（ mNode ）の QoSSIOC 設定の詳細をクリアできます。新しい管理ノードのクレデンシャルを設定したり、 QoSSIOC サービスのパスワードを変更したりする場合は、先に設定をクリアする必要があります。QoSSIOC の設定をクリアすると、 vCenter 、クラスタ、およびデータストアからアクティブな QoSSIOC が削除されます。
+
+.手順
+. NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
+. [* アクション * ] をクリックします。
+. 表示されたメニューで、「 * クリア * 」を選択します。
+. 操作を確定します。
++
+[*QoSSIOC Status*] フィールドには、プロセスの完了後に「 Not Configured 」と表示されます。
+
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

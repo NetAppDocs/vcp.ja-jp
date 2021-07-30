@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: reference_requirements_vcp.html 
+summary: NetApp Element Plug-in for vCenter Server の使用を開始する前に、製品をインストールして使用するための前提条件を理解しておく必要があります。 
+keywords: netapp, hci, kubernetes, on premise, cloud services 
+---
+= Element Plug-in for vCenter Server の要件
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server を使用して NetApp HCI または SolidFire オールフラッシュアレイストレージを管理するには、システムがプラグイン使用時の要件を満たしている必要があります。一致する必要があります
+
+
+
+== VMware vSphere の前提条件
+
+NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 、 6.7 、または 6.5 が必要です。
+
+
+
+=== プラグインでサポートされている VMware vSphere のバージョン
+
+次のメジャーバージョンの VMware ソフトウェアをサポートします。
+
+* vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 7.0 および 7.0 Update 1
+* vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.7 Update 1 および 3
++
+
+IMPORTANT: このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。
+
+* vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.5 および 6.5 Update 1 以降
+
+
+
+
+=== vSphere 6.0 のサポート終了
+
+
+IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了しました。NetApp HCI 1.8 および Element 12 以降では、 vSphere 6.0 はサポートされなくなりました。詳細については、こちらを参照してください https://mysupport.netapp.com/info/communications/ECMLP2863840.html["製品のコミュニケーション"]。
+
+
+
+== vSphere との互換性およびベストプラクティス
+
+プラグインを使用する前に、次の機能と推奨事項を考慮してください。
+
+* vCenter High Availability （ VCHA ）はサポートされません。
+* データストアの作成には選択した ESXi ホストでサポートされる最も高い VMFS バージョンが使用されるため、 VMFS の互換性に関する問題を防ぐために、実行する vSphere および ESXi のバージョンをすべてのクラスタメンバーで統一する必要があります。
+* vSphere HTML5 Web Client と Flash Web Client は別々のデータベースを使用しており、両データベースを統合することはできません。一方のクライアントに追加したクラスタは、もう一方のクライアントで認識されません。両方のクライアントを使用する場合は、両方にクラスタを追加してください。
+
+
+
+
+== NetApp Element のサポート
+
+次のメジャーバージョンをサポートします。
+
+* Element 12.x （ SolidFire エンタープライズ SDS を含む
+* Element 11.x
+
+
+
+
+== ネットワークポートの要件
+
+システムをリモートから管理し、データセンターの外部のクライアントがリソースに接続できるようにするには、データセンターのエッジファイアウォールで一部の TCP ポートを許可する必要があります。NetApp HCI および SolidFire システムで使用されるポートの包括的なリストについては、こちらを参照してください link:https://docs.netapp.com/us-en/hci/docs/hci_prereqs_required_network_ports.html["ページ"]。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

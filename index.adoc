@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: index.html 
+summary: NetApp Element ソフトウェアを実行しているストレージクラスタを管理および監視するには、 VMware vSphere インターフェイスのプラグインである NetApp Element Plug-in for vCenter Server （ VCP ）を使用します。 
+keywords: netapp, vcp, on premise, hybrid cloud control, hcc 
+---
+= NetApp Element Plug-in for vCenter Server のドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server （ VCP ）では VMware vSphere インターフェイスのプラグインが提供され、 NetApp Element ソフトウェアを実行しているストレージクラスタを管理および監視できます。
+
+このドキュメントでは、プラグインの詳細と使用方法について説明しています。このドキュメントでは、 4.6 以降のバージョンについて説明します。旧バージョンのプラグインについては、を参照してください link:reference_earlier_versions.html["このページです"]。
+
+
+
+== 新機能をご紹介します
+
+* link:rn_whatsnew_vcp.html["NetApp Element Plug-in for vCenter Server の新機能"]
+* http://docs.netapp.com/sfe-122/index.jsp["NetApp Element ソフトウェアの新機能"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["Element ソフトウェアとネットアップの管理サービスの新機能 できません"^]
+
+
+
+
+== NetApp Element Plug-in for vCenter Server を使い始めます
+
+* link:vcp_task_getstarted.html["NetApp Element Plug-in for vCenter Server のインストールと導入の概要"]
+* link:concept_vcp_product_overview.html["プラグインに関連する概念を理解する"]
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+https://www.netapp.com/support-and-training/documentation/["ネットアップの製品マニュアル"^]

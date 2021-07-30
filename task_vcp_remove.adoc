@@ -1,0 +1,125 @@
+---
+sidebar: sidebar 
+permalink: task_vcp_remove.html 
+summary: 最新の NetApp Element Plug-in for vCenter Server にアップグレードします。 
+keywords: netapp, vcp, vcenter, plugin, element, upgrade 
+---
+= vCenter Plug-in を削除します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, vcp, vcenter, plugin, element, upgrade
+
+
+[role="lead"]
+vSphere 6.7 以前で使用する vCenter Plug-in 2.5 以降では、次の手順を実行して、プラグインに関連付けられているすべてのファイルを vCenter Server から手動で削除する必要があります。vSphere 7.0 では、プラグインの登録を解除するとすべてのファイルが自動的に削除されます。
+
+.必要なもの
+* vCenter Plug-in 2.5 以降
+* vSphere 6.7 以前
+* これで完了です link:task_vcp_unregister.html["登録解除"] 既存のプラグインと vCSA または vCenter Server への SSH 、 RDP 、またはその他の適切な接続が確立されている。
+
+
+.手順
+. vCenter Server を実行しているサーバに管理者としてログインし、コマンドプロンプトを開きます。
+. vCenter Server のサービスを停止します。
++
+** Windows の場合
++
+*** （ Flash クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --stop vsphere-client
+----
+*** （ HTML5 クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --stop vsphere-client
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --stop vsphere-ui
+----
+
+
+** vCenter Server Appliance （ vCSA ）
++
+*** （ Flash クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+service-control --stop vsphere-client
+----
+*** （ HTML5 クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+service-control --stop vsphere-client
+service-control --stop vsphere-ui
+----
+
+
+
+
+. SolidFire のフォルダとファイルを次の場所から削除します。
++
+** （ Windows の場合） Windows エクスプローラを使用して、「 C ： \ProgramData\VMware\VMware」 で SolidFire を検索し、「 C ： \Program Files\VMware」 を検索します。
++
+
+NOTE: ProgramData フォルダは非表示になっています。このフォルダにアクセスするには、ファイルの完全パスを入力する必要があります。
+
+** （ vCSA の場合）次のコマンドを実行します。
++
+[listing]
+----
+find / -name "*solidfire*" -exec rm -rf {} \;
+----
+
+
+. vCenter Server のサービスを開始します。
++
+** Windows の場合
++
+*** （ Flash クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --start vsphere-client
+----
+*** （ HTML5 クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --start vsphere-client
+C:\Program Files\VMware\vCenter Server\vmon>.\vmon-cli --start vsphere-ui
+----
+
+
+** vCSA ：
++
+*** （ Flash クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+service-control --start vsphere-client
+----
+*** （ HTML5 クライアントの場合）次のコマンドを実行します。
++
+[listing]
+----
+service-control --start vsphere-client
+service-control --start vsphere-ui
+----
+
+
+
+
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

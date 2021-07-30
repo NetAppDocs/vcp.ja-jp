@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_reports_volume_performance.html 
+summary: 選択したクラスタ内のすべてのボリュームのパフォーマンス情報は、 NetApp Element Plug-in for vCenter Server の Reporting タブにある Volume Performance ページで確認できます。 
+keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, cluster, performance 
+---
+= ボリュームのパフォーマンスを監視
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Management 拡張ポイントの Reporting タブでは、選択したクラスタ内のすべてのボリュームのパフォーマンス情報を確認できます。
+
+.手順
+. vCenter Plug-in で、 * NetApp Element Management* を選択します。
+. * Reporting * > * Volume Performance * を選択します。
+. ページ上のデータの更新頻度を変更するには、 [ すべてのリストを更新する *] をクリックして値を選択します。
++
+クラスタのボリューム数が 1 、 000 個未満の場合、デフォルトの更新間隔は 10 秒です。それ以外の場合は 60 秒です。[ なし ] の値を選択すると、自動ページ更新は無効になります。
+
+
+
+
+
+== ボリュームのパフォーマンスデータ
+
+* * 名前 * ：作成時のボリュームの名前。
+* * Account * ：ボリュームに割り当てられているアカウントの名前。
+* * アクセスグループ * ：ボリュームが属するボリュームアクセスグループの名前。
+* * ボリューム利用率 %* ：ボリュームを使用しているクライアントの割合を示す値。
++
+有効な値は次のとおり
+
+* 0 ：クライアントはボリュームを使用していません
+* 100 ：クライアントは最大値まで使用しています
+* >100 ：クライアントはバースト値を使用しています
+* * 合計 IOPS * ：ボリュームに対して実行中の IOPS （読み取りおよび書き込み）の総数。
+* * 読み取り IOPS * ：ボリュームに対して実行中の読み取り IOPS の総数。
+* * 書き込み IOPS * ：ボリュームに対して実行中の書き込み IOPS の総数。
+* * 合計スループット * ：ボリュームに対して実行中のスループット（読み取りおよび書き込み）の総量。
+* * Read Throughput * ：ボリュームに対して実行中の読み取りスループットの総量。
+* * 書き込みスループット * ：ボリュームに対して実行中の書き込みスループットの総量。
+* * 合計レイテンシ（ミリ秒） * ：ボリュームへの読み取りおよび書き込み処理が完了するまでの平均時間（マイクロ秒）。
+* * 読み取りレイテンシ（ミリ秒） * ：過去 500 ミリ秒の、ボリュームへの読み取り処理が完了するまでの平均時間（マイクロ秒）。
+* * 書き込みレイテンシ（ミリ秒） * ：過去 500 ミリ秒の、ボリュームへの書き込み処理を完了するための平均時間（マイクロ秒）。
+* * Queue Depth * ：ボリュームに対する未処理の読み取り処理と書き込み処理の数。
+* * Average IO Size * ：過去 500 ミリ秒における、ボリュームに対する最近の I/O の平均サイズ（バイト）。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

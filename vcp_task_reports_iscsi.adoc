@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: vcp_task_reports_iscsi.html 
+summary: NetApp Element Plug-in for vCenter Server で、選択したクラスタに接続されている iSCSI セッションに関する情報を確認できます。 
+keywords: netapp, hci, vcp, vcenter, element, monitor, report, iscsi, connection 
+---
+= iSCSI セッションを監視して接続ステータスを確認
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server で、選択したクラスタに接続されている iSCSI セッションに関する情報を確認できます。
+
+.手順
+. vCenter Plug-in で、 * NetApp Element Management* を選択します。
+. [*Reporting*>*iSCSI Sessions*] を選択します。
+
+
+
+
+== iSCSI セッションデータ
+
+* * Node * ：ボリュームのプライマリメタデータパーティションをホストしているノード。
+* * Account * ：ボリュームを所有するアカウントの名前。値が空白の場合は、ダッシュ（ - ）が表示されます。
+* * Volume * ：ノードで識別されているボリュームの名前。
+* * Volume ID * ：ターゲット IQN に関連付けられたボリュームの ID 。
+* * Initiator ID * ：システムによって生成されたイニシエータの ID 。
+* * イニシエータエイリアス * ：イニシエータが多数ある場合に特定のイニシエータを見つけやすくするための別名。
+* * Initiator IP * ：セッションを開始するエンドポイントの IP アドレス。
+* * イニシエータ IQN * ：セッションを開始するエンドポイントの IQN 。
+* * Target IP * ：ボリュームをホストしているノードの IP アドレス。
+* * ターゲット IQN * ：ボリュームの IQN 。
+* * 作成日 * ：セッションが確立された日付。
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

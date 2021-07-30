@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: task_vcp_upgrades.html 
+summary: 最新の NetApp Element Plug-in for vCenter Server にアップグレードします。 
+keywords: netapp, vcp, vcenter, plugin, element, upgrade 
+---
+= プラグインをアップグレードします
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, vcp, vcenter, plugin, element, upgrade
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element Plug-in for vCenter Server 4.7 は、管理サービスバンドルの一部として、 Element リリースおよび NetApp HCI リリース以外で使用できます。
+
+プラグインをアップグレードするには、の手順に従います https://docs.netapp.com/us-en/hci/docs/task_vcp_upgrade_plugin.html["ドキュメントをアップグレードする"^]。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2876748["vCenter Plug-in 4.7 リリースノート"^]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["『 Hybrid Cloud Control and Management Services Release Notes 』を参照してください"^]
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* http://mysupport.netapp.com/hci/resources["NetApp HCI のリソースページ"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

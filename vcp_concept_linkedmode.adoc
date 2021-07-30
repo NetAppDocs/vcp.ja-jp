@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_linkedmode.html 
+summary:  
+keywords: netapp, vcp, element, plugin, plug-in, linked mode 
+---
+= リンクモードおよびプラグイン
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server では、 vCenter リンクモードを使用して他の vCenter Server のクラスタリソースを管理することができます。
+
+リンクモードグループに属するいずれかの vCenter Server にログインし、リンクされた他の vCenter Server が所有するリソースを同じインターフェイスから管理できます。
+
+プラグインを使用するリンクモード環境内の各 vCenter Server にプラグインを登録する必要があります。プラグインの登録ユーティリティを使用して、各 vCenter Server への登録を完了してください。さらに、リンクされたそれぞれの vCenter Server の vSphere Web Client に一度ログインする必要があります。ログインすると、 Web Client にプラグインがインストールされます。
+
+
+TIP: クラスタの追加設定プロセスでクラスタに関連付ける vCenter Server からクラスタを管理します。
+
+Element ソフトウェアベースのストレージを使用するホストは特定の vCenter Server 専用であり、リンクモードグループのメンバー間では共有されません。そのため、クラスタのストレージ管理タスクは vCenter Server 内で使用可能なホストに限定されます。
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+

@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task_vcp_unregister.html 
+summary: vCenter から NetApp Element Plug-in for vCenter Server の登録を解除できます。 
+keywords: netapp, vcp, vcenter, plugin, element, unregister 
+---
+= vCenter Plug-in の登録を解除します
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:keywords: netapp, vcp, vcenter, plugin, element, unregister
+
+
+[role="lead"]
+次のいずれかの手順を使用して、 vCenter から NetApp Element Plug-in for vCenter Server の登録を解除できます。
+
+.必要なもの
+* プラグインの登録を解除するための vCenter Administrator ロールの権限。
+* 管理ノードの IP アドレスです。
+* プラグインの登録を解除する vCenter の URL とクレデンシャル。
+
+
+vSphere 6.7 以前では、プラグインの登録を解除すると無効にした場合と同じ効果がありますが、ローカルにインストールされている関連するファイルやフォルダはすべて削除されません。すべてのプラグインファイルを削除するには、の手順を参照してください link:task_vcp_remove.html["プラグインを削除しています"]。
+
+vSphere 7.0 では、プラグインの登録を解除するとすべてのファイルが自動的に削除されます。
+
+.手順
+. プラグインの登録を解除するには、インストールされているバージョンに対応する手順に従います。
++
+** vCenter Plug-in 3.0 以降では、 vCenter Plug-in 登録ユーティリティを使用してプラグインの登録を解除します。
++
+... 登録用の TCP ポートを含む管理ノードの IP アドレスをブラウザに入力します： https://<ManagementNodeIP>:9443`
+... 「 * 登録解除プラグイン * 」に移動します。
+... 次のように入力します。
++
+.... プラグインを登録した vCenter サービスの IP アドレスまたは FQDN サーバ名。
+.... vCenter Administrator のユーザ名。
+.... vCenter Administrator のパスワード。
+
+
+... 「 * 登録解除 * 」を選択します。
+
+
+** vCenter Plug-in 2.7 ～ 2.7 の場合：
++
+*** ブラウザで vCenter Managed Object Browser （ MOB ）インターフェイスを使用して、登録を手動で解除します。
++
+.... MOB の URL 「 https://<vcenter>/mob` 」を入力します
+.... コンテンツ／ Extension Manager ／ UnregisterExtension* を選択します。
+.... 「 com.solidfire 」と入力します。
+.... * メソッドの呼び出し * を選択します。
+
+
+*** PowerCLI を使用して登録を解除し
++
+[listing]
+----
+Connect-VIServer -Server $vcenter -User administrator@vsphere.local -Password xxxxXXx -Force -ErrorAction Stop -SaveCredentials
+$em = Get-View ExtensionManager
+$em.ExtensionList | ft -property Key
+$em.UnregisterExtension("com.solidfire")
+$em.UpdateViewData()
+$em.ExtensionList | ft -property Key
+Disconnect-VIServer * -Confirm:$false
+----
+
+
+** vCenter Plug-in 2.6.1 以前の場合：
++
+... ブラウザで登録ユーティリティの URL を入力するか、プログラムディレクトリでユーティリティを探します。
++
+**** https://<FDVAorManagementNodeIP>:8443`
+**** /opt/solidfire/vcp/bin/vcp-reg.sh
+
+
+... vCenter プラグイン登録 / 登録解除ウィンドウで、 * 登録解除 * を選択します。
+
+
+
+
+
+
+[discrete]
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+
