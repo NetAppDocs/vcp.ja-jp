@@ -2380,4 +2380,5 @@
   <block id="9c17578111f04071be2db36d040281bf" category="sidebar">プラグインの登録を解除します</block>
   <block id="faa169d4c778c54064b635053ab306a2" category="sidebar">プラグインを削除します</block>
   <block id="5612baf51d00a05f0290357c97294f8d" category="sidebar">プラグインのトラブルシューティングを行います</block>
+  <block id="b43e19e2999292fbebfa71878760ddf9" category="paragraph">バージョン 4.7 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 2 のコンポーネントがサポートされるようになりました。</block>
 </blocks>

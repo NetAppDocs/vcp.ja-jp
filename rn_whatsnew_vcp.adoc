@@ -16,6 +16,8 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 [role="lead"]
 NetApp Element Plug-in for vCenter Server 4.7 では、セキュリティがさらに強化され、でさらに強化された機能が追加されています https://security.netapp.com/advisory/ntap-20210315-0001/["最新の管理サービス 2.17.56 パッチ"] リリース。
 
+バージョン 4.7 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 2 のコンポーネントがサポートされるようになりました。
+
 NetApp Element Plug-in for vCenter Server 4.7 は、 2.18 リリースの管理サービスで使用できます。
 
 
