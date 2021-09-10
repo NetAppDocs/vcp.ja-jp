@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: legal-notices.html 
+keywords:  
+summary:  
+---
+= 法的通知
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:firstname: = Legal notices
+:author: = Legal notices
+:authorinitials: =
+:authors: = Legal notices
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[""]
+
+link:https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[""]
+
+* link:media/mgmt_svcs_2.18_notice.pdf["管理サービス 2.18.91 （ VCP 4.7.10 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.17.56_notice.pdf["管理サービス 2.17.56 （ VCP 4.6.32 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.17_notice.pdf["管理サービス 2.17.52 （ VCP 4.6.29 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.16_notice.pdf["管理サービス 2.16 に関する注意事項（ VCP 4.6.29 ）"^]
+* link:media/mgmt_svcs_2.14_notice.pdf["管理サービス 2.14 （ VCP 4.42 ）に関する注意事項"^]
+* link:media/mgmt_svcs_2.13_notice.pdf["管理サービス 2.13 の注意事項（ VCP 4.5.42 ）"^]
+* link:media/mgmt_svcs_2.11_notice.pdf["管理サービス 2.11 （ VCP 4.4.72 ）に関する注意事項"^]
+
