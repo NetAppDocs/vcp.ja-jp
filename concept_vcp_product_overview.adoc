@@ -61,7 +61,7 @@ vSphere に加え、 vCenter プラグインで使用する一般的な URL の�
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
 * http://mysupport.netapp.com/hci/resources["NetApp HCI のリソースページ"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 * link:vcp_concept_config_extension_point.html["NetApp Element Configuration 拡張ポイント"]
 * link:vcp_concept_management_extension_point.html["NetApp Element Configuration 拡張ポイント"]
 

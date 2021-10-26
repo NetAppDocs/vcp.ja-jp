@@ -155,8 +155,6 @@
   <block id="9c83e144e5481ac6766f4055e566594d" category="floating-title">詳細については、こちらをご覧ください</block>
   <block id="ad0a505756223d68dc11afeae3459351" category="inline-link">NetApp HCI のドキュメント</block>
   <block id="bf667c8802395357e4f080e2fcd819e4" category="list-text"><block ref="bf667c8802395357e4f080e2fcd819e4" category="inline-link-rx"></block></block>
-  <block id="ca400825810e4b740fea1209f6374847" category="inline-link">NetApp SolidFire および Element ソフトウェアのドキュメント</block>
-  <block id="b4588bac0cd7e0e5442d66db103d5537" category="list-text"><block ref="b4588bac0cd7e0e5442d66db103d5537" category="inline-link-rx"></block></block>
   <block id="bd607b66858d9331643c0e3529eef009" category="summary">このバージョンの NetApp Element Plug-in for vCenter Server の新機能について説明します。</block>
   <block id="bd4fc9c876f29d7b65b5ec6243dd29b1" category="doc">NetApp Element Plug-in for vCenter Server の新機能</block>
   <block id="4ffb98b73fd3c97c4d4ff0bb0a71e369" category="inline-link">最新の管理サービス 2.17.56 パッチ</block>
@@ -242,13 +240,10 @@
   <block id="36fb791a39c0dcf9d768ea535ca51db9" category="doc">Element Plug-in for vCenter Server の要件</block>
   <block id="e6934e0cf4466efe40dba8ffce55213b" category="paragraph">NetApp Element Plug-in for vCenter Server を使用して NetApp HCI または SolidFire オールフラッシュアレイストレージを管理するには、システムがプラグイン使用時の要件を満たしている必要があります。一致する必要があります</block>
   <block id="d495047561c1a08074d3afeeb5b5d172" category="section-title">VMware vSphere の前提条件</block>
-  <block id="f8618a7fa99b25f7eeca653662a62a4c" category="paragraph">NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 、 6.7 、または 6.5 が必要です。</block>
   <block id="3903fd261f224ad8af888f893eb71a5e" category="section-title">プラグインでサポートされている VMware vSphere のバージョン</block>
   <block id="39bb4a890cda10e989012ed844843a1a" category="paragraph">次のメジャーバージョンの VMware ソフトウェアをサポートします。</block>
   <block id="f91a10eb569e37e963d1fe4559054eaf" category="list-text">vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 7.0 および 7.0 Update 1</block>
   <block id="8bc5dd01570b8e30ab647a98f1b5c995" category="list-text">vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.7 Update 1 および 3</block>
-  <block id="6f6bb60dc6cd3a3594eacd7f8a7e0fad" category="admonition">このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。</block>
-  <block id="dd7674941102f4fa734eb3c2e50275f8" category="list-text">vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.5 および 6.5 Update 1 以降</block>
   <block id="bcc539df8c871d5ecc3798cf0bf4e50a" category="section-title">vSphere 6.0 のサポート終了</block>
   <block id="dec3ff704eae83bc704f10747ef72261" category="inline-link">製品のコミュニケーション</block>
   <block id="56e21e285d29ac3707d9de62d9f702c6" category="admonition">VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了しました。NetApp HCI 1.8 および Element 12 以降では、 vSphere 6.0 はサポートされなくなりました。詳細については、こちらを参照してください<block ref="f606560fd089580031ad7289c0774bc4" category="inline-link-rx"></block>。</block>
@@ -408,15 +403,11 @@
   <block id="e6f04bc267aa8b790e8358fbcafd13da" category="inline-link">vCenter Plug-in 4.3 リリースノート</block>
   <block id="b2a1b69fb08bccdb5677884b0a061505" category="list-text"><block ref="b2a1b69fb08bccdb5677884b0a061505" category="inline-link-rx"></block></block>
   <block id="ff87ebe2c25e682bd61568ba1a06d717" category="section-title">ファームウェアを計算します</block>
-  <block id="3b912116949947004f7508c5e18dbffe" category="inline-link">Compute Firmware Bundle 2.76 リリースノート（最新）</block>
-  <block id="a7c5f716cc46aaac07c3d488491ca5f1" category="list-text"><block ref="a7c5f716cc46aaac07c3d488491ca5f1" category="inline-link-rx"></block></block>
   <block id="add6cf39bf48bd4bb95153935993051e" category="inline-link">Compute Firmware Bundle 2.27 リリースノート</block>
   <block id="da2623f4186e06c9a6c44a9bd8ba7dc2" category="list-text"><block ref="da2623f4186e06c9a6c44a9bd8ba7dc2" category="inline-link-rx"></block></block>
   <block id="3a155d4e218deae857aac98fd3d2be2c" category="inline-link">Compute Firmware Bundle 12.2.109 リリースノート</block>
   <block id="564b18336879036fad235824c42003f6" category="list-text"><block ref="564b18336879036fad235824c42003f6" category="inline-link-rx"></block></block>
   <block id="002e74c06881f6eef90f201bb310bbfa" category="section-title">ストレージファームウェア</block>
-  <block id="2b7dd4e3b734a3463631c30749f4f77d" category="inline-link">ストレージファームウェアバンドル 2.76 リリースノート（最新）</block>
-  <block id="3a350e23971adb938e70542f8a043316" category="list-text"><block ref="3a350e23971adb938e70542f8a043316" category="inline-link-rx"></block></block>
   <block id="f0334c1f59f95a0173885c35e98f843f" category="inline-link">ストレージファームウェアバンドル 2.27 リリースノート</block>
   <block id="fb6956e658e563cc55e645e1fae3f2f9" category="list-text"><block ref="fb6956e658e563cc55e645e1fae3f2f9" category="inline-link-rx"></block></block>
   <block id="af149d844cc5e37dba5faa0cc28a9285" category="inline-link">H610S BMC 3.84.07 リリースノート</block>
@@ -1026,7 +1017,6 @@
   <block id="ab91dd7f95968fffd00546428fa0ec61" category="paragraph">NetApp HCI を使用してノードを追加することにより、 NetApp HCI インフラを手動で拡張できます。システムを拡張するための NetApp HCI UI へのリンクには、 NetApp Element 拡張ポイントからアクセスできます。NetApp Element Management 拡張ポイントには、 Getting Started および Cluster のページからアクセスできるリンクもあります。</block>
   <block id="18a2913d457d149d724c285bb0b5ecf6" category="list-text">「 * NetApp HCI を展開する * 」を選択します。</block>
   <block id="41bebb27febffbe684d395967a3074fb" category="summary">NetApp Element Plug-in for vCenter Server 4.6 より前のリリースのドキュメントを参照できます。</block>
-  <block id="7a083f9e5491b2ecbc098e610f3b6dc3" category="paragraph">ドキュメントは、 NetApp Element Plug-in for vCenter Server 4.6 より前のリリースでも参照できます。</block>
   <block id="34b6cd75171affba6957e308dcbd92be" category="cell">バージョン</block>
   <block id="8c4acbc2063657214fc1de03ee31a0df" category="cell">プラグインのリリースノート</block>
   <block id="fefb29e781716d4ae47b68c416f147bf" category="cell">管理サービスリリースノート</block>
@@ -1318,10 +1308,6 @@
   <block id="b0ec293604aea8d5a90bcb818b872d3b" category="list-text">ボリュームとすべての接続がリストアされたことを確認します。</block>
   <block id="799c7a7e8a296591856f1cfd78f68e3d" category="doc">リンクモードおよびプラグイン</block>
   <block id="8a6865cfe151df75b8bd946dc97b82dd" category="paragraph">NetApp Element Plug-in for vCenter Server では、 vCenter リンクモードを使用して他の vCenter Server のクラスタリソースを管理することができます。</block>
-  <block id="b841358fefea1005ff53491ca5d914fc" category="paragraph">リンクモードグループに属するいずれかの vCenter Server にログインし、リンクされた他の vCenter Server が所有するリソースを同じインターフェイスから管理できます。</block>
-  <block id="dfa7a41e10cc98a1627d1e1aeacbfed6" category="paragraph">プラグインを使用するリンクモード環境内の各 vCenter Server にプラグインを登録する必要があります。プラグインの登録ユーティリティを使用して、各 vCenter Server への登録を完了してください。さらに、リンクされたそれぞれの vCenter Server の vSphere Web Client に一度ログインする必要があります。ログインすると、 Web Client にプラグインがインストールされます。</block>
-  <block id="3cf5a49e393d2d65754bd1edb610cef6" category="admonition">クラスタの追加設定プロセスでクラスタに関連付ける vCenter Server からクラスタを管理します。</block>
-  <block id="4418789a52da27754e9a5d6a19813162" category="paragraph">Element ソフトウェアベースのストレージを使用するホストは特定の vCenter Server 専用であり、リンクモードグループのメンバー間では共有されません。そのため、クラスタのストレージ管理タスクは vCenter Server 内で使用可能なホストに限定されます。</block>
   <block id="3fc23f34e36d05f9e3d062c71bacd2f0" category="doc">保護ドメイン</block>
   <block id="9b480422c240fe96384c295ed19ec96d" category="paragraph">保護ドメインとは、ドメイン内のいずれかのノードまたはすべてのノードに障害が発生し、クラスタのデータ可用性が失われることがあるように、グループ化されたノードまたはノードのセットのことです。保護ドメイン機能を使用すると、クラスタのリソース容量を監視して、障害発生時にもクラスタを修復できる状態にすることができます。監視はノードまたはシャーシのドメインレベルで選択できます。</block>
   <block id="d3aa0229608e48b638ce6da6bee6fdb7" category="list-text">* ノードレベル * は、個々のノードごとに保護ドメインを定義します。各ノードは潜在的にシャーシ全体に配置されます。</block>
@@ -2346,9 +2332,6 @@
   <block id="8acadeccb90bf205135348e4902b9c20" category="inline-link">この記事では</block>
   <block id="6827a947857f77989cf06bb0f67a6085" category="list-text">を参照してください<block ref="fcb81063f72d7cb08144faa25942e149" category="inline-link-rx"></block> 問題に固有の対処方法については、を参照してください。</block>
   <block id="8fbfd26ed5e6497365d351c8f25fa303" category="doc">プラグインをアップグレードします</block>
-  <block id="9aa7f8879a91eb7b1e09682dc66b4757" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element Plug-in for vCenter Server 4.7 は、管理サービスバンドルの一部として、 Element リリースおよび NetApp HCI リリース以外で使用できます。</block>
-  <block id="f5c23e4b91da34e39fcfeacbaac12df0" category="inline-link">ドキュメントをアップグレードする</block>
-  <block id="b0608da611be8c8809947a97d1bfebf7" category="paragraph">プラグインをアップグレードするには、の手順に従います<block ref="a635796bc63ef5dc485933239edfbba1" category="inline-link-rx"></block>。</block>
   <block id="9cec0e50b42801b7660f56e947b1c67f" category="inline-link">『 Hybrid Cloud Control and Management Services Release Notes 』を参照してください</block>
   <block id="9154c6fd5e4a9dc865524f9f8778b48f" category="list-text"><block ref="9154c6fd5e4a9dc865524f9f8778b48f" category="inline-link-rx"></block></block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">リリースノート</block>
@@ -2370,4 +2353,74 @@
   <block id="b43e19e2999292fbebfa71878760ddf9" category="paragraph">バージョン 4.7 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 2 のコンポーネントがサポートされるようになりました。</block>
   <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
+  <block id="631923a687ff82d68973d99b95597b47" category="inline-link">SolidFire and Element Resources ページにアクセスします</block>
+  <block id="238c5b123e3473c57e2925edccb205c2" category="list-text"><block ref="238c5b123e3473c57e2925edccb205c2" category="inline-link-rx"></block></block>
+  <block id="19d7fd1174be86185b720fea9ff20172" category="paragraph">NetApp Element Plug-in for vCenter Server 4.8 では、セキュリティの向上、メモリ使用率の向上、および他社製ライブラリのアップグレードが実装されています。</block>
+  <block id="a4bdf0d2fea25fcb0a7523212aa31626" category="paragraph">NetApp Element Plug-in for vCenter Server 4.8 は、 2.19 リリースの管理サービスで使用できます。</block>
+  <block id="0c6401f3a6e4115c47e9c1a72d14ab9e" category="section-title">NetApp Element Plug-in for vCenter Server 4.7</block>
+  <block id="4c0d90c9ada6ab81f16f3446180ab3a1" category="inline-link-macro">vCenter リンクモード</block>
+  <block id="9fdb639b750d5db855a8b30b956f7e52" category="admonition">NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください <block ref="dca51ead05041aae3fc819e20576b43e" category="inline-link-macro-rx"></block> はローカルストレージクラスタのみに制限されます。</block>
+  <block id="8b1a6c95fed8363998ed5d7eae965f1a" category="inline-link-macro">管理サービス 2.19.48 （ VCP 4.8.34 ）に関する注意事項</block>
+  <block id="48e73a938758f852ecf42def2ae2a2ec" category="list-text"><block ref="48e73a938758f852ecf42def2ae2a2ec" category="inline-link-macro-rx"></block></block>
+  <block id="f69d59b3c086e91cd1005a1ff37e9c51" category="paragraph">NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 または 6.7 が必要です。</block>
+  <block id="f72c3688e3e7a685ff88f8a7c360f844" category="admonition">このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 ビルド 13007421 および更新 2a より前にリリースされたその他の 6.7 U2 ビルド（ビルド 13643870 ）とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。</block>
+  <block id="45d51a6416ad3562026999aeda3b30f2" category="admonition">このプラグインは、 VMware vCenter Server 6.5 と互換性がありません。</block>
+  <block id="54866f3f5260905d8cc6b998d85fee46" category="inline-link">NetApp HCI 1.9P1 リリースノート</block>
+  <block id="5f123fb5072e8736326c928e2de971af" category="list-text"><block ref="9676fc811bea74225536cdd128daebc0" category="inline-link-rx"></block> _ 新規 _</block>
+  <block id="7199e7988a06a61dd6614783601855bd" category="inline-link">NetApp Element ソフトウェア 12.3.1 リリースノート</block>
+  <block id="b91b7e31099336f65c115b7637d8d891" category="list-text"><block ref="9add94ad0bafb6a0c0977e09efa22b79" category="inline-link-rx"></block> _ 新規 _</block>
+  <block id="3b34803433d83528840d8e729af0e8bc" category="inline-link">vCenter Plug-in 4.8 リリースノート</block>
+  <block id="c561b7d92736e6c451a661a0a5da7586" category="list-text"><block ref="c561b7d92736e6c451a661a0a5da7586" category="inline-link-rx"></block></block>
+  <block id="b8a3e041719b8e9752b150f5cd409639" category="inline-link">Compute Firmware Bundle 2.76.10 リリースノート ( 最新 )</block>
+  <block id="b95832f9e97293e5970c119813d12f8c" category="list-text"><block ref="b95832f9e97293e5970c119813d12f8c" category="inline-link-rx"></block></block>
+  <block id="7a02f75af06b21c7f1cfccabab836899" category="inline-link">Compute Firmware Bundle 2.76 リリースノート</block>
+  <block id="6c8926cd2660fe1426832a40f7e78bff" category="list-text"><block ref="6c8926cd2660fe1426832a40f7e78bff" category="inline-link-rx"></block></block>
+  <block id="e2b165ab46734aee4acaaada05a4c247" category="inline-link">ストレージファームウェアバンドル 2.99.2 リリースノート（最新）</block>
+  <block id="f1de80703dd5c9a1cd53931752c56274" category="list-text"><block ref="f1de80703dd5c9a1cd53931752c56274" category="inline-link-rx"></block></block>
+  <block id="826ed2a2fd875eeb127f73e48856de14" category="inline-link">ストレージファームウェアバンドル 2.76 リリースノート</block>
+  <block id="c8de9bc8a027f0e5864fb603489b44fd" category="list-text"><block ref="c8de9bc8a027f0e5864fb603489b44fd" category="inline-link-rx"></block></block>
+  <block id="c60c64f416bf22b6e140eb52525d5b01" category="paragraph">ドキュメントは、 NetApp Element Plug-in for vCenter Server 4.8 より前のリリースでも参照できます。</block>
+  <block id="b1859080f20e43589e23a4f60292cbd0" category="inline-link-macro">マニュアルへのリンク</block>
+  <block id="76fd0d53661e4e34cc3d7eadc5c43294" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> バージョン 4.8 の NetApp Element Plug-in for vCenter Server には、バージョン 4.6 および 4.7 も含まれています。</block>
+  <block id="820341dc67dd887805f2620efabe6669" category="cell">4.7</block>
+  <block id="4ada441a918bfe9c2818d0e81bb96974" category="cell"><block ref="4ada441a918bfe9c2818d0e81bb96974" category="inline-link-rx"></block></block>
+  <block id="ec6b509a3b39fbc4fcdff883a3e28204" category="inline-link">2.18.91</block>
+  <block id="d25890d249ad2472b717cc5d87d84d8b" category="cell"><block ref="d25890d249ad2472b717cc5d87d84d8b" category="inline-link-rx"></block></block>
+  <block id="97e7c9a7d06eac006a28bf05467fcc8b" category="inline-link-macro">リンク</block>
+  <block id="ccd34459e819d9a4ebe1588f0bf8337c" category="cell"><block ref="ccd34459e819d9a4ebe1588f0bf8337c" category="inline-link-macro-rx"></block></block>
+  <block id="231910ff513901af9c1921224df901ba" category="cell">4.6</block>
+  <block id="57b1260b3b4b02b95040a199f4ba7ae7" category="cell"><block ref="57b1260b3b4b02b95040a199f4ba7ae7" category="inline-link-rx"></block></block>
+  <block id="1bf351bf2131e4e1257bf891c669a3df" category="inline-link">2.17.56 KB</block>
+  <block id="09d6a9e13c81a9feff06e2f08afd0bf9" category="cell"><block ref="09d6a9e13c81a9feff06e2f08afd0bf9" category="inline-link-rx"></block></block>
+  <block id="b6183ce9c4e8eb00aca6382fa0b9133d" category="paragraph">Element Plug-in でストレージクラスタを管理できるのは、デスティネーション vCenter の Web クライアントにログインしている場合のみです。</block>
+  <block id="0d4feab6027cad30793ce2dadc6e4fde" category="paragraph">vSphere リンクモード環境でストレージクラスタの管理をセットアップするには、次の手順を使用してストレージクラスタを手動で追加します。</block>
+  <block id="91e17858e171c728ce382e4d503b66bc" category="list-text">プラグインを使用するリンクモード環境内の各 vCenter Server にプラグインを登録します。</block>
+  <block id="58ac558cf97424514dc4281b13503a9e" category="list-text">リンクされた各 vCenter Server の vSphere Web Client に一度ログインします。</block>
+  <block id="c4cc76bc9ec18ff5bf06879832a4ba84" category="paragraph">ログインすると、 Web Client にプラグインがインストールされます。</block>
+  <block id="a87ae6e15ccb731ab64b5c012e2ae079" category="list-text">ストレージクラスタを管理するデスティネーション vCenter の Web クライアントにログインします。</block>
+  <block id="1f3806ff5dcd0c681fc8ea6fc9018160" category="list-text">ストレージクラスタを Element Plug-in のインベントリに追加します。</block>
+  <block id="480f73beb479c360bbae467c26cb4ccc" category="paragraph">リンクモードで vCenter1 と vCenter2 を、ストレージ cluster1 とストレージ cluster2 をそれぞれ設定した。cluster1 、 vCenter2 の管理を許可して cluster2 を管理します。ストレージクラスタ管理を設定するには、各 vCenter Server にプラグインを登録したあとで、次の手順を実行します。</block>
+  <block id="02804728f799134f878cb8e8bdb7d17c" category="list-text">vCenter1 Web クライアントにログインします。</block>
+  <block id="686eb72e50fdf6e66f191bfc6cd63d86" category="list-text">cluster1 を vCenter1 Web クライアントから管理するには、 cluster1 を Element Plug-in のインベントリに追加します。</block>
+  <block id="cc02c1a474fd0061edf9cb89e5207e4b" category="list-text">vCenter2 Web クライアントにログインします。</block>
+  <block id="fc1711098d513e4eacdd203c03109df1" category="list-text">cluster2 を vCenter2 Web クライアントから管理するには、 cluster2 を Element Plug-in のインベントリに追加します。</block>
+  <block id="adee7899128d267f13a11c68d161c1f4" category="list-text"><block ref="07fa342623c29f24475338282827edaa" category="inline-xref-macro-rx"></block></block>
+  <block id="4b3f9c6de81a8dc90f7429b2464c6b39" category="section-title">VMware vCenter Server 6.7U1 に VCP 4.8 をアップグレードしたあとのエラー</block>
+  <block id="ac1d7f2400d2aa38888bfc6cc2a28d59" category="paragraph">VMware vCenter Server 6.7U1 を使用して VCP 4.8 にアップグレードすると、次の問題が発生する場合があります。</block>
+  <block id="bbcde54d38a7d044c3b8a3ec056f932f" category="list-text">クラスタは、「 * クラスタ * 」セクションには表示されません。</block>
+  <block id="cec85f10ae66451b3af081cbc5ca7e20" category="list-text">NetApp Element 構成の「 * クラスタと QoSSIOC 設定 * 」セクションにサーバエラーが表示されます。</block>
+  <block id="aa8746d5b71402972581bdd84dcc2484" category="paragraph">クラスタと QoSSIOC の設定をリストアします。</block>
+  <block id="c3a78f82feea7790e45dc2b8ff202ad6" category="list-text">vCenter からログアウトします。</block>
+  <block id="1b3bf198be8d42e344e87e814638c35e" category="list-text">ログアウトしたら、 2~3 分待ってから再度ログインします。</block>
+  <block id="42fe583841480643befc86660359cc97" category="list-text">現在の vSphere Client ビューで、更新アイコンを選択します。</block>
+  <block id="d0027b340b133639d43317fb35d13a94" category="list-text">たとえば、 Ctrl+F5 キーを押してキャッシュを無効にし、ブラウザを更新します。</block>
+  <block id="389eaf94a0ef26f9ba0cba36b0fb8069" category="list-text">クラスタと QoSSIOC の設定がリストアされたかどうかを確認します。</block>
+  <block id="b89387a58bf1412670fdff83f0b343a9" category="inline-link-macro">クラスタを再度追加します</block>
+  <block id="b7860cf0970d15cae4ff75cc6777e13e" category="paragraph">問題が解除されない場合は、が必要です <block ref="2defad7184bda40da2bf8bda0cd5de7e" category="inline-link-macro-rx"></block>。</block>
+  <block id="11de79fb56eb3a529489d5598250cfa1" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element Plug-in for vCenter Server 4.8 は、管理サービスバンドルの一部として、 Element リリースおよび NetApp HCI リリース以外で使用できます。</block>
+  <block id="230c0803a12f9d38853bdccc853eaabd" category="paragraph">プラグインをアップグレードするには、お使いの製品のアップグレードマニュアルに記載されている手順に従ってください。</block>
+  <block id="056947baa0d57b8ea8db9699e2b2d650" category="inline-link">NetApp HCI システムをアップグレードします</block>
+  <block id="8205746f5d5236ad86d4993e15eed883" category="list-text"><block ref="8205746f5d5236ad86d4993e15eed883" category="inline-link-rx"></block></block>
+  <block id="e868028708701bd050c5db2e0a7f54a9" category="inline-link">SolidFire オールフラッシュストレージシステムをアップグレード</block>
+  <block id="9082b5c51eb2d8daa6920501e4e6ac2a" category="list-text"><block ref="9082b5c51eb2d8daa6920501e4e6ac2a" category="inline-link-rx"></block></block>
 </blocks>

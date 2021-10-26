@@ -16,6 +16,9 @@ keywords: netapp, vcp, element, plugin, plug-in, management, extension point
 NetApp Element Management 拡張ポイントでは、クラスタの追加と管理、リンクモードの vCenter Server へのストレージクラスタの割り当て、管理ノードの QoSSIOC の設定を行うことができます。
 
 
+NOTE: NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+
+
 NOTE: インストールされている vSphere のバージョンによっては、 vSphere Web Client が次のイメージと多少異なる場合があります。
 
 image::vcp_management_extension_point.png[Management 拡張ポイント]
@@ -44,5 +47,5 @@ NetApp Element Management 拡張ポイントからは、次のタブを使用で
 * link:vcp_concept_config_extension_point["NetApp Element Configuration 拡張ポイント"]
 * link:concept_vcp_product_overview.html["NetApp Element Plug-in for vCenter Server の概要を参照してください"]
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 

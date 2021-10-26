@@ -114,6 +114,9 @@ NetApp Element Configuration 拡張ポイントを使用して、 vCenter Plug-i
 
 リンクモードグループを設定している場合にクラスタを別の vCenter Server に再割り当てするには、クラスタプロファイルを削除してから、リンクされている別の vCenter Server の IP で再度追加します。
 
+
+NOTE: NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+
 . NetApp Element Configuration > Clusters * を選択します。
 . 削除するクラスタを選択します。
 . [ * アクション * ] を選択します。
@@ -281,5 +284,5 @@ NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタで�
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 

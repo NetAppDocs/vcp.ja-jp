@@ -19,7 +19,7 @@ NetApp Element Plug-in for vCenter Server を使用して NetApp HCI または S
 
 == VMware vSphere の前提条件
 
-NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 、 6.7 、または 6.5 が必要です。
+NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 または 6.7 が必要です。
 
 
 
@@ -31,10 +31,12 @@ NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と E
 * vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.7 Update 1 および 3
 +
 
-IMPORTANT: このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。
+IMPORTANT: このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 ビルド 13007421 および更新 2a より前にリリースされたその他の 6.7 U2 ビルド（ビルド 13643870 ）とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。
 
-* vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.5 および 6.5 Update 1 以降
 
+
+
+IMPORTANT: このプラグインは、 VMware vCenter Server 6.5 と互換性がありません。
 
 
 
@@ -74,5 +76,5 @@ IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了�
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 

@@ -19,6 +19,9 @@ QoSSIOC イベントは、 NetApp Element Plug-in for vCenter Server の NetApp 
 
 QoSSIOC イベントは、ローカルに追加されたクラスタから表示されます。リンクモード環境で、クラスタがローカルに追加されている vSphere Web Client にログインして、そのクラスタの QoSSIOC イベントを表示します。
 
+
+NOTE: NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+
 .必要なもの
 * クラスタが少なくとも 1 つ追加されて実行されている必要があります。
 * プラグインの QoSSIOC 設定ページを使用して、 QoSSIOC サービスの設定と確認を行う必要があります。
@@ -48,5 +51,5 @@ QoSSIOC イベントは、ローカルに追加されたクラスタから表示
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 

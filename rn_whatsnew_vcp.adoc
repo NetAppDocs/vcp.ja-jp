@@ -14,6 +14,14 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 
 
 [role="lead"]
+NetApp Element Plug-in for vCenter Server 4.8 では、セキュリティの向上、メモリ使用率の向上、および他社製ライブラリのアップグレードが実装されています。
+
+NetApp Element Plug-in for vCenter Server 4.8 は、 2.19 リリースの管理サービスで使用できます。
+
+
+
+== NetApp Element Plug-in for vCenter Server 4.7
+
 NetApp Element Plug-in for vCenter Server 4.7 では、セキュリティがさらに強化され、でさらに強化された機能が追加されています https://security.netapp.com/advisory/ntap-20210315-0001/["最新の管理サービス 2.17.56 パッチ"] リリース。
 
 バージョン 4.7 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 2 のコンポーネントがサポートされるようになりました。
@@ -34,5 +42,5 @@ NetApp Element Plug-in for vCenter Server 4.6 は、 2.16 リリースの管理�
 * link:reference_earlier_versions.html["以前のバージョンの NetApp Element プラグインのドキュメント"]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["Hybrid Cloud Control and Management Services リリースノート KB"^]
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
-* https://docs.netapp.com/sfe-122/topic/com.netapp.ndc.sfe-vers/GUID-B1944B0E-B335-4E0B-B9F1-E960BF32AE56.html["NetApp SolidFire および Element ソフトウェアのドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 
