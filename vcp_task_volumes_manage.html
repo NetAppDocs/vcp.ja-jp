@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>ボリュームを管理します</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="ボリュームを管理します" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/vcp/vcp_task_volumes_manage.html" />
+	<meta property="og:description" content="NetApp Element Plug-in for vCenter Server では、以下のファイルの作成、表示、編集、削除を行うことができます。 ボリュームをクローニング、バックアップ、リストアまた、クラスタ上の各ボリュームの管理や、ボリュームアクセスグループのボリュームの追加と削除も可能です。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/vcp/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="NetApp Element Plug-in for vCenter Server では、以下のファイルの作成、表示、編集、削除を行うことができます。 ボリュームをクローニング、バックアップ、リストアまた、クラスタ上の各ボリュームの管理や、ボリュームアクセスグループのボリュームの追加と削除も可能です。">
+  <meta name="keywords" content=" netapp, volumes, vcp, vcenter, element,">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ja-jp/vcp/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/vcp/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/vcp/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/vcp/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/vcp/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ja-jp/vcp/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ja-jp/vcp/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ja-jp/vcp/js/na-search.js'></script>
+  
+
+  
+  <script src='/ja-jp/vcp/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ja-jp/vcp/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/vcp/js/na-utility.js'></script>
+  <script src='/ja-jp/vcp/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/vcp/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/vcp/js/toc.js'></script>
+  <script src='/ja-jp/vcp/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ja-jp/vcp/js/version-dropdown.js'></script>
+  <script src='/ja-jp/vcp/js/product-family.js'></script>
+  <script src='/ja-jp/vcp/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip.min.js'></script>
+  <script src='/ja-jp/vcp/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/vcp/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/vcp/vcp_task_volumes_manage.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/vcp/vcp_task_volumes_manage.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/vcp/vcp_task_volumes_manage.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ja-jp/vcp/pdfs/fullsite-sidebar/NetApp_Element_Plug_in_for_vCenter_Server_のドキュメント.pdf" >
+          <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/NetApp_Element_Plug_in_for_vCenter_Server_のドキュメント.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            NetApp Element Plug-in for vCenter Server のドキュメント
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してストレージを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            vCenter Plug-in を使用してストレージを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/クラスタハードウェアおよび仮想ネットワークを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            クラスタハードウェアおよび仮想ネットワークを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムパフォーマンスを監視.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            システムパフォーマンスを監視
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムアラートを監視する.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            システムアラートを監視する
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してデータを保護します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            vCenter Plug-in を使用してデータを保護します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/vcp/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class="subfolders "><a href="/ja-jp/vcp/index.html">
+        <div class="na-navbar-padding"> NetApp Element Plug-in for vCenter Server のドキュメント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/concept_vcp_product_overview.html">
+        NetApp Element Plug-in for vCenter Server の製品概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/rn_whatsnew_vcp.html">
+        NetApp Element Plug-in for vCenter Server の新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/rn_relatedrn_vcp.html">
+        その他のリリース情報
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_config_extension_point.html">
+        NetApp Element Configuration 拡張ポイント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_management_extension_point.html">
+        NetApp Element Management 拡張ポイント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_accounts.html">
+        ユーザアカウント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_protection_domains.html">
+        保護ドメイン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_linkedmode.html">
+        リンクモードと vCenter Plug-in
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_qossioc.html">
+        QoSSIOC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_vvols.html">
+        仮想ボリューム（ VVOL ）
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/reference_requirements_vcp.html">
+        導入前の要件
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_getstarted.html">
+        NetApp Element Plug-in for vCenter Server をインストールして設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_upgrades.html">
+        プラグインをアップグレードします
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> vCenter Plug-in を使用してストレージを管理します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_clusters_manage.html">
+        クラスタを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_datastores_manage.html">
+        データストアを管理します
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_volumes_manage.html">
+        ボリュームを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_user_accounts.html">
+        ユーザアカウントを作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_access_groups.html">
+        アクセスグループを作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_initiators.html">
+        イニシエータを作成および管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_qossioc.html">
+        Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_qos_policies.html">
+        ボリュームの QoS ポリシーの作成と管理
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> クラスタハードウェアおよび仮想ネットワークを管理します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_manage_cluster_overview.html">
+        クラスタのハードウェアと仮想ネットワークの概要を管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_add_manage_drive.html">
+        ドライブを追加および管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_add_manage_nodes.html">
+        ノードを追加および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_vlans.html">
+        仮想ネットワークを作成および管理する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> システムパフォーマンスを監視</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_intro.html">
+        レポートオプションを使用して、システムパフォーマンスを監視します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_overview.html">
+        概要ページでクラスタ全体の健全性を監視します
+      </a></li><li class="subfolders "><a href="/ja-jp/vcp/vcp_task_reports_alerts.html">
+        <div class="na-navbar-padding"> システムアラートを監視する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_reference_reports_alert_errors.html">
+        システムアラートのリスト
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_event_logs.html">
+        イベントログを監視してトラブルシューティングを行う
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_volume_performance.html">
+        ボリュームのパフォーマンスを監視
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_iscsi.html">
+        iSCSI セッションを監視して接続ステータスを確認
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_qossioc.html">
+        QOSSIOC イベントで VM のパフォーマンスを監視する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> vCenter Plug-in を使用してデータを保護します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_overview.html">
+        vCenter Plug-in の概要を使用してデータを保護します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_volume.html">
+        ボリューム Snapshot を作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_group.html">
+        グループ Snapshot を作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_schedules.html">
+        Snapshot スケジュールを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_remote_replication.html">
+        クラスタ間でリモートレプリケーションを実行
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_configure_manage_vvols.html">
+        vCenter Plug-in を使用して仮想ボリュームをセットアップおよび管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_unregister.html">
+        プラグインの登録を解除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_remove.html">
+        プラグインを削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_reference_troubleshoot_vcp.html">
+        プラグインのトラブルシューティングを行います
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/reference_earlier_versions.html">
+        以前のバージョンの NetApp Element プラグインのドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/legal-notices.html">
+        法的通知
+      </a></li></ul></li></ul>
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">ホーム</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">ドキュメント</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/vcp/">VCP</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          ボリュームを管理します
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">ボリュームを管理します</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-10-26 10:22:18 +0000">10/26/2021</time>
+    
+  
+
+<span>寄稿者
+  <a target="_blank" href="https://github.com/netapp-dbagwell">
+    <img  class="avatar avatar-small"
+          alt="netapp-dbagwell"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/amgrissino">
+    <img  class="avatar avatar-small"
+          alt="amgrissino"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/36450105?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-pcarriga">
+    <img  class="avatar avatar-small"
+          alt="netapp-pcarriga"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/77334475?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>NetApp Element Plug-in for vCenter Server では、以下のファイルの作成、表示、編集、削除を行うことができます。 ユーザアカウントのボリュームをクローニング、バックアップ、またはリストアする。また、クラスタ上の各ボリュームの管理や、ボリュームアクセスグループのボリュームの追加と削除も可能です。</p>
+</div>
+<div class="ulist">
+<div class="title">オプション（ Options ）</div>
+<ul>
+<li>
+<p><a href="#Create a volume">[Create a volume]</a></p>
+</li>
+<li>
+<p><a href="#View volume details">[View volume details]</a></p>
+</li>
+<li>
+<p><a href="#Edit a volume">[Edit a volume]</a></p>
+</li>
+<li>
+<p><a href="#Clone a volume">[Clone a volume]</a></p>
+</li>
+<li>
+<p><a href="#Back up or restore volumes">[Back up or restore volumes]</a></p>
+</li>
+<li>
+<p><a href="#Delete volumes">[Delete volumes]</a></p>
+</li>
+<li>
+<p><a href="#Purge volumes">[Purge volumes]</a></p>
+</li>
+<li>
+<p><a href="#Restore deleted volumes">[Restore deleted volumes]</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームを作成します">ボリュームを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>新しいボリュームを作成し、そのボリュームを指定したアカウントに関連付けることができます（すべてのボリュームをアカウントに関連付ける必要があります）。この関連付けにより、アカウントは、 iSCSI イニシエータ経由で CHAP クレデンシャルを使用してボリュームにアクセスできます。作成中にボリュームの QoS 設定を指定することもできます。</p>
+</div>
+<div class="paragraph">
+<p>VMware ではディスクリソースに 512e が必要です。512e が有効になっていないと VMFS は作成できません。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>クラスタが少なくとも 1 つ追加されて実行されている必要があります。</p>
+</li>
+<li>
+<p>ユーザアカウントが作成されている必要があります。</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element Management*&gt;* Management* を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、このタスクに使用するクラスタをナビゲーションバーで選択します。</p>
+</li>
+<li>
+<p>[* Volumes （ボリューム） ] サブタブを選択します。</p>
+</li>
+<li>
+<p>アクティブ * 表示から、 * ボリュームの作成 * を選択します。</p>
+</li>
+<li>
+<p>ボリュームの名前を入力します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+わかりやすい名前のベストプラクティスを使用してください。これは、環境で複数のクラスタや vCenter Server を使用している場合に特に重要です。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>作成するボリュームの合計サイズを入力します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+デフォルトで選択されているボリュームサイズの単位は GB です。ボリュームは、 GB または GiB 単位のサイズを使用して作成できます。 1GB = 1 000 000 000 バイト 1GiB = 1 073 741 824 バイト
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+デフォルトでは、すべての新しいボリュームについて、 512 バイトエミュレーションが ON に設定されます。VMware ではディスクリソースに 512e が必要です。512e が有効になっていないと VMFS は作成できません。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * アカウント * 」リストからユーザーアカウントを選択します。</p>
+</li>
+<li>
+<p>[* Quality of Service* （サービス品質 * ） ] 領域で、次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>「 * Policy 」で、既存の QoS ポリシーがある場合は選択します。</p>
+</li>
+<li>
+<p>カスタム設定 * で、 IOPS の最小値、最大値、バースト値をカスタマイズするか、デフォルトの QoS 値を使用します。</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。データストアの QoSSIOC 設定を有効にすると、ボリュームレベルの QoS 設定よりも優先されます。最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームの詳細を表示します">ボリュームの詳細を表示します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp Element Management 拡張ポイントでは、クラスタ上のすべてのアクティブボリュームに関する全般的な情報を確認できます。効率化、パフォーマンス、 QoS 、関連付けられた Snapshot など、アクティブなボリュームごとの詳細も確認できます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブをクリックします。</p>
+<div class="paragraph">
+<p>アクティブボリュームに関する全般的な情報が表示されます。</p>
+</div>
+</li>
+<li>
+<p>特定のボリュームをチェックします。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * 詳細を表示 * 」を選択します。</p>
+</li>
+<li>
+<p>次の点について確認</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* Volume ID * ：システムによって生成されたボリュームの ID 。</p>
+</li>
+<li>
+<p>* ボリューム名 * ：ボリュームに割り当てられた名前。</p>
+</li>
+<li>
+<p>* Account * ：ボリュームに割り当てられているアカウントの名前。</p>
+</li>
+<li>
+<p>* アクセスグループ * ：ボリュームが属するボリュームアクセスグループの名前。</p>
+</li>
+<li>
+<p>* アクセス * ：ボリュームの作成時に割り当てられたアクセスのタイプ。</p>
+<div class="paragraph">
+<p>有効な値は次のとおり</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read/Write ：すべての読み取りと書き込みが許可されます。</p>
+</li>
+<li>
+<p>Read Only ：すべての読み取りアクティビティが許可されます。書き込みは許可されません。</p>
+</li>
+<li>
+<p>「ロック」：管理者アクセスのみが許可されます。</p>
+</li>
+<li>
+<p>ReplicationTarget ：レプリケートされたボリュームペアのターゲットボリュームとして指定されます。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>* ペアリングされているボリューム * ：ボリュームがペアリングされているかどうかを示します。</p>
+</li>
+<li>
+<p>* サイズ（ GB ） * ：ボリュームの合計サイズ（ GB ）。</p>
+</li>
+<li>
+<p>* Snapshots * ：ボリュームに対して作成された Snapshot の数。</p>
+</li>
+<li>
+<p>* QoS Policy * ：ユーザ定義の QoS ポリシーの名前。</p>
+</li>
+<li>
+<p>* 512e * ：ボリュームで 512e が有効になっているかどうか。値は、 Yes または No のいずれかです</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>次のセクションに記載されている特定のボリュームの詳細を確認します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#General Details section">[General Details section]</a></p>
+</li>
+<li>
+<p><a href="#Efficiency section">[Efficiency section]</a></p>
+</li>
+<li>
+<p><a href="#Performance section">[Performance section]</a></p>
+</li>
+<li>
+<p><a href="#Quality of Service section">[Quality of Service section]</a></p>
+</li>
+<li>
+<p><a href="#Snapshots section">[Snapshots section]</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="general-details-セクション">General Details セクション</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>* 名前 * ：ボリュームに割り当てられた名前。</p>
+</li>
+<li>
+<p>* Volume ID * ：システムによって生成されたボリュームの ID 。</p>
+</li>
+<li>
+<p><strong>IQN</strong> ：ボリュームの iSCSI Qualified Name 。</p>
+</li>
+<li>
+<p>* アカウント ID * ：関連付けられたアカウントの一意のアカウント ID 。</p>
+</li>
+<li>
+<p>* Account * ：ボリュームに割り当てられているアカウントの名前。</p>
+</li>
+<li>
+<p>* アクセスグループ * ：ボリュームが属するボリュームアクセスグループの名前。</p>
+</li>
+<li>
+<p>* サイズ * ：ボリュームの合計サイズ（バイト）。</p>
+</li>
+<li>
+<p>* ペアリングされているボリューム * ：ボリュームがペアリングされているかどうかを示します。</p>
+</li>
+<li>
+<p>* SCSI EUI Device ID * ： EUI-64 ベースの 16 バイト形式で、ボリュームに割り当てられたグローバル一意の SCSI デバイス ID 。</p>
+</li>
+<li>
+<p><strong>SCSI NAA デバイス ID</strong>: NAA IEEE Registered Extended Format でのプロトコルエンドポイントのグローバル一意 SCSI デバイス識別子。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="効率セクション">効率セクション</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>* Compression * ：このボリュームの圧縮による削減率。</p>
+</li>
+<li>
+<p>* 重複排除機能 * ：ボリュームの重複排除による削減率。</p>
+</li>
+<li>
+<p>* シンプロビジョニング * ：ボリュームのシンプロビジョニングによる削減率。</p>
+</li>
+<li>
+<p>* Last Updated * ：前回の効率化スコアの日時。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="パフォーマンスセクション">パフォーマンスセクション</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>* アカウント ID * ：関連付けられたアカウントの一意のアカウント ID 。</p>
+</li>
+<li>
+<p>* Actual IOPS * ：過去 500 ミリ秒の、ボリュームに対する実際の IOPS 。</p>
+</li>
+<li>
+<p>* Async Delay* ：ボリュームが最後にリモートクラスタと同期されてからの時間。</p>
+</li>
+<li>
+<p>* 平均 IOP サイズ * ：過去 500 ミリ秒における、ボリュームへの最近の I/O の平均サイズ（バイト）。</p>
+</li>
+<li>
+<p>* Burst IOPS Size * ：ユーザが使用できる IOP クレジットの合計数。ボリュームが最大 IOPS に到達していない場合、クレジットは蓄積されます。</p>
+</li>
+<li>
+<p>* クライアントキュー深度 * ：ボリュームに対する未処理の読み取り処理と書き込み処理の数。</p>
+</li>
+<li>
+<p>* 最終更新日 * ：パフォーマンスが最後に更新された日時。</p>
+</li>
+<li>
+<p>* Latency usec * ：過去 500 ミリ秒以内にボリュームへの処理が完了するまでの平均時間（マイクロ秒）。値「 0 」（ゼロ）は、ボリュームに対する I/O がないことを示します。</p>
+</li>
+<li>
+<p>* ゼロ以外のブロック * ：前回のガベージコレクション完了後、データが含まれる 4KiB ブロックの総数。</p>
+</li>
+<li>
+<p>* パフォーマンス利用率 * ：消費されているクラスタ IOPS の割合。たとえば、 25 万 IOPS のクラスタが 10 万 IOPS で実行されている場合、消費率は 40% です。</p>
+</li>
+<li>
+<p>* Read Bytes * ：ボリューム作成以降にボリュームから読み取られた累積バイト数の合計。</p>
+</li>
+<li>
+<p>* Read Latency usec * ：過去 500 ミリ秒のボリュームへの読み取り処理が完了するまでの平均時間（マイクロ秒）。</p>
+</li>
+<li>
+<p>* Read Operations * ：ボリューム作成以降の、ボリュームに対する読み取り処理の合計数。</p>
+</li>
+<li>
+<p>* シンプロビジョニング * ：ボリュームのシンプロビジョニングによる削減率。</p>
+</li>
+<li>
+<p>* スロットル * ： 0~1 の浮動小数点数。データの再レプリケーション、一時的なエラー、 Snapshot の作成のために、クライアントの処理量を maxIOPS 未満に抑えている割合。</p>
+</li>
+<li>
+<p>* Total Latency usec * ：ボリュームへの読み取りおよび書き込み処理を完了するまでの時間（マイクロ秒）。</p>
+</li>
+<li>
+<p>* アラインされていない読み取り * ： 512e ボリュームの場合、 4k セクターの境界に沿っていない読み取り処理の数。アラインされていない読み取りが多数ある場合は、パーティションのアライメントが適切でない可能性</p>
+</li>
+<li>
+<p>* アラインされていない書き込み * ： 512e ボリュームの場合、 4k セクターの境界に沿っていない書き込み処理の数。アラインされていない書き込みが多数ある場合は、パーティションのアライメントが適切でない可能性</p>
+</li>
+<li>
+<p>* 使用容量 * ：使用済み容量の割合。</p>
+</li>
+<li>
+<p>* Volume ID * ：システムによって生成されたボリュームの ID 。</p>
+</li>
+<li>
+<p>* ボリュームアクセスグループ * ：ボリュームに関連付けられたボリュームアクセスグループ ID 。</p>
+</li>
+<li>
+<p>* Volume Utilization * ：ボリュームを使用しているクライアントの割合を示す値。有効な値は次のとおり</p>
+<div class="ulist">
+<ul>
+<li>
+<p>0 ：クライアントはボリュームを使用していません。</p>
+</li>
+<li>
+<p>100 ：クライアントは最大値まで使用しています</p>
+</li>
+<li>
+<p>&gt;100 ：クライアントはバースト値を使用しています。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>* Write Bytes * ：ボリューム作成以降にボリュームに書き込まれた累積バイト数の合計。</p>
+</li>
+<li>
+<p>* Write Latency usec * ：過去 500 ミリ秒以内にボリュームへの書き込み処理を完了するまでの平均時間（マイクロ秒）。</p>
+</li>
+<li>
+<p>* Write Operations * ：ボリューム作成以降の、ボリュームに対して行った書き込み処理の累積総数。</p>
+</li>
+<li>
+<p>* ゼロブロック * ：前回のガベージコレクション完了後、データが含まれない 4KiB ブロックの総数。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="quality-of-service-セクションの略">Quality of Service セクションの略</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>* Policy * ：ボリュームに割り当てられている QoS ポリシーの名前。</p>
+</li>
+<li>
+<p>* I/O サイズ * ： IOPS のサイズ（ KB ）。</p>
+</li>
+<li>
+<p>* Min IOPS * ：クラスタがボリュームに提供する平常時の最小 IOPS 。ボリュームに設定された Min IOPS は、そのボリュームに対して最低限保証されるパフォーマンスレベルです。パフォーマンスがこのレベルを下回ることはありません。</p>
+</li>
+<li>
+<p>* 最大 IOPS * ：クラスタがボリュームに提供する平常時の最大 IOPS 。クラスタの IOPS レベルが非常に高い場合も、 IOPS パフォーマンスはこのレベル以下に抑えられます。</p>
+</li>
+<li>
+<p>* Burst IOPS * ：短時間のバースト時に許容される最大 IOPS 。ボリュームが Max IOPS 未満で動作している間は、バーストクレジットが蓄積されます。パフォーマンスレベルが非常に高くなって最大レベルに達した場合、ボリュームで IOPS の短時間のバーストが許容されます。</p>
+</li>
+<li>
+<p>* Max Bandwidth * ：ブロックサイズを大きく処理するためにシステムで許容される最大帯域幅。</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="snapshot-セクション">Snapshot セクション</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>* Snapshot ID * ：システムによって生成された Snapshot の ID 。</p>
+</li>
+<li>
+<p>* Snapshot 名 * ： Snapshot のユーザ定義名。</p>
+</li>
+<li>
+<p>* 作成日 * ： Snapshot が作成された日時。</p>
+</li>
+<li>
+<p>* 有効期限 * ： Snapshot が削除される日時。</p>
+</li>
+<li>
+<p>* サイズ * ：ユーザーが定義したスナップショットのサイズ（ GB 単位）。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームを編集します">ボリュームを編集します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>QoS 値、ボリュームのサイズ、バイト値の算出単位など、ボリュームの属性を変更できます。また、アクセスレベルやボリュームにアクセスできるアカウントを変更することもできます。レプリケーションで使用するため、またはボリュームへのアクセスを制限するために、アカウントアクセスを変更することもできます。</p>
+</div>
+<div class="paragraph">
+<p>管理ノードに永続ボリュームを使用している場合は、永続ボリュームの名前を変更しないでください。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブをクリックします。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * 編集 * 」を選択します。</p>
+</li>
+<li>
+<p>* オプション * ： * Volume Size * フィールドに、 GB または GiB 単位で異なるボリュームサイズを入力します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+ボリュームのサイズは、増やすことはできますが、減らすことはできません。レプリケーション用にボリュームサイズを調整する場合は、最初にレプリケーションターゲットとして割り当てられているボリュームのサイズを拡張する必要があります。次に、ソースボリュームのサイズを変更します。ターゲットボリュームのサイズは、ソースボリュームと同じかそれ以上のサイズにすることはできますが、ソースボリュームより小さくすることはできません。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>* オプション * ：別のユーザアカウントを選択します。</p>
+</li>
+<li>
+<p>* オプション * ：次のいずれかのアクセスレベルを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>読み取り / 書き込み</p>
+</li>
+<li>
+<p>読み取り専用です</p>
+</li>
+<li>
+<p>ロック済み</p>
+</li>
+<li>
+<p>レプリケーションターゲット</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[* Quality of Service* （サービス品質 * ） ] 領域で、次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>既存の QoS ポリシーがある場合は、 Policy （ポリシー）で選択します。</p>
+</li>
+<li>
+<p>カスタム設定で、 IOPS の最小値、最大値、バースト値をカスタマイズするか、デフォルトの QoS 値を使用します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+* ベストプラクティス * ： IOPS 値を変更する場合は、 10 または 100 の単位で増分します。入力値には有効な整数を指定する必要があります。ボリュームのバースト値はできるだけ高くします。バースト値を非常に高く設定することで、たまに発生する大規模ブロックのシーケンシャルワークロードを迅速に処理できる一方で、平常時の IOPS は引き続き抑制することができます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。データストアの QoSSIOC 設定を有効にすると、ボリュームレベルの QoS 設定よりも優先されます。最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームのクローンを作成します">ボリュームのクローンを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ボリュームのクローンを作成して、データのポイントインタイムコピーを作成できます。ボリュームをクローニングすると、ボリュームの Snapshot が作成され、次にその Snapshot が参照しているデータのコピーが作成されます。これは非同期のプロセスであり、クローニングするボリュームのサイズおよび現在のクラスタの負荷によって所要時間が異なります。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>クラスタが少なくとも 1 つ追加されて実行されている必要があります。</p>
+</li>
+<li>
+<p>ボリュームを少なくとも 1 つ作成しておく必要があります。</p>
+</li>
+<li>
+<p>少なくとも 1 つのユーザアカウントを作成する必要があります。</p>
+</li>
+<li>
+<p>ソースボリュームのサイズと同じかそれ以上のプロビジョニングされていない利用可能なスペースが必要です。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>クラスタでは、ボリュームあたり一度に実行できるクローン要求は最大 2 つ、アクティブなボリュームのクローン処理は最大 8 件までサポートされます。これらの制限を超える要求はキューに登録され、あとで処理されます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+クローンボリュームには、ソースボリュームのボリュームアクセスグループメンバーシップは継承されません。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>オペレーティングシステムによって、クローニングされたボリュームの処理方法が異なります。ESXi では、クローンボリュームはボリュームコピーまたは Snapshot ボリュームとして扱われます。新しいデータストアの作成に使用できるデバイスがボリュームになります。クローンボリュームのマウントと Snapshot LUN の処理の詳細については、 VMware のドキュメントを参照してください <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html">"VMFS データストアのコピーをマウントしています"</a> および。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>クローニングするボリュームを選択します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * Clone * 」を選択します。</p>
+</li>
+<li>
+<p>新しいクローンボリュームのボリューム名を入力します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+わかりやすい名前のベストプラクティスを使用してください。これは、環境で複数のクラスタや vCenter Server を使用している場合に特に重要です。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>クローンボリュームのサイズ（ GB または GIB ）を選択します。</p>
+<div class="paragraph">
+<p>デフォルトで選択されているボリュームサイズの単位は GB です。GB または GiB 単位のサイズを使用してボリュームを作成できます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1GB=1 、 000 、 000 、 000 バイト</p>
+</li>
+<li>
+<p>1GiB=1 、 073 、 741 、 824 バイトです</p>
+<div class="paragraph">
+<p>クローンのボリュームサイズを拡張すると、末尾に空きスペースが追加された新しいボリュームが作成されます。ボリュームの使用方法によっては、新しい空きスペースを使用するために、空きスペースでパーティションの拡張または新しいパーティションの作成が必要になる場合があります。</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>新しいクローンボリュームに関連付けるアカウントを選択します。</p>
+</li>
+<li>
+<p>新しいクローンボリュームのアクセスタイプとして次のいずれかを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>読み取り / 書き込み</p>
+</li>
+<li>
+<p>読み取り専用です</p>
+</li>
+<li>
+<p>ロック済み</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>必要に応じて 512e の設定を調整します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+デフォルトでは、すべての新しいボリュームについて、 512 バイトエミュレーションが有効になります。VMware ではディスクリソースに 512e が必要です。512e が有効になっていないと VMFS は作成できず、ボリュームの詳細はグレー表示になります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+クローニング処理が完了するまでの時間は、ボリュームサイズおよび現在のクラスタの負荷によって異なります。クローンボリュームがボリュームリストに表示されない場合は、ページを更新してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームのバックアップまたはリストア">ボリュームのバックアップまたはリストア</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp Element ソフトウェアベースのストレージの外部にあるオブジェクトストアコンテナとの間でボリュームの内容をバックアップおよびリストアするようにシステムを設定できます。</p>
+</div>
+<div class="paragraph">
+<p>リモートの NetApp Element ソフトウェアベースのシステムとの間でデータをバックアップおよびリストアすることもできます。1 つのボリューム上で、一度に最大 2 つのバックアップまたはリストアのプロセスを実行できます。</p>
+</div>
+<div class="sect2">
+<h3 id="ボリュームをバックアップ">ボリュームをバックアップ</h3>
+<div class="paragraph">
+<p>NetApp Element ボリュームは、 Element ストレージ、および Amazon S3 または OpenStack Swift と互換性のあるセカンダリオブジェクトストアにバックアップできます。</p>
+</div>
+<div class="sect3">
+<h4 id="amazon-s3-オブジェクトストアにボリュームをバックアップします">Amazon S3 オブジェクトストアにボリュームをバックアップします</h4>
+<div class="paragraph">
+<p>Amazon S3 と互換性のある外部のオブジェクトストアに NetApp Element ボリュームをバックアップできます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「バックアップ先 * 」を選択します。</p>
+</li>
+<li>
+<p>[ ボリュームのバックアップ先 * ] で、 [* Amazon S3 * ] を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式でのオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[ * ホスト名 * ] フィールドに、オブジェクトストアへのアクセスに使用するホスト名を入力します。</p>
+</li>
+<li>
+<p>[Access key ID*] フィールドに、アカウントのアクセスキー ID を入力します。</p>
+</li>
+<li>
+<p>「 * Secret access key * 」フィールドに、アカウントのシークレットアクセスキーを入力します。</p>
+</li>
+<li>
+<p>Amazon S3 バケット * フィールドに、バックアップを格納する S3 バケットを入力します。</p>
+</li>
+<li>
+<p>* オプション * ： * Prefix * フィールドにバックアップ・ボリューム名のプレフィックスを入力します。</p>
+</li>
+<li>
+<p>* オプション * ： * Nametag * フィールドに、プレフィックスに付加するネームタグを入力します。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="openstack-swift-オブジェクトストアにボリュームをバックアップします">OpenStack Swift オブジェクトストアにボリュームをバックアップします</h4>
+<div class="paragraph">
+<p>OpenStack Swift と互換性のある外部のオブジェクトストアに NetApp Element ボリュームをバックアップできます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「バックアップ先 * 」を選択します。</p>
+</li>
+<li>
+<p>ボリュームのバックアップ先 * で、 * OpenStack Swift * を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式でのオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[* URL] フィールドに、オブジェクトストアへのアクセスに使用する URL を入力します。</p>
+</li>
+<li>
+<p>[* ユーザー名 *] フィールドに、アカウントのユーザー名を入力します。</p>
+</li>
+<li>
+<p>[* Authentication key*] フィールドに、アカウントの認証キーを入力します。</p>
+</li>
+<li>
+<p>[* Container * （コンテナ * ） ] フィールドに、バックアップを保存するコンテナを入力します。</p>
+</li>
+<li>
+<p>* オプション * ： * Prefix * フィールドにバックアップ・ボリューム名のプレフィックスを入力します。</p>
+</li>
+<li>
+<p>* オプション * ： * Nametag * フィールドに、プレフィックスに付加するネームタグを入力します。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="element-ソフトウェアを実行しているクラスタにボリュームをバックアップします">Element ソフトウェアを実行しているクラスタにボリュームをバックアップします</h4>
+<div class="paragraph">
+<p>NetApp Element ソフトウェアを実行しているクラスタにあるボリュームをリモートの Element クラスタにバックアップできます。</p>
+</div>
+<div class="paragraph">
+<p>クラスタ間でバックアップまたはリストアを実行する際には、システムによってクラスタ間の認証に使用するキーが生成されます。</p>
+</div>
+<div class="paragraph">
+<p>ソースクラスタはこのボリュームの一括書き込みキーを使用してデスティネーションクラスタに対して認証し、デスティネーションボリュームへの書き込みがセキュリティで保護されます。バックアップまたはリストアのプロセスでは、処理を開始する前に、デスティネーションボリュームからボリュームの一括書き込みキーを生成する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>これは 2 部構成の手順です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>（デスティネーション）バックアップボリュームを設定</p>
+</li>
+<li>
+<p>（ソース）ボリュームをバックアップします</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">バックアップボリュームをセットアップ</div>
+<ol class="arabic">
+<li>
+<p>ボリューム・バックアップを配置する vCenter およびクラスタから、 * NetApp Element Management &gt; Management * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * リストア元 * 」を選択します。</p>
+</li>
+<li>
+<p>[ * リストア元 * ] で、 [ * NetApp Element * ] を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式でのオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Generate Key （キーの生成） * をクリックして、宛先ボリュームの一括ボリューム書き込みキーを生成します。</p>
+</li>
+<li>
+<p>ボリュームの一括書き込みキーをクリップボードにコピーします。これは以降のソースクラスタの手順で使用します。</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">ボリュームをバックアップします</div>
+<ol class="arabic">
+<li>
+<p>バックアップに使用するソース・ボリュームを含む vCenter およびクラスタから、 * NetApp Element Management &gt; Management * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「バックアップ先 * 」を選択します。</p>
+</li>
+<li>
+<p>「 * 音量を * にバックアップ」で、「 * NetApp Element * 」を選択します。</p>
+</li>
+<li>
+<p>デスティネーションクラスタと同じオプションを、次のデータ形式で選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Remote cluster MVIP * フィールドに、デスティネーションボリュームのクラスタの管理仮想 IP アドレスを入力します。</p>
+</li>
+<li>
+<p>リモートクラスタのユーザ名 * フィールドに、デスティネーションクラスタのクラスタ管理者のユーザ名を入力します。</p>
+</li>
+<li>
+<p>リモートクラスタのユーザパスワード * フィールドに、デスティネーションクラスタのクラスタ管理者のパスワードを入力します。</p>
+</li>
+<li>
+<p>「 * Bulk volume write key * 」フィールドに、生成したキーをデスティネーションクラスタに貼り付けます。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ボリュームをリストア">ボリュームをリストア</h3>
+<div class="paragraph">
+<p>OpenStack Swift や Amazon S3 などのオブジェクトストアにあるバックアップからボリュームをリストアするときは、元のバックアッププロセスのマニフェスト情報が必要です。NetApp Element ベースのストレージシステムにバックアップされている NetApp Element ボリュームをリストアする場合、マニフェスト情報は不要です。Swift および S3 からのリストアに必要なマニフェスト情報は、 Reporting タブのイベントログで確認できます。</p>
+</div>
+<div class="sect3">
+<h4 id="amazon-s3-オブジェクトストア上のバックアップからボリュームをリストアする">Amazon S3 オブジェクトストア上のバックアップからボリュームをリストアする</h4>
+<div class="paragraph">
+<p>プラグインを使用して、 Amazon S3 オブジェクトストア上のバックアップからボリュームをリストアできます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>［ * NetApp Element 管理 ］ &gt; ［ レポート作成 * ］ を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>[ * イベントログ * ] サブタブを選択します。</p>
+</li>
+<li>
+<p>リストアする必要のあるバックアップを作成したバックアップイベントを選択します。</p>
+</li>
+<li>
+<p>イベントの [<strong>Details</strong>] を選択します。</p>
+</li>
+<li>
+<p>「 * 詳細を表示 * 」を選択します。</p>
+</li>
+<li>
+<p>マニフェスト情報をクリップボードにコピーします。</p>
+</li>
+<li>
+<p>[* Management] &gt; [Volumes] を選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * リストア元 * 」を選択します。</p>
+</li>
+<li>
+<p>* リストア元 * で、 * Amazon S3 * を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式のオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[ * ホスト名 * ] フィールドに、オブジェクトストアへのアクセスに使用するホスト名を入力します。</p>
+</li>
+<li>
+<p>[Access key ID*] フィールドに、アカウントのアクセスキー ID を入力します。</p>
+</li>
+<li>
+<p>「 * Secret access key * 」フィールドに、アカウントのシークレットアクセスキーを入力します。</p>
+</li>
+<li>
+<p>Amazon S3 バケット * フィールドに、バックアップが格納されている S3 バケットを入力します。</p>
+</li>
+<li>
+<p>マニフェスト情報を * Manifest * フィールドに貼り付けます。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="openstack-swift-オブジェクトストア上のバックアップからボリュームをリストアします">OpenStack Swift オブジェクトストア上のバックアップからボリュームをリストアします</h4>
+<div class="paragraph">
+<p>プラグインを使用して、 OpenStack Swift オブジェクトストア上のバックアップからボリュームをリストアできます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>［ * NetApp Element 管理 ］ &gt; ［ レポート作成 * ］ を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>[ * イベントログ * ] サブタブを選択します。</p>
+</li>
+<li>
+<p>リストアする必要のあるバックアップを作成したバックアップイベントを選択します。</p>
+</li>
+<li>
+<p>イベントの [<strong>Details</strong>] を選択します。</p>
+</li>
+<li>
+<p>「 * 詳細を表示 * 」を選択します。</p>
+</li>
+<li>
+<p>マニフェスト情報をクリップボードにコピーします。</p>
+</li>
+<li>
+<p>[* Management] &gt; [Volumes] を選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * リストア元 * 」を選択します。</p>
+</li>
+<li>
+<p>* リストア元 * で、 * OpenStack Swift * を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式のオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[* URL] フィールドに、オブジェクトストアへのアクセスに使用する URL を入力します。</p>
+</li>
+<li>
+<p>[* ユーザー名 *] フィールドに、アカウントのユーザー名を入力します。</p>
+</li>
+<li>
+<p>[* Authentication key*] フィールドに、アカウントの認証キーを入力します。</p>
+</li>
+<li>
+<p>[* Container * （コンテナ * ） ] フィールドに、バックアップが保存されているコンテナの名前を入力します。</p>
+</li>
+<li>
+<p>マニフェスト情報を * Manifest * フィールドに貼り付けます。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="element-ソフトウェアを実行しているクラスタ上のバックアップからボリュームをリストアする">Element ソフトウェアを実行しているクラスタ上のバックアップからボリュームをリストアする</h4>
+<div class="paragraph">
+<p>NetApp Element ソフトウェアを実行しているクラスタ上のバックアップからボリュームをリストアできます。クラスタ間でバックアップまたはリストアを実行する際には、システムによってクラスタ間の認証に使用するキーが生成されます。ソースクラスタはこのボリュームの一括書き込みキーを使用してデスティネーションクラスタに対して認証し、デスティネーションボリュームへの書き込みがセキュリティで保護されます。バックアップまたはリストアのプロセスでは、処理を開始する前に、デスティネーションボリュームからボリュームの一括書き込みキーを生成する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>これは 2 部構成の手順です。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>（デスティネーションクラスタ）リストアに使用するボリュームを選択します</p>
+</li>
+<li>
+<p>（ソースクラスタ）ボリュームをリストアします</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">リストアに使用するボリュームを選択します</div>
+<ol class="arabic">
+<li>
+<p>ボリュームをリストアする vCenter およびクラスタで、 * NetApp Element Management &gt; Management * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * リストア元 * 」を選択します。</p>
+</li>
+<li>
+<p>[ * リストア元 * ] で、 [ * NetApp Element * ] を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式でのオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Generate Key （キーの生成） * をクリックして、宛先ボリュームの一括ボリューム書き込みキーを生成します。</p>
+</li>
+<li>
+<p>ボリュームの一括書き込みキーをクリップボードにコピーします。これは以降のソースクラスタの手順で使用します。</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">ボリュームをリストアします</div>
+<ol class="arabic">
+<li>
+<p>リストアに使用するソース・ボリュームを含む vCenter およびクラスタから、 * NetApp Element Management &gt; Management * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>「 * Active * 」ビューで音量を確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「バックアップ先 * 」を選択します。</p>
+</li>
+<li>
+<p>「 * 音量を * にバックアップ」で、「 * NetApp Element * 」を選択します。</p>
+</li>
+<li>
+<p>次のデータ形式に一致するバックアップオプションを選択します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Native ： NetApp Element ソフトウェアベースのストレージシステムのみが読み取り可能な圧縮形式。</p>
+</li>
+<li>
+<p>Uncompressed ：他のシステムと互換性がある非圧縮形式。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Remote cluster MVIP * フィールドに、デスティネーションボリュームのクラスタの管理仮想 IP アドレスを入力します。</p>
+</li>
+<li>
+<p>リモートクラスタのユーザ名 * フィールドに、デスティネーションクラスタのクラスタ管理者のユーザ名を入力します。</p>
+</li>
+<li>
+<p>リモートクラスタのユーザパスワード * フィールドに、デスティネーションクラスタのクラスタ管理者のパスワードを入力します。</p>
+</li>
+<li>
+<p>「 * Bulk volume write key * 」フィールドに、生成したキーをデスティネーションクラスタに貼り付けます。</p>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームを削除します">ボリュームを削除します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp Element Management 拡張ポイントを使用して、 NetApp Element クラスタから 1 つ以上のボリュームを削除できます。</p>
+</div>
+<div class="paragraph">
+<p>削除したボリュームはすぐにパージされるわけではありません。ボリュームを削除したあと約 8 時間はリストア可能です。</p>
+</div>
+<div class="paragraph">
+<p>システムによってパージされる前にボリュームをリストアできます。また、 * Management * &gt; * Volumes * の削除済みビューから手動でボリュームをパージできます。ボリュームをリストアすると、そのボリュームがオンラインに戻り、 iSCSI 接続を再度確立できます。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+管理サービスに関連付けられた永続ボリュームが作成され、インストールまたはアップグレード時に新しいアカウントに割り当てられます。永続ボリュームを使用している場合は、ボリュームや関連付けられているアカウントを変更または削除しないでください。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+スナップショットの作成に使用されたボリュームが削除されると、関連付けられているスナップショットは、 Protection &gt; Snapshots ページの Inactive ビューに表示されます。削除したソースボリュームがパージされると、非アクティブビューの Snapshot もシステムから削除されます。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>1 つ以上のボリュームを削除します。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>「 * Active * 」ビューで、削除するボリュームを確認します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>「 * 削除」を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+プラグインでは、データストアを含むボリュームは削除できません。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>操作を確定します。</p>
+<div class="paragraph">
+<p>ボリュームがアクティブビューから削除ビューに移動し、ボリュームページが表示されます。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ボリュームをパージする">ボリュームをパージする</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>削除したボリュームを手動でパージできます。</p>
+</div>
+<div class="paragraph">
+<p>削除したボリュームは、 8 時間後に自動的にパージされます。ただし、スケジュールされているパージ時刻より前にボリュームをパージする場合は、次の手順に従って手動でパージできます。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+パージしたボリュームは、システムからただちに完全に削除されます。ボリューム内のデータはすべて失われます。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>ビューフィルタを選択して、リストから [ 削除済み（ * Deleted ） ] を選択します。</p>
+</li>
+<li>
+<p>パージするボリュームを 1 つ以上選択します。</p>
+</li>
+<li>
+<p>「 * パージ * 」を選択します。</p>
+</li>
+<li>
+<p>操作を確定します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="削除したボリュームをリストアする">削除したボリュームをリストアする</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp Element システムでは、削除したボリュームのうち、パージされていないボリュームをリストアできます。</p>
+</div>
+<div class="paragraph">
+<p>削除したボリュームは約 8 時間後に自動的にパージされます。パージ済みのボリュームはリストアできません。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+削除したあとにリストアしたボリュームは、 ESXi で検出されません（データストアが存在する場合はデータストアも検出されません）。ESXi iSCSI アダプタから静的ターゲットを削除し、アダプタを再スキャンしてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+</li>
+<li>
+<p>複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。</p>
+</li>
+<li>
+<p>* Volumes * サブタブを選択します。</p>
+</li>
+<li>
+<p>ビューフィルタを選択して、リストから [ 削除済み（ * Deleted ） ] を選択します。</p>
+</li>
+<li>
+<p>リストアするボリュームを 1 つ以上選択します。</p>
+</li>
+<li>
+<p>[* Restore] を選択します。</p>
+</li>
+<li>
+<p>ビューフィルタを選択し、リストから * アクティブ * を選択します。</p>
+</li>
+<li>
+<p>ボリュームとすべての接続がリストアされたことを確認します。</p>
+</li>
+</ol>
+</div>
+<h2 id="詳細についてはこちらをご覧ください" class="discrete">詳細については、こちらをご覧ください</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/hci/index.html" target="_blank" rel="noopener">"NetApp HCI のドキュメント"</a></p>
+</li>
+<li>
+<p><a href="https://www.netapp.com/data-storage/solidfire/documentation" target="_blank" rel="noopener">"SolidFire and Element Resources ページにアクセスします"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/vcp/issues/new?body=Page%3A%20[ボリュームを管理します](https://docs.netapp.com/ja-jp/vcp/vcp_task_volumes_manage.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/vcp/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/vcp/blob/main/vcp_task_volumes_manage.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/vcp/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/vcp/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/vcp/js/www-ntap.js'></script>
+    <script src='/ja-jp/vcp/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>

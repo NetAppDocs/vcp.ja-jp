@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/vcp/vcp_task_qossioc.html" />
+	<meta property="og:description" content="クラスタでプロビジョニングされたストレージに対してボリュームの QoS とデータストアの SIOC （ QoSSIOC ）を設定および変更することができます。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/vcp/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/>
+  
+  <meta name="description" content="クラスタでプロビジョニングされたストレージに対してボリュームの QoS とデータストアの SIOC （ QoSSIOC ）を設定および変更することができます。">
+  <meta name="keywords" content=" netapp, qossioc, quality of service, qos, sioc, vcp, vcenter, element">
+  
+  
+
+  <!-- Icons -->
+  <link rel="icon" href="/ja-jp/vcp/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed -->
+  
+
+  <!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/vcp/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/vcp/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/vcp/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/vcp/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/tabbed-blocks.css" type="text/css">
+  <link rel="stylesheet" href='/ja-jp/vcp/css/product-family.css' type="text/css">
+  
+
+  
+  <link rel='stylesheet' href='/ja-jp/vcp/css/na-feature.css' type='text/css'>
+  
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+  
+    <script src='/ja-jp/vcp/js/na-search.js'></script>
+  
+
+  
+  <script src='/ja-jp/vcp/js/na-pagenav.js'></script>
+  
+
+  <link rel='stylesheet' href='/ja-jp/vcp/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/vcp/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/vcp/js/na-utility.js'></script>
+  <script src='/ja-jp/vcp/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/vcp/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/vcp/js/toc.js'></script>
+  <script src='/ja-jp/vcp/js/customscripts.js'></script>
+
+  <script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ja-jp/vcp/js/version-dropdown.js'></script>
+  <script src='/ja-jp/vcp/js/product-family.js'></script>
+  <script src='/ja-jp/vcp/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip.min.js'></script>
+  <script src='/ja-jp/vcp/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/vcp/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/vcp/vcp_task_qossioc.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/vcp/vcp_task_qossioc.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/vcp/vcp_task_qossioc.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" >
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ja-jp/vcp/pdfs/fullsite-sidebar/NetApp_Element_Plug_in_for_vCenter_Server_のドキュメント.pdf" >
+          <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/NetApp_Element_Plug_in_for_vCenter_Server_のドキュメント.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            NetApp Element Plug-in for vCenter Server のドキュメント
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してストレージを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            vCenter Plug-in を使用してストレージを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/クラスタハードウェアおよび仮想ネットワークを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            クラスタハードウェアおよび仮想ネットワークを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムパフォーマンスを監視.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            システムパフォーマンスを監視
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムアラートを監視する.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            システムアラートを監視する
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してデータを保護します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf.png" width="16" height="16"/>
+            vCenter Plug-in を使用してデータを保護します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/vcp/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class="subfolders "><a href="/ja-jp/vcp/index.html">
+        <div class="na-navbar-padding"> NetApp Element Plug-in for vCenter Server のドキュメント</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/concept_vcp_product_overview.html">
+        NetApp Element Plug-in for vCenter Server の製品概要
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> リリースノート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/rn_whatsnew_vcp.html">
+        NetApp Element Plug-in for vCenter Server の新機能
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/rn_relatedrn_vcp.html">
+        その他のリリース情報
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_config_extension_point.html">
+        NetApp Element Configuration 拡張ポイント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_management_extension_point.html">
+        NetApp Element Management 拡張ポイント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_accounts.html">
+        ユーザアカウント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_protection_domains.html">
+        保護ドメイン
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_linkedmode.html">
+        リンクモードと vCenter Plug-in
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_qossioc.html">
+        QoSSIOC
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_concept_vvols.html">
+        仮想ボリューム（ VVOL ）
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/reference_requirements_vcp.html">
+        導入前の要件
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_getstarted.html">
+        NetApp Element Plug-in for vCenter Server をインストールして設定します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_upgrades.html">
+        プラグインをアップグレードします
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> vCenter Plug-in を使用してストレージを管理します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_clusters_manage.html">
+        クラスタを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_datastores_manage.html">
+        データストアを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_volumes_manage.html">
+        ボリュームを管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_user_accounts.html">
+        ユーザアカウントを作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_access_groups.html">
+        アクセスグループを作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_initiators.html">
+        イニシエータを作成および管理する
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_qossioc.html">
+        Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_qos_policies.html">
+        ボリュームの QoS ポリシーの作成と管理
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> クラスタハードウェアおよび仮想ネットワークを管理します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_manage_cluster_overview.html">
+        クラスタのハードウェアと仮想ネットワークの概要を管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_add_manage_drive.html">
+        ドライブを追加および管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_add_manage_nodes.html">
+        ノードを追加および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_create_manage_vlans.html">
+        仮想ネットワークを作成および管理する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> システムパフォーマンスを監視</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_intro.html">
+        レポートオプションを使用して、システムパフォーマンスを監視します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_overview.html">
+        概要ページでクラスタ全体の健全性を監視します
+      </a></li><li class="subfolders "><a href="/ja-jp/vcp/vcp_task_reports_alerts.html">
+        <div class="na-navbar-padding"> システムアラートを監視する</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_reference_reports_alert_errors.html">
+        システムアラートのリスト
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_event_logs.html">
+        イベントログを監視してトラブルシューティングを行う
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_volume_performance.html">
+        ボリュームのパフォーマンスを監視
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_iscsi.html">
+        iSCSI セッションを監視して接続ステータスを確認
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_reports_qossioc.html">
+        QOSSIOC イベントで VM のパフォーマンスを監視する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> vCenter Plug-in を使用してデータを保護します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_overview.html">
+        vCenter Plug-in の概要を使用してデータを保護します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_volume.html">
+        ボリューム Snapshot を作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_group.html">
+        グループ Snapshot を作成および管理します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_snapshots_schedules.html">
+        Snapshot スケジュールを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_protect_remote_replication.html">
+        クラスタ間でリモートレプリケーションを実行
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_task_configure_manage_vvols.html">
+        vCenter Plug-in を使用して仮想ボリュームをセットアップおよび管理する
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_unregister.html">
+        プラグインの登録を解除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/task_vcp_remove.html">
+        プラグインを削除します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/vcp_reference_troubleshoot_vcp.html">
+        プラグインのトラブルシューティングを行います
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/reference_earlier_versions.html">
+        以前のバージョンの NetApp Element プラグインのドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/vcp/legal-notices.html">
+        法的通知
+      </a></li></ul></li></ul>
+</div>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container -->
+    <article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://www.netapp.com">ホーム</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">ドキュメント</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/vcp/">VCP</a>
+        </li>
+        <li class="n-breadcrumb__list-item">
+          Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+        </li>
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/vcp/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2021-10-26 10:22:18 +0000">10/26/2021</time>
+    
+  
+
+<span>寄稿者
+  <a target="_blank" href="https://github.com/netapp-dbagwell">
+    <img  class="avatar avatar-small"
+          alt="netapp-dbagwell"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/53352450?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/netapp-pcarriga">
+    <img  class="avatar avatar-small"
+          alt="netapp-pcarriga"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/77334475?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+</span>
+
+
+</p>
+
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>QoSSIOC 自動化は、プラグインで制御されている個々のボリュームとデータストアに対して設定できます。 <a href="vcp_concept_qossioc.html">"QoSSIOC"</a> サービス品質を自動化します (<a href="https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html" target="_blank" rel="noopener">"QoS"</a>） Storage I/O Control に基づきます ）標準データストア上のすべての VM の設定。</p>
+</div>
+<div class="paragraph">
+<p>管理ノード上の QoSSIOC サービスは vCenter と通信し、データストア上の VM アクティビティを監視します。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。QoSSIOC はオプション機能であり、プラグインを使用してストレージクラスタを管理する場合には必要ありません。</p>
+</div>
+<div class="paragraph">
+<p>QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+QoSSIOC の設定ページでは、仮想ボリューム（ VVol ）機能を有効にしたり、 VVol を vSphere で使用できるようにしたりすることはできません。詳細については、 Element Plug-in for vCenter Server のドキュメントを参照してください。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>リンクモードの場合は、 NetApp Element Plug-in for vCenter Server で登録するすべての vCenter Server に、 1 つの vCenter Server で指定した QoSSIOC 設定が使用されます。</p>
+</div>
+<div class="paragraph">
+<p>vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を設定および管理できます。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="セットアップのタスク">セットアップのタスク</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"QoSSIOC を設定します"</a></p>
+</li>
+<li>
+<p><a href="#Enabling QoSSIOC automation on datastores">[Enabling QoSSIOC automation on datastores]</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="管理タスク">管理タスク</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_reports_qossioc.html" target="_blank" rel="noopener">"QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します"</a></p>
+</li>
+<li>
+<p><a href="#Edit QoSSIOC settings">[Edit QoSSIOC settings]</a></p>
+</li>
+<li>
+<p><a href="#Change the QoSSIOC service password">[Change the QoSSIOC service password]</a></p>
+</li>
+<li>
+<p><a href="#Disable QoSSIOC automation for a datastore">[Disable QoSSIOC automation for a datastore]</a></p>
+</li>
+<li>
+<p><a href="#Clear QoSSIOC settings">[Clear QoSSIOC settings]</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアでの-qossioc-自動化の有効化">データストアでの QoSSIOC 自動化の有効化</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラグインで QoSSIOC サービスを有効にすると、データストアの QoSSIOC の自動化を有効にし、仮想マシンディスク（ VMDK ）のパフォーマンスレベルをカスタマイズできます。</p>
+</div>
+<div class="paragraph">
+<p>これで完了です <a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"QoSSIOC サービスの設定を行いました"</a> [QoSSIOC の設定 ] ページで、 [*QoSSIOC ステータス *] フィールドには「アップ」と表示されます。</p>
+</div>
+<div class="paragraph">
+<p>QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC はポリシーに関係なく、ボリュームの QoS 設定に対して優先して QoS 値を調整します。
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>選択したデータストアの * QoSSIOC 自動化 * 列にあるステータスボタンをクリックします。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+QoS の想定外の変更を防止するため、別の vCenter では同じデータストアの QoSSIOC 統合を有効にしないでください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 QoS と SIOC を有効にする」を選択します。</p>
+</li>
+<li>
+<p>* バースト係数 * を設定します。</p>
+<div class="paragraph">
+<p>バースト係数は、 VMDK の IOPS 制限（ SIOC ）設定を乗算する係数です。デフォルト値を変更する場合は、すべての VMDK について、 IOPS 制限にこの係数を掛けても NetApp Element ソフトウェアベースのボリュームの最大バースト制限を超えない値を指定してください。</p>
+</div>
+</li>
+<li>
+<p>（任意） [*Override default QoS] を選択し、設定を行います。</p>
+<div class="paragraph">
+<p>データストアに対して「デフォルトの QoS 設定を上書き」が無効になっている場合は、各 VM のデフォルトの SIOC 設定に基づいて、共有 IOPS と制限 IOPS の値が自動的に設定されます。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+SIOC シェア制限をカスタマイズするときは、 SIOC IOPS 制限も必ずカスタマイズしてください。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+デフォルトでは、 SIOC のディスク共有の最大数は無制限に設定されています。VDI などの大規模な VM 環境では、クラスタの最大 IOPS がオーバーコミットされる可能性があります。QoSSIOC を有効にするときは、常にデフォルト QoS を上書きするオプションをオンにして、 IOPS 制限オプションを適切な値に設定してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[OK] をクリックします。</p>
+<div class="paragraph">
+<p>データストアに対して QoSSIOC 自動化を有効にすると、このボタンは「 Disabled 」から「 Enabled 」に変わります。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qossioc-の設定を編集します">QoSSIOC の設定を編集します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>アクティブな Element 管理ノードの QoSSIOC と vCenter のクレデンシャルを変更できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element Configuration &gt; QoSSIOC Settings * の順に選択します。</p>
+</li>
+<li>
+<p>[* アクション * ] をクリックします。</p>
+</li>
+<li>
+<p>表示されたメニューで、「 * 編集 * 」を選択します。</p>
+</li>
+<li>
+<p>[Edit QoSSIOC Settings] * ダイアログボックスで、次のいずれかを変更します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* QoSSIOC ユーザー ID * ： QoSSIOC サービスのユーザー ID です。QoSSIOC サービスのデフォルトのユーザ ID は「 admin 」です。NetApp HCI の場合、 NetApp Deployment Engine を使用したインストールで入力されるユーザ ID と同じです。</p>
+</li>
+<li>
+<p>* QoSSIOC パスワード * ： Element QoSSIOC サービスのパスワードです。QoSSIOC サービスのデフォルトのパスワードは SolidFire です。カスタムパスワードを作成していない場合は、登録ユーティリティの UI （「 https://[management node ip] ： 9443 」）から作成できます。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+NetApp HCI 環境の場合、デフォルトのパスワードはインストール時にランダムに生成されます。パスワードを確認するには、このの「手順 4 」を参照してください <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)" target="_blank" rel="noopener">"KB"</a> 記事。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>* vCenter User ID * ： Administrator ロールのすべての権限を持つ vCenter 管理者のユーザ名です。</p>
+</li>
+<li>
+<p>* vCenter Password * ： Administrator ロールのすべての権限を持つ vCenter 管理者のパスワードです。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[OK] をクリックします。プラグインがサービスと正常に通信できる場合、 [QoSSIOC Status] フィールドには [Up] と表示されます。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+を参照してください <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)" target="_blank" rel="noopener">"KB"</a> 次のいずれかのステータスになっている場合のトラブルシューティング : QoSSIOC は有効になっていません。*`Not Configured ( 設定されていません ): QoSSIOC 設定は構成されていません*Network Down: vCenter はネットワーク上の QoSSIOC サービスと通信できません。mNode と SIOC サービスはまだ実行されている可能性があります。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+管理ノードに対して有効な QoSSIOC 設定を行ったあとは、それらの設定がデフォルトになります。新しい管理ノードに対して有効な QoSSIOC 設定を指定するまで、 QoSSIOC の設定は最後に有効な有効な QoSSIOC 設定に戻ります。新しい管理ノードの QoSSIOC クレデンシャルを設定する場合は、先に設定されている管理ノードの QoSSIOC 設定をクリアする必要があります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qossioc-サービスのパスワードを変更します">QoSSIOC サービスのパスワードを変更します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>登録ユーティリティの UI を使用して、管理ノードで QoSSIOC サービスのパスワードを変更できます。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>管理ノードの電源をオンにしておきます。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます <a href="#Edit QoSSIOC settings">QoSSIOC 設定</a> NetApp Element Configuration 拡張ポイントのページ。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element Configuration &gt; QoSSIOC Settings * の順に選択します。</p>
+</li>
+<li>
+<p>[* アクション * ] をクリックします。</p>
+</li>
+<li>
+<p>表示されたメニューで、「 * クリア * 」を選択します。</p>
+</li>
+<li>
+<p>操作を確定します。</p>
+<div class="paragraph">
+<p>[<strong>QoSSIOC Status</strong>] フィールドには、プロセスの完了後に「 Not Configured 」と表示されます。</p>
+</div>
+</li>
+<li>
+<p>ブラウザに管理ノードの IP アドレスを入力します。登録用の TCP ポート「 https://[management node ip] ： 9443 」を入力します。</p>
+<div class="paragraph">
+<p>登録ユーティリティの UI にプラグインの * QoSSIOC サービスのクレデンシャルの管理 * ページが表示されます。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./media/vcp_registration_ui_qossioc.png" alt="VCP 登録ユーティリティのメニュー">
+</div>
+</div>
+</li>
+<li>
+<p>次の情報を入力します。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>* Old Password * ： QoSSIOC サービスの現在のパスワード。まだパスワードを割り当てていない場合は、 SolidFire のデフォルトのパスワードを入力します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+NetApp HCI 環境の場合、デフォルトのパスワードはインストール時にランダムに生成されます。パスワードを確認するには、このの「手順 4 」を参照してください <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)" target="_blank" rel="noopener">"KB"</a> 記事。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>* New Password * ： QoSSIOC サービスの新しいパスワード。</p>
+</li>
+<li>
+<p>* パスワードの確認 * ：新しいパスワードをもう一度入力します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>[Submit Changes] をクリックします。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+変更を送信すると、 QoSSIOC サービスが自動的に再起動されます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>vSphere Web Client で、 * NetApp Element Configuration &gt; QoSSIOC Settings * の順に選択します。</p>
+</li>
+<li>
+<p>[* アクション * ] をクリックします。</p>
+</li>
+<li>
+<p>表示されたメニューで、 * Configure * （設定 * ）を選択します。</p>
+</li>
+<li>
+<p>Configure QoSSIOC Settings * （ QoSSIOC 設定 * ）ダイアログボックスで、 * QoSSIOC パスワード * フィールドに新しいパスワードを入力します。</p>
+</li>
+<li>
+<p>[OK] をクリックします。</p>
+<div class="paragraph">
+<p>プラグインがサービスと正常に通信できる場合は、 [*QoSSIOC ステータス *] フィールドに「アップ」と表示されます。</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアに対して-qossioc-自動化を無効にする">データストアに対して QoSSIOC 自動化を無効にする</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>データストアに対する QoSSIOC 統合を無効にできます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element 管理 &gt; 管理 * を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="注記">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>選択したデータストアの「 * QoSSIOC 自動化 * 」列のボタンをクリックします。</p>
+</li>
+<li>
+<p>Enable QoS &amp; SIOC * チェックボックスをオフにして統合を無効にします。</p>
+<div class="paragraph">
+<p>Enable QoS &amp; SIOC チェックボックスをオフにすると、デフォルトの QoS は自動的に上書きされます。</p>
+</div>
+</li>
+<li>
+<p>[OK] をクリックします。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qossioc-の設定をクリアします">QoSSIOC の設定をクリアします</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Element ストレージ管理ノード（ mNode ）の QoSSIOC 設定の詳細をクリアできます。新しい管理ノードのクレデンシャルを設定したり、 QoSSIOC サービスのパスワードを変更したりする場合は、先に設定をクリアする必要があります。QoSSIOC の設定をクリアすると、 vCenter 、クラスタ、およびデータストアからアクティブな QoSSIOC が削除されます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>NetApp Element Configuration &gt; QoSSIOC Settings * の順に選択します。</p>
+</li>
+<li>
+<p>[* アクション * ] をクリックします。</p>
+</li>
+<li>
+<p>表示されたメニューで、「 * クリア * 」を選択します。</p>
+</li>
+<li>
+<p>操作を確定します。</p>
+<div class="paragraph">
+<p>[<strong>QoSSIOC Status</strong>] フィールドには、プロセスの完了後に「 Not Configured 」と表示されます。</p>
+</div>
+</li>
+</ol>
+</div>
+<h2 id="詳細についてはこちらをご覧ください" class="discrete">詳細については、こちらをご覧ください</h2>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/hci/index.html" target="_blank" rel="noopener">"NetApp HCI のドキュメント"</a></p>
+</li>
+<li>
+<p><a href="https://www.netapp.com/data-storage/solidfire/documentation" target="_blank" rel="noopener">"SolidFire and Element Resources ページにアクセスします"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/vcp/issues/new?body=Page%3A%20[Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します](https://docs.netapp.com/ja-jp/vcp/vcp_task_qossioc.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/vcp/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/vcp/blob/main/vcp_task_qossioc.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/vcp/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/vcp/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <div style="clear: both"></div><!-- Main needs to have height -->
+</div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/vcp/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div>
+
+      <!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/vcp/js/www-ntap.js'></script>
+    <script src='/ja-jp/vcp/js/tabbed-blocks.js'></script>
+  </body>
+
+  
+</html>
