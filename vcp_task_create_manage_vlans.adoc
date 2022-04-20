@@ -6,6 +6,7 @@ keywords: netapp, VLANs, create, manage, delete, view vcp, vcenter, element
 ---
 = 仮想ネットワークを作成および管理する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

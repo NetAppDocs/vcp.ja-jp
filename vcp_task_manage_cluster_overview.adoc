@@ -6,6 +6,7 @@ keywords: netapp, VLANs, drives, nodes, cluster, manage create, delete, view vcp
 ---
 = クラスタのハードウェアと仮想ネットワークの概要を管理します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ keywords: netapp, datastore, vcp, vcenter, element
 ---
 = データストアを管理します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -73,7 +74,7 @@ NOTE: 新しいデータストアを作成するには、ホストが少なく�
 . Configure Volume （ボリュームの設定） * ペインで、既存のボリュームを選択して次の手順に進むか、新しいデータストア用の新しいボリュームを作成します。
 +
 
-NOTE: 既存のボリュームを選択して新しいデータストアを作成すると、既存のデータは失われます。既存の VMFS ボリュームについては、 VMware のドキュメントを参照してください https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html["VMFS データストアのコピーをマウントしています"^] および。
+NOTE: 既存のボリュームを選択して新しいデータストアを作成すると、既存のデータは失われます。既存の VMFS ボリュームについては、 VMware のドキュメントを参照してください https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html["VMFS データストアのコピーをマウントしています"^] および https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EBAB0D5A-3C77-4A9B-9884-3D4AD69E28DC.html["重複する VMFS データストアの管理"^]。
 
 +
 .. データストアの基盤となるボリュームの名前を入力します。

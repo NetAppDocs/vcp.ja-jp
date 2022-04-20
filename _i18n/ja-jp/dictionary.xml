@@ -1516,8 +1516,6 @@
   <block id="61993b64115728d8f5ac3de889d7d5cd" category="cell">証明書は 3 日以内に期限切れになるか、すでに期限切れになっています。</block>
   <block id="42a775dbc829e1685b50072b5c687f36" category="paragraph">* 解決するには * ：この問題を解決するには、有効期限が切れる前に SSL 証明書を更新してください。更新された SSL 証明書を提供するには、「 UpdateIdpConfiguration 」 API メソッドを「 re freshCertificateExpirationTime=true 」とともに使用します。</block>
   <block id="308f88c7343bcde5928afc202705f02e" category="list-text">* inconsistentBondModes * ： VLAN デバイス上のボンディングモードがありません。想定されるボンディングモードと使用中のボンディングモードが表示されます。</block>
-  <block id="34abef81b9a8ce278ef3ade37200f6a4" category="list-text">*inconsistentInterfaceConfiguration*: インターフェイス設定が矛盾しています。</block>
-  <block id="5b0166feabda67b3040f6239ee1f1e40" category="paragraph">* ：この問題を解決するには、ストレージクラスタ内のノードインターフェイスの設定が同じであることを確認してください。</block>
   <block id="c4b0c56cdcb13f6eb48c16acd3406015" category="list-text">* inconsistentMtus * ：このクラスタエラーは、次のいずれかの状態を示しています。</block>
   <block id="9c1485d86c325377a29a8d89037f06b2" category="list-text">Bond1G mismatch ： Bond1G インターフェイス間で異なる MTU が設定されています。</block>
   <block id="b9c6a0b1df2e02b3cef9f3c2de4ae589" category="list-text">Bond10G mismatch ： Bond10G インターフェイス間で異なる MTU が設定されています。</block>
@@ -2350,8 +2348,6 @@
   <block id="faa169d4c778c54064b635053ab306a2" category="sidebar">プラグインを削除します</block>
   <block id="5612baf51d00a05f0290357c97294f8d" category="sidebar">プラグインのトラブルシューティングを行います</block>
   <block id="b43e19e2999292fbebfa71878760ddf9" category="paragraph">バージョン 4.7 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 2 のコンポーネントがサポートされるようになりました。</block>
-  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
-  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="631923a687ff82d68973d99b95597b47" category="inline-link">SolidFire and Element Resources ページにアクセスします</block>
   <block id="238c5b123e3473c57e2925edccb205c2" category="list-text"><block ref="238c5b123e3473c57e2925edccb205c2" category="inline-link-rx"></block></block>
   <block id="19d7fd1174be86185b720fea9ff20172" category="paragraph">NetApp Element Plug-in for vCenter Server 4.8 では、セキュリティの向上、メモリ使用率の向上、および他社製ライブラリのアップグレードが実装されています。</block>
@@ -2425,4 +2421,18 @@
   <block id="3903fc6a9f0bcbe1f49608f5110cf661" category="list-text"><block ref="9de5606ae9b23ff6651244b85bd5dae8" category="inline-link-rx"></block> _ 新規 _</block>
   <block id="9add94ad0bafb6a0c0977e09efa22b79" category="list-text"><block ref="9add94ad0bafb6a0c0977e09efa22b79" category="inline-link-rx"></block></block>
   <block id="27e0892481776817839fc398f00de350" category="doc">NetApp Element Plug-in for vCenter Server の新機能</block>
+  <block id="72da0f32a8783a5cb119cddae9f955bb" category="admonition">1 つの vCenter インスタンスに複数の NetApp Element VASA Provider を登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">著作権に関する声明、商標、特許などにアクセスできます。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">著作権</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp のロゴ、および NetApp の商標ページに記載されているマークは、 NetApp, Inc. の商標です。その他の会社名および製品名は、それぞれの所有者の商標である場合があります。</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">特許</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">ネットアップが所有する特許の最新リストは、次のサイトで入手できます。</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">プライバシーポリシー</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">オープンソース</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。</block>
 </blocks>

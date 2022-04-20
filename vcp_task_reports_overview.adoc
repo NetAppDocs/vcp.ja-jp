@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report
 ---
 = 概要ページでクラスタ全体の健全性を監視します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

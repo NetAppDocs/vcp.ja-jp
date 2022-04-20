@@ -1,4 +1,5 @@
 = NetApp HCI
+:allow-uri-read: 
 
 
 ここでは、 NetApp HCI および Element ストレージ環境のさまざまなコンポーネントに関する最新リリースノートと以前のリリースノートへのリンクを記載します。

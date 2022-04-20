@@ -6,6 +6,7 @@ keywords: netapp, qossioc, quality of service, qos, sioc, vcp, vcenter, element
 ---
 = Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -13,7 +14,7 @@ keywords: netapp, qossioc, quality of service, qos, sioc, vcp, vcenter, element
 
 
 [role="lead"]
-QoSSIOC 自動化は、プラグインで制御されている個々のボリュームとデータストアに対して設定できます。 link:vcp_concept_qossioc.html["QoSSIOC"] サービス品質を自動化します (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます ）標準データストア上のすべての VM の設定。
+QoSSIOC 自動化は、プラグインで制御されている個々のボリュームとデータストアに対して設定できます。 link:vcp_concept_qossioc.html["QoSSIOC"] サービス品質を自動化します (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます (https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-7686FEC3-1FAC-4DA7-B698-B808C44E5E96.html["SIOC"^]）標準データストア上のすべての VM の設定。
 
 管理ノード上の QoSSIOC サービスは vCenter と通信し、データストア上の VM アクティビティを監視します。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。QoSSIOC はオプション機能であり、プラグインを使用してストレージクラスタを管理する場合には必要ありません。
 

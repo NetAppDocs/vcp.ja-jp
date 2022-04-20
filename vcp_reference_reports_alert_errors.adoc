@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, p
 ---
 = システムアラートのリスト
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -282,10 +283,6 @@ NOTE: 警告ステータスは、トリプル Helix システムでのみ発生�
 * 解決するには * ：この問題を解決するには、有効期限が切れる前に SSL 証明書を更新してください。更新された SSL 証明書を提供するには、「 UpdateIdpConfiguration 」 API メソッドを「 re freshCertificateExpirationTime=true 」とともに使用します。
 
 * * inconsistentBondModes * ： VLAN デバイス上のボンディングモードがありません。想定されるボンディングモードと使用中のボンディングモードが表示されます。
-* *inconsistentInterfaceConfiguration*: インターフェイス設定が矛盾しています。
-+
-* ：この問題を解決するには、ストレージクラスタ内のノードインターフェイスの設定が同じであることを確認してください。
-
 * * inconsistentMtus * ：このクラスタエラーは、次のいずれかの状態を示しています。
 +
 ** Bond1G mismatch ： Bond1G インターフェイス間で異なる MTU が設定されています。

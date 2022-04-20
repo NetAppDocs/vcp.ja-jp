@@ -2,10 +2,11 @@
 sidebar: sidebar 
 permalink: vcp_task_configure_manage_vvols.html 
 summary: クラスタ内にプロビジョニングされたストレージ用の仮想ボリュームを設定できます。 
-keywords: netapp, set up vvol, configure vvol, virtual volume, vcp, vcenter, element 
+keywords: netapp, set up vvol, configure vvol, virtual volume, vcp, vcenter, element, vasa provider 
 ---
 = 仮想ボリュームを設定および管理する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -13,7 +14,7 @@ keywords: netapp, set up vvol, configure vvol, virtual volume, vcp, vcenter, ele
 
 
 [role="lead"]
-VMware vSphere を有効にすることができます link:vcp_concept_vvols.html["仮想ボリューム（ vVol ）"] NetApp Element ストレージクラスタに仮想ボリューム構成をセットアップする。Element Plug-in for vCenter Server はパフォーマンスを監視し、仮想ボリュームを管理するためのオプションを提供します。 、 、およびホストを NetApp Element Management 拡張ポイントから削除します。
+VMware vSphere を有効にすることができます link:vcp_concept_vvols.html["仮想ボリューム（ vVol ）"] NetApp Element ストレージクラスタに仮想ボリューム構成をセットアップする。Element Plug-in for vCenter Server はパフォーマンスを監視し、仮想ボリュームを管理するためのオプションを提供します。 link:vcp_concept_vvols.html#storage-containers["ストレージコンテナ"]、 link:vcp_concept_vvols.html#protocol-endpoints["プロトコルエンドポイント"]、およびホストを NetApp Element Management 拡張ポイントから削除します。
 
 .必要なもの
 * VVOL と互換性がある ESXi 6.5 以降の環境に接続された NetApp Element 10 以降のクラスタを使用している。
@@ -81,6 +82,9 @@ vCenter でクラスタの VVol 機能が認識されるように、 NetApp Elem
 
 
 IMPORTANT: NetApp Element VASA Provider を複数の vCenter インスタンスに登録しないでください。vCenter での SSL の処理に制約があるため、 NetApp Element VASA Provider は 1 つの vCenter にしか登録できません。1 つの vCenter に複数の NetApp Element クラスタを作成できますが、 2 つの vCenter インスタンス間でクラスタを共有することはできません。
+
+
+IMPORTANT: 1 つの vCenter インスタンスに複数の NetApp Element VASA Provider を登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
 
 
 NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。

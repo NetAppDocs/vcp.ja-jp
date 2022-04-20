@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, protect, replication, remote, clus
 ---
 = クラスタ間でリモートレプリケーションを実行
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

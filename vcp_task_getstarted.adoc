@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, install, setup
 ---
 = NetApp Element Plug-in for vCenter Server をインストールして設定します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

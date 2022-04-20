@@ -6,6 +6,7 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 ---
 = Element Plug-in for vCenter Server の要件
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

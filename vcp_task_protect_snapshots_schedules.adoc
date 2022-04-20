@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, schedule
 ---
 = Snapshot スケジュールを作成します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

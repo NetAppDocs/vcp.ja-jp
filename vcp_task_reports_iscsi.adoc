@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, iscsi, connection
 ---
 = iSCSI セッションを監視して接続ステータスを確認
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

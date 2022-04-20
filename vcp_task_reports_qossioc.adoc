@@ -6,6 +6,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, qossioc, cluster,
 ---
 = QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

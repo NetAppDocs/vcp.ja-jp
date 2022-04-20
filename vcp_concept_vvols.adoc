@@ -6,6 +6,7 @@ keywords: netapp, vvol, virtual volume, storage container, protocol endpoint, vc
 ---
 = 仮想ボリューム（ VVOL ）
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -46,6 +47,9 @@ NetApp Element ソフトウェアでサポートされているプロトコル�
 vSphere で NetApp Element クラスタの VVol 機能を認識するには、 vSphere 管理者が NetApp Element VASA Provider を vCenter に登録する必要があります。VASA Provider は、 vSphere と Element クラスタ間のアウトオブバンド管理パスです。VM の作成、 vSphere での VM の利用可能化、 vSphere へのストレージ機能のアドバタイズなど、 vSphere に代わって Element クラスタで要求を実行します。
 
 VASA Provider は、 Element ソフトウェアのクラスタマスターの一部として実行されます。クラスタマスターは可用性の高いサービスで、必要に応じてクラスタ内の任意のノードにフェイルオーバーします。クラスタマスターがフェイルオーバーすると、 VASA Provider も一緒に移動するため、 VASA Provider の高可用性が確保されます。プロビジョニングタスクとストレージ管理タスクはいずれも VASA Provider を使用します。 VASA Provider は、 Element クラスタで必要な変更を処理します。
+
+
+NOTE: 1 つの vCenter インスタンスに複数の NetApp Element VASA Provider を登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
 
 
 NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"^] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。
