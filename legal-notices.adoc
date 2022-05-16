@@ -54,6 +54,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。
 
+* link:media/mgmt_svcs_2.20_notice.pdf["管理サービス2.20.69（VCP 4.9.14）に関する注意事項"^]
 * link:media/mgmt_svcs_2.19_notice.pdf["管理サービス 2.19.48 （ VCP 4.8.34 ）に関する注意事項"^]
 * link:media/mgmt_svcs_2.18_notice.pdf["管理サービス 2.18.91 （ VCP 4.7.10 ）に関する注意事項"^]
 * link:media/mgmt_svcs_2.17.56_notice.pdf["管理サービス 2.17.56 （ VCP 4.6.32 ）に関する注意事項"^]

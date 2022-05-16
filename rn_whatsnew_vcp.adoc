@@ -15,6 +15,14 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 
 
 [role="lead"]
+NetApp Element Plug-in for vCenter Server 4.9は、vCenter Server、ESXi、vSphere HTML5 Web Clientを含むvSphere 6.5をサポートしています。
+
+NetApp Element Plug-in for vCenter Server 4.9は、管理サービスの2.20リリースで使用できます。
+
+
+
+== NetApp Element Plug-in for vCenter Server 4.8の略
+
 NetApp Element Plug-in for vCenter Server 4.8 では、セキュリティの向上、メモリ使用率の向上、および他社製ライブラリのアップグレードが実装されています。
 
 NetApp Element Plug-in for vCenter Server 4.8 は、 2.19 リリースの管理サービスで使用できます。

@@ -18,7 +18,7 @@ keywords: netapp, hci, vcp, vcenter, element, troubleshoot, monitor, report, ale
 NetApp Element Plug-in for vCenter Server で発生する代表的な問題とその解決方法を理解しておく必要があります。
 
 * <<Plug-in registration successful but icons do not appear in web client>>
-* <<Errors after VCP 4.8 upgrade with VMware vCenter Server 6.7U1>>
+* <<Errors after VCP 4.8 or later upgrade with VMware vCenter Server 6.7U1>>
 * <<Error registering plug-in using Registration UI>>
 * <<Error updating plug-in using Registration UI>>
 * <<Error message that NetApp extension cannot be upgraded>>
@@ -81,9 +81,9 @@ NOTE: URL がアクセス不能または無効な場合は修正する必要が�
 
 
 
-== VMware vCenter Server 6.7U1 に VCP 4.8 をアップグレードしたあとのエラー
+== VCP 4.8以降をVMware vCenter Server 6.7U1にアップグレードしたあとに発生するエラー
 
-VMware vCenter Server 6.7U1 を使用して VCP 4.8 にアップグレードすると、次の問題が発生する場合があります。
+VMware vCenter Server 6.7U1を使用してVCP 4.8以降にアップグレードすると、次の問題が発生する場合があります。
 
 * クラスタは、「 * クラスタ * 」セクションには表示されません。
 * NetApp Element 構成の「 * クラスタと QoSSIOC 設定 * 」セクションにサーバエラーが表示されます。
@@ -92,7 +92,7 @@ VMware vCenter Server 6.7U1 を使用して VCP 4.8 にアップグレードす�
 クラスタと QoSSIOC の設定をリストアします。
 
 . vCenter からログアウトします。
-. ログアウトしたら、 2~3 分待ってから再度ログインします。
+. ログアウトしたら、3~5分待ってからログインし直してください。
 . 現在の vSphere Client ビューで、更新アイコンを選択します。
 . たとえば、 Ctrl+F5 キーを押してキャッシュを無効にし、ブラウザを更新します。
 . クラスタと QoSSIOC の設定がリストアされたかどうかを確認します。
