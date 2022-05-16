@@ -854,7 +854,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-22 08:02:10 +0000">04/22/2022</time>
+    <time datetime="2022-05-16 14:09:09 +0000">05/16/2022</time>
     
   
 
@@ -872,7 +872,7 @@
 <h2 id="vmware-vsphere-の前提条件">VMware vSphere の前提条件</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>NetApp Element Plug-in for vCenter Server を使用するには、 vCenter と ESXi を搭載し、ソフトウェア iSCSI アダプタと iSCSI ネットワークが設定された VMware vSphere 7.0 または 6.7 が必要です。</p>
+<p>NetApp Element Plug-in for vCenter Serverを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。</p>
 </div>
 <div class="sect2">
 <h3 id="プラグインでサポートされている-vmware-vsphere-のバージョン">プラグインでサポートされている VMware vSphere のバージョン</h3>
@@ -883,6 +883,18 @@
 <ul>
 <li>
 <p>vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 7.0 および 7.0 Update 1</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+VMware vCenter Server 7.0 U3 にアップグレードすると、すべてのバージョンの NetApp Element Plug-in for vCenter Server を導入できません。この問題 を解決するには、を参照してください <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3" target="_blank" rel="noopener">"こちらの技術情報アーティクル"</a>。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p>vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.7 Update 1 および 3</p>
@@ -899,19 +911,10 @@
 </table>
 </div>
 </li>
+<li>
+<p>vSphere 6.5：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む</p>
+</li>
 </ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/vcp/images/important.svg" alt="重要">
-</td>
-<td class="content">
-このプラグインは、 VMware vCenter Server 6.5 と互換性がありません。
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
