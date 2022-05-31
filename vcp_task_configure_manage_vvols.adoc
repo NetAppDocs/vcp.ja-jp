@@ -23,7 +23,7 @@ VMware vSphere を有効にすることができます link:vcp_concept_vvols.ht
 
 
 
-=== セットアップのタスク
+== セットアップのタスク
 
 NetApp Element Plug-in for vCenter Server で仮想ボリューム（ VVol ）を使用するには、初期設定手順を実行する必要があります。
 
@@ -35,7 +35,7 @@ NetApp Element Plug-in for vCenter Server で仮想ボリューム（ VVol ）�
 
 
 
-=== 管理タスク
+== 管理タスク
 
 * <<Monitor virtual volume resources>>
 * <<Create a VVol datastore for a storage container>>

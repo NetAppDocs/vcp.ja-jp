@@ -14,7 +14,7 @@ keywords: netapp, hci, vcp, vcenter, element, install, setup
 
 
 [role="lead"]
-最新バージョンの NetApp Element Plug-in for vCenter Server （ VCP ）を vCenter に直接インストールし、 vSphere Web Client を使用してプラグインにアクセスできます。
+最新バージョンのNetApp Element Plug-in for vCenter ServerをvCenterに直接インストールし、vSphere Web Clientを使用してプラグインにアクセスできます。
 
 インストールが完了したら、 Storage I/O Control に基づくサービス品質（ QoSSIOC ）サービスおよび vCenter Plug-in のその他のサービスを使用できます。
 

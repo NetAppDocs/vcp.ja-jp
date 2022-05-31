@@ -14,7 +14,7 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server を使用して NetApp HCI または SolidFire オールフラッシュアレイストレージを管理するには、システムがプラグイン使用時の要件を満たしている必要があります。一致する必要があります
+NetApp Element Plug-in for vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしている必要があります。
 
 
 
@@ -39,6 +39,10 @@ IMPORTANT: VMware vCenter Server 7.0 U3 にアップグレードすると、す�
 IMPORTANT: このプラグインは、 HTML5 vSphere Web Client バージョン 6.7 U2 ビルド 13007421 および更新 2a より前にリリースされたその他の 6.7 U2 ビルド（ビルド 13643870 ）とは互換性がありません。Flash / Flex 用のバージョン 6.7 U2 vSphere Web Client と互換性があります。
 
 * vSphere 6.5：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む
++
+
+IMPORTANT: このプラグインは、VMware vCenter Server 4.6、4.7、および4.8向けElementプラグインバージョン6.5とは互換性がありません。
+
 
 
 
