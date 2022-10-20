@@ -54,7 +54,8 @@ NOTE: 1 つの vCenter インスタンスに複数の NetApp Element VASA Provid
 
 NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"^] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

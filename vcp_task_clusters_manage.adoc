@@ -27,17 +27,17 @@ NOTE: NetApp Element 管理拡張ポイントの機能を使用するには、�
 
 
 .オプション（ Options ）
-* <<View cluster details>>
-* <<Edit a cluster profile>>
-* <<Remove a cluster profile>>
-* <<Enable Encryption at Rest>>
-* <<Disable Encryption at Rest>>
-* <<Enable SSH>>
-* <<Change the SSH time limit>>
-* <<Disable SSH>>
-* <<Set protection domain monitoring>>
-* <<Shut down a cluster>>
-* <<Expand your NetApp HCI infrastructure>>
+*  cluster details
+*  a cluster profile
+*  a cluster profile
+*  Encryption at Rest
+*  Encryption at Rest
+*  SSH
+*  the SSH time limit
+*  SSH
+*  protection domain monitoring
+*  down a cluster
+*  your NetApp HCI infrastructure
 
 
 
@@ -116,7 +116,7 @@ NetApp Element Configuration 拡張ポイントを使用して、 vCenter Plug-i
 リンクモードグループを設定している場合にクラスタを別の vCenter Server に再割り当てするには、クラスタプロファイルを削除してから、リンクされている別の vCenter Server の IP で再度追加します。
 
 
-NOTE: NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+NOTE: NetApp Element Plug-in for VMware vCenter Serverを使用して、を使用して他のvCenter Serverのクラスタリソースを管理する link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
 
 . NetApp Element Configuration > Clusters * を選択します。
 . 削除するクラスタを選択します。
@@ -281,7 +281,8 @@ NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタで�
 . 「 * NetApp HCI を展開する * 」を選択します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

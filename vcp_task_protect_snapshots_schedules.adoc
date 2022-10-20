@@ -21,11 +21,11 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, schedule
 
 NOTE: スケジュールは UTC+0 時間を使用して作成されます。タイムゾーンに基づいて、 Snapshot が実行される実際の時刻の調整が必要になる場合があります。
 
-* <<Create a snapshot schedule>>
-* <<View snapshot schedule details>>
-* <<Edit a snapshot schedule>>
-* <<Copy a snapshot schedule>>
-* <<Delete a snapshot schedule>>
+*  a snapshot schedule
+*  snapshot schedule details
+*  a snapshot schedule
+*  a snapshot schedule
+*  a snapshot schedule
 
 
 
@@ -170,7 +170,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . 操作を確定します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

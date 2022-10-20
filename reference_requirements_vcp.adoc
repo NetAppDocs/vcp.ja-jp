@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: reference_requirements_vcp.html 
-summary: NetApp Element Plug-in for vCenter Server の使用を開始する前に、製品をインストールして使用するための前提条件を理解しておく必要があります。 
+summary: NetApp Element Plug-in for VMware vCenter Serverの使用を開始する前に、製品をインストールして使用するための前提条件を理解しておく必要があります。 
 keywords: netapp, hci, kubernetes, on premise, cloud services 
 ---
-= Element Plug-in for vCenter Server の要件
+= VMware vCenter Server向けNetApp Element プラグインの要件
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしている必要があります。
+NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしている必要があります。
 
 
 
 == VMware vSphere の前提条件
 
-NetApp Element Plug-in for vCenter Serverを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。
+Element vCenter Plug-inを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。
 
 
 
@@ -28,10 +28,11 @@ NetApp Element Plug-in for vCenter Serverを使用するには、vCenterとESXi�
 
 次のメジャーバージョンの VMware ソフトウェアをサポートします。
 
-* vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 7.0 および 7.0 Update 1
+* vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含むvSphere 7.0および7.0 Update 1および2
+* vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含むvSphere 7.0 Update 3では、Spring Framework 4が使用されます
 +
 
-IMPORTANT: VMware vCenter Server 7.0 U3 にアップグレードすると、すべてのバージョンの NetApp Element Plug-in for vCenter Server を導入できません。この問題 を解決するには、を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["こちらの技術情報アーティクル"^]。
+IMPORTANT: VMware vCenter Server 7.0 U3にアップグレードすると、Elementプラグインの導入が失敗します。Spring Framework 4を使用してこの問題 を解決するには、を参照してください https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["こちらの技術情報アーティクル"^]。
 
 * vCenter Server 、 ESXi 、 VMFS5 および VMFS6 のデータストアを含む vSphere 6.7 Update 1 および 3
 +
@@ -69,7 +70,7 @@ IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了�
 
 次のメジャーバージョンをサポートします。
 
-* Element 12.x （ SolidFire エンタープライズ SDS を含む
+* Element 12.x
 * Element 11.x
 
 
@@ -79,7 +80,8 @@ IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了�
 
 システムをリモートから管理し、データセンターの外部のクライアントがリソースに接続できるようにするには、データセンターのエッジファイアウォールで一部の TCP ポートを許可する必要があります。NetApp HCI および SolidFire システムで使用されるポートの包括的なリストについては、こちらを参照してください link:https://docs.netapp.com/us-en/hci/docs/hci_prereqs_required_network_ports.html["ページ"]。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

@@ -4,9 +4,10 @@ permalink: vcp_task_getstarted.html
 summary: Element ストレージで使用する Element Plug-in for vCenter Server をインストールして設定できます。 
 keywords: netapp, hci, vcp, vcenter, element, install, setup 
 ---
-= NetApp Element Plug-in for vCenter Server をインストールして設定します
+= NetApp Element Plug-in for VMware vCenter Serverをインストールして設定します
 :hardbreaks:
 :allow-uri-read: 
+:url-peak: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -14,21 +15,21 @@ keywords: netapp, hci, vcp, vcenter, element, install, setup
 
 
 [role="lead"]
-最新バージョンのNetApp Element Plug-in for vCenter ServerをvCenterに直接インストールし、vSphere Web Clientを使用してプラグインにアクセスできます。
+最新バージョンのNetApp Element Plug-in for VMware vCenter ServerをvCenterに直接インストールし、vSphere Web Clientを使用してプラグインにアクセスできます。
 
 インストールが完了したら、 Storage I/O Control に基づくサービス品質（ QoSSIOC ）サービスおよび vCenter Plug-in のその他のサービスを使用できます。
 
 各手順を読んで完了し、プラグインのインストールと使用を開始します。
 
-* <<Prepare for installation>>
-* <<Install the management node>>
-* <<Register the plug-in with vCenter>>
-* <<Modify vCenter properties for a dark site HTTP server>>
-* <<Access the plug-in and verify successful installation>>
-* <<Add storage clusters for use with the plug-in>>
-* <<Configure QoSSIOC settings using the plug-in>>
-* <<Configure user accounts>>
-* <<Create datastores and volumes>>
+*  for installation
+*  the management node
+*  the plug-in with vCenter
+*  vCenter properties for a dark site HTTP server
+*  the plug-in and verify successful installation
+*  storage clusters for use with the plug-in
+*  QoSSIOC settings using the plug-in
+*  user accounts
+*  datastores and volumes
 
 
 
@@ -65,7 +66,7 @@ vCenter Plug-in は、そのプラグインを使用するすべての vCenter S
 リンクモード環境では、 MOB データの同期を保ち、プラグインをアップグレードできるようにするために、環境内の各 vCenter Server にプラグインを登録する必要があります。接続先の vCenter Server にプラグインが登録されていない場合、 vSphere Web Client にはプラグインが表示されません。
 
 
-NOTE: NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+NOTE: Element vCenterプラグインを使用して他のvCenter Serverのクラスタリソースを管理するには、を使用します link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
 
 .手順
 . 登録用 TCP ポートを含む管理ノードの IP アドレスをブラウザに入力します。
@@ -107,7 +108,7 @@ NOTE: vCenter Administrator ロールの権限を持つユーザのユーザ名�
 ** （社内サーバ / ダークサイトの場合）プラグインの ZIP のカスタム URL 。
 +
 
-NOTE: ほとんどのインストールではデフォルトパスが使用されます。HTTP または HTTPS サーバ（ダークサイト）を使用している場合、または ZIP ファイル名やネットワーク設定を変更した場合は、「 * カスタム URL * 」を選択して URL をカスタマイズします。URL をカスタマイズする場合の追加手順については、 * を参照してください <<Modify vCenter properties for a dark site HTTP server,ダークサイトの HTTP サーバの vCenter プロパティを変更します>>。
+NOTE: ほとんどのインストールではデフォルトパスが使用されます。HTTP または HTTPS サーバ（ダークサイト）を使用している場合、または ZIP ファイル名やネットワーク設定を変更した場合は、「 * カスタム URL * 」を選択して URL をカスタマイズします。URL をカスタマイズする場合の追加手順については、 * を参照してください  vCenter properties for a dark site HTTP server,ダークサイトの HTTP サーバの vCenter プロパティを変更します。
 
 
 
@@ -290,7 +291,7 @@ IMPORTANT: vSphere HTML5 Web Client と Flash Web Client は別々のデータ�
 [NOTE]
 ====
 *** クラスタでは vCenter Server ごとに専用のホストを使用します。選択した vCenter Server から目的のホストにアクセスできることを確認してください。使用するホストをあとで変更する場合は、クラスタを削除し、別の vCenter Server に再割り当てして再度追加します。
-*** NetApp Element Plug-in for vCenter Server を使用して他の vCenter Server のクラスタリソースを管理する方法については、を参照してください link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+*** Element vCenterプラグインを使用して他のvCenter Serverのクラスタリソースを管理するには、を使用します link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
 
 
 ====
@@ -345,7 +346,8 @@ QoSSIOC サービスを有効にすると、個々のデータストアで QoSSI
 
 を作成できます link:vcp_task_datastores_manage.html#create-a-datastore["データストアと Element ボリューム"] ストレージの割り当てを開始します。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

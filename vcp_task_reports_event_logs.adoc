@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_event_logs.html 
-summary: NetApp Element Plug-in for vCenter Server でイベントログを確認し、クラスタで実行された処理とエラーを示すクラスタエラーを表示します。 
+summary: NetApp Element Plug-in for VMware vCenter Serverでイベントログを確認し、クラスタで実行された処理とエラーを示すクラスタエラーを表示します。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, cluster, performance 
 ---
 = イベントログを監視してトラブルシューティングを行う
@@ -90,7 +90,8 @@ NOTE: 読み取り専用の API コマンドはイベントログに記録され
 * * vasaProviderEvent * ： VASA （ vSphere APIs for Storage Awareness ） Provider に関連するイベント。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

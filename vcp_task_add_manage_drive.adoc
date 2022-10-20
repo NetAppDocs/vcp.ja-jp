@@ -16,9 +16,9 @@ keywords: netapp, drives, add, manage, remove, view vcp, vcenter, element
 [role="lead"]
 NetApp Element 管理拡張ポイントを使用して、クラスタへのドライブの追加、既存のドライブの表示、およびドライブの削除を行うことができます。
 
-* <<Add available drives to a cluster>>
-* <<View drive details>>
-* <<Remove a drive>>
+*  available drives to a cluster
+*  drive details
+*  a drive
 
 
 

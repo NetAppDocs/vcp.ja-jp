@@ -22,7 +22,8 @@ keywords: netapp, vcp, element, plugin, plug-in, protection, domain
 
 シャーシドメインには、障害への耐障害性を確保するために、ノードドメインよりも多くの容量リソースが必要です。保護ドメインのしきい値を超えると、データの可用性を中断せずに障害から回復するための十分な容量をクラスタで確保できなくなります。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

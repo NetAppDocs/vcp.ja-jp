@@ -19,11 +19,11 @@ A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.h
 アクセスグループを作成するには、 iSCSI イニシエータの IQN または Fibre Channel の WWPN をボリュームのグループにマッピングします。アクセスグループに追加した各 IQN は、 CHAP 認証なしでグループ内の各ボリュームにアクセスできます。アクセスグループに追加した各 WWPN は、アクセスグループ内のボリュームへの Fibre Channel ネットワークアクセスを許可します。
 
 .オプション（ Options ）
-* <<Create an access group>>
-* <<Edit an access group>>
-* <<Add volumes to an access group>>
-* <<Remove volumes from an access group>>
-* <<Delete an access group>>
+*  an access group
+*  an access group
+*  volumes to an access group
+*  volumes from an access group
+*  an access group
 
 
 
@@ -151,7 +151,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . 操作を確定します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

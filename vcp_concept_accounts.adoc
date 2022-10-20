@@ -20,7 +20,8 @@ keywords: netapp, vcp, element, plugin, plug-in, account
 
 アカウントには最大 2 、 000 個のボリュームを割り当てることができますが、 1 つのボリュームが属することのできるアカウントは 1 つだけです。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

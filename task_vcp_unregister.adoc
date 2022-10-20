@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task_vcp_unregister.html 
-summary: vCenter から NetApp Element Plug-in for vCenter Server の登録を解除できます。 
+summary: vCenterからNetApp Element Plug-in for VMware vCenter Serverの登録を解除できます。 
 keywords: netapp, vcp, vcenter, plugin, element, unregister 
 ---
 = vCenter Plug-in の登録を解除します
@@ -11,11 +11,10 @@ keywords: netapp, vcp, vcenter, plugin, element, unregister
 :icons: font
 :linkattrs: 
 :imagesdir: ../media/
-:keywords: netapp, vcp, vcenter, plugin, element, unregister
 
 
 [role="lead"]
-次のいずれかの手順を使用して、 vCenter から NetApp Element Plug-in for vCenter Server の登録を解除できます。
+次のいずれかの手順を使用して、vCenterからNetApp Element Plug-in for VMware vCenter Serverの登録を解除できます。
 
 .必要なもの
 * プラグインの登録を解除するための vCenter Administrator ロールの権限。
@@ -83,7 +82,8 @@ Disconnect-VIServer * -Confirm:$false
 
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

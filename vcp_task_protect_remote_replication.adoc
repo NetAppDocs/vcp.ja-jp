@@ -29,11 +29,11 @@ NetApp Element ソフトウェアを実行するクラスタでは、リアル�
 NOTE: データのレプリケーションにおける WAN アクセラレータアプライアンスの使用は、ネットアップで認定されていません。データをレプリケートする 2 つのクラスタ間にこのアプライアンスを配置すると、圧縮および重複排除の妨げとなる場合があります。WAN アクセラレータアプライアンスを本番環境に導入する前に、影響を十分に検証してください。
 
 .手順
-. <<Pair clusters>>
-. <<Pair volumes>>
-. <<Validate volume replication>>
-. <<Delete a volume relationship after replication>>
-. <<Manage volume relationships>>
+.  clusters
+.  volumes
+.  volume replication
+.  a volume relationship after replication
+.  volume relationships
 
 
 
@@ -58,8 +58,8 @@ NOTE: クラスタをペアリングするには、管理ネットワーク上�
 
 次のいずれかの方法を選択します。
 
-* <<Pair clusters using known credentials>>
-* <<Pair clusters with a pairing key>>
+*  clusters using known credentials
+*  clusters with a pairing key
 
 
 
@@ -70,7 +70,7 @@ NOTE: クラスタをペアリングするには、管理ネットワーク上�
 
 クラスタをペアリングする前に、クラスタ管理者のユーザ名とパスワードを使用してクラスタアクセスを認証します。
 
-MVIP がわからない場合やクラスタへのアクセスが許可されていない場合は、ペアリングキーを生成し、そのキーを使用して 2 つのクラスタをペアリングできます。手順については、を参照してください <<Pair clusters with a pairing key>>。
+MVIP がわからない場合やクラスタへのアクセスが許可されていない場合は、ペアリングキーを生成し、そのキーを使用して 2 つのクラスタをペアリングできます。手順については、を参照してください  clusters with a pairing key。
 
 .手順
 . ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 保護 * を選択します。
@@ -82,8 +82,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . 「 * クラスタペアリングの作成」を選択します。
 . 次のいずれかを選択します。
 +
-** * 登録クラスタ * ：ペアリングするリモートクラスタが NetApp Element Plug-in for vCenter Server の同じインスタンスで制御されている場合は、このオプションを選択します。
-** * Credentialed Cluster * ：リモートクラスタに NetApp Element Plug-in for vCenter Server の外部で設定された既知のクレデンシャルがある場合は、このオプションを選択します。
+** *登録クラスタ*：ペアリングするリモートクラスタがElement vCenterプラグインの同じインスタンスで制御されている場合は、このオプションを選択します。
+** * Credentialed Cluster *：リモートクラスタにElement vCenterプラグインの外部で設定された既知のクレデンシャルがある場合は、このオプションを選択します。
 
 
 . 「 Registered Cluster 」を選択した場合は、使用可能なクラスタのリストからクラスタを選択し、「 * Pair * 」をクリックします。
@@ -173,14 +173,14 @@ NOTE: ロード中のスピナーアイコンが消えてから次の手順に�
 
 次のいずれかの方法でボリュームをペアリングできます。
 
-* <<Pair volumes using known credentials>>：両方のクラスタに既知のクレデンシャルを使用します
-* <<Pair volumes using a pairing key>>：ペアリングキーは、ソースクラスタでしかクラスタのクレデンシャルを使用できない場合に使用します。
-* <<Create target volumes and pair them with local volumes>>：両方のクラスタのクレデンシャルがわかっている場合は、リモートクラスタにレプリケーションターゲットボリュームを作成してソースクラスタとペアリングします。
+*  volumes using known credentials：両方のクラスタに既知のクレデンシャルを使用します
+*  volumes using a pairing key：ペアリングキーは、ソースクラスタでしかクラスタのクレデンシャルを使用できない場合に使用します。
+*  target volumes and pair them with local volumes：両方のクラスタのクレデンシャルがわかっている場合は、リモートクラスタにレプリケーションターゲットボリュームを作成してソースクラスタとペアリングします。
 
 
 ボリュームペアリング関係を確立したら、どちらのボリュームをレプリケーションターゲットにするかを指定する必要があります。
 
-* <<Assign a replication source and target to paired volumes>>
+*  a replication source and target to paired volumes
 
 
 .必要なもの
@@ -213,9 +213,9 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . 「 * Volume Pairing * （ボリュームペアリング）」を選択
 . 次のいずれかを選択します。
 +
-** * ボリュームの作成 * ：リモートクラスタにレプリケーションターゲットボリュームを作成する場合に選択します。この方法は、 NetApp Element Plug-in for vCenter Server で制御されているリモートクラスタでのみ使用できます。
-** * ボリュームの選択 * ：ターゲットボリュームのリモートクラスタが NetApp Element Plug-in for vCenter Server で制御されている場合は、このオプションを選択します。
-** * ボリューム ID * ：ターゲットボリュームを含むリモートクラスタに NetApp Element Plug-in for vCenter Server の外部で設定された既知のクレデンシャルがある場合は、このオプションを選択します。
+** * ボリュームの作成 * ：リモートクラスタにレプリケーションターゲットボリュームを作成する場合に選択します。この方法は、Element vCenterプラグインで制御されているリモートクラスタでのみ使用できます。
+** *ボリュームの選択*：ターゲットボリュームを含むリモートクラスタがElement vCenterプラグインで制御されている場合に選択します。
+** *ボリュームID *：ターゲットボリュームを含むリモートクラスタに、Element vCenterプラグイン以外の設定で設定された既知のクレデンシャルがある場合に選択します。
 
 
 . レプリケーションモードの選択：
@@ -481,7 +481,7 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 レプリケーションが完了してボリュームペアリング関係が不要になったら、ボリューム関係を削除できます。
 
-を参照してください <<Delete a volume pair>>。
+を参照してください  a volume pair。
 
 
 
@@ -489,10 +489,10 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 レプリケーションの一時停止、ボリュームペアリングの反転、レプリケーションモードの変更、ボリュームペアの削除、クラスタペアの削除など、さまざまな方法でボリューム関係を管理できます。
 
-* <<Pause replication>>
-* <<Change the mode of replication>>
-* <<Delete a volume pair>>
-* <<Delete a cluster pair>>
+*  replication
+*  the mode of replication
+*  a volume pair
+*  a cluster pair
 
 
 
@@ -610,8 +610,8 @@ NetApp Element 管理の設定ポイントで、保護タブのボリューム�
 
 ペアリングと進捗状況を示すメッセージがボリュームステータス列に表示されます。
 
-* <<Volume pairing messages>>
-* <<Volume pairing warnings>>
+*  pairing messages
+*  pairing warnings
 
 
 
@@ -651,7 +651,8 @@ NetApp Element 管理設定ポイントから保護タブのボリュームペ�
 * *StoppedMisconfigured *: 永続的な設定エラーが検出されました。リモートボリュームがパージされたかペアが解除されました。対処方法はありません。新しいペアリングを確立する必要があります。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

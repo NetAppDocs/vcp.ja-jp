@@ -17,11 +17,11 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, clone, backup,
 関連する一連のボリュームのグループ Snapshot を作成して、各ボリュームのメタデータのポイントインタイムコピーを保持できます。グループ Snapshot をバックアップまたはロールバックとして使用して、ボリュームグループの状態を希望する時点にリストアすることができます。
 
 .オプション（ Options ）
-* <<Create a group snapshot>>
-* <<View group snapshot details>>
-* <<Clone volumes from a group snapshot>>
-* <<Roll back volumes to a group snapshot>>
-* <<Delete a group snapshot>>
+*  a group snapshot
+*  group snapshot details
+*  volumes from a group snapshot
+*  back volumes to a group snapshot
+*  a group snapshot
 
 
 
@@ -182,7 +182,8 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 . 操作を確定します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

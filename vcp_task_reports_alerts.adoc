@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_alerts.html 
-summary: アラートを監視する。このページでは、 NetApp Element Plug-in for vCenter Server のレポートページを使用して、クラスタの稼働状況を示す情報、警告、またはエラーを確認できます。 
+summary: アラートを監視する。このページでは、NetApp Element Plug-in for VMware vCenter Serverのレポートページを使用して、クラスタの稼働状況を示す情報、警告、またはエラーを確認できます。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, performance 
 ---
 = システムアラートを監視する
@@ -54,7 +54,8 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, p
 . 問題が解決されたことを確認するには、解決済みビューで を探します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

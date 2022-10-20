@@ -19,12 +19,12 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, clone, backup,
 Snapshot を使用して、 Snapshot が作成された時点の状態にボリュームをロールバックできます。ただし、 Snapshot はボリュームメタデータの単なるレプリカであるため、マウントや書き込みはできません。
 
 .オプション（ Options ）
-* <<Create a volume snapshot>>
-* <<View volume snapshot details>>
-* <<Clone a volume from a snapshot>>
-* <<Roll back a volume to a snapshot>>
-* <<Back up a volume snapshot to an external object store>>
-* <<Delete a volume snapshot>>
+*  a volume snapshot
+*  volume snapshot details
+*  a volume from a snapshot
+*  back a volume to a snapshot
+*  up a volume snapshot to an external object store
+*  a volume snapshot
 
 
 
@@ -179,9 +179,9 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 
 Snapshot を外部のオブジェクトストアにバックアップする場合は、オブジェクトストアに接続していて、読み取り / 書き込み処理が許可されている必要があります。
 
-* <<Back up a volume snapshot to an Amazon S3 object store>>
-* <<Back up a volume snapshot to an OpenStack Swift object store>>
-* <<Back up a volume snapshot to a cluster running Element software>>
+*  up a volume snapshot to an Amazon S3 object store
+*  up a volume snapshot to an OpenStack Swift object store
+*  up a volume snapshot to a cluster running Element software
 
 
 
@@ -334,7 +334,8 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 . 操作を確定します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

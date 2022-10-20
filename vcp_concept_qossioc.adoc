@@ -14,7 +14,7 @@ keywords: netapp, quality of service, volume performance, sioc, storage I/O cont
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server では、オプションでサービス品質を自動で設定することができます (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます (https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-7686FEC3-1FAC-4DA7-B698-B808C44E5E96.html["SIOC"^]）標準データストア上のすべての VM の設定。QoS と SIOC の統合（ QoSSIOC ）は、すべての標準データストアで有効にすることができます。有効にすると、関連するすべての VM のすべての SIOC 設定がスキャンされます。
+NetApp Element Plug-in for VMware vCenter Serverでは、オプションでサービス品質を自動で設定することができます (https://docs.netapp.com/us-en/hci/docs/concept_hci_performance.html["QoS"^]） Storage I/O Control に基づきます (https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.resmgmt.doc/GUID-7686FEC3-1FAC-4DA7-B698-B808C44E5E96.html["SIOC"^]）標準データストア上のすべての VM の設定。QoS と SIOC の統合（ QoSSIOC ）は、すべての標準データストアで有効にすることができます。有効にすると、関連するすべての VM のすべての SIOC 設定がスキャンされます。
 
 QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。QoSSIOC サービスは、すべての SIOC リザベーションの合計と IOPS 制限の合計を使用して、各データストアの基盤となるボリュームの最小 QoS と最大 QoS を決定します。バースト係数も設定できます。
 
@@ -35,7 +35,8 @@ TIP: リザベーション値は vSphere API では設定できません。VMDK 
 
 TIP: https://activeiq.solidfire.com["SolidFire Active IQ の略"^] QoS の推奨ページで、最適な構成と QoS 設定に関するアドバイスを確認できます。
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

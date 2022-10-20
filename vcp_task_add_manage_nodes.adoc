@@ -16,11 +16,11 @@ keywords: netapp, nodes, create, manage, delete, view vcp, vcenter, element
 [role="lead"]
 vCenter Plug-in を使用して、を追加できます https://docs.netapp.com/us-en/hci/docs/concept_hci_nodes.html#storage-nodes["ストレージノード"] クラスタを作成する場合やストレージの追加が必要な場合。NetApp Element Management 拡張ポイントを使用して、 Element ソフトウェアを実行するストレージノードを追加できます。NetApp HCI コンピューティングノードは、 vSphere のプラグイン以外で追加および管理する必要があります。
 
-* <<Add a node to a cluster>>
-* <<View node details>>
-* <<Restart a node>>
-* <<Shut down a node>>
-* <<Remove a node from a cluster>>
+*  a node to a cluster
+*  node details
+*  a node
+*  down a node
+*  a node from a cluster
 
 
 

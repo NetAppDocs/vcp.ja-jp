@@ -17,9 +17,9 @@ keywords: netapp, storage, accounts, vcp, vcenter, element
 link:vcp_concept_accounts.html["ユーザアカウント"^] NetApp Element ソフトウェアベースのネットワーク上のストレージリソースへのアクセスを制御するために使用されます。
 
 .オプション（ Options ）
-* <<Create an account>>
-* <<Edit an account>>
-* <<Delete an account>>
+*  an account
+*  an account
+*  an account
 
 
 
@@ -117,7 +117,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . 操作を確定します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

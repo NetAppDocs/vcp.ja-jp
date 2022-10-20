@@ -14,7 +14,7 @@ keywords: netapp, datastore, vcp, vcenter, element
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server では、 Element ボリュームに基づくデータストアを管理できます。データストアを作成、拡張、クローニング、共有、削除できます。また、 VAAI UNMAP 機能を使用して、シンプロビジョニングされた VMFS データストアから解放されたブロックスペースをクラスタで再生することもできます。
+NetApp Element Plug-in for VMware vCenter Serverでは、Elementボリュームに基づくデータストアを管理できます。データストアを作成、拡張、クローニング、共有、削除できます。また、 VAAI UNMAP 機能を使用して、シンプロビジョニングされた VMFS データストアから解放されたブロックスペースをクラスタで再生することもできます。
 
 .必要なもの
 * データストアを作成および管理するには、最初に少なくとも 1 つのユーザアカウントを作成する必要があります。
@@ -23,13 +23,13 @@ NetApp Element Plug-in for vCenter Server では、 Element ボリュームに�
 
 
 .オプション（ Options ）
-* <<Create a datastore>>
-* <<View the datastore list>>
-* <<Extend a datastore>>
-* <<Clone a datastore>>
-* <<Share a datastore>>
-* <<Perform VAAI UNMAP>>
-* <<Delete a datastore>>
+*  a datastore
+*  the datastore list
+*  a datastore
+*  a datastore
+*  a datastore
+*  VAAI UNMAP
+*  a datastore
 
 
 
@@ -471,7 +471,8 @@ NOTE: ボリュームを削除せずに残し、あとで別のデータスト�
 . 「 * はい * 」を選択します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

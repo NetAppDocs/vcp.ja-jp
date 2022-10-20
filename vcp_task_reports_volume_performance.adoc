@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_volume_performance.html 
-summary: 選択したクラスタ内のすべてのボリュームのパフォーマンス情報は、 NetApp Element Plug-in for vCenter Server の Reporting タブにある Volume Performance ページで確認できます。 
+summary: 選択したクラスタ内のすべてのボリュームのパフォーマンス情報は、NetApp Element Plug-in for VMware vCenter ServerのReportingタブにあるVolume Performanceページで確認できます。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, cluster, performance 
 ---
 = ボリュームのパフォーマンスを監視
@@ -52,7 +52,8 @@ NetApp Element Management 拡張ポイントの Reporting タブでは、選択�
 * * Average IO Size * ：過去 500 ミリ秒における、ボリュームに対する最近の I/O の平均サイズ（バイト）。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_reference_reports_alert_errors.html 
-summary: 次に、システムアラートのリストを示します。このリストは、 NetApp Element Plug-in for vCenter Server のレポートページを使用して、クラスタの稼働状況を示す情報、警告、またはエラーです。 
+summary: 次に、NetApp Element Plug-in for VMware vCenter Serverのレポートページを使用して、クラスタが正常に稼働していることを示す情報、警告、またはエラーのリストを示します。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, performance 
 ---
 = システムアラートのリスト
@@ -568,7 +568,8 @@ NOTE: エラーの詳細については、「詳細」の見出しを参照し�
 
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

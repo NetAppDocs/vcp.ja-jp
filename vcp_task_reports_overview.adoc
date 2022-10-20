@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_overview.html 
-summary: NetApp Element Plug-in for vCenter Server のレポートページを使用して、クラスタのコンポーネントとパフォーマンスに関する情報を表示します。 
+summary: NetApp Element Plug-in for VMware vCenter Serverのレポートページを使用して、クラスタのコンポーネントとパフォーマンスに関する情報を表示します。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report 
 ---
 = 概要ページでクラスタ全体の健全性を監視します
@@ -14,7 +14,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server の NetApp Element Management 拡張ポイントから、レポートタブの概要ページで、選択したクラスタの全体的な容量、効率、パフォーマンスなどのクラスタ情報を確認できます。
+NetApp Element Plug-in for VMware vCenter ServerのNetApp Element Management拡張ポイントから、レポートタブの概要ページで、選択したクラスタの全体的な容量、効率、パフォーマンスなどのクラスタ情報を確認できます。
 
 .手順
 . vCenter Plug-in で、 * NetApp Element Management* を選択します。
@@ -86,7 +86,8 @@ NOTE: たとえば、クラスタに 4 つのボリュームがあり、それ�
 * * パフォーマンス利用率 * ：消費されているクラスタ IOPS の割合。たとえば、 25 万 IOPS のクラスタが 10 万 IOPS で実行されている場合、消費率は 40% です。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

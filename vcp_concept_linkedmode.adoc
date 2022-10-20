@@ -14,7 +14,7 @@ keywords: netapp, vcp, element, plugin, plug-in, linked mode
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server では、 vCenter リンクモードを使用して他の vCenter Server のクラスタリソースを管理することができます。
+NetApp Element Plug-in for VMware vCenter Serverでは、vCenterリンクモードを使用して他のvCenter Serverのクラスタリソースを管理することができます。
 
 Element Plug-in でストレージクラスタを管理できるのは、デスティネーション vCenter の Web クライアントにログインしている場合のみです。
 
@@ -38,7 +38,8 @@ vSphere リンクモード環境でストレージクラスタの管理をセッ
 . cluster2 を vCenter2 Web クライアントから管理するには、 cluster2 を Element Plug-in のインベントリに追加します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

@@ -4,7 +4,7 @@ permalink: vcp_task_protect_overview.html
 summary: データのコピーを必要な場所に作成して保存できます。 
 keywords: netapp, vcp, vcenter, element, protect, data 
 ---
-= NetApp Element Plug-in for vCenter Server を使用してデータを保護します
+= NetApp Element Plug-in for VMware vCenter Serverを使用してデータを保護します
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ keywords: netapp, vcp, vcenter, element, protect, data
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server を使用することで、データのコピーが作成され、必要な場所に格納されるようにすることができます。これを行うには、ボリュームとグループの Snapshot を作成して管理し、 Snapshot スケジュールを設定し、リモートクラスタ間のレプリケーションに使用するボリュームとクラスタのペア関係を作成します。
+NetApp Element Plug-in for VMware vCenter Serverを使用して、データのコピーを作成し、必要な場所に格納することができます。これを行うには、ボリュームとグループの Snapshot を作成して管理し、 Snapshot スケジュールを設定し、リモートクラスタ間のレプリケーションに使用するボリュームとクラスタのペア関係を作成します。
 
 .オプション（ Options ）
 * link:vcp_task_protect_snapshots_volume.html["ボリューム Snapshot を作成および管理します"]
@@ -23,7 +23,8 @@ NetApp Element Plug-in for vCenter Server を使用することで、データ�
 * link:vcp_task_protect_remote_replication.html["クラスタ間でリモートレプリケーションを実行"]
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

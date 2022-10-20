@@ -16,10 +16,10 @@ keywords: netapp, VLANs, create, manage, delete, view vcp, vcenter, element
 [role="lead"]
 クラスタ構成に新しい仮想ネットワークを追加すると、マルチテナント環境から NetApp Element ソフトウェアを実行しているクラスタに接続し、 vCenter Plug-in を使用して仮想ネットワークを管理できるようになります。
 
-* <<Create a virtual network>>
-* <<View virtual network details>>
-* <<Edit a virtual network>>
-* <<Delete a virtual network>>
+*  a virtual network
+*  virtual network details
+*  a virtual network
+*  a virtual network
 
 
 

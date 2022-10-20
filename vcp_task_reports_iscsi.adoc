@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_iscsi.html 
-summary: NetApp Element Plug-in for vCenter Server で、選択したクラスタに接続されている iSCSI セッションに関する情報を確認できます。 
+summary: NetApp Element Plug-in for VMware vCenter Serverで、選択したクラスタに接続されているiSCSIセッションに関する情報を確認できます。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, iscsi, connection 
 ---
 = iSCSI セッションを監視して接続ステータスを確認
@@ -14,7 +14,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, iscsi, connection
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server で、選択したクラスタに接続されている iSCSI セッションに関する情報を確認できます。
+NetApp Element Plug-in for VMware vCenter Serverで、選択したクラスタに接続されているiSCSIセッションに関する情報を確認できます。
 
 .手順
 . vCenter Plug-in で、 * NetApp Element Management* を選択します。
@@ -38,7 +38,8 @@ NetApp Element Plug-in for vCenter Server で、選択したクラスタに接�
 * * 作成日 * ：セッションが確立された日付。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

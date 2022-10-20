@@ -28,18 +28,18 @@ VMware vSphere を有効にすることができます link:vcp_concept_vvols.ht
 NetApp Element Plug-in for vCenter Server で仮想ボリューム（ VVol ）を使用するには、初期設定手順を実行する必要があります。
 
 .手順
-. <<Enable virtual volumes functionality on the NetApp Element cluster>>
-. <<Register the VASA provider with vCenter>>
-. <<Create a storage container and associated VVol datastore>>
+.  virtual volumes functionality on the NetApp Element cluster
+.  the VASA provider with vCenter
+.  a storage container and associated VVol datastore
 
 
 
 
 == 管理タスク
 
-* <<Monitor virtual volume resources>>
-* <<Create a VVol datastore for a storage container>>
-* <<Delete a storage container>>
+*  virtual volume resources
+*  a VVol datastore for a storage container
+*  a storage container
 
 
 
@@ -65,7 +65,7 @@ NOTE: VVol 機能を有効にすると、 Element クラスタは VASA Provider 
 . 選択したクラスタに対して * Actions * を選択します。
 . 表示されたメニューで、「 * Details （詳細） * 」を選択します。
 . VASA Provider の URL を「 * VASA Provider URL * 」フィールドからコピーします。この URL は、 VASA Provider を vCenter に登録する際に使用します。
-. を参照してください <<Register the VASA provider with vCenter>> 次の手順に進みます。
+. を参照してください  the VASA provider with vCenter 次の手順に進みます。
 
 
 
@@ -112,7 +112,7 @@ NOTE: VASA Provider の URL は、 vCenter Plug-in で VVol を有効にする�
 
 NOTE: プロバイダの初回登録後にプロバイダの現在のステータスを表示するには、必要に応じてストレージプロバイダを更新します。プロバイダが有効になっているかどうかは、 * NetApp Element Configuration > Clusters * でも確認できます。有効にするクラスタに対して * Actions * を選択し、 * Details * をクリックします。
 
-. を参照してください <<Create a storage container and associated VVol datastore>> 次の手順に進みます。
+. を参照してください  a storage container and associated VVol datastore 次の手順に進みます。
 
 
 
@@ -169,9 +169,9 @@ NOTE: vCenter リンクモードを使用している場合は、クラスタが
 
 プラグインの NetApp Element Management 拡張ポイントから、仮想ボリュームコンポーネントのパフォーマンスと設定を確認できます。
 
-* <<Monitoring VVols>>
-* <<Monitoring storage containers>>
-* <<Monitoring protocol endpoints>>
+*  VVols
+*  storage containers
+*  protocol endpoints
 
 
 
@@ -236,7 +236,7 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == ストレージコンテナ用の VVol データストアを作成します
 
-ストレージコンテナを作成したら、 vCenter の NetApp Element クラスタでストレージコンテナを表す仮想ボリュームデータストアも作成する必要があります。この手順は、からデータストアを作成する代わりに使用できます <<Create a storage container and associated VVol datastore,ストレージコンテナを作成します>> ウィザード。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つの VVol データストアを作成する必要があります。
+ストレージコンテナを作成したら、 vCenter の NetApp Element クラスタでストレージコンテナを表す仮想ボリュームデータストアも作成する必要があります。この手順は、からデータストアを作成する代わりに使用できます  a storage container and associated VVol datastore,ストレージコンテナを作成します ウィザード。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つの VVol データストアを作成する必要があります。
 
 .必要なもの
 * 仮想環境にストレージコンテナが存在している必要があります。
@@ -284,7 +284,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 . ストレージコンテナ * サブタブでストレージコンテナのリストを更新して、ストレージコンテナが削除されたことを確認します。
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

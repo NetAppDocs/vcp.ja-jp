@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: vcp_task_reports_intro.html 
-summary: NetApp Element Plug-in for vCenter Server のレポートページを使用して、クラスタのコンポーネントとパフォーマンスに関する情報を表示します。 
+summary: NetApp Element Plug-in for VMware vCenter Serverのレポートページを使用して、クラスタのコンポーネントとパフォーマンスに関する情報を表示します。 
 keywords: netapp, hci, vcp, vcenter, element, monitor, report, cluster, performance 
 ---
 = Reporting オプションを使用してシステムパフォーマンスを監視します
@@ -14,7 +14,7 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, cluster, performa
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server のレポートページを使用して、クラスタのコンポーネントやパフォーマンスに関する情報を表示できます。
+NetApp Element Plug-in for VMware vCenter Serverのレポートページを使用して、クラスタのコンポーネントとパフォーマンスに関する情報を表示できます。
 
 vCenter Plug-in を使用すると、次の方法でクラスタコンポーネントとパフォーマンスを監視できます。
 
@@ -26,7 +26,8 @@ vCenter Plug-in を使用すると、次の方法でクラスタコンポーネ�
 * link:vcp_task_reports_qossioc.html["QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します"]
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

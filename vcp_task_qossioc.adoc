@@ -23,7 +23,7 @@ QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリ
 
 NOTE: QoSSIOC の設定ページでは、仮想ボリューム（ VVol ）機能を有効にしたり、 VVol を vSphere で使用できるようにしたりすることはできません。詳細については、 Element Plug-in for vCenter Server のドキュメントを参照してください。
 
-リンクモードの場合は、 NetApp Element Plug-in for vCenter Server で登録するすべての vCenter Server に、 1 つの vCenter Server で指定した QoSSIOC 設定が使用されます。
+リンクモードの場合は、Element vCenterプラグインで、1つのvCenter Serverで指定したQoSSIOC設定を使用してすべてのvCenter Serverが登録されます。
 
 vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を設定および管理できます。
 
@@ -32,7 +32,7 @@ vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を�
 == セットアップのタスク
 
 * link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["QoSSIOC を設定します"]
-* <<Enabling QoSSIOC automation on datastores>>
+*  QoSSIOC automation on datastores
 
 
 
@@ -40,10 +40,10 @@ vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を�
 == 管理タスク
 
 * link:vcp_task_reports_qossioc.html["QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します"^]
-* <<Edit QoSSIOC settings>>
-* <<Change the QoSSIOC service password>>
-* <<Disable QoSSIOC automation for a datastore>>
-* <<Clear QoSSIOC settings>>
+*  QoSSIOC settings
+*  the QoSSIOC service password
+*  QoSSIOC automation for a datastore
+*  QoSSIOC settings
 
 
 
@@ -136,7 +136,7 @@ NOTE: 管理ノードに対して有効な QoSSIOC 設定を行ったあとは�
 * 管理ノードの電源をオンにしておきます。
 
 
-ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます <<Edit QoSSIOC settings,QoSSIOC 設定>> NetApp Element Configuration 拡張ポイントのページ。
+ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます  QoSSIOC settings,QoSSIOC 設定 NetApp Element Configuration 拡張ポイントのページ。
 
 .手順
 . NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
@@ -151,7 +151,7 @@ NOTE: 管理ノードに対して有効な QoSSIOC 設定を行ったあとは�
 登録ユーティリティの UI にプラグインの * QoSSIOC サービスのクレデンシャルの管理 * ページが表示されます。
 
 +
-image::vcp_registration_ui_qossioc.png[VCP 登録ユーティリティのメニュー]
+image::vcp_registration_ui_qossioc.png[NetApp Element Plug-in for vCenter Server登録ユーティリティのメニュー]
 
 . 次の情報を入力します。
 +
@@ -215,7 +215,8 @@ Element ストレージ管理ノード（ mNode ）の QoSSIOC 設定の詳細�
 
 
 
-[discrete]
+
+
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
