@@ -30,7 +30,7 @@ Element vCenter Plug-in 4.9は、管理サービスの2.20.69リリースで使�
 
 == NetApp Element Plug-in for vCenter Server 4.8の略
 
-Element vCenterプラグイン4.7 4.8には、セキュリティの向上、メモリ使用率の改善、およびサードパーティ製ライブラリのアップグレードが含まれています。
+Element vCenterプラグイン4.8では、セキュリティの向上、メモリ使用率の向上、およびサードパーティ製ライブラリのアップグレードが実装されています。
 
 Element vCenterプラグイン4.8は、管理サービスの2.19リリースで提供されています。
 

@@ -125,7 +125,7 @@ homepage:
     - title: 新機能
       url: "/rn_whatsnew_vcp.html"
     - title: リリースノート
-      url: "/rn_relatedrn.html"
+      url: "/rn_relatedrn_vcp.html"
   - title: SolidFire オールフラッシュストレージシステム
     links:
     - title: Element Plug-inをアップグレードします

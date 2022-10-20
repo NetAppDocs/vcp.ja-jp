@@ -17,7 +17,7 @@ summary: NetApp Element Plug-in for VMware vCenter Server 4.6より前のリリ�
 NetApp Element Plug-in for VMware vCenter Serverのバージョン4.10より前のリリースに関するドキュメントも用意されています。
 
 
-NOTE: これ link:index.html["マニュアルへのリンク"] Element vCenterプラグイン4.10およびバージョン4.9、4.6、4.7、および4.8が含まれている。
+NOTE: これ link:index.html["マニュアルへのリンク"] Element vCenterプラグイン4.10およびバージョン4.6、4.7、4.8、および4.9が含まれている。
 
 [cols="4*"]
 |===

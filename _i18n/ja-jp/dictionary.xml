@@ -2389,7 +2389,6 @@
   <block id="177259bf399e56131535817a5b3d056c" category="summary">NetApp Element Plug-in for VMware vCenter Server 4.6より前のリリースのドキュメントを参照できます。</block>
   <block id="51e42727247460a0bec3c65c38a8231b" category="doc">以前のバージョンのNetApp Element Plug-in for VMware vCenter Serverドキュメント</block>
   <block id="fa1dfaacd9c58d6fa24c3cd804696883" category="paragraph">NetApp Element Plug-in for VMware vCenter Serverのバージョン4.10より前のリリースに関するドキュメントも用意されています。</block>
-  <block id="0b94915d96bdf913ca5fd03ffc778f0e" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> Element vCenterプラグイン4.10およびバージョン4.9、4.6、4.7、および4.8が含まれている。</block>
   <block id="622fbbcf746903b903f2af5462c8550a" category="cell">4.9</block>
   <block id="f751fbabf8051844c49362e0317859f4" category="cell"><block ref="f751fbabf8051844c49362e0317859f4" category="inline-link-rx"></block></block>
   <block id="b9cf34af101112b6fe1d9cb0084bf6d5" category="inline-link">2.20.69</block>
@@ -2438,7 +2437,6 @@
   <block id="e6d3d1619eb4fdac2775643fea2a6c05" category="section-title">NetApp Element Plug-in for vCenter Server 4.9</block>
   <block id="be2443c4720bed9c69fd7e827839e61c" category="paragraph">NetApp Element Plug-in for VMware vCenter Server 4.9は、vCenter Server、ESXi、vSphere HTML5 Web Clientを含むvSphere 6.5をサポートしています。</block>
   <block id="d186d1a54781fe84473dd5d36734fed7" category="paragraph">Element vCenter Plug-in 4.9は、管理サービスの2.20.69リリースで使用できます。</block>
-  <block id="cbc0df0d0811f264690cee9b3ba10fcc" category="paragraph">Element vCenterプラグイン4.7 4.8には、セキュリティの向上、メモリ使用率の改善、およびサードパーティ製ライブラリのアップグレードが含まれています。</block>
   <block id="537ead2e0cdece5a8f74b676b2a76ecc" category="paragraph">Element vCenterプラグイン4.8は、管理サービスの2.19リリースで提供されています。</block>
   <block id="2d11279b1331356298fd619891de0ffa" category="section-title">VMware vCenter Server 4.7向けNetApp Element プラグイン</block>
   <block id="518d3755563da4f104451562701d56eb" category="paragraph">Element vCenterプラグイン4.7では、さらに改良されたセキュリティ機能が強化されています<block ref="b1233a0bfa93edf062561cc29a402448" category="inline-link-rx"></block> リリース。</block>
@@ -2474,4 +2472,6 @@
   <block id="102fa0b3d48f5eb07a14f36cdde32296" category="sidebar">SolidFire およびElementのドキュメント</block>
   <block id="e832d6528eba00e46f3e6d6ad9b8258b" category="sidebar">NetApp HCI のドキュメント</block>
   <block id="f5409f597000de172b3e43bc31e32407" category="sidebar">NetApp Hybrid Cloud Control and Management ServicesリリースノートKB</block>
+  <block id="11c89ff1a6e1a8fdbe820874038b12c8" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> Element vCenterプラグイン4.10およびバージョン4.6、4.7、4.8、および4.9が含まれている。</block>
+  <block id="8e929e82af0bc25d8adcd4def2eab9a9" category="paragraph">Element vCenterプラグイン4.8では、セキュリティの向上、メモリ使用率の向上、およびサードパーティ製ライブラリのアップグレードが実装されています。</block>
 </blocks>
