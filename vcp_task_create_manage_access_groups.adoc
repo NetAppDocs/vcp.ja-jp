@@ -14,7 +14,7 @@ keywords: netapp, storage, access groups, vcp, vcenter, element
 
 
 [role="lead"]
-A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.html["ボリュームアクセスグループ"] は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。
+A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.html["ボリュームアクセスグループ"^] は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。
 
 アクセスグループを作成するには、iSCSIイニシエータのIQNまたはFCのWWPNをボリュームのグループにマッピングします。アクセスグループに追加した各 IQN は、 CHAP 認証なしでグループ内の各ボリュームにアクセスできます。アクセスグループに追加した各WWPNは、アクセスグループ内のボリュームへのFCネットワークアクセスを可能にします。
 

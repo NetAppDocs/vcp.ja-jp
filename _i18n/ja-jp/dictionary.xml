@@ -2356,7 +2356,6 @@
   <block id="cdac12e8444404de524af6aed2665f45" category="inline-link">2.21.61</block>
   <block id="493947108f90792d70b0080451b59368" category="cell"><block ref="493947108f90792d70b0080451b59368" category="inline-link-rx"></block></block>
   <block id="562a438f33bff2259da6858dd288f400" category="cell"><block ref="562a438f33bff2259da6858dd288f400" category="inline-link-rx"></block></block>
-  <block id="35217a2ac23a8b6448931b9efc4c4f94" category="paragraph">A <block ref="2934e3adb910b5942a2e24ca276b4338" category="inline-link-macro-rx"></block> は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。</block>
   <block id="adcd2fc490460962064733fd569fa4ea" category="paragraph">アクセスグループを作成するには、iSCSIイニシエータのIQNまたはFCのWWPNをボリュームのグループにマッピングします。アクセスグループに追加した各 IQN は、 CHAP 認証なしでグループ内の各ボリュームにアクセスできます。アクセスグループに追加した各WWPNは、アクセスグループ内のボリュームへのFCネットワークアクセスを可能にします。</block>
   <block id="ba5eebae5f14aac1ccd19f5057a508df" category="list-text">vSphere Web Clientで、* Management *タブを開きます。</block>
   <block id="00d5861848d4c935bdf9d8f9e8d3a493" category="list-text">Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</block>
@@ -2645,4 +2644,5 @@
   <block id="0e9c9eb44ef5108d7204ec64bc76f844" category="sidebar">NetApp Element Plug-in for VMware vCenter Server 5.0以降</block>
   <block id="74f171bb465a49ebcce88fa91d4562d4" category="sidebar">NetApp Element Plug-in for VMware vCenter Server 4.10以前</block>
   <block id="2abfacd3d0325353cbe289faa9d0d3b1" category="sidebar">NetApp Element Plug-in for vCenter Server をインストールして設定します</block>
+  <block id="e97497d0f5938ed35b2e63e89f51bf3c" category="paragraph">A <block ref="e64b216761b70bc0cfda4bc4eab1b43a" category="inline-link-macro-rx"></block> は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。</block>
 </blocks>

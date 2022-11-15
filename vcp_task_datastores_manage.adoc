@@ -20,7 +20,7 @@ NetApp Element Plug-in for VMware vCenter Serverでは、Elementボリューム�
 * データストアを作成および管理するには、最初に少なくとも 1 つのユーザアカウントを作成する必要があります。
 * データストアでQoSSIOCサービスを使用するには、まずプラグイン拡張ポイントのQoSSIOC設定ページで設定を行う必要があります。
 +
-** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenterプラグイン5.0以降を使用して設定を行います"]
 ** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
 
 
@@ -150,7 +150,7 @@ TIP: QoS ポリシーを使用する場合は、 QoSSIOC を有効にしない�
 
 QoSSIOCサービスを使用できない場合は、最初にQoSSIOCを設定する必要があります。
 
-** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenterプラグイン5.0以降を使用して設定を行います"]
 ** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
 
 
@@ -363,7 +363,7 @@ IMPORTANT: QoS ポリシーを使用する場合は、 QoSSIOC を有効にし�
 
 QoSSIOCサービスを使用できない場合は、プラグイン拡張ポイントからQoSSIOCの設定ページで最初に設定する必要があります。
 
-** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenterプラグイン5.0以降を使用して設定を行います"]
 ** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
 
 
