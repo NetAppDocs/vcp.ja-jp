@@ -6,7 +6,7 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
-  langs: ja-jp,us-en,zh-cn,zh-tw,ko-kr
+  langs: ja-jp,us-en,zh-cn,zh-tw,ko-kr,fr-fr,de-de
 sidebar:
   entries:
   - title: NetApp Element Plug-in for VMware vCenter Serverのドキュメント
@@ -21,24 +21,36 @@ sidebar:
       url: "/rn_relatedrn_vcp.html"
   - title: 概念
     entries:
-    - title: NetApp Element Configuration 拡張ポイント
-      url: "/vcp_concept_config_extension_point.html"
-    - title: NetApp Element Management 拡張ポイント
-      url: "/vcp_concept_management_extension_point.html"
+    - title: NetApp Element Plug-in for VMware vCenter Server 5.0以降
+      entries:
+      - title: リモートプラグインのアーキテクチャの概要
+        url: "/vcp_concept_remote_plugin_architecture.html"
+      - title: NetApp Element リモートプラグイン拡張ポイント
+        url: "/vcp_concept_remote_plugin_extension_point.html"
+    - title: NetApp Element Plug-in for VMware vCenter Server 4.10以前
+      entries:
+      - title: NetApp Element Configuration 拡張ポイント
+        url: "/vcp_concept_config_extension_point.html"
+      - title: NetApp Element Management 拡張ポイント
+        url: "/vcp_concept_management_extension_point.html"
     - title: ユーザアカウント
       url: "/vcp_concept_accounts.html"
     - title: 保護ドメイン
       url: "/vcp_concept_protection_domains.html"
-    - title: リンクモードと vCenter Plug-in
+    - title: リンクモードとvCenter Plug-in
       url: "/vcp_concept_linkedmode.html"
     - title: QoSSIOC
       url: "/vcp_concept_qossioc.html"
     - title: 仮想ボリューム（ VVOL ）
       url: "/vcp_concept_vvols.html"
   - title: 導入前の要件
-    url: reference_requirements_vcp.html
-  - title: NetApp Element Plug-in for VMware vCenter Serverをインストールして設定します
-    url: "/vcp_task_getstarted.html"
+    url: "/reference_requirements_vcp.html"
+  - title: NetApp Element Plug-in for vCenter Server をインストールして設定します
+    entries:
+    - title: vCenter Server 7.0以降にElement Plug-in 5.0以降をインストールして設定します
+      url: "/vcp_task_getstarted_5_0.html"
+    - title: Element Plug-in 4.10以前をインストールして設定します
+      url: "/vcp_task_getstarted.html"
   - title: プラグインをアップグレードします
     url: "/task_vcp_upgrades.html"
   - title: vCenter Plug-in を使用してストレージを管理します

@@ -14,7 +14,11 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, p
 
 
 [role="lead"]
-NetApp Element Management 拡張ポイントの * Reporting > Alerts * ページに、各アラートのエラーコードが表示されます。エラーコードは、アラートが発生したシステムのコンポーネントおよびアラートが生成された理由を判断する場合に役立ちます。
+各アラートについてエラーコードが報告されるため、アラートが発生したシステムのコンポーネントおよびアラートが生成された理由を確認できます。プラグイン拡張ポイントを使用して、エラーコードを確認できます。
+
+* Element vCenterプラグイン5.0以降では、* NetApp Remote Plugin > Management > Reporting > Alerts *の順に選択します。
+* Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Reporting > Alerts *の順に選択します。
+
 
 以下に、各種のシステムアラートの一覧を示します。
 

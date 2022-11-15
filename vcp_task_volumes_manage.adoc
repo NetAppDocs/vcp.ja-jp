@@ -41,7 +41,12 @@ VMware ではディスクリソースに 512e が必要です。512e が有効�
 
 
 .手順
-. NetApp Element Management*>* Management* を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、このタスクに使用するクラスタをナビゲーションバーで選択します。
 . [* Volumes （ボリューム） ] サブタブを選択します。
 . アクティブ * 表示から、 * ボリュームの作成 * を選択します。
@@ -77,9 +82,15 @@ IMPORTANT: QoS ポリシーは、データベースサーバ、アプリケー�
 
 == ボリュームの詳細を表示します
 
-NetApp Element Management 拡張ポイントでは、クラスタ上のすべてのアクティブボリュームに関する全般的な情報を確認できます。効率化、パフォーマンス、 QoS 、関連付けられた Snapshot など、アクティブなボリュームごとの詳細も確認できます。
+Plug-in拡張ポイントでは、クラスタ上のすべてのアクティブボリュームに関する全般的な情報を確認できます。効率化、パフォーマンス、 QoS 、関連付けられた Snapshot など、アクティブなボリュームごとの詳細も確認できます。
 
-. NetApp Element 管理 > 管理 * を選択します。
+.手順
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブをクリックします。
 +
@@ -218,7 +229,13 @@ QoS 値、ボリュームのサイズ、バイト値の算出単位など、ボ�
 
 管理ノードに永続ボリュームを使用している場合は、永続ボリュームの名前を変更しないでください。
 
-. NetApp Element 管理 > 管理 * を選択します。
+.手順
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブをクリックします。
 . 「 * Active * 」ビューで音量を確認します。
@@ -246,11 +263,17 @@ NOTE: ボリュームのサイズは、増やすことはできますが、減�
 
 TIP: * ベストプラクティス * ： IOPS 値を変更する場合は、 10 または 100 の単位で増分します。入力値には有効な整数を指定する必要があります。ボリュームのバースト値はできるだけ高くします。バースト値を非常に高く設定することで、たまに発生する大規模ブロックのシーケンシャルワークロードを迅速に処理できる一方で、平常時の IOPS は引き続き抑制することができます。
 
-
-
 +
+[IMPORTANT]
+====
+QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。
 
-IMPORTANT: QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。データストアの QoSSIOC 設定を有効にすると、ボリュームレベルの QoS 設定よりも優先されます。最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+データストアの QoSSIOC 設定を有効にすると、ボリュームレベルの QoS 設定よりも優先されます。
+
+最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+
+====
+
 
 . 「 * OK 」を選択します。
 
@@ -273,10 +296,15 @@ IMPORTANT: QoS ポリシーは、データベースサーバ、アプリケー�
 
 NOTE: クローンボリュームには、ソースボリュームのボリュームアクセスグループメンバーシップは継承されません。
 
-オペレーティングシステムによって、クローニングされたボリュームの処理方法が異なります。ESXi では、クローンボリュームはボリュームコピーまたは Snapshot ボリュームとして扱われます。新しいデータストアの作成に使用できるデバイスがボリュームになります。クローンボリュームのマウントと Snapshot LUN の処理の詳細については、 VMware のドキュメントを参照してください https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html["VMFS データストアのコピーをマウントしています"] および https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EBAB0D5A-3C77-4A9B-9884-3D4AD69E28DC.html["重複する VMFS データストアの管理"]。
+オペレーティングシステムによって、クローニングされたボリュームの処理方法が異なります。ESXi では、クローンボリュームはボリュームコピーまたは Snapshot ボリュームとして扱われます。新しいデータストアの作成に使用できるデバイスがボリュームになります。クローンボリュームのマウントと Snapshot LUN の処理の詳細については、 VMware のドキュメントを参照してください https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EEFEB765-A41F-4B6D-917C-BB9ABB80FC80.html["VMFS データストアのコピーをマウントしています"^] および https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.storage.doc/GUID-EBAB0D5A-3C77-4A9B-9884-3D4AD69E28DC.html["重複する VMFS データストアの管理"^]。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . クローニングするボリュームを選択します。
 . [ * アクション * ] を選択します。
@@ -338,7 +366,12 @@ NetApp Element ボリュームは、 Element ストレージ、および Amazon 
 
 Amazon S3 と互換性のある外部のオブジェクトストアに NetApp Element ボリュームをバックアップできます。
 
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -366,7 +399,12 @@ Amazon S3 と互換性のある外部のオブジェクトストアに NetApp El
 
 OpenStack Swift と互換性のある外部のオブジェクトストアに NetApp Element ボリュームをバックアップできます。
 
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -405,7 +443,12 @@ NetApp Element ソフトウェアを実行しているクラスタにあるボ�
 
 
 .バックアップボリュームをセットアップ
-. ボリューム・バックアップを配置する vCenter およびクラスタから、 * NetApp Element Management > Management * を選択します。
+. ボリュームバックアップを配置するvCenterおよびクラスタで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -423,7 +466,12 @@ NetApp Element ソフトウェアを実行しているクラスタにあるボ�
 
 
 .ボリュームをバックアップします
-. バックアップに使用するソース・ボリュームを含む vCenter およびクラスタから、 * NetApp Element Management > Management * を選択します。
+. バックアップに使用するソース・ボリュームを含むvCenterおよびクラスタから、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -455,7 +503,12 @@ OpenStack Swift や Amazon S3 などのオブジェクトストアにあるバ�
 
 プラグインを使用して、 Amazon S3 オブジェクトストア上のバックアップからボリュームをリストアできます。
 
-. ［ * NetApp Element 管理 ］ > ［ レポート作成 * ］ を選択します。
+. vCenter Plug-inで、* Reporting *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>レポート*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Reporting *の順に選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . [ * イベントログ * ] サブタブを選択します。
 . リストアする必要のあるバックアップを作成したバックアップイベントを選択します。
@@ -487,7 +540,12 @@ OpenStack Swift や Amazon S3 などのオブジェクトストアにあるバ�
 
 プラグインを使用して、 OpenStack Swift オブジェクトストア上のバックアップからボリュームをリストアできます。
 
-. ［ * NetApp Element 管理 ］ > ［ レポート作成 * ］ を選択します。
+. vCenter Plug-inで、* Reporting *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>レポート*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Reporting *の順に選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . [ * イベントログ * ] サブタブを選択します。
 . リストアする必要のあるバックアップを作成したバックアップイベントを選択します。
@@ -526,7 +584,12 @@ NetApp Element ソフトウェアを実行しているクラスタ上のバッ�
 
 
 .リストアに使用するボリュームを選択します
-. ボリュームをリストアする vCenter およびクラスタで、 * NetApp Element Management > Management * を選択します。
+. ボリュームをリストアするvCenterおよびクラスタで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -544,7 +607,12 @@ NetApp Element ソフトウェアを実行しているクラスタ上のバッ�
 
 
 .ボリュームをリストアします
-. リストアに使用するソース・ボリュームを含む vCenter およびクラスタから、 * NetApp Element Management > Management * を選択します。
+. リストアに使用するソース・ボリュームを含むvCenterおよびクラスタから、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 「 * Active * 」ビューで音量を確認します。
@@ -568,7 +636,7 @@ NetApp Element ソフトウェアを実行しているクラスタ上のバッ�
 
 == ボリュームを削除します
 
-NetApp Element Management 拡張ポイントを使用して、 NetApp Element クラスタから 1 つ以上のボリュームを削除できます。
+プラグイン拡張ポイントを使用して、NetApp Element クラスタから1つ以上のボリュームを削除できます。
 
 削除したボリュームはすぐにパージされるわけではありません。ボリュームを削除したあと約 8 時間はリストア可能です。
 
@@ -581,7 +649,12 @@ IMPORTANT: 管理サービスに関連付けられた永続ボリュームが作
 IMPORTANT: スナップショットの作成に使用されたボリュームが削除されると、関連付けられているスナップショットは、 Protection > Snapshots ページの Inactive ビューに表示されます。削除したソースボリュームがパージされると、非アクティブビューの Snapshot もシステムから削除されます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . 1 つ以上のボリュームを削除します。
@@ -613,7 +686,12 @@ NOTE: プラグインでは、データストアを含むボリュームは削�
 IMPORTANT: パージしたボリュームは、システムからただちに完全に削除されます。ボリューム内のデータはすべて失われます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . ビューフィルタを選択して、リストから [ 削除済み（ * Deleted ） ] を選択します。
@@ -634,7 +712,12 @@ NetApp Element システムでは、削除したボリュームのうち、パ�
 NOTE: 削除したあとにリストアしたボリュームは、 ESXi で検出されません（データストアが存在する場合はデータストアも検出されません）。ESXi iSCSI アダプタから静的ターゲットを削除し、アダプタを再スキャンしてください。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . 複数のクラスタが追加されている場合は、ナビゲーションバーでクラスタを選択します。
 . * Volumes * サブタブを選択します。
 . ビューフィルタを選択して、リストから [ 削除済み（ * Deleted ） ] を選択します。

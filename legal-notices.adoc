@@ -47,14 +47,15 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。
 
+* link:media/mgmt_svcs_2.22_notice.pdf["管理サービス2.22.7（VMware vCenter Server 5.337用NetApp Element プラグイン）に関する注意事項"^]
 * link:media/mgmt_svcs_2.21_notice.pdf["管理サービス2.2.1.61（NetApp Element Plug-in for VMware vCenter Server 4.10.12）に関する注意事項"^]
 * link:media/mgmt_svcs_2.20_notice.pdf["管理サービス2.20.69（VMware vCenter Server 4.9.14用NetApp Element プラグイン）に関する注意事項"^]
-* link:media/mgmt_svcs_2.19_notice.pdf["管理サービス2.19.48の通知（vCenter Server 4.8.34用NetApp Element プラグイン）"^]
-* link:media/mgmt_svcs_2.18_notice.pdf["管理サービス2.18.91（NetApp Element Plug-in for vCenter Server 4.7.10）に関する注意事項"^]
-* link:media/mgmt_svcs_2.17.56_notice.pdf["管理サービス2.17.56（vCenter Server 4.6.32用NetApp Element プラグイン）に関する注意事項"^]
-* link:media/mgmt_svcs_2.17_notice.pdf["管理サービス2.17.52の注意事項（vCenter Server 4.6.29用NetApp Element プラグイン）"^]
-* link:media/mgmt_svcs_2.16_notice.pdf["管理サービス2.16の注意事項（vCenter Server 4.6.29用NetApp Element プラグイン）"^]
-* link:media/mgmt_svcs_2.14_notice.pdf["管理サービス2.14（NetApp Element Plug-in for vCenter Server 4.5.42）に関する注意事項"^]
-* link:media/mgmt_svcs_2.13_notice.pdf["管理サービス2.13に関する注意事項（vCenter Server 4.5.42用NetApp Element プラグイン）"^]
-* link:media/mgmt_svcs_2.11_notice.pdf["管理サービス2.11（vCenter Server 4.4.72用NetApp Element プラグイン）に関する注意事項"^]
+* link:media/mgmt_svcs_2.19_notice.pdf["管理サービス2.19.48の注意事項（VMware vCenter Server 4.8.34用NetApp Element プラグイン）"^]
+* link:media/mgmt_svcs_2.18_notice.pdf["管理サービス2.18.91（NetApp Element Plug-in for VMware vCenter Server 4.7.10）に関する注意事項"^]
+* link:media/mgmt_svcs_2.17.56_notice.pdf["管理サービス2.17.56の注意事項（VMware vCenter Server 4.6.32用NetApp Element プラグイン）"^]
+* link:media/mgmt_svcs_2.17_notice.pdf["管理サービス2.17.52（VMware vCenter Server 4.6.29用NetApp Element プラグイン）に関する注意事項"^]
+* link:media/mgmt_svcs_2.16_notice.pdf["管理サービス2.16に関する注意事項（NetApp Element Plug-in for VMware vCenter Server 4.6.29）"^]
+* link:media/mgmt_svcs_2.14_notice.pdf["管理サービス2.14（NetApp Element Plug-in for VMware vCenter Server 4.5.42）に関する注意事項"^]
+* link:media/mgmt_svcs_2.13_notice.pdf["管理サービス2.13に関する注意事項（VMware vCenter Server 4.5.42用NetApp Element プラグイン）"^]
+* link:media/mgmt_svcs_2.11_notice.pdf["管理サービス2.11に関する注意事項（VMware vCenter Server 4.4.72用NetApp Element プラグイン）"^]
 

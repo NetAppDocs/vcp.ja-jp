@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: vcp_concept_remote_plugin_architecture.html 
+summary: リモートのNetApp Element Plug-in for vCenter Serverアーキテクチャについて説明します。 
+keywords: netapp, vcp, vcenter, plugin, element, remote, architecture 
+---
+= リモートプラグインのアーキテクチャの概要
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Element Plug-in for vCenter Server 5.0以降では、プラグインのアーキテクチャがローカルからリモートに変更されています。リモートアーキテクチャの導入に伴うプラグインのvCenter Serverへの導入は廃止されました。Element Plug-in for vCenter Server 4.10以前では、プラグインの導入先のvCenterサーバに対してローカルなままです。
+
+このページでは、リモートNetApp Element Plug-in for vCenter Serverの実装について説明します。
+
+vSphere Clientのリモートプラグインアーキテクチャは、プラグイン機能をvCenter Server内で実行することなくvSphere Clientに統合するように設計されています。リモートプラグインアーキテクチャはプラグインの分離をサポートし、大規模なvSphere環境で動作するプラグインのスケールアウトを可能にします。このアーキテクチャには、次のようなメリットがあります。
+
+* プラグインは、同じvSphere Clientにロードされているプラグインが不安定または侵害されることで、干渉から保護されます。
+* プラグインの互換性は、vCenter Serverをアップグレードする際にも維持されます。
+* 互換性のないプラグインによってvCenter Serverの処理が妨げられることはありません。
+* 同じvSphere環境に複数のバージョンのプラグインを導入できます。
+* リモートプラグインのユーザインターフェイスは、単一のバックエンドサーバとのみ通信する必要があります。
+* 導入されたプラグイントポロジは明確に定義されており、どのトポロジがトラブルシューティングをサポートしているかを簡単に把握できます
+
+
+
+
+== Remote Element Plug-in for vCenter Serverのアーキテクチャ概要
+
+NetApp Hybrid Cloud Controlを使用すると、リモートのElement Plug-inが管理ノード内のDockerコンテナと管理サービスに導入されます。
+
+image:vcp_remote_plugin_high_level_architecture.png["リモートプラグインのハイレベルアーキテクチャ"]
+
+Remote Element Plug-in vCenter Server、登録サービス、Storage I/O Control（SIOC）サービスは同じDockerサービスを共有しますが、異なるポートでリスンします。
+
+[cols="50,25"]
+|===
+| 説明 | ポート 
+
+
+| リモートElement Plug-in vCenter Server | 8333 
+
+
+| 登録サービス | ポート 1 
+
+
+| SIOCサービス | 8443 
+|===
+
+
+== Remote Element Plug-inの通信パスの概要
+
+最初に、管理ノードで実行されている登録サービスを使用して、リモートプラグインをvCenter Serverに登録する必要があります (`https://<mnode-ip>:9443/`）。登録ページには、vCenter Serverのユーザ名、パスワード、およびが表示されます `plugin.json` マニフェストファイルのパス。
+
+
+NOTE: デフォルトのパスがUIに表示されます。対処は不要です。
+
+指定した詳細が正しい場合は、登録サービスによってプラグインがvCenter Serverに登録され、プラグインサーバのデータベースにvCenterの詳細が入力されます。
+
+登録が完了すると、プラグインサーバによってがダウンロードされます `plugin.json` マニフェストファイルを作成し、リモートプラグインの導入を開始します。この場合は、でリモートプラグインを拡張機能として設定します `vsphere-ui` クライアント：導入が完了したら、からNetApp Element リモートプラグイン*拡張ポイントにアクセスできます `vsphere-ui` Webクライアント。
+
+プラグインUIからのすべての通信はvCenter Server経由で行われ、HTTPSプロトコルを使用してリバースプロキシサービスが実行されます。このプロトコルは、リモートプラグインサービスの要求を転送します。このプラグインサーバは、HTTPSベーシック認証を使用してSIOCサービスと通信し、Element Javaソフトウェア開発キット（SDK）を使用してElementクラスタと通信します。
+
+
+
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
+

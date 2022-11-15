@@ -16,13 +16,17 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, qossioc, cluster,
 [role="lead"]
 QoSSIOC に関連するイベントは、 QoS 対応データストアがある VM が再設定された場合、または電源イベントやゲストイベントが発生した場合に表示されます。
 
-QoSSIOCイベントは、NetApp Element Plug-in for VMware vCenter ServerのNetApp Element Configuration拡張ポイントで確認できます。
+QoSSIOCイベントは、NetApp Element Plug-in for vCenter Serverのプラグイン拡張ポイントで確認できます。
 
 QoSSIOC イベントは、ローカルに追加されたクラスタから表示されます。リンクモード環境で、クラスタがローカルに追加されている vSphere Web Client にログインして、そのクラスタの QoSSIOC イベントを表示します。
 
+[NOTE]
+====
+* Element vCenter Plug-in 5.0以降で使用できるようになりました link:vcp_concept_linkedmode.html["vCenter リンクモード"]では、NetApp SolidFire ストレージクラスタを管理するvCenter Serverごとに、Element Plug-inを別の管理ノードから登録します。
+* NetApp Element Plug-in for vCenter Server 4.10以前を使用して、他のvCenter Serverのクラスタリソースを管理する link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
 
-NOTE: Element vCenterプラグインを使用して他のvCenter Serverのクラスタリソースを管理するには、を使用します link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
 
+====
 .必要なもの
 * クラスタが少なくとも 1 つ追加されて実行されている必要があります。
 * プラグインの QoSSIOC 設定ページを使用して、 QoSSIOC サービスの設定と確認を行う必要があります。
@@ -30,8 +34,12 @@ NOTE: Element vCenterプラグインを使用して他のvCenter Serverのクラ
 
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 構成 * を選択します。
-. [QoSSIOC イベント *] を選択します。
+. vSphere Web Clientで、* QoSSIOCイベント*タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>設定> QoSSIOCイベント*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Configuration > QoSSIOCイベント*を選択します。
+
+
 
 
 

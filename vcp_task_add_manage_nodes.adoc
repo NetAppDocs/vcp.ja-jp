@@ -14,7 +14,7 @@ keywords: netapp, nodes, create, manage, delete, view vcp, vcenter, element
 
 
 [role="lead"]
-vCenter Plug-in を使用して、を追加できます https://docs.netapp.com/us-en/hci/docs/concept_hci_nodes.html#storage-nodes["ストレージノード"] クラスタを作成する場合やストレージの追加が必要な場合。NetApp Element Management 拡張ポイントを使用して、 Element ソフトウェアを実行するストレージノードを追加できます。NetApp HCI コンピューティングノードは、 vSphere のプラグイン以外で追加および管理する必要があります。
+プラグインを使用して、を追加できます https://docs.netapp.com/us-en/hci/docs/concept_hci_nodes.html#storage-nodes["ストレージノード"] クラスタを作成する場合やストレージの追加が必要な場合。Elementソフトウェアを実行しているストレージノードを追加することもできます。NetApp HCI コンピューティングノードは、vSphereのプラグイン以外の場所に追加する必要があります。
 
 *  a node to a cluster
 *  node details
@@ -37,14 +37,19 @@ vCenter Plug-in を使用して、クラスタにストレージノードを追�
 
 NOTE: 追加するノードの NetApp Element ソフトウェアのメジャーバージョンまたはマイナーバージョンがクラスタで実行されているバージョンと異なる場合、クラスタマスターで実行されている NetApp Element ソフトウェアのバージョンに非同期的に更新されます。更新されたノードは、自動的にクラスタに追加されます。この非同期プロセスの間 ' ノードの状態は pendingActive になります
 
-ノードは、初回の電源投入時に初期設定を行う必要があります。ノードは、セットアップと設定が完了すると、ノードの設定時に識別されたクラスタに自身が登録され、 NetApp Element 管理拡張ポイントの * Cluster > Nodes * ページにある保留中のノードのリストに表示されます。
+ノードは、初回の電源投入時に初期設定を行う必要があります。ノードのセットアップと設定が完了すると、ノードはそのノードの設定時に識別されたクラスタに自身を登録し、プラグイン拡張ポイントの* Cluster > Nodes *ページにある保留中のノードのリストに表示されます。
 
 既存のクラスタには、大小さまざまな容量のノードを追加できます。
 
-手順は、 NetApp Element ソフトウェアを実行している Fibre Channel ノードまたはストレージノードを追加する場合と同じです。
+手順 は、NetApp Element ソフトウェアを実行するFCノードまたはストレージノードを追加する場合と同じです。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -67,10 +72,15 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == ノードの詳細を表示します
 
-NetApp Element Management 拡張ポイントから、クラスタタブのノードページにクラスタ内のノードのリストを表示できます。アクティブなノードのリストを表示するには、アクティブなビューを選択する必要があります。ドロップダウン・フィルタを使用して ' Pending ' ' 'PendingActive ' および all のオプションを選択すると ' ビューを変更できます
+プラグイン拡張ポイントから、ClusterタブのNodesページにクラスタ内のノードのリストを表示できます。アクティブなノードのリストを表示するには、アクティブなビューを選択する必要があります。を選択すると、ビューを変更できます `Pending`、 `PendingActive`および `All` ドロップダウンフィルタを使用したオプション。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -87,7 +97,7 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == ノードを再起動します
 
-NetApp Element Management 拡張ポイントを使用して、クラスタ内の 1 つ以上のアクティブノードを再起動できます。
+プラグイン拡張ポイントを使用して、クラスタ内の1つ以上のアクティブノードを再起動できます。
 
 同時に複数のノードを再起動する場合は、 I/O を停止し、すべての iSCSI セッションを切断しておきます。
 
@@ -100,7 +110,12 @@ IMPORTANT: このメソッドは、ノードのすべてのネットワークサ
 NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -119,7 +134,7 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == ノードをシャットダウン
 
-NetApp Element Management 拡張ポイントを使用して、クラスタ内の 1 つ以上のアクティブノードをシャットダウンできます。クラスタをシャットダウンするには、すべてのクラスタノードを選択して同時にシャットダウンします。
+Plug-in拡張ポイントを使用して、クラスタ内の1つ以上のアクティブノードをシャットダウンできます。クラスタをシャットダウンするには、すべてのクラスタノードを選択して同時にシャットダウンします。
 
 同時に複数のノードを再起動する場合は、 I/O を停止し、すべての iSCSI セッションを切断しておきます。
 
@@ -128,7 +143,12 @@ NetApp Element Management 拡張ポイントを使用して、クラスタ内の
 NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -154,10 +174,15 @@ NOTE: ノードが何らかの理由でシャットダウン状態になって 5
 
 ノード内のすべてのドライブをクラスタから削除しておきます。RemoveDrives プロセスが完了してすべてのデータがノードから移行されるまで、ノードを削除することはできません。
 
-NetApp Element クラスタでの Fibre Channel 接続には、少なくとも 2 つの Fibre Channel ノードが必要です。Fibre Channel ノードが 1 つだけ接続されている場合は、クラスタに別の Fibre Channel ノードを追加するまでイベントログにアラートがトリガーされます。これは、すべての Fibre Channel ネットワークトラフィックが 1 つの Fibre Channel ノードでのみ動作を継続する場合でも同様です。
+NetApp Element クラスタでのFC接続には、少なくとも2つのFCノードが必要です。FCノードが1つしか接続されていない場合は、クラスタに別のFCノードを追加するまでイベントログにアラートが記録されます。これは、すべてのFCネットワークトラフィックが1つのFCノードでのみ処理を続けている場合でも同様です。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -174,4 +199,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 +
 クラスタから削除したノードがすべて Pending 状態のノードのリストに表示されます。
 
+
+
+
+
+== 詳細については、こちらをご覧ください
+
+* https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
+* https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 

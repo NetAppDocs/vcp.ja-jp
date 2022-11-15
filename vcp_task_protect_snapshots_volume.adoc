@@ -34,7 +34,12 @@ Snapshot を使用して、 Snapshot が作成された時点の状態にボリ�
 アクティブボリュームの Snapshot を作成すると、任意の時点におけるボリュームイメージを保持できます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -78,7 +83,12 @@ NOTE: 保持期間には、現在の時刻からの期間を選択します。�
 必要に応じて、 Snapshot が追加されたことを確認できます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -101,7 +111,12 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 ボリュームの Snapshot から新しいボリュームを作成できます。この処理では、 Snapshot の作成時点でボリュームに含まれていたデータを使用して新しいボリュームをクローニングします。ボリュームの他の Snapshot に関する情報も新しく作成されたボリュームに保存されます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、vCenter Plug-inから* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -129,7 +144,12 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 . 「 * OK 」を選択します。
 . 新しいボリュームを検証します。
 +
-.. NetApp Element Management*>* Management* を選択します。
+.. [*管理（* Management）]タブを開きます。
++
+*** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+*** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 .. [* Volumes （ボリューム） ] サブタブを選択します。
 .. アクティブ * ビューで、新しいボリュームが表示されていることを確認します。
 +
@@ -147,7 +167,12 @@ TIP: 必要に応じてページをリフレッシュしてください。
 ボリュームは Snapshot にいつでもロールバックできます。Snapshot の作成後にボリュームに対して行われた変更はすべて元に戻ります。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -191,7 +216,12 @@ Snapshot を外部のオブジェクトストアにバックアップする場�
 Amazon S3 と互換性のある外部のオブジェクトストアに NetApp Element Snapshot をバックアップできます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -227,7 +257,12 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 OpenStack Swift と互換性のあるセカンダリオブジェクトストアに NetApp Element Snapshot をバックアップできます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -267,10 +302,15 @@ NetApp Element ソフトウェアを実行しているクラスタにあるボ�
 クラスタ間でバックアップまたはリストアを実行する際には、システムによってクラスタ間の認証に使用するキーが生成されます。ソースクラスタはこのボリュームの一括書き込みキーを使用してデスティネーションクラスタに対して認証し、デスティネーションボリュームへの書き込みがセキュリティで保護されます。バックアップまたはリストアのプロセスでは、処理を開始する前に、デスティネーションボリュームからボリュームの一括書き込みキーを生成する必要があります。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+
 
 . [* VOLUMES * ] サブタブを選択します。
 . デスティネーションボリュームのチェックボックスを選択します。
@@ -285,7 +325,12 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 
 . Generate Key * を選択して、デスティネーション・ボリュームの一括ボリューム書き込みキーを生成します。
 . ボリュームの一括書き込みキーをクリップボードにコピーします。これは以降のソースクラスタの手順で使用します。
-. ソースクラスタを含む vCenter から、 * NetApp Element 管理 * > * 保護 * を選択します。
+. ソースクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -310,14 +355,19 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == ボリューム Snapshot を削除します
 
-NetApp Element Management 拡張ポイントを使用して、 NetApp Element ソフトウェアを実行しているクラスタからボリューム Snapshot を削除できます。Snapshot を削除すると、システムはただちに削除します。
+Plug-in拡張ポイントを使用して、NetApp Element ソフトウェアを実行しているクラスタからボリュームSnapshotを削除できます。Snapshot を削除すると、システムはただちに削除します。
 
 レプリケート中の Snapshot をソースクラスタから削除できます。ターゲットクラスタと同期中の Snapshot を削除すると、同期レプリケーションが完了した時点でソースクラスタから Snapshot が削除されます。ターゲットクラスタからは Snapshot は削除されません。
 
 ターゲットにレプリケート済みの Snapshot をターゲットクラスタから削除することもできます。削除した Snapshot は、ターゲットがソースクラスタで Snapshot が削除されたことを検知するまで、ターゲットの削除済み Snapshot のリストに保持されます。ソース Snapshot が削除されたことをターゲットが検知すると、ターゲットはその Snapshot のレプリケーションを停止します。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vCenter Plug-inで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、使用するクラスタがナビゲーションバーで選択されていることを確認してください。

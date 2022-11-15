@@ -14,10 +14,10 @@ keywords: netapp, vcp, vcenter, plugin, element, upgrade
 
 
 [role="lead"]
-vSphere 6.7 以前で使用する vCenter Plug-in 2.5 以降では、次の手順を実行して、プラグインに関連付けられているすべてのファイルを vCenter Server から手動で削除する必要があります。vSphere 7.0 では、プラグインの登録を解除するとすべてのファイルが自動的に削除されます。
+vSphere 6.7以前で使用するvCenter Plug-in 4.0から4.10では、次の手順を実行して、プラグインに関連付けられているすべてのファイルをvCenter Serverから手動で削除する必要があります。vSphere 7.0以降では、プラグインの登録を解除したあとにファイルを削除する必要はありません。
 
 .必要なもの
-* vCenter Plug-in 2.5 以降
+* vCenter Plug-in 4.0から4.10
 * vSphere 6.7 以前
 * これで完了です link:task_vcp_unregister.html["登録解除"] 既存のプラグインと vCSA または vCenter Server への SSH 、 RDP 、またはその他の適切な接続が確立されている。
 

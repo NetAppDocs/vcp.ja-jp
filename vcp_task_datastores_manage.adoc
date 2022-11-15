@@ -18,7 +18,12 @@ NetApp Element Plug-in for VMware vCenter Serverでは、Elementボリューム�
 
 .必要なもの
 * データストアを作成および管理するには、最初に少なくとも 1 つのユーザアカウントを作成する必要があります。
-* データストアで QoSSIOC サービスを使用するには、最初にが必要です link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["設定を行います"] NetApp Element Configuration 拡張ポイントの QoSSIOC の設定ページで、
+* データストアでQoSSIOCサービスを使用するには、まずプラグイン拡張ポイントのQoSSIOC設定ページで設定を行う必要があります。
++
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
+
+
 * データストアの作成には選択した ESXi ホストでサポートされる最も高い VMFS バージョンが使用されるため、 VMFS の互換性に関する問題を防ぐために、実行する vSphere および ESXi のバージョンをすべてのクラスタメンバーで統一する必要があります。
 
 
@@ -39,7 +44,7 @@ TIP: vSphere のタスク監視を使用して、データストア処理の進�
 
 == データストアを作成
 
-データストアは、 NetApp Element 管理拡張機能を使用して作成できます。
+データストアはプラグインの拡張機能を使用して作成できます。
 
 .必要なもの
 * vCenter Server にホストが少なくとも 1 つ接続されている必要があります。
@@ -49,11 +54,21 @@ TIP: vSphere のタスク監視を使用して、データストア処理の進�
 NOTE: vCenter リンクモードを使用している場合は、クラスタが追加されている vCenter Server が正しいことを確認してください。
 
 * 少なくとも 1 つのユーザアカウントを作成する必要があります。
-* データストアで QoSSIOC サービスを使用するには、最初にが必要です link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["設定を行います"] NetApp Element Configuration 拡張ポイントの QoSSIOC の設定ページで、
+* データストアでQoSSIOCサービスを使用するには、プラグイン拡張ポイントからQoSSIOCの設定ページで最初に設定を行う必要があります。
++
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
+
+
 
 
 .手順
-. NetApp Element Management*>* Management* を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -129,12 +144,17 @@ TIP: 最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超え�
 
 . QoSSIOC 自動化を有効にする場合は、 QoS と SIOC を有効にする * をオンにしてから、 QoSSIOC を設定します。
 +
+--
 
 TIP: QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
 
-+
-QoSSIOC サービスを使用できない場合は、最初にそのサービスを使用します link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["QoSSIOC を設定します"]。
+QoSSIOCサービスを使用できない場合は、最初にQoSSIOCを設定する必要があります。
 
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
+
+
+--
 +
 .. 「 QoS と SIOC を有効にする」を選択します。
 .. * バースト係数 * を設定します。
@@ -166,9 +186,14 @@ TIP: デフォルトでは、 SIOC のディスク共有の最大数は「無制
 
 == データストアリストを表示します
 
-NetApp Element Management 拡張ポイントからは、 Datastores ページで使用可能なデータストアを表示できます。
+Plug-in拡張ポイントからは、Datastoresページ上の使用可能なデータストアを表示できます。
 
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
@@ -203,9 +228,15 @@ NOTE: 複数のボリュームにまたがるデータストア（混在デー�
 
 == データストアを拡張する
 
-NetApp Element Management 拡張ポイントを使用して、データストアを拡張してボリュームのサイズを大きくすることができます。データストアを拡張すると、そのデータストアに関連する VMFS ボリュームも拡張されます。
+プラグインの拡張ポイントを使用して、データストアを拡張してボリュームのサイズを大きくすることができます。データストアを拡張すると、そのデータストアに関連する VMFS ボリュームも拡張されます。
 
-. NetApp Element 管理 > 管理 * を選択します。
+.手順
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
@@ -244,7 +275,12 @@ NOTE: vCenter リンクモードを使用している場合は、クラスタが
 
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
@@ -321,12 +357,17 @@ TIP: 最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超え�
 
 . QoSSIOC 自動化を有効にする場合は、「 QoS と SIOC を有効にする」チェックボックスをオンにしてから、 QoSSIOC を設定します。
 +
+--
 
 IMPORTANT: QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
 
-+
-QoSSIOC サービスを使用できない場合は、 NetApp Element Configuration 拡張ポイントの QoSSIOC の設定ページで最初に設定する必要があります。
+QoSSIOCサービスを使用できない場合は、プラグイン拡張ポイントからQoSSIOCの設定ページで最初に設定する必要があります。
 
+** link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 5.0以降を使用して設定を行います"]
+** link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
+
+
+--
 +
 .. 「 QoS と SIOC を有効にする」を選択します。
 .. * バースト係数 * を設定します。
@@ -357,7 +398,7 @@ TIP: デフォルトでは、 SIOC のディスク共有の最大数は「無制
 
 == データストアを共有する
 
-NetApp Element Management 拡張ポイントを使用して、データストアを 1 つ以上のホストと共有できます。
+プラグインの拡張ポイントを使用して、データストアを1つ以上のホストと共有できます。
 
 データストアは、同じデータセンター内のホスト間でのみ共有できます。
 
@@ -371,7 +412,12 @@ NOTE: vCenter リンクモードを使用している場合は、クラスタが
 
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
@@ -436,7 +482,12 @@ esxcli system settings advanced set -i 1 -o /VMFS3/EnableBlockDelete 」を参�
 
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
@@ -453,9 +504,14 @@ NOTE: 複数のクラスタが追加されている場合は、ナビゲーシ�
 
 == データストアを削除する
 
-NetApp Element Management 拡張ポイントを使用して、データストアを削除できます。この処理を実行すると、データストア上の、削除する VM に関連付けられているすべてのファイルが完全に削除されます。プラグインでは、登録済みの VM を含むデータストアは削除されません。
+プラグイン拡張ポイントを使用して、データストアを削除できます。この処理を実行すると、データストア上の、削除する VM に関連付けられているすべてのファイルが完全に削除されます。プラグインでは、登録済みの VM を含むデータストアは削除されません。
 
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。

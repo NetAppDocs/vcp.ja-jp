@@ -14,9 +14,9 @@ keywords: netapp, storage, access groups, vcp, vcenter, element
 
 
 [role="lead"]
-A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.html["ボリュームアクセスグループ"^] は、ユーザが iSCSI イニシエータまたは Fibre Channel イニシエータを使用してアクセスできるボリュームの集まりです。
+A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.html["ボリュームアクセスグループ"] は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。
 
-アクセスグループを作成するには、 iSCSI イニシエータの IQN または Fibre Channel の WWPN をボリュームのグループにマッピングします。アクセスグループに追加した各 IQN は、 CHAP 認証なしでグループ内の各ボリュームにアクセスできます。アクセスグループに追加した各 WWPN は、アクセスグループ内のボリュームへの Fibre Channel ネットワークアクセスを許可します。
+アクセスグループを作成するには、iSCSIイニシエータのIQNまたはFCのWWPNをボリュームのグループにマッピングします。アクセスグループに追加した各 IQN は、 CHAP 認証なしでグループ内の各ボリュームにアクセスできます。アクセスグループに追加した各WWPNは、アクセスグループ内のボリュームへのFCネットワークアクセスを可能にします。
 
 .オプション（ Options ）
 *  an access group
@@ -33,7 +33,12 @@ A link:https://docs.netapp.com/us-en/hci/docs/concept_hci_volume_access_groups.h
 1 つ以上のイニシエータを含むボリュームアクセスグループを作成できます。クライアントの Fibre Channel （ WWPN ）イニシエータまたは iSCSI （ IQN ）イニシエータをボリュームアクセスグループ内のボリュームにマッピングすることで、ネットワークとボリュームの間の安全なデータ I/O 通信が実現します。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -57,10 +62,15 @@ NOTE: イニシエータは、ボリュームアクセスグループの作成�
 
 == アクセスグループを編集します
 
-NetApp Element Management 拡張ポイントで、ボリュームアクセスグループの名前を編集したり、イニシエータの追加や削除を行ったりすることができます。
+プラグイン拡張ポイントで、ボリュームアクセスグループの名前を編集したり、イニシエータの追加や削除を行ったりすることができます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -79,7 +89,7 @@ NOTE: イニシエータを削除するときは、ごみ箱アイコンをク�
 
 
 
-. [OK] をクリックします。
+. 「 * OK 」を選択します。
 
 
 
@@ -95,7 +105,12 @@ NOTE: イニシエータを削除するときは、ごみ箱アイコンをク�
 
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -119,7 +134,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 IMPORTANT: アクセスグループからボリュームを削除すると、ボリュームへのホストアクセスが中断される可能性があります。
 
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -136,10 +156,15 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 == アクセスグループを削除する
 
-NetApp Element Management 拡張ポイントを使用して、ボリュームアクセスグループを削除できます。ボリュームアクセスグループを削除する前に、イニシエータ ID を削除したり、グループとボリュームの関連付けを解除したりする必要はありません。アクセスグループを削除すると、ボリュームへのグループアクセスが切断されます。
+プラグイン拡張ポイントを使用して、ボリュームアクセスグループを削除できます。ボリュームアクセスグループを削除する前に、イニシエータ ID を削除したり、グループとボリュームの関連付けを解除したりする必要はありません。アクセスグループを削除すると、ボリュームへのグループアクセスが切断されます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vSphere Web Clientで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。

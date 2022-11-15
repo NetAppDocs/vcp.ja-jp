@@ -30,7 +30,11 @@ VMware ESXi ホストは、プロトコルエンドポイントと呼ばれる�
 
 NetApp Element クラスタ内のプロトコルエンドポイントは、 SCSI 管理論理ユニットとして機能します。各プロトコルエンドポイントはクラスタによって自動的に作成されます。クラスタ内のノードごとに、対応するプロトコルエンドポイントが作成されます。たとえば、 4 ノードクラスタの場合は 4 つのプロトコルエンドポイントが作成されます。
 
-NetApp Element ソフトウェアでサポートされているプロトコルは iSCSI だけです。Fibre Channel プロトコルはサポートされません。ユーザがプロトコルエンドポイントを削除または変更することはできません。プロトコルエンドポイントはアカウントには関連付けられず、またボリュームアクセスグループに追加することはできません。NetApp Element Management 拡張ポイントの * VVOLs > Protocol Endpoints * ページで、プロトコルエンドポイント情報を確認できます。
+NetApp Element ソフトウェアでサポートされているプロトコルは iSCSI だけです。Fibre Channel プロトコルはサポートされません。ユーザがプロトコルエンドポイントを削除または変更することはできません。プロトコルエンドポイントはアカウントには関連付けられず、またボリュームアクセスグループに追加することはできません。プラグイン拡張ポイントを使用して、プロトコルエンドポイントの情報を確認できます。
+
+* Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> VVol >プロトコルエンドポイント*を選択します。
+* Element vCenter Plug-in 4.10以前の場合は、* NetApp Element Management > vvols > Protocol Endpoints *を選択します。
+
 
 
 
@@ -38,7 +42,13 @@ NetApp Element ソフトウェアでサポートされているプロトコル�
 
 ストレージコンテナは、 NetApp Element アカウントにマッピングされた論理構成要素であり、レポートの作成やリソースの割り当てに使用されます。このプールには、ストレージシステムが仮想ボリュームに提供できる物理ストレージ容量またはアグリゲートのストレージ機能がプールされます。vSphere で作成された VVol データストアは、個々のストレージコンテナにマッピングされます。1 つのストレージコンテナには、 NetApp Element クラスタから使用可能なリソースがデフォルトですべて含まれています。マルチテナンシーをより詳細に管理する必要がある場合は、複数のストレージコンテナを作成できます。
 
-ストレージコンテナは従来のアカウントと同様に機能し、仮想ボリュームとトラディショナルボリュームの両方を格納できます。クラスタあたり最大 4 つのストレージコンテナがサポートされます。VVol 機能を使用するには、少なくとも 1 つのストレージコンテナが必要です。NetApp Element Management 拡張ポイントの * VVols > Storage Containers * ページで、ストレージコンテナに関する詳細を作成、削除、表示できます。vCenter では VVol の作成時にストレージコンテナを検出できます。
+ストレージコンテナは従来のアカウントと同様に機能し、仮想ボリュームとトラディショナルボリュームの両方を格納できます。クラスタあたり最大 4 つのストレージコンテナがサポートされます。VVol 機能を使用するには、少なくとも 1 つのストレージコンテナが必要です。Plug-in拡張ポイントを使用して、ストレージコンテナに関する詳細を作成、削除、表示できます。
+
+* Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> VVol >ストレージコンテナ*を選択します。
+* Element vCenter Plug-in 4.10以前では、「* NetApp Element Management > vvols > Storage Containers *」を選択します。
+
+
+vCenterではVVolの作成時にストレージコンテナを検出することもできます。
 
 
 
@@ -49,7 +59,7 @@ vSphere で NetApp Element クラスタの VVol 機能を認識するには、 v
 VASA Provider は、 Element ソフトウェアのクラスタマスターの一部として実行されます。クラスタマスターは可用性の高いサービスで、必要に応じてクラスタ内の任意のノードにフェイルオーバーします。クラスタマスターがフェイルオーバーすると、 VASA Provider も一緒に移動するため、 VASA Provider の高可用性が確保されます。プロビジョニングタスクとストレージ管理タスクはいずれも VASA Provider を使用します。 VASA Provider は、 Element クラスタで必要な変更を処理します。
 
 
-NOTE: 1 つの vCenter インスタンスに複数の NetApp Element VASA Provider を登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
+NOTE: Elementソフトウェア12.5以前では、1つのvCenterインスタンスに複数のNetApp Element VASAプロバイダを登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
 
 
 NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"^] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。

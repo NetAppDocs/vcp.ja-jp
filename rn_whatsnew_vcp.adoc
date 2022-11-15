@@ -14,7 +14,17 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server 4.10では、セキュリティの脆弱性など、解決済みの問題が解決されています。アップグレード中に発生するシステムの停止を大幅に減らし、一部の環境で日常の運用を強化することができます。本プラグインのバージョン4.10では、オンライン・ヘルプ・リンクがこのファイルに移行しています link:index.html["マニュアルへのリンク"]。プラグイン内からオンラインヘルプのリンクにアクセスするには、ネットワークアクセスが必要です。
+NetApp Element Plug-in for vCenter Server 5.0には、プラグインのリモートアーキテクチャが含まれています。このアーキテクチャは、vCenter Server内でプラグインを実行することなく、vSphere Clientにプラグイン機能を統合するように設計されています。リモートアーキテクチャではプラグインの分離がサポートされており、大規模なvSphere環境で動作するプラグインのスケールアウトが可能です。リモートのElement Plug-inは、管理サービスとともに管理ノード内のDockerコンテナに導入されます。 link:vcp_concept_remote_plugin_architecture.html["詳細はこちら。"]
+
+Element vCenterプラグイン5.0は、VMware vSphere 8.0、7.0、7.0 Update 1、2、3（vCenter Server、ESXi、vSphere HTML5 Web Clientを含む）をサポートしています。
+
+Element vCenterプラグイン5.0は、管理サービスの2.22.7リリースで使用できます。このプラグインを使用しない場合、他のすべてのサービスと機能はバージョン2.2.61と同じであるため、このアップグレードはオプションです。管理サービスの最新の更新情報については、を参照してください https://library.netapp.com/ecm/ecm_download_file/ECMLP2884458["管理サービスリリースノート2.1.61"^]。
+
+
+
+== vCenter Server 4.10用NetApp Element プラグイン
+
+Element vCenter Plug-in 4.10には、セキュリティの脆弱性など、解決済みの問題が含まれています。アップグレード中に発生する中断を大幅に減らし、一部の環境で日常の運用を強化することができます。本プラグインのバージョン4.10では、オンライン・ヘルプ・リンクがこのファイルに移行しています link:index.html["マニュアルへのリンク"]。プラグイン内からオンラインヘルプのリンクにアクセスするには、ネットワークアクセスが必要です。
 
 Element vCenter Plug-in 4.10は、管理サービスの2.2.61リリースで使用できます。
 
@@ -22,7 +32,7 @@ Element vCenter Plug-in 4.10は、管理サービスの2.2.61リリースで使�
 
 == NetApp Element Plug-in for vCenter Server 4.9
 
-NetApp Element Plug-in for VMware vCenter Server 4.9は、vCenter Server、ESXi、vSphere HTML5 Web Clientを含むvSphere 6.5をサポートしています。
+NetApp Element Plug-in for vCenter Server 4.9は、vCenter Server、ESXi、vSphere HTML5 Web Clientを含むvSphere 6.5をサポートしています。
 
 Element vCenter Plug-in 4.9は、管理サービスの2.20.69リリースで使用できます。
 
@@ -36,7 +46,7 @@ Element vCenterプラグイン4.8は、管理サービスの2.19リリースで�
 
 
 
-== VMware vCenter Server 4.7向けNetApp Element プラグイン
+== NetApp Element Plug-in for vCenter Server 4.7
 
 Element vCenterプラグイン4.7では、さらに改良されたセキュリティ機能が強化されています https://security.netapp.com/advisory/ntap-20210315-0001/["最新の管理サービス 2.17.56 パッチ"] リリース。
 
@@ -46,7 +56,7 @@ Element vCenterプラグイン4.7は、2.18リリースの管理サービスで�
 
 
 
-== NetApp Element Plug-in for VMware vCenter Server 4.6
+== NetApp Element Plug-in for vCenter Server 4.6
 
 バージョン 4.6 では、 vCenter Server 、 ESXi 、 vSphere HTML5 Web Client など、 vSphere 7.0 Update 1 のコンポーネントがサポートされるようになりました。
 

@@ -16,7 +16,7 @@ keywords: netapp, qos policy, quality of service, qos policies, vcp, vcenter, el
 [role="lead"]
 標準的なサービス品質設定を QoS ポリシーとして作成および保存して、複数のボリュームに適用することができます。QoS ポリシーを使用するには、 Element 10.0 以降のクラスタを選択する必要があります。 10.0 より前のクラスタでは QoS ポリシーを使用できません。
 
-NetApp Element Management 拡張ポイントを使用すると、次のタスクを実行して QoSSIOC を設定および管理できます。
+Plug-in拡張ポイントを使用すると、次のタスクを実行してQoSSIOCを設定および管理できます。
 
 *  a QoS policy
 *  a QoS policy to volumes
@@ -35,7 +35,12 @@ QoS ポリシーを作成し、同等のパフォーマンスが必要なボリ�
 NOTE: QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -60,7 +65,12 @@ TIP: わかりやすい名前のベストプラクティスを使用してくだ
 一括して適用する QoS ポリシーを用意しておきます  a QoS policy,作成済み。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -82,7 +92,12 @@ QoS ポリシーのボリュームへの関連付けを解除したり、別の 
 変更するボリュームはです  a QoS policy to volumes,関連付けられました QoS ポリシーを使用する。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -107,7 +122,12 @@ NOTE: デフォルトの QoS のリセット * をクリックして、デフォ
 既存の QoS ポリシーの名前を変更したり、ポリシーに関連付けられている値を編集したりできます。QoS ポリシーのパフォーマンス値を変更すると、そのポリシーに関連付けられているすべてのボリュームの QoS に影響します。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -138,7 +158,12 @@ NOTE: デフォルトの QoS のリセットをクリックして、デフォル
 不要になった QoS ポリシーを削除できます。QoS ポリシーを削除すると、そのポリシーに関連付けられているすべてのボリュームで、これまでにそのポリシーで定義されていた QoS 値が個々のボリュームの QoS 値として維持されます。削除された QoS ポリシーとの関連付けがすべて削除されます。
 
 .手順
-. NetApp Element 管理 > 管理 * を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。

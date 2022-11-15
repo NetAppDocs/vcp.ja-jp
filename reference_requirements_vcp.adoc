@@ -14,17 +14,31 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 
 
 [role="lead"]
-NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしている必要があります。
+NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしていることを確認する必要があります。
+
+[role="tabbed-block"]
+====
+.vCenter 5.0以降向けElementプラグイン
+--
+システムがElement vCenter Plug-in 5.0以降を使用するための要件を満たしていることを確認します。
+
+Element vCenterプラグインを使用するには、vCenterおよびESXiを搭載したVMware vSphere 8.0および7.0（ソフトウェアiSCSIアダプタおよびiSCSIネットワークが設定されている）が必要です。
+
+次のメジャーバージョンの VMware ソフトウェアをサポートします。
+
+* vSphere 8.0：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む
+* vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含むvSphere 7.0および7.0 Update 1、2、3
 
 
 
-== VMware vSphere の前提条件
+IMPORTANT: VMware vSphere 6.5および6.7のサポートは、2022年10月15日に終了しました。Element Plug-in 5.0以降では、vSphere 6.5および6.7はサポートされなくなりました。詳細については、こちらを参照してください https://core.vmware.com/blog/reminder-vsphere-6567-end-general-support["記事"^]。
 
-Element vCenter Plug-inを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。
+--
+.vCenter 4.10以前のElementプラグイン
+--
+システムがElement vCenter Plug-in 4.10以前の使用要件を満たしていることを確認します。
 
-
-
-=== プラグインでサポートされている VMware vSphere のバージョン
+Element vCenterプラグインを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。
 
 次のメジャーバージョンの VMware ソフトウェアをサポートします。
 
@@ -42,17 +56,16 @@ IMPORTANT: このプラグインは、 HTML5 vSphere Web Client バージョン 
 * vSphere 6.5：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む
 +
 
-IMPORTANT: このプラグインは、VMware vCenter Server 4.6、4.7、および4.8向けElementプラグインバージョン6.5とは互換性がありません。
+IMPORTANT: このプラグインは、vCenter 4.6、4.7、および4.8向けElementプラグインバージョン6.5とは互換性がありません。
 
 
 
-
-
-=== vSphere 6.0 のサポート終了
-
+.vSphere 6.0 のサポート終了
 
 IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了しました。NetApp HCI 1.8 および Element 12 以降では、 vSphere 6.0 はサポートされなくなりました。詳細については、こちらを参照してください https://mysupport.netapp.com/info/communications/ECMLP2863840.html["製品のコミュニケーション"]。
 
+--
+====
 
 
 == vSphere との互換性およびベストプラクティス

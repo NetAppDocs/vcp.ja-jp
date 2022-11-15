@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: vcp_task_getstarted.html 
-summary: Elementストレージで使用するElement Plug-in for vCenter Server 4.10以前のインストールと設定を行うことができます。 
+permalink: vcp_task_getstarted_5_0.html 
+summary: Elementストレージで使用するElement Plug-in for vCenter Server 5.0以降をインストールして設定できます。 
 keywords: netapp, hci, vcp, vcenter, element, install, setup 
 ---
-= Element Plug-in 4.10以前をインストールして設定します
+= vCenter Server 7.0以降にElement Plug-in 5.0以降をインストールして設定します
 :hardbreaks:
 :allow-uri-read: 
 :url-peak: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Element_Plug-in_for_vCenter_server/mNode_Status_shows_as_%27Network_Down%27_or_%27Down%27_in_the_mNode_Settings_tab_of_the_Element_Plugin_for_vCenter_(VCP)
@@ -15,7 +15,7 @@ keywords: netapp, hci, vcp, vcenter, element, install, setup
 
 
 [role="lead"]
-NetApp Element Plug-in for VMware vCenter Server 4.10以前をvCenterに直接インストールし、vSphere Web Clientを使用してプラグインにアクセスできます。
+NetApp Element Plug-in for vCenter Server 5.0以降では、最新バージョンのElement Plug-inをvCenterに直接インストールし、vSphere Web Clientを使用してプラグインにアクセスできます。
 
 インストールが完了したら、 Storage I/O Control に基づくサービス品質（ QoSSIOC ）サービスおよび vCenter Plug-in のその他のサービスを使用できます。
 
@@ -24,7 +24,6 @@ NetApp Element Plug-in for VMware vCenter Server 4.10以前をvCenterに直接�
 *  for installation
 *  the management node
 *  the plug-in with vCenter
-*  vCenter properties for a dark site HTTP server
 *  the plug-in and verify successful installation
 *  storage clusters for use with the plug-in
 *  QoSSIOC settings using the plug-in
@@ -53,20 +52,19 @@ NetApp Element Plug-in for VMware vCenter Server 4.10以前をvCenterに直接�
 vSphere Web Client に vCenter Plug-in パッケージを導入するには、 vCenter Server でパッケージを拡張機能として登録する必要があります。登録が完了すると、 vSphere 環境に接続されたすべての vSphere Web Client でこのプラグインを利用できるようになります。
 
 .必要なもの
-* vSphere 6.5 および 6.7 の場合は、 vSphere Web Client からログアウトしていることを確認します。これらのバージョンの Web Client からログアウトしないと、このプロセスで行ったプラグインへの更新が認識されません。vSphere 7.0 では、 Web Client からログアウトする必要はありません。
 * プラグインを登録するための vCenter Administrator ロールの権限が必要です。
-* Element ソフトウェア 11.3 以降を実行する管理ノード OVA を導入しておきます。
+* Elementソフトウェア12.3.x以降を実行する管理ノードOVAを導入しておきます。
 * 管理ノードの電源をオンにして IP アドレスまたは DHCP アドレスを設定しておきます。
 * SSH クライアントまたは Web ブラウザ（ Chrome 56 以降または Firefox 52 以降）を使用します。
-* ファイアウォールルールでオープンが許可されている link:reference_requirements_vcp.html["ネットワーク通信"] TCP ポート 443 、 8443 、 9443 で vCenter とストレージクラスタ MVIP の間に配置されます。ポート 9443 は登録に使用され、登録完了後は閉じてもかまいません。クラスタで仮想ボリューム機能を有効にした場合は、 VASA Provider アクセス用に TCP ポート 8444 も開いていることを確認してください。
+* ファイアウォールルールでオープンが許可されている link:reference_requirements_vcp.html["ネットワーク通信"] TCPポート443、8443、8333、9443にvCenterとストレージクラスタMVIPの間に配置されます。ポート 9443 は登録に使用され、登録完了後は閉じてもかまいません。クラスタで仮想ボリューム機能を有効にした場合は、 VASA Provider アクセス用に TCP ポート 8444 も開いていることを確認してください。
 
 
 vCenter Plug-in は、そのプラグインを使用するすべての vCenter Server に登録する必要があります。
 
-リンクモード環境では、 MOB データの同期を保ち、プラグインをアップグレードできるようにするために、環境内の各 vCenter Server にプラグインを登録する必要があります。接続先の vCenter Server にプラグインが登録されていない場合、 vSphere Web Client にはプラグインが表示されません。
+リンクモード環境では、MOBデータの同期を保ち、プラグインをアップグレードできるように、環境内の各vCenter Serverに別々のプラグインを登録する必要があります。接続先の vCenter Server にプラグインが登録されていない場合、 vSphere Web Client にはプラグインが表示されません。
 
 
-NOTE: NetApp Element Plug-in for vCenter Serverを使用して、を使用して他のvCenter Serverのクラスタリソースを管理する link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+NOTE: を使用してください link:vcp_concept_linkedmode.html["vCenter リンクモード"]では、NetApp SolidFire ストレージクラスタを管理するvCenter Serverごとに、Element Plug-inを別の管理ノードから登録します。
 
 .手順
 . 登録用 TCP ポートを含む管理ノードの IP アドレスをブラウザに入力します。
@@ -94,7 +92,7 @@ NOTE: 変更を送信すると、 QoSSIOC サービスが自動的に再開さ�
 
 . vCenter Plug-in Registration * を選択します。
 +
-image::vcp_registration_ui.png[登録ユーティリティの UI]
+image::vcp_remote_plugin_registration_ui.png[プラグインのリモート登録ユーティリティのUI]
 
 . 次の情報を入力します。
 +
@@ -105,11 +103,6 @@ image::vcp_registration_ui.png[登録ユーティリティの UI]
 NOTE: vCenter Administrator ロールの権限を持つユーザのユーザ名とパスワードを入力する必要があります。
 
 ** vCenter Administrator のパスワード。
-** （社内サーバ / ダークサイトの場合）プラグインの ZIP のカスタム URL 。
-+
-
-NOTE: ほとんどのインストールではデフォルトパスが使用されます。HTTP または HTTPS サーバ（ダークサイト）を使用している場合、または ZIP ファイル名やネットワーク設定を変更した場合は、「 * カスタム URL * 」を選択して URL をカスタマイズします。URLをカスタマイズする場合の追加手順については、を参照してください  vCenter properties for a dark site HTTP server,ダークサイトの HTTP サーバの vCenter プロパティを変更します。
-
 
 
 . [*Register] を選択します。
@@ -126,130 +119,16 @@ NOTE: ほとんどのインストールではデフォルトパスが使用さ�
 .. Check Status * を選択して、新しいバージョンのプラグインが vCenter Server に登録されていることを確認します。
 
 
-. （ vSphere 6.5 および 6.7 ユーザ） vCenter Administrator として vSphere Web Client にログインします。
-+
-
-NOTE: この操作で vSphere Web Client でのインストールが完了します。vCenter Plug-in のアイコンが vSphere に表示されない場合は、を参照してください link:vcp_reference_troubleshoot_vcp.html#plug-in-registration-successful-but-icons-do-not-appear-in-web-client["トラブルシューティングに関するドキュメント"]。
-
 . vSphere Web Client で、タスクモニタで次のタスクが完了していることを確認します。「ダウンロードプラグイン」および「デプロイプラグイン」。
-
-
-
-
-== ダークサイトの HTTP サーバの vCenter プロパティを変更します
-
-vCenter Plug-in の登録時に社内（ダークサイト）の HTTP サーバの URL をカスタマイズする場合は、 vSphere Web Client のプロパティファイル「 webclient.properties` 」を変更する必要があります。vCSA または Windows を使用して変更を行うことができます。
-
-ネットアップサポートサイトからソフトウェアをダウンロードする権限。
-
-.vCSA を使用した手順
-. SSH で vCenter Server に接続します。
-+
-[listing]
-----
-Connected to service
-    * List APIs: "help api list"
-    * List Plugins: "help pi list"
-    * Launch BASH: "shell"
-Command>
-----
-. コマンドプロンプトで「地獄」と入力して root にアクセスします。
-+
-[listing]
-----
-Command> shell
-Shell access is granted to root
-----
-. VMware vSphere Web Client サービスを停止します。
-+
-[listing]
-----
-service-control --stop vsphere-client
-service-control --stop vsphere-ui
-----
-. ディレクトリを変更します。
-+
-[listing]
-----
-cd /etc/vmware/vsphere-client
-----
-. webclient.properties` ファイルを編集し 'allowHttp=true を追加します
-. ディレクトリを変更します。
-+
-[listing]
-----
-cd /etc/vmware/vsphere-ui
-----
-. webclient.properties` ファイルを編集し 'allowHttp=true を追加します
-. VMware vSphere Web Client サービスを起動します。
-+
-[listing]
-----
-service-control --start vsphere-client
-service-control --start vsphere-ui
-----
-+
-
-NOTE: 登録手順が完了したら、変更したファイルから「 allowHttp=true 」を削除してかまいません。
-
-. vCenter をリブートします。
-
-
-.Windows を使用した手順
-. コマンドプロンプトからディレクトリを変更します。
-+
-[listing]
-----
-cd c:\Program Files\VMware\vCenter Server\bin
-----
-. VMware vSphere Web Client サービスを停止します。
-+
-[listing]
-----
-service-control --stop vsphere-client
-service-control --stop vsphere-ui
-----
-. ディレクトリを変更します。
-+
-[listing]
-----
-cd c:\ProgramData\VMware\vCenterServer\cfg\vsphere-client
-----
-. webclient.properties` ファイルを編集し 'allowHttp=true を追加します
-. ディレクトリを変更します。
-+
-[listing]
-----
-cd  c:\ProgramData\VMware\vCenterServer\cfg\vsphere-ui
-----
-. webclient.properties` ファイルを編集し 'allowHttp=true を追加します
-. コマンドプロンプトからディレクトリを変更します。
-+
-[listing]
-----
-cd c:\Program Files\VMware\vCenter Server\bin
-----
-. VMware vSphere Web Client サービスを起動します。
-+
-[listing]
-----
-service-control --start vsphere-client
-service-control --start vsphere-ui
-----
-+
-
-NOTE: 登録手順が完了したら、変更したファイルから「 allowHttp=true 」を削除してかまいません。
-
-. vCenter をリブートします。
 
 
 
 
 == プラグインにアクセスし、インストールが正常に完了したことを確認します
 
-インストールまたはアップグレードが完了すると、 NetApp Element の設定および管理拡張ポイントが vSphere Web Client のショートカットタブとサイドパネルに表示されます。
+インストールまたはアップグレードが完了すると、NetApp Element リモートプラグイン拡張ポイントがサイドパネルのvSphere Web Clientの[ショートカット]タブに表示されます。
 
-image::vcp_plugin_icons_home_page.png[vSphere にプラグイン拡張ポイントが表示されます]
+image::vcp_remote_plugin_icons_home_page.png[は、アップグレードまたはインストールが正常に完了したあとのプラグイン拡張ポイントを示しています]
 
 
 NOTE: vCenter Plug-inのアイコンが表示されない場合は、を参照してください link:vcp_reference_troubleshoot_vcp.html#plug-in-registration-successful-but-icons-do-not-appear-in-web-client["トラブルシューティングに関するドキュメント"]。
@@ -258,28 +137,23 @@ NOTE: vCenter Plug-inのアイコンが表示されない場合は、を参照�
 
 == プラグインで使用するストレージクラスタを追加します
 
-NetApp Element Configuration 拡張ポイントを使用して、 Element ソフトウェアを実行しているクラスタを追加して、プラグインで管理できるようにすることができます。
-
-クラスタへの接続が確立されると、そのクラスタを NetApp Element 管理拡張ポイントを使用して管理できるようになります。
+NetApp Element リモートプラグイン拡張ポイントを使用して、Elementソフトウェアを実行するクラスタを追加および管理できます。
 
 .必要なもの
 * IP アドレスまたは FQDN がわかっている使用可能な状態のクラスタが少なくとも 1 つ必要です。
 * クラスタに対するフル権限を持つ現在のクラスタ管理者のユーザクレデンシャルが必要です。
-* ファイアウォールルールによりオープンが許可されている link:reference_requirements_vcp.html["ネットワーク通信"] TCP ポート 443 および 8443 で vCenter とクラスタ MVIP の間。
+* ファイアウォールルールによりオープンが許可されている link:reference_requirements_vcp.html["ネットワーク通信"] TCPポート443、8333、および8443でvCenterとクラスタMVIPの間。
 
 
 
-NOTE: NetApp Element Management拡張ポイントの機能を使用するには、クラスタが少なくとも1つ追加されている必要があります。
+NOTE: 管理機能を使用するには、クラスタを少なくとも1つ追加する必要があります。
 
 この手順では、クラスタプロファイルを追加してクラスタをプラグインで管理する方法について説明します。プラグインを使用してクラスタ管理者のクレデンシャルを変更することはできません。
 
 を参照してください https://docs.netapp.com/us-en/element-software/storage/concept_system_manage_manage_cluster_administrator_users.html["クラスタ管理者ユーザアカウントの管理"^] クラスタ管理者アカウントのクレデンシャルを変更する手順については、を参照してください。
 
-
-IMPORTANT: vSphere HTML5 Web Client と Flash Web Client は別々のデータベースを使用しており、両データベースを統合することはできません。一方のクライアントに追加したクラスタは、もう一方のクライアントで認識されません。両方のクライアントを使用する場合は、両方にクラスタを追加してください。
-
 .手順
-. NetApp Element Configuration > Clusters * を選択します。
+. NetApp Element リモートプラグイン>構成>クラスタ*を選択します。
 . Add Cluster （クラスタの追加） * を選択します。
 . 次の情報を入力します。
 +
@@ -291,7 +165,7 @@ IMPORTANT: vSphere HTML5 Web Client と Flash Web Client は別々のデータ�
 [NOTE]
 ====
 *** クラスタでは vCenter Server ごとに専用のホストを使用します。選択した vCenter Server から目的のホストにアクセスできることを確認してください。使用するホストをあとで変更する場合は、クラスタを削除し、別の vCenter Server に再割り当てして再度追加します。
-*** NetApp Element Plug-in for vCenter Serverを使用して、を使用して他のvCenter Serverのクラスタリソースを管理する link:vcp_concept_linkedmode.html["vCenter リンクモード"] はローカルストレージクラスタのみに制限されます。
+*** を使用してください link:vcp_concept_linkedmode.html["vCenter リンクモード"]では、NetApp SolidFire ストレージクラスタを管理するvCenter Serverごとに、Element Plug-inを別の管理ノードから登録します。
 
 
 ====
@@ -311,7 +185,7 @@ Storage I/O Control に基づいてサービス品質の自動化を設定でき
 管理ノードに対して有効な QoSSIOC 設定を行ったあとは、それらの設定がデフォルトになります。新しい管理ノードに対して有効な QoSSIOC 設定を指定するまで、 QoSSIOC の設定は最後に有効な有効な QoSSIOC 設定に戻ります。新しい管理ノードの QoSSIOC クレデンシャルを設定する場合は、先に設定されている管理ノードの QoSSIOC 設定をクリアする必要があります。
 
 .手順
-. NetApp Element Configuration > QoSSIOC Settings * の順に選択します。
+. NetApp Element リモートプラグイン>設定> QoSSIOC設定*を選択します。
 . [ * アクション * ] を選択します。
 . 表示されたメニューで、 * Configure * （設定 * ）を選択します。
 . Configure QoSSIOC Settings * （ QoSSIOC 設定 * ）ダイアログボックスで、次の情報を入力します。
@@ -356,8 +230,7 @@ QoSSIOC サービスを有効にすると、個々のデータストアで QoSSI
 
 を作成できます link:vcp_task_datastores_manage.html#create-a-datastore["データストアと Element ボリューム"] ストレージの割り当てを開始します。
 
-
-
+[discrete]
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

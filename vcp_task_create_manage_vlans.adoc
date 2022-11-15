@@ -48,7 +48,12 @@ keywords: netapp, VLANs, create, manage, delete, view vcp, vcenter, element
 仮想ネットワークを追加すると、各ノードのインターフェイスが作成され、そのそれぞれに仮想ネットワーク IP アドレスが必要となります。新しい仮想ネットワークを作成する際に指定する IP アドレスの数は、クラスタ内のノードの数以上であることが必要です。仮想ネットワークアドレスはまとめてプロビジョニングされ、個々のノードに自動的に割り当てられます。仮想ネットワークアドレスをクラスタ内のノードに手動で割り当てる必要はありません。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -100,10 +105,15 @@ NOTE: IP アドレスの総数は、ストレージクラスタのノードの�
 
 == 仮想ネットワークの詳細を表示します
 
-NetApp Element Management 拡張ポイントからは、クラスタタブのネットワークページで VLAN のネットワーク情報を確認できます。
+プラグイン拡張ポイントからは、ClusterタブのNetworkページでVLANのネットワーク情報を確認できます。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -125,7 +135,12 @@ VLAN 名、ネットマスク、 IP アドレスブロックのサイズなど�
 VLAN の VLAN タグおよび SVIP は変更できません。ゲートウェイ属性を変更できるのは VRF VLAN のみです。iSCSI 、リモートレプリケーション、またはその他のネットワークセッションの実行中は、変更に失敗することがあります。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -146,7 +161,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 VLAN オブジェクトとその IP ブロックを完全に削除できます。VLAN に割り当てられていたアドレスブロックは、割り当てが解除されて、別の仮想ネットワークに再割り当てできるようになります。
 
 .手順
-. NetApp Element Management > Cluster * の順に選択します。
+. vSphere Web Clientで、* Cluster *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Cluster *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。

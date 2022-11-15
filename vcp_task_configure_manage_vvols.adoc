@@ -14,7 +14,7 @@ keywords: netapp, set up vvol, configure vvol, virtual volume, vcp, vcenter, ele
 
 
 [role="lead"]
-VMware vSphere を有効にすることができます link:vcp_concept_vvols.html["仮想ボリューム（ vVol ）"] NetApp Element ストレージクラスタに仮想ボリューム構成をセットアップする。Element Plug-in for vCenter Server はパフォーマンスを監視し、仮想ボリュームを管理するためのオプションを提供します。 link:vcp_concept_vvols.html#storage-containers["ストレージコンテナ"]、 link:vcp_concept_vvols.html#protocol-endpoints["プロトコルエンドポイント"]、およびホストを NetApp Element Management 拡張ポイントから削除します。
+VMware vSphere を有効にすることができます link:vcp_concept_vvols.html["仮想ボリューム（ vVol ）"] NetApp Element ストレージクラスタに仮想ボリューム構成をセットアップする。Element Plug-in for vCenter Server はパフォーマンスを監視し、仮想ボリュームを管理するためのオプションを提供します。 link:vcp_concept_vvols.html#storage-containers["ストレージコンテナ"]、 link:vcp_concept_vvols.html#protocol-endpoints["プロトコルエンドポイント"]およびホストをプラグイン拡張ポイントから削除します。
 
 .必要なもの
 * VVOL と互換性がある ESXi 6.5 以降の環境に接続された NetApp Element 10 以降のクラスタを使用している。
@@ -46,13 +46,18 @@ NetApp Element Plug-in for vCenter Server で仮想ボリューム（ VVol ）�
 
 == NetApp Element クラスタで仮想ボリューム機能を有効にします
 
-NetApp Element Configuration 拡張ポイントを使用して、 vSphere Virtual Volumes （ VVol ）機能を手動で有効にする必要があります。Element システムの VVol 機能はデフォルトでは無効になっており、新規インストール時やアップグレード時に自動的に有効になることはありません。VVol 機能の有効化は 1 度だけ実行します。
+プラグイン拡張ポイントを使用して、vSphere Virtual Volumes（VVol）機能を手動で有効にする必要があります。Element システムの VVol 機能はデフォルトでは無効になっており、新規インストール時やアップグレード時に自動的に有効になることはありません。VVol 機能の有効化は 1 度だけ実行します。
 
 .手順
-. NetApp Element Configuration > Clusters * を選択します。
+. vSphere Web Clientで、*クラスタ*タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>構成>クラスタ*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Configuration > Clusters *を選択します。
+
+
 . 有効にするクラスタをリストから選択します。
 . [ * アクション * ] を選択します。
-. 表示されたメニューで、 * VVol を有効にする * をクリックします。
+. 表示されたメニューで、「* VVolを有効にする*」を選択します。
 +
 
 IMPORTANT: 有効にした VVol 機能をあとから無効にすることはできません。vSphere Virtual Volumes 機能を有効にすると、 NetApp Element ソフトウェアの設定が永続的に変更されます。クラスタが VMware ESXi VVol に対応した環境に接続されている場合にのみ、 VVol 機能を有効にしてください。VVol 機能を無効にしてデフォルト設定に戻すには、クラスタを工場出荷時のイメージに戻す必要があります。
@@ -84,23 +89,23 @@ vCenter でクラスタの VVol 機能が認識されるように、 NetApp Elem
 IMPORTANT: NetApp Element VASA Provider を複数の vCenter インスタンスに登録しないでください。vCenter での SSL の処理に制約があるため、 NetApp Element VASA Provider は 1 つの vCenter にしか登録できません。1 つの vCenter に複数の NetApp Element クラスタを作成できますが、 2 つの vCenter インスタンス間でクラスタを共有することはできません。
 
 
-IMPORTANT: 1 つの vCenter インスタンスに複数の NetApp Element VASA Provider を登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
+IMPORTANT: Elementソフトウェア12.5以前では、1つのvCenterインスタンスに複数のNetApp Element VASAプロバイダを登録しないでください。2 つ目の NetApp Element VASA Provider が追加されている場合、その結果、すべての VVOL データストアにアクセスできなくなります。
 
 
 NOTE: VASA Provider を vCenter に登録済みの場合、アップグレードパッチとして最大 10 個の vCenter がサポートされます。をインストールするには、 VASA39 マニフェストの指示に従い、から .tar.gz ファイルをダウンロードします link:https://mysupport.netapp.com/site/products/all/details/element-software/downloads-tab/download/62654/vasa39["ネットアップのソフトウェアダウンロード"] サイトNetApp Element VASA プロバイダはネットアップの証明書を使用します。このパッチでは、 vCenter が証明書を変更せずに使用して、 VASA および VVOL に使用する複数の vCenter をサポートします。証明書は変更しないでください。カスタム SSL 証明書は VASA でサポートされません。
 
 .手順
-. vSphere Client Home で、 * Hosts and Clusters * をクリックします。
+. vSphere Client Homeで、* Hosts and Clusters *を選択します。
 . NetApp Element VASA Provider を登録する vCenter インスタンスを選択します。
 . Configure > Storage Providers * の順に選択します。
-. ストレージプロバイダ * で、追加アイコンをクリックします。
+. ストレージプロバイダ*から、追加アイコンを選択します。
 . [ 新しいストレージプロバイダ * ] ダイアログボックスで、次の情報を入力します。
 +
 ** VASA Provider の名前。
 ** VASA Provider の URL 。
 +
 
-NOTE: VASA Provider の URL は、 vCenter Plug-in で VVol を有効にすると提供されます。URL は、クラスタの詳細（ * NetApp Element Configuration > Clusters * ）または Element UI （「 https://<MVIP>/cluster` 」）のクラスタ設定で確認できます。
+NOTE: VASA Provider の URL は、 vCenter Plug-in で VVol を有効にすると提供されます。URLは、クラスタの詳細（* NetApp Element Configuration > Cluster *または* NetApp Element Remote Plugin > Configuration > Cluster *）またはElement UIのクラスタ設定で確認できます (`https://<MVIP>/cluster`）。
 
 ** NetApp Element クラスタの管理用アカウントのユーザ名。
 ** NetApp Element クラスタの管理用アカウントのパスワード。
@@ -110,7 +115,7 @@ NOTE: VASA Provider の URL は、 vCenter Plug-in で VVol を有効にする�
 . プロンプトが表示されたら、 SSL のサムプリントを承認します。これで、 NetApp Element VASA プロバイダが「 Connected 」ステータスで登録されます。
 +
 
-NOTE: プロバイダの初回登録後にプロバイダの現在のステータスを表示するには、必要に応じてストレージプロバイダを更新します。プロバイダが有効になっているかどうかは、 * NetApp Element Configuration > Clusters * でも確認できます。有効にするクラスタに対して * Actions * を選択し、 * Details * をクリックします。
+NOTE: プロバイダの初回登録後にプロバイダの現在のステータスを表示するには、必要に応じてストレージプロバイダを更新します。プロバイダが有効になっているかどうかは、* NetApp Element Configuration > Clusters *または* NetApp Element Remote Plugin > Configuration > Clusters *でも確認できます。有効にするクラスタに対して* Actions *を選択し、* Details *を選択します。
 
 . を参照してください  a storage container and associated VVol datastore 次の手順に進みます。
 
@@ -119,7 +124,7 @@ NOTE: プロバイダの初回登録後にプロバイダの現在のステー�
 
 == ストレージコンテナおよび関連付ける VVol データストアを作成します
 
-NetApp Element Management 拡張ポイントの VVol タブで、ストレージコンテナを作成できます。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つのストレージコンテナを作成する必要があります。
+プラグイン拡張ポイントのvvolsタブでストレージコンテナを作成できます。VVol を使用する仮想マシンのプロビジョニングを開始するためには、少なくとも 1 つのストレージコンテナを作成する必要があります。
 
 .作業を開始する前に
 * クラスタで VVol 機能を有効にしておきます。
@@ -127,7 +132,12 @@ NetApp Element Management 拡張ポイントの VVol タブで、ストレージ
 
 
 .手順
-. NetApp Element Management > VVOLs * を選択します。
+. vSphere Web Clientで、* VVols *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> vVols *を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Management > vvols *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -167,7 +177,7 @@ NOTE: vCenter リンクモードを使用している場合は、クラスタが
 
 == 仮想ボリュームのリソースを監視
 
-プラグインの NetApp Element Management 拡張ポイントから、仮想ボリュームコンポーネントのパフォーマンスと設定を確認できます。
+プラグイン拡張ポイントでは、仮想ボリュームコンポーネントのパフォーマンスと設定を確認できます。
 
 *  VVols
 *  storage containers
@@ -185,7 +195,12 @@ NOTE: vCenter リンクモードを使用している場合は、クラスタが
 
 
 .手順
-. NetApp Element Management > VVOLs * を選択します。
+. vSphere Web Clientで、* VVols *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> vVols *を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Management > vvols *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -203,7 +218,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 クラスタ上のすべてのアクティブなストレージコンテナに関する一般的なデータ、または各ストレージコンテナの詳細なデータを確認できます。プラグインは、ストレージコンテナの効率、パフォーマンス、および関連する仮想ボリュームを追跡します。
 
 .手順
-. NetApp Element Management > VVOLs * を選択します。
+. vSphere Web Clientで、* VVols *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> vVols *を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Management > vvols *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -221,7 +241,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 クラスタ上のすべてのプロトコルエンドポイントに関する全般的なデータを確認できます。
 
 .手順
-. NetApp Element Management > VVOLs * を選択します。
+. vSphere Web Clientで、* VVols *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> vVols *を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Management > vvols *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -264,14 +289,19 @@ NOTE: プロトコルエンドポイント（ PE ）の LUN を手動で作成�
 
 == ストレージコンテナを削除します
 
-NetApp Element Management 拡張ポイントからストレージコンテナを削除できます。
+プラグイン拡張ポイントからストレージコンテナを削除できます。
 
 .必要なもの
 * すべてのボリュームをストレージコンテナから削除しておく必要があります。
 
 
 .手順
-. NetApp Element Management > VVOLs * を選択します。
+. vSphere Web Clientで、* VVols *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理> vVols *を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Management > vvols *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。

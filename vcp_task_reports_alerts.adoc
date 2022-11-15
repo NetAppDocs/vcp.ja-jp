@@ -21,7 +21,12 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, alert, cluster, p
 問題を解決すると、システムが問題をポーリングし、解決済みであることを特定します。その後、アラートに関するすべての情報（解決日を含む）が解決済みビューに移動します。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element Management* を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . [*Reporting*>*Alerts*] を選択します。
 . 次のクラスタアラート情報を監視します。
 +

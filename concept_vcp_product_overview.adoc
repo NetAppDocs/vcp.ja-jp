@@ -23,6 +23,10 @@ NetApp Element Plug-in for VMware vCenter Serverは、VMware vSphere Web Client�
 == プラグインに関連するネットアップのコンポーネント
 
 * * 登録ユーティリティ * ：を管理するためのツール link:vcp_concept_qossioc.html["QoSSIOC"] vCenter へのサービスおよびプラグインの登録
++
+
+NOTE: Element Plug-in for vCenter 5.0以降では、NetApp SolidFire ストレージクラスタを管理するvCenter Serverごとに、Element Plug-inを別々の管理ノードから登録します。
+
 * * 管理サービス * ： vCenter Plug-in の QoSSIOC サービスを含むマイクロサービス。プラグインのアップグレードは、管理サービスバンドルの一部としてリリースされます。
 +
 
@@ -65,4 +69,5 @@ vSphere に加え、 vCenter プラグインで使用する一般的な URL の�
 * https://www.netapp.com/data-storage/solidfire/documentation["SolidFire and Element Resources ページにアクセスします"^]
 * link:vcp_concept_config_extension_point.html["NetApp Element Configuration 拡張ポイント"]
 * link:vcp_concept_management_extension_point.html["NetApp Element Configuration 拡張ポイント"]
+* link:vcp_concept_remote_plugin_extension_point.html["NetApp Element リモートプラグイン拡張ポイント"]
 

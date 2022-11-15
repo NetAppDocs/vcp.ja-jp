@@ -14,11 +14,16 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, clust
 
 
 [role="lead"]
-NetApp Element Management 拡張ポイントの Reporting タブでは、選択したクラスタ内のすべてのボリュームのパフォーマンス情報を確認できます。
+プラグイン拡張ポイントのReportingタブでは、選択したクラスタ内のすべてのボリュームのパフォーマンス情報を確認できます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element Management* を選択します。
-. * Reporting * > * Volume Performance * を選択します。
+. vCenter Plug-inで、* Reporting *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>レポート*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Reporting *の順に選択します。
+
+
+. 「* Volume Performance」を選択します。
 . ページ上のデータの更新頻度を変更するには、 [ すべてのリストを更新する *] をクリックして値を選択します。
 +
 クラスタのボリューム数が 1 、 000 個未満の場合、デフォルトの更新間隔は 10 秒です。それ以外の場合は 60 秒です。[ なし ] の値を選択すると、自動ページ更新は無効になります。

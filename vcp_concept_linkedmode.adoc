@@ -1,27 +1,80 @@
 ---
 sidebar: sidebar 
 permalink: vcp_concept_linkedmode.html 
-summary:  
+summary: NetApp Element Plug-in for VMware vCenter Serverでは、vCenterリンクモードを使用して他のvCenter Serverのクラスタリソースを管理することができます。 
 keywords: netapp, vcp, element, plugin, plug-in, linked mode 
 ---
-= リンクモードおよびプラグイン
+= リンクモードとvCenter Plug-in
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
 NetApp Element Plug-in for VMware vCenter Serverでは、vCenterリンクモードを使用して他のvCenter Serverのクラスタリソースを管理することができます。
 
-Element Plug-in でストレージクラスタを管理できるのは、デスティネーション vCenter の Web クライアントにログインしている場合のみです。
+[role="tabbed-block"]
+====
+.vCenter 5.0以降向けElementプラグイン
+--
+Element Plug-in 5.0以降では、NetApp SolidFire ストレージクラスタを管理するvCenter Serverごとに、Element Plug-inを別々の管理ノードから登録します。
+
+.例
+* vCenter1に登録します。 `https://[mnode1]:9443/solidfire-mnode/registration`
+* vCenter2に登録： `https://[mnode2]:9443/solidfire-mnode/registration`
+
 
 vSphere リンクモード環境でストレージクラスタの管理をセットアップするには、次の手順を使用してストレージクラスタを手動で追加します。
 
 .手順
-. プラグインを使用するリンクモード環境内の各 vCenter Server にプラグインを登録します。
+. プラグインを使用するリンクモード環境内のvCenter Serverごとに別の管理ノードからプラグインを登録して、Element Plug-inを導入します。
+. Element Plug-inを使用します。
++
+.. リンクモード環境内の任意のvCenter ServerのWebクライアントにログインします。
+.. NetApp Element リモートプラグイン*の行で、*インスタンス*のリストを選択します。
++
+image:select_instance.png["リストからインスタンスを選択します"]
+
+.. 使用するvCenter Serverを選択します。
++
+ターゲットのvCenter Serverを選択したら、そのvCenter Server環境用のクラスタを追加および管理できます。
+
++
+
+NOTE: 表示および管理できるのは、選択したvCenter Serverに関連付けられているストレージクラスタのみです。
+
+
+
+
+
+リンクモードで vCenter1 と vCenter2 を、ストレージ cluster1 とストレージ cluster2 をそれぞれ設定した。cluster1 、 vCenter2 の管理を許可して cluster2 を管理します。
+
+image:two_vcenter_topology.PNG["は、vCenterとクラスタのトポロジを示しています"]
+
+vCenter Serverごとに別の管理ノードにプラグインを登録したら、ストレージクラスタ管理を設定します。
+
+.手順
+. リンクモード環境内の任意のvCenter ServerのWebクライアントにログインします。
+. NetApp Element リモートプラグイン*の行で、*インスタンス*のリストを選択します。
+. cluster1をvCenter1 Webクライアントから管理するには、リストから* vCenter1 *を選択します。
+. cluster1をElement Plug-inのインベントリに追加します。
+. NetApp Element リモートプラグイン*の行で、*インスタンス*のリストを選択します
+. cluster2のWebクライアントからcluster2を管理するには、リストから* vCenter2 *を選択します。
+. cluster2をElement Plug-inインベントリに追加します。
+
+
+--
+.vCenter 4.10以前のElementプラグイン
+--
+Element Plug-in 4.10以前では、デスティネーションvCenterのWebクライアントにログインしている場合にのみ、Element Plug-inでストレージクラスタを管理できます。
+
+vSphere リンクモード環境でストレージクラスタの管理をセットアップするには、次の手順を使用してストレージクラスタを手動で追加します。
+
+.手順
+. プラグインを使用するリンクモード環境内の各vCenter Serverにプラグインを登録します。
 . リンクされた各 vCenter Server の vSphere Web Client に一度ログインします。
 +
 ログインすると、 Web Client にプラグインがインストールされます。
@@ -38,6 +91,8 @@ vSphere リンクモード環境でストレージクラスタの管理をセッ
 . cluster2 を vCenter2 Web クライアントから管理するには、 cluster2 を Element Plug-in のインベントリに追加します。
 
 
+--
+====
 
 
 == 詳細については、こちらをご覧ください

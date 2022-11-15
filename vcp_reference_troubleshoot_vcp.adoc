@@ -31,6 +31,7 @@ NetApp Element Plug-in for VMware vCenter Serverで発生する代表的な問�
 *  message for QoSSIOC status
 *  service shown as available but is unavailable
 *  is enabled for datastore but unavailable
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/NetApp_HCI/vCenter_plug-in_deployment_fails_after_upgrading_vCenter_to_version_7.0_U3["VMware vSphere 7.0 Update 3にアップグレードすると、vCenterプラグインの導入が失敗する"^]
 
 
 
@@ -39,7 +40,7 @@ NetApp Element Plug-in for VMware vCenter Serverで発生する代表的な問�
 
 登録に成功したと表示されますが、プラグインのアイコンが vSphere Web Client に表示されません。
 
-.対処方法
+.NetApp Element vCenterプラグイン4.10以前に対する対処方法
 * vSphere Web Client からログアウトし、再度ログインします。必要に応じて、ブラウザを閉じて開き直します。
 * ブラウザキャッシュをクリアします。
 * vCenter で、 Windows の管理ツール内のサービスメニューから vSphere Web Client Service を再起動するか、 vCenter をリブートします。
@@ -85,8 +86,8 @@ NOTE: URL がアクセス不能または無効な場合は修正する必要が�
 
 VMware vCenter Server 6.7U1を使用してElement vCenterプラグイン4.8以降にアップグレードすると、次の問題が発生する場合があります。
 
-* クラスタは、「 * クラスタ * 」セクションには表示されません。
-* NetApp Element 構成の「 * クラスタと QoSSIOC 設定 * 」セクションにサーバエラーが表示されます。
+* プラグイン拡張ポイントの「*クラスタ*」セクションにクラスタが表示されません。
+* サーバエラーは「*クラスタ*」および「* QoSSIOC設定*」のセクションに表示されます。
 
 
 クラスタと QoSSIOC の設定をリストアします。
@@ -97,7 +98,7 @@ VMware vCenter Server 6.7U1を使用してElement vCenterプラグイン4.8以�
 . たとえば、 Ctrl+F5 キーを押してキャッシュを無効にし、ブラウザを更新します。
 . クラスタと QoSSIOC の設定がリストアされたかどうかを確認します。
 +
-問題が解除されない場合は、が必要です link:https://docs.netapp.com/us-en/vcp/vcp_task_getstarted.html#add-storage-clusters-for-use-with-the-plug-in["クラスタを再度追加します"^]。
+問題が解除されない場合は、が必要です link:vcp_task_getstarted_5_0.html#add-storage-clusters-for-use-with-the-plug-in["Element Plug-in 5.0以降のクラスタを再追加します"] または link:vcp_task_getstarted.html#add-storage-clusters-for-use-with-the-plug-in["Element Plug-in 4.10以前のクラスタを再追加します"]。
 
 
 
@@ -214,7 +215,9 @@ vSphere Web Client からログアウトし、再度ログインします。必�
 
 QoSSIOC サービスの設定には「 UP 」と表示されているが、 QoSSIOC を使用できない。
 
-NetApp Element Configuration 拡張ポイントの * QoSSIOC 設定 * タブで、更新ボタンをクリックします。必要に応じて、 IP アドレスまたはユーザ認証情報を更新します。
+NetApp Element リモートプラグイン>設定タブの* QoSSIOC設定*タブで、更新ボタンを選択します。必要に応じて、 IP アドレスまたはユーザ認証情報を更新します。
+
+NetApp Element Configuration拡張ポイントの* QoSSIOC設定*タブで、更新ボタンを選択します。必要に応じて、 IP アドレスまたはユーザ認証情報を更新します。
 
 
 

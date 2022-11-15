@@ -17,7 +17,12 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report, event, log, clust
 選択したクラスタで実行された処理のイベントログと、発生する可能性があるクラスタ障害を確認できます。ほとんどのエラーはシステムによって自動的に解決されます。それ以外の障害では手動での対応が必要になる場合
 
 .手順
-. vCenter Plug-in で、 * NetApp Element Management* を選択します。
+. vCenter Plug-inで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 . *Reporting*>*Event Log* を選択します。
 . 詳細を確認するには、イベントを選択して * Details * をクリックします。
 . 次のイベント情報を確認します。

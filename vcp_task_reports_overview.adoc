@@ -17,9 +17,13 @@ keywords: netapp, hci, vcp, vcenter, element, monitor, report
 NetApp Element Plug-in for VMware vCenter ServerのNetApp Element Management拡張ポイントから、レポートタブの概要ページで、選択したクラスタの全体的な容量、効率、パフォーマンスなどのクラスタ情報を確認できます。
 
 .手順
-. vCenter Plug-in で、 * NetApp Element Management* を選択します。
-. [*Reporting*] を選択します。
-. 概要ページでデータを監視します。
+. vCenter Plug-inで、* Reporting *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>レポート*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Reporting *の順に選択します。
+
+
+. [*概要*（Overview *）]ページでデータを監視します。
 
 
 

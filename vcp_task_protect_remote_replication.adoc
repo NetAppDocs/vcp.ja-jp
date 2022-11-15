@@ -73,10 +73,15 @@ NOTE: クラスタをペアリングするには、管理ネットワーク上�
 MVIP がわからない場合やクラスタへのアクセスが許可されていない場合は、ペアリングキーを生成し、そのキーを使用して 2 つのクラスタをペアリングできます。手順については、を参照してください  clusters with a pairing key。
 
 .手順
-. ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 保護 * を選択します。
+. vSphere Web Clientで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>設定>保護*を選択します。
+** Element vCenterプラグイン4.10以前では、* NetApp Element Configuration > Protection *の順に選択します。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+
 
 . [ クラスタペア * （ Cluster Pairs * ） ] サブタブを選択します。
 . 「 * クラスタペアリングの作成」を選択します。
@@ -96,7 +101,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 
 . タスクが完了してクラスタペアページが表示されたら、クラスタペアが接続されていることを確認します。
-. （オプション）リモートクラスタで、 * NetApp Element Management* > * Protection * > * Cluster Pairs * を選択するか、 Element Web UI を使用してクラスタペアが接続されていることを確認します。
+. （オプション）リモートクラスタで、Element UIまたはプラグイン拡張ポイントを使用して、クラスタペアが接続されていることを確認します。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護>クラスタペア*を選択します。
+** Element vCenter Plug-in 4.10以前の場合は、* NetApp Element Management > Protection > Cluster Pairs *を選択します。
+
+
 
 
 
@@ -107,11 +117,17 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 この手順では、ローカルサイトとリモートサイトで vCenter を使用し、 2 つのクラスタをペアリングする方法について説明します。vCenter Plug-in で制御されないクラスタの場合は、代わりにを使用することもできます https://docs.netapp.com/us-en/element-software/storage/task_replication_pair_cluster_using_pairing_key.html["クラスタペアリングを開始または完了します"] Element Web UI を使用
 
+[[open_protection_tab]]
 .手順
-. ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 保護 * を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+
 
 . [ クラスタペア * （ Cluster Pairs * ） ] サブタブを選択します。
 . 「 * クラスタペアリングの作成」を選択します。
@@ -132,7 +148,7 @@ NOTE: クラスタペアリングキーには、リモートレプリケーシ�
 
 IMPORTANT: ペアリングキーの文字はいっさい変更しないでください。キーが変更されると無効になります。
 
-. リモートクラスタを含む vCenter から、 * NetApp Element 管理 * > * 保護 * を選択します。
+. リモートクラスタを含むvCenterで、 ,Protectionタブを開きます。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -150,7 +166,7 @@ NOTE: ロード中のスピナーアイコンが消えてから次の手順に�
 . ローカルクラスタのペアリングキーを * クラスタペアリングキー * フィールドに貼り付けます。
 . 「 * Pair Cluster * 」を選択します。
 . タスクが完了して「 * クラスタペア * 」ページが表示されたら、クラスタペアが接続されていることを確認します。
-. クラスタペアが接続されていることを確認するには、リモートクラスタで * NetApp Element Management * > * Protection * を選択するか、 Element UI を使用します。
+. クラスタペアが接続されていることを確認するために、リモートクラスタで実行します ,Protectionタブを開きます またはElement UIを使用してください。
 
 
 
@@ -202,7 +218,12 @@ NOTE: ロード中のスピナーアイコンが消えてから次の手順に�
 
 
 .手順
-. ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 管理 * を選択します。
+. ローカルクラスタを含むvCenterで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -306,11 +327,17 @@ Element Web UI からボリュームのペアリングを開始または完了�
 
 NOTE: ボリュームペアリングキーには、暗号化されたボリューム情報が格納されており、機密情報が含まれている場合があります。このキーは必ず安全な方法で共有してください。
 
+[[open_management]]
 .手順
-. ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 管理 * を選択します。
+. ローカルクラスタを含むvCenterで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+
+
 
 . [* Volumes （ボリューム） ] サブタブを選択します。
 . アクティブ * ビューで、ペアリングするボリュームのチェックボックスを選択します。
@@ -340,7 +367,7 @@ NOTE: ボリュームペアリングキーの取り扱いには十分に注意�
 
 IMPORTANT: ペアリングキーの文字はいっさい変更しないでください。キーが変更されると無効になります。
 
-. リモートクラスタを含む vCenter から、 * NetApp Element 管理 * > * 管理 * を選択します。
+. リモートクラスタを含むvCenterで、 ,[管理]タブを開きます。
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -384,7 +411,12 @@ NOTE: ペアリングキーを使用してペアリングされたボリュー�
 
 
 .手順
-. ローカルクラスタを含む vCenter から、 * NetApp Element 管理 * > * 管理 * を選択します。
+. ローカルクラスタを含むvCenterで、* Management *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>管理*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management *を選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -433,8 +465,13 @@ NOTE: ペアリング操作を確定すると、 2 つのクラスタでボリ�
 * ベストプラクティス * ：ターゲットボリュームにはデータを格納せず、サイズ、 512e 、 QoS などをソースボリュームとまったく同じにします。ターゲットボリュームのサイズは、ソースボリュームと同じかそれ以上のサイズにすることはできますが、ソースボリュームより小さくすることはできません。
 
 .手順
-. vCenter Server の * NetApp Element Management * 拡張ポイントで、レプリケーションソースとして使用するペアリングされたボリュームが含まれているクラスタを選択します。
-. NetApp Element Management*>* Management* を選択します。
+. プラグインの拡張ポイントから、レプリケーションソースとして使用するペアリングされたボリュームが含まれているクラスタを選択します。
++
+** NetApp Remote Plugin > Management *からElement vCenterプラグイン5.0以降
+** Element vCenterプラグイン4.10以前の場合は、「* NetApp Element 管理*」を選択します。
+
+
+. Element Plug-in for vCenter Serverのバージョンの拡張ポイントで、* Management *タブを選択します。
 . [* Volumes （ボリューム） ] サブタブを選択します。
 . アクティブ * ビューで、編集するボリュームのチェックボックスを選択します。
 . [ * アクション * ] を選択します。
@@ -445,8 +482,12 @@ NOTE: ペアリング操作を確定すると、 2 つのクラスタでボリ�
 IMPORTANT: ソースとターゲット原因の割り当てを逆にしている場合、新しいレプリケーションターゲットが割り当てられるまでボリュームペアには PausedMisconfigured と表示されます。アクセスを変更すると、ボリュームレプリケーションが一時停止し、データの転送が中止されます。両方のサイトでこれらの変更を調整したことを確認してください。
 
 . 「 * OK 」を選択します。
-. NetApp Element Management * 拡張ポイントで、レプリケーションターゲットとして使用するペアリングされたボリュームが含まれているクラスタを選択します。
-. NetApp Element Management*>* Management* を選択します。
+. レプリケーションターゲットとして使用するペアリングされたボリュームが含まれているクラスタを選択します。
++
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Management > Management *の順に選択します。
+** NetApp Remote Plugin > Management > Management *からElement vCenterプラグイン5.0以降
+
+
 . [* Volumes （ボリューム） ] サブタブを選択します。
 . アクティブ * ビューで、編集するボリュームのチェックボックスを選択します。
 . [ * アクション * ] を選択します。
@@ -466,7 +507,12 @@ IMPORTANT: レプリケーションターゲットとして既存のボリュー
 ボリュームがレプリケートされたら、ソースボリュームとターゲットボリュームがアクティブになっていることを確認する必要があります。状態が Active の場合は、ボリュームがペアリングされ、ソースボリュームからターゲットボリュームにデータが送信されて同期されています。
 
 .手順
-. ペアリング内のいずれかのクラスタで、 * NetApp Element Management* > * Protection* を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -502,7 +548,12 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 ボリュームペアのプロパティを編集して、レプリケーションを手動で一時停止することができます。
 
 .手順
-. NetApp Element Management*>* Protection* を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -526,7 +577,12 @@ IMPORTANT: ボリュームレプリケーション原因を手動で一時停止
 ボリュームペアのプロパティを編集して、ボリュームペア関係のレプリケーションモードを変更することができます。
 
 .手順
-. NetApp Element Management*>* Protection* を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -560,7 +616,12 @@ IMPORTANT: レプリケーションモードの変更はすぐに反映されま
 vCenter Plug-in で制御されていないボリュームについては、代わりにを使用することもできます link:https://docs.netapp.com/us-en/element-software/storage/task_replication_delete_volume_relationship_after_replication.html["ボリュームペアの削除"] Element Web UI を使用
 
 .手順
-. NetApp Element Management*>* Protection* を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 +
 
 NOTE: 複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
@@ -589,7 +650,12 @@ vCenter Plug-in を使用してクラスタペアを削除できます
 vCenter Plug-in で制御されないクラスタの場合は、代わりにを使用することもできます link:https://docs.netapp.com/us-en/element-software/storage/task_replication_delete_cluster_pair.html["クラスタペアの削除"] Element Web UI を使用
 
 .手順
-. NetApp Element Management*>* Protection* を選択します。
+. ローカルクラスタを含むvCenterで、* Protection *タブを開きます。
++
+** Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン>管理>保護*を選択します。
+** Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management > Protection *の順に選択します。
+
+
 . [ クラスタペア * （ Cluster Pairs * ） ] サブタブを選択します。
 . 削除するクラスタペアのチェックボックスを選択します。
 . [ * アクション * ] を選択します。
@@ -606,7 +672,7 @@ NOTE: この操作では、ローカルクラスタ側のクラスタペアの�
 
 == ボリュームペアリングに関するメッセージと警告
 
-NetApp Element 管理の設定ポイントで、保護タブのボリュームペアのページで、ペアリングされているボリュームまたはペアリング処理中のボリュームの情報を確認できます。
+プラグインの拡張ポイントで、ProtectionタブのVolume Pairsページで、ペアリングされているボリュームまたはペアリング中のボリュームの情報を表示できます。Element vCenterプラグイン5.0以降では、NetApp Element リモートプラグイン拡張ポイントから管理タブを選択します。Element vCenter Plug-in 4.10以前では、NetApp Element Management拡張ポイントを選択します。
 
 ペアリングと進捗状況を示すメッセージがボリュームステータス列に表示されます。
 
@@ -618,7 +684,7 @@ NetApp Element 管理の設定ポイントで、保護タブのボリューム�
 
 === ボリュームペアリングに関するメッセージ
 
-NetApp Element の管理設定ポイントから、保護タブのボリュームペアページで最初のペアリングプロセス中に表示されるメッセージを確認できます。これらのメッセージはボリュームステータス列に表示され、ペアリングのソースとターゲットの両方の端に表示されます。
+プラグイン拡張ポイントでは、ProtectionタブのVolume Pairsページで、初回ペアリングプロセス中にメッセージを表示できます。これらのメッセージはボリュームステータス列に表示され、ペアリングのソースとターゲットの両方の端に表示されます。
 
 * * PausedDisconnected * ：ソースレプリケーションまたは同期 RPC がタイムアウトしました。リモートクラスタへの接続が失われました。クラスタへのネットワーク接続を確認してください。
 * * ResumingConnected ** ：リモートレプリケーションの同期がアクティブになりました。同期プロセスが開始され、データを待っています。
@@ -635,7 +701,7 @@ NetApp Element の管理設定ポイントから、保護タブのボリュー�
 
 === ボリュームペアリングに関する警告
 
-NetApp Element 管理設定ポイントから保護タブのボリュームペアページでボリュームをペアリングすると、警告メッセージを確認できます。これらのメッセージはボリュームステータス列に表示され、ペアリングのソースとターゲットの両方の端に表示されます。
+プラグイン拡張ポイントで、ProtectionタブのVolume Pairsページでボリュームをペアリングしたあとに表示される警告メッセージを確認できます。これらのメッセージはボリュームステータス列に表示され、ペアリングのソースとターゲットの両方の端に表示されます。
 
 特に記載がないかぎり、これらのメッセージはペアリングのソースとターゲットの両方に表示されます。
 
@@ -651,8 +717,7 @@ NetApp Element 管理設定ポイントから保護タブのボリュームペ�
 * *StoppedMisconfigured *: 永続的な設定エラーが検出されました。リモートボリュームがパージされたかペアが解除されました。対処方法はありません。新しいペアリングを確立する必要があります。
 
 
-
-
+[discrete]
 == 詳細については、こちらをご覧ください
 
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]

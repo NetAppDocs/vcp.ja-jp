@@ -67,17 +67,6 @@ Disconnect-VIServer * -Confirm:$false
 ----
 
 
-** vCenter Plug-in 2.6.1 以前の場合：
-+
-... ブラウザで登録ユーティリティの URL を入力するか、プログラムディレクトリでユーティリティを探します。
-+
-**** https://<FDVAorManagementNodeIP>:8443`
-**** /opt/solidfire/vcp/bin/vcp-reg.sh
-
-
-... vCenter プラグイン登録 / 登録解除ウィンドウで、 * 登録解除 * を選択します。
-
-
 
 
 
