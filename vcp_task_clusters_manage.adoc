@@ -37,17 +37,17 @@ NOTE: プラグイン拡張ポイントの機能を使用するには、クラ�
 
 
 .オプション（ Options ）
-*  cluster details
-*  a cluster profile
-*  a cluster profile
-*  Encryption at Rest
-*  Encryption at Rest
-*  SSH
-*  the SSH time limit
-*  SSH
-*  protection domain monitoring
-*  down a cluster
-*  your NetApp HCI infrastructure
+* <<クラスタの詳細を表示します>>
+* <<クラスタプロファイルを編集する>>
+* <<クラスタプロファイルを削除する>>
+* <<保存データの暗号化を有効にします>>
+* <<保存データの暗号化を無効にします>>
+* <<SSH を有効にします。>>
+* <<SSH の制限時間を変更します>>
+* <<SSH を無効にする>>
+* <<保護ドメインの監視を設定する>>
+* <<クラスタをシャットダウン>>
+* <<NetApp HCI インフラを拡張>>
 
 
 
@@ -322,6 +322,7 @@ Plug-in拡張ポイントを使用して、ストレージクラスタ内のす�
 
 NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
+.必要なもの
 I/O を停止し、すべての iSCSI セッションを切断しておきます。
 
 .手順

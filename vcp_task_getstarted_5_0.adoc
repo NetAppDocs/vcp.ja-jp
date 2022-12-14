@@ -21,14 +21,14 @@ NetApp Element Plug-in for vCenter Server 5.0以降では、最新バージョ�
 
 各手順を読んで完了し、プラグインのインストールと使用を開始します。
 
-*  for installation
-*  the management node
-*  the plug-in with vCenter
-*  the plug-in and verify successful installation
-*  storage clusters for use with the plug-in
-*  QoSSIOC settings using the plug-in
-*  user accounts
-*  datastores and volumes
+* <<設置を準備>>
+* <<管理ノードをインストール>>
+* <<プラグインを vCenter に登録します>>
+* <<プラグインにアクセスし、インストールが正常に完了したことを確認します>>
+* <<プラグインで使用するストレージクラスタを追加します>>
+* <<プラグインを使用して QoSSIOC を設定します>>
+* <<ユーザアカウントを設定>>
+* <<データストアとボリュームを作成>>
 
 
 
@@ -59,6 +59,7 @@ vSphere Web Client に vCenter Plug-in パッケージを導入するには、 v
 * ファイアウォールルールでオープンが許可されている link:reference_requirements_vcp.html["ネットワーク通信"] TCPポート443、8443、8333、9443にvCenterとストレージクラスタMVIPの間に配置されます。ポート 9443 は登録に使用され、登録完了後は閉じてもかまいません。クラスタで仮想ボリューム機能を有効にした場合は、 VASA Provider アクセス用に TCP ポート 8444 も開いていることを確認してください。
 
 
+.このタスクについて
 vCenter Plug-in は、そのプラグインを使用するすべての vCenter Server に登録する必要があります。
 
 リンクモード環境では、MOBデータの同期を保ち、プラグインをアップグレードできるように、環境内の各vCenter Serverに別々のプラグインを登録する必要があります。接続先の vCenter Server にプラグインが登録されていない場合、 vSphere Web Client にはプラグインが表示されません。
@@ -148,6 +149,7 @@ NetApp Element リモートプラグイン拡張ポイントを使用して、El
 
 NOTE: 管理機能を使用するには、クラスタを少なくとも1つ追加する必要があります。
 
+.このタスクについて
 この手順では、クラスタプロファイルを追加してクラスタをプラグインで管理する方法について説明します。プラグインを使用してクラスタ管理者のクレデンシャルを変更することはできません。
 
 を参照してください https://docs.netapp.com/us-en/element-software/storage/concept_system_manage_manage_cluster_administrator_users.html["クラスタ管理者ユーザアカウントの管理"^] クラスタ管理者アカウントのクレデンシャルを変更する手順については、を参照してください。
@@ -182,6 +184,7 @@ NOTE: 管理機能を使用するには、クラスタを少なくとも1つ追�
 
 Storage I/O Control に基づいてサービス品質の自動化を設定できます link:vcp_concept_qossioc.html["（ QoSSIOC ）"] プラグインで制御される個々のボリュームおよびデータストアの場合。これを行うには、 QoSSIOC と vCenter のクレデンシャルを設定します。このクレデンシャルを設定すると、 QoSSIOC サービスが vCenter と通信できるようになります。
 
+.このタスクについて
 管理ノードに対して有効な QoSSIOC 設定を行ったあとは、それらの設定がデフォルトになります。新しい管理ノードに対して有効な QoSSIOC 設定を指定するまで、 QoSSIOC の設定は最後に有効な有効な QoSSIOC 設定に戻ります。新しい管理ノードの QoSSIOC クレデンシャルを設定する場合は、先に設定されている管理ノードの QoSSIOC 設定をクリアする必要があります。
 
 .手順

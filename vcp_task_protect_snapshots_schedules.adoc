@@ -21,11 +21,11 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, schedule
 
 NOTE: スケジュールは UTC+0 時間を使用して作成されます。タイムゾーンに基づいて、 Snapshot が実行される実際の時刻の調整が必要になる場合があります。
 
-*  a snapshot schedule
-*  snapshot schedule details
-*  a snapshot schedule
-*  a snapshot schedule
-*  a snapshot schedule
+* <<Snapshot スケジュールを作成します>>
+* <<Snapshot スケジュールの詳細を表示します>>
+* <<Snapshot スケジュールを編集します>>
+* <<Snapshot スケジュールをコピーします>>
+* <<Snapshot スケジュールを削除します>>
 
 
 

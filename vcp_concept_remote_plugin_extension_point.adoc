@@ -18,10 +18,10 @@ NetApp Element vCenterプラグイン5.0以降では、NetApp Element リモー�
 
 NetApp Element リモートプラグイン拡張ポイントからは、以下のタブを使用できます。
 
-*  Started
-* 
-* 
-* 
+* <<はじめに>>
+* <<設定>>
+* <<管理>>
+* <<バージョン情報>>
 
 
 

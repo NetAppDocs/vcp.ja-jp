@@ -22,8 +22,10 @@ NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI また
 --
 システムがElement vCenter Plug-in 5.0以降を使用するための要件を満たしていることを確認します。
 
+.VMware vSphere の前提条件
 Element vCenterプラグインを使用するには、vCenterおよびESXiを搭載したVMware vSphere 8.0および7.0（ソフトウェアiSCSIアダプタおよびiSCSIネットワークが設定されている）が必要です。
 
+.プラグインでサポートされている VMware vSphere のバージョン
 次のメジャーバージョンの VMware ソフトウェアをサポートします。
 
 * vSphere 8.0：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む
@@ -38,8 +40,10 @@ IMPORTANT: VMware vSphere 6.5および6.7のサポートは、2022年10月15日�
 --
 システムがElement vCenter Plug-in 4.10以前の使用要件を満たしていることを確認します。
 
+.VMware vSphere の前提条件
 Element vCenterプラグインを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。
 
+.プラグインでサポートされている VMware vSphere のバージョン
 次のメジャーバージョンの VMware ソフトウェアをサポートします。
 
 * vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含むvSphere 7.0および7.0 Update 1および2

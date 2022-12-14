@@ -50,6 +50,7 @@ NOTE: 表示および管理できるのは、選択したvCenter Serverに関連
 
 
 
+.例
 リンクモードで vCenter1 と vCenter2 を、ストレージ cluster1 とストレージ cluster2 をそれぞれ設定した。cluster1 、 vCenter2 の管理を許可して cluster2 を管理します。
 
 image:two_vcenter_topology.PNG["は、vCenterとクラスタのトポロジを示しています"]
@@ -83,6 +84,7 @@ vSphere リンクモード環境でストレージクラスタの管理をセッ
 . ストレージクラスタを Element Plug-in のインベントリに追加します。
 
 
+.例
 リンクモードで vCenter1 と vCenter2 を、ストレージ cluster1 とストレージ cluster2 をそれぞれ設定した。cluster1 、 vCenter2 の管理を許可して cluster2 を管理します。ストレージクラスタ管理を設定するには、各 vCenter Server にプラグインを登録したあとで、次の手順を実行します。
 
 . vCenter1 Web クライアントにログインします。

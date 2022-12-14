@@ -18,11 +18,11 @@ keywords: netapp, qos policy, quality of service, qos policies, vcp, vcenter, el
 
 Plug-in拡張ポイントを使用すると、次のタスクを実行してQoSSIOCを設定および管理できます。
 
-*  a QoS policy
-*  a QoS policy to volumes
-*  the QoS policy association of a volume
-*  a QoS policy
-*  a QoS policy
+* <<QoS ポリシーを作成する>>
+* <<ボリュームに QoS ポリシーを適用する>>
+* <<ボリュームの QoS ポリシーの関連付けを変更します>>
+* <<QoS ポリシーを編集する>>
+* <<QoS ポリシーを削除する>>
 
 
 
@@ -62,7 +62,8 @@ TIP: わかりやすい名前のベストプラクティスを使用してくだ
 
 既存の QoS ポリシーを複数のボリュームに適用することができます。このプロセスは、ポリシーを 1 つ以上のボリュームに一括して適用する場合に使用します。
 
-一括して適用する QoS ポリシーを用意しておきます  a QoS policy,作成済み。
+.必要なもの
+一括して適用する QoS ポリシーを用意しておきます <<QoS ポリシーを作成する,作成済み>>。
 
 .手順
 . vCenter Plug-inで、* Management *タブを開きます。
@@ -89,7 +90,8 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 QoS ポリシーのボリュームへの関連付けを解除したり、別の QoS ポリシーやカスタム QoS を選択したりできます。
 
-変更するボリュームはです  a QoS policy to volumes,関連付けられました QoS ポリシーを使用する。
+.必要なもの
+変更するボリュームはです <<ボリュームに QoS ポリシーを適用する,関連付けられました>> QoS ポリシーを使用する。
 
 .手順
 . vCenter Plug-inで、* Management *タブを開きます。

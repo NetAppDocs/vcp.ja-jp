@@ -19,12 +19,12 @@ keywords: netapp, hci, vcp, vcenter, element, protect, snapshots, clone, backup,
 Snapshot を使用して、 Snapshot が作成された時点の状態にボリュームをロールバックできます。ただし、 Snapshot はボリュームメタデータの単なるレプリカであるため、マウントや書き込みはできません。
 
 .オプション（ Options ）
-*  a volume snapshot
-*  volume snapshot details
-*  a volume from a snapshot
-*  back a volume to a snapshot
-*  up a volume snapshot to an external object store
-*  a volume snapshot
+* <<ボリューム Snapshot を作成します>>
+* <<ボリューム Snapshot の詳細を表示します>>
+* <<Snapshot からボリュームをクローニングします>>
+* <<ボリュームを Snapshot にロールバックします>>
+* <<外部のオブジェクトストアにボリューム Snapshot をバックアップします>>
+* <<ボリューム Snapshot を削除します>>
 
 
 
@@ -204,9 +204,9 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 
 Snapshot を外部のオブジェクトストアにバックアップする場合は、オブジェクトストアに接続していて、読み取り / 書き込み処理が許可されている必要があります。
 
-*  up a volume snapshot to an Amazon S3 object store
-*  up a volume snapshot to an OpenStack Swift object store
-*  up a volume snapshot to a cluster running Element software
+* <<Amazon S3 オブジェクトストアにボリューム Snapshot をバックアップします>>
+* <<OpenStack Swift オブジェクトストアにボリューム Snapshot をバックアップします>>
+* <<Element ソフトウェアを実行しているクラスタにボリューム Snapshot をバックアップします>>
 
 
 
@@ -297,8 +297,10 @@ NOTE: 複数のクラスタが追加されている場合は、使用するク�
 
 NetApp Element ソフトウェアを実行しているクラスタにあるボリューム Snapshot をリモートの Element クラスタにバックアップできます。
 
+.必要なもの
 バックアップに使用する Snapshot と同じかそれ以上のサイズのデスティネーションクラスタにボリュームを作成する必要があります。
 
+.このタスクについて
 クラスタ間でバックアップまたはリストアを実行する際には、システムによってクラスタ間の認証に使用するキーが生成されます。ソースクラスタはこのボリュームの一括書き込みキーを使用してデスティネーションクラスタに対して認証し、デスティネーションボリュームへの書き込みがセキュリティで保護されます。バックアップまたはリストアのプロセスでは、処理を開始する前に、デスティネーションボリュームからボリュームの一括書き込みキーを生成する必要があります。
 
 .手順
@@ -357,6 +359,7 @@ NOTE: 複数のクラスタが追加されている場合は、このタスク�
 
 Plug-in拡張ポイントを使用して、NetApp Element ソフトウェアを実行しているクラスタからボリュームSnapshotを削除できます。Snapshot を削除すると、システムはただちに削除します。
 
+.このタスクについて
 レプリケート中の Snapshot をソースクラスタから削除できます。ターゲットクラスタと同期中の Snapshot を削除すると、同期レプリケーションが完了した時点でソースクラスタから Snapshot が削除されます。ターゲットクラスタからは Snapshot は削除されません。
 
 ターゲットにレプリケート済みの Snapshot をターゲットクラスタから削除することもできます。削除した Snapshot は、ターゲットがソースクラスタで Snapshot が削除されたことを検知するまで、ターゲットの削除済み Snapshot のリストに保持されます。ソース Snapshot が削除されたことをターゲットが検知すると、ターゲットはその Snapshot のレプリケーションを停止します。

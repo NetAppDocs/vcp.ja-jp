@@ -2,7 +2,6 @@
 <blocks>
   <block id="6bde8427d243711530e47035165075a8" category="summary">プラグインを使用して、 Element ボリュームに作成された管理用データストアを追加できます。</block>
   <block id="1b8a04f09ff55290753a17988fd53c2a" category="doc">データストアを管理します</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">必要なもの</block>
   <block id="fee03a90bfc424cd6ea94a6cc22746e8" category="list-text">データストアを作成および管理するには、最初に少なくとも 1 つのユーザアカウントを作成する必要があります。</block>
   <block id="292ffe431087f7d8cd09b046745b9893" category="list-text">データストアの作成には選択した ESXi ホストでサポートされる最も高い VMFS バージョンが使用されるため、 VMFS の互換性に関する問題を防ぐために、実行する vSphere および ESXi のバージョンをすべてのクラスタメンバーで統一する必要があります。</block>
   <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">オプション（ Options ）</block>
@@ -2645,4 +2644,9 @@
   <block id="74f171bb465a49ebcce88fa91d4562d4" category="sidebar">NetApp Element Plug-in for VMware vCenter Server 4.10以前</block>
   <block id="2abfacd3d0325353cbe289faa9d0d3b1" category="sidebar">NetApp Element Plug-in for vCenter Server をインストールして設定します</block>
   <block id="e97497d0f5938ed35b2e63e89f51bf3c" category="paragraph">A <block ref="e64b216761b70bc0cfda4bc4eab1b43a" category="inline-link-macro-rx"></block> は、ユーザがiSCSIイニシエータまたはFCイニシエータを使用してアクセスできるボリュームの集まりです。</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">必要なもの</block>
+  <block id="65988ccc1e915ab34bd44768f37b0444" category="paragraph-title">Element vCenterプラグイン5.0以降に対する対処方法</block>
+  <block id="47c4fb98f272f850da400ba07b3981fa" category="paragraph-title">Element vCenterプラグイン4.10以前の対処方法</block>
+  <block id="d495047561c1a08074d3afeeb5b5d172" category="paragraph-title">VMware vSphere の前提条件</block>
+  <block id="3903fd261f224ad8af888f893eb71a5e" category="paragraph-title">プラグインでサポートされている VMware vSphere のバージョン</block>
 </blocks>

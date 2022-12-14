@@ -32,7 +32,7 @@ vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を�
 == セットアップのタスク
 
 * link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["QoSSIOC を設定します"]
-*  QoSSIOC automation on datastores
+* <<データストアでの QoSSIOC 自動化の有効化>>
 
 
 
@@ -40,10 +40,10 @@ vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を�
 == 管理タスク
 
 * link:vcp_task_reports_qossioc.html["QoSSIOC イベントを使用して VM のパフォーマンス階層化を監視します"^]
-*  QoSSIOC settings
-*  the QoSSIOC service password
-*  QoSSIOC automation for a datastore
-*  QoSSIOC settings
+* <<QoSSIOC の設定を編集します>>
+* <<QoSSIOC サービスのパスワードを変更します>>
+* <<データストアに対して QoSSIOC 自動化を無効にする>>
+* <<QoSSIOC の設定をクリアします>>
 
 
 
@@ -52,12 +52,14 @@ vCenter Plug-in を使用すると、次のタスクを実行して QoSSIOC を�
 
 プラグインで QoSSIOC サービスを有効にすると、データストアの QoSSIOC の自動化を有効にし、仮想マシンディスク（ VMDK ）のパフォーマンスレベルをカスタマイズできます。
 
+.必要なもの
 QoSSIOCの設定ページでQoSSIOCサービスの設定を行っており、「* QoSSIOC Status *」フィールドにと表示されます `UP`。
 
 * link:vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in["Element vCenterプラグイン5.0以降を使用して設定を行います"]
 * link:vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in["Element vCenter Plug-in 4.10以前を使用して設定を行います"]
 
 
+.このタスクについて
 QoSSIOC は標準のデータストアでのみ使用できます。仮想ボリューム（ vVol ）では機能しません。QoSSIOC は、電源のオン / オフイベント、ゲストの再起動やシャットダウン、再設定アクティビティなどの仮想マシンイベントが発生したときに、標準の Element ボリュームの QoS 値を調整します。
 
 
@@ -150,7 +152,8 @@ NOTE: 管理ノードに対して有効な QoSSIOC 設定を行ったあとは�
 * 管理ノードの電源をオンにしておきます。
 
 
-ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます  QoSSIOC settings,QoSSIOC 設定 ページ
+.このタスクについて
+ここでは、 QoSSIOC パスワードのみを変更する方法について説明します。QoSSIOC ユーザ名を変更する場合は、で変更できます <<QoSSIOC の設定を編集します,QoSSIOC 設定>> ページ
 
 .手順
 . vSphere Web Clientで、* QoSSIOCの設定*タブを開きます。
