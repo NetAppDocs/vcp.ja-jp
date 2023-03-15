@@ -2761,4 +2761,52 @@
   <block id="9451a3dfb762350c7cbcbe9ee518b8af" category="paragraph">セカンダリボリュームのレプリケートと同期が終了していません。このメッセージは、同期が完了するとクリアされます。</block>
   <block id="f18e735235d5a307ceb3e60d3161fa15" category="list-text">* volumesOffline *</block>
   <block id="bd0e78ee6b3a04179ae19c5baa7233f3" category="paragraph">ストレージクラスタ内の 1 つ以上のボリュームがオフラインです。「 * volumeDegraded 」 * エラーも発生します。</block>
+  <block id="644c5c3e42ab1df305052c80680df2ca" category="inline-xref">vCenterで「VCPロール」を作成します</block>
+  <block id="d64a2b92e4ea6060988dc03f5e5113fa" category="paragraph">vCenter Server 8.0および7.0では、を実行できます <block ref="80e1b054839423dbd44653f6cd7557e3" category="inline-xref-macro-rx"></block> （Element Plug-in for vCenter Serverの登録またはアップグレード、およびElementプラグインの管理タスクを実行するための権限を割り当てます。）</block>
+  <block id="7cc7fd4493e163c595e2dabf484d9c9a" category="section-title">（オプション）vCenterで「VCPロール」を作成します</block>
+  <block id="050119bbf4fa875736755d8256c34fed" category="paragraph">vCenter Server 8.0および7.0では、vCenterでElementプラグインユーザアカウント用の「VCPロール」を作成し、Element Plug-in for vCenter Serverを登録またはアップグレードし、Elementプラグインの管理タスクを実行するための権限を割り当てることができます。</block>
+  <block id="d5bb073b6bd682a668721b757a9e61de" category="list-text">vSphere Web Clientに管理者としてログインします。</block>
+  <block id="8524fc8052d7c8f5a5557839d96cd0f7" category="list-text">[管理]*を選択します。</block>
+  <block id="bc729d3b22ea3e08238255fb733b75e4" category="list-text">[シングルサインオン]*&gt;*[ユーザーとグループ]*を選択します。</block>
+  <block id="ebd11e76c0b736dd6dc24addd8e6608f" category="list-text">[ユーザ]タブを選択し、[ドメイン]リストからターゲットドメインを選択します。</block>
+  <block id="fa12509cfb8e8ccded16e2a254e988c4" category="list-text">「 * 追加」を選択します。</block>
+  <block id="09166198be13ed464f3dba33744e2b11" category="list-text">[ユーザの追加]*画面のフィールドに入力し、*[追加]*を選択します。</block>
+  <block id="7f0e45b2a7b37d33b8e5ec6012c42841" category="inline-image-macro">[Add User]フィールドのスクリーンショット</block>
+  <block id="e0cecd6609fe5cb500562692e5b44586" category="paragraph"><block ref="e0cecd6609fe5cb500562692e5b44586" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="cbf6f433c2146e5cb893afde836b7584" category="list-text">[アクセス制御]*&gt;*[ロール]*を選択し、*[新規]*を選択します。</block>
+  <block id="f34080b41d0f41a6c1144b3336935b25" category="list-text">[New role]*画面で、次の手順を実行します。</block>
+  <block id="23a1a1c1bda77f4c3673f7fbe4ca2878" category="list-text">[ロール名]*に「VCProle」と入力します。</block>
+  <block id="8051682eea92ae27fbd88fda94829d22" category="list-text">エンダーA概要 。</block>
+  <block id="cbef7f3bcab72196c6bc5c548e2ed7f7" category="list-text">[Show（表示）]*リストから、vCenter Serverのバージョンに対応する権限を選択します。</block>
+  <block id="45db17c966a6c26ef47a4ba1c610215f" category="list-text">vCenter Server 8.0の権限を選択します。</block>
+  <block id="74f62e29bec771603bb7251042c8ded8" category="list-text">[Cryptographic operations]&gt;[Register VM</block>
+  <block id="5014a958f399385be4f44a0520625edd" category="list-text">[Datastore]&gt;[Select All</block>
+  <block id="bd14c779d6a491d4992aebb056db7d55" category="list-text">[Extension]&gt;[Select All</block>
+  <block id="61249cd3896c13e946979764cc0c9063" category="list-text">[Host]&gt;[Configuration]&gt;[Change settings]</block>
+  <block id="0b23b0d39406a9b3915a59b194bf63e5" category="list-text">[ホスト]&gt;[設定]&gt;[接続]をクリック</block>
+  <block id="256d33dbb5c1c290b364b11571a9d57f" category="list-text">[ホスト]&gt;[設定]&gt;[メンテナンス]をクリック</block>
+  <block id="092c601502be0f60d8c97c58fe469f3f" category="list-text">[Host]&gt;[Configuration]&gt;[Storage partition configuration]を選択します</block>
+  <block id="e722e18169e2f876c6e8b936c2ee4c57" category="list-text">[Host]&gt;[Configuration]&gt;[System Management]を選択します</block>
+  <block id="1ec37c60f04ba576cbdb4dc7597a3a62" category="list-text">[Host]&gt;[Configuration]&gt;[System resources]の順に選択</block>
+  <block id="d79c90f48cef0babeb322f302fa6191f" category="list-text">Privilege.Task.Update.Task.Update.label &gt; privilege.Task.Update.Task.Update.label</block>
+  <block id="294ef7232b74c7e7748074ee0e298862" category="list-text">[タスク]&gt;[すべて選択</block>
+  <block id="7de295a163b1ed913ab7bcbcfee0029a" category="list-text">[Virtual machine]&gt;[Edit Inventory]&gt;[Register]</block>
+  <block id="c1165f36f2062c025c4da87ce3b31703" category="list-text">[VM storage policies]&gt;[VM storage policies]ビュー権限&gt;[View VM storage policies]</block>
+  <block id="77cd5b8cd461de562694a99ba9dee580" category="list-text">vCenter Server 7.xの権限を選択します。</block>
+  <block id="cb63c230d719fa24116203b496dee10d" category="list-text">[Host]&gt;[Configuration]&gt;[System Resources]を選択します</block>
+  <block id="5dc59e217df09f6415678f6607f5df72" category="list-text">Plugin &gt; Select Allの順に選択します</block>
+  <block id="9af128212a39b4bf7fbdef0570e64c29" category="list-text">スケジュールされたタスク&gt;すべて選択</block>
+  <block id="117fe7a1900288d871a49853a8b64f59" category="list-text">[Storage Views]&gt;[Select All]をクリックします</block>
+  <block id="bf18811faac9b8e4fcaebab51afd1113" category="list-text">「 * Create * 」を選択します。</block>
+  <block id="138f8f5d73de2cb5fb20f743a7f5dc45" category="inline-image-macro">[New Role]フィールドのスクリーンショット</block>
+  <block id="f45b7593c255832f87fd8eff35a580ac" category="paragraph"><block ref="f45b7593c255832f87fd8eff35a580ac" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f7d1490dda99e395678a3cf9e7c62a8" category="list-text">[グローバル権限]*を選択し、*[追加]*を選択します。</block>
+  <block id="fdd8b6bb99fb0bd050cf23d180fa409d" category="list-text">[権限の追加]画面で、次の手順を実行します。</block>
+  <block id="91c619d30319a7c8737a0afb04770a94" category="list-text">[ドメイン]*リストからターゲットドメインを選択します。</block>
+  <block id="e63d96af7b54d58a62c992b3f3beea69" category="list-text">[User/Group]フィールドに、ElementプラグインのユーザIDを入力します。</block>
+  <block id="37518f126d566dda3513459fc2d4a601" category="list-text">[Role]*リストから[VCProle]*を選択します。</block>
+  <block id="b1b266d490da6f5aec9dc67b1ef044d7" category="list-text">[子に伝播（Propagate to Children）]*を選択し、*[OK]*を選択します。</block>
+  <block id="94ca762adece646829ae29b252ee07c1" category="inline-image-macro">[Add Permission]フィールドのスクリーンショット</block>
+  <block id="5e636586f9af12688faa4fc928306db1" category="paragraph"><block ref="5e636586f9af12688faa4fc928306db1" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="091b350d4631df39f5b5dc80970dd512" category="paragraph">「vcpuser」アカウントを使用してvSphere Web Clientにログインできるようになりました。</block>
 </blocks>

@@ -10,11 +10,13 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]
 NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしていることを確認する必要があります。
+
+vCenter Server 8.0および7.0では、を実行できます <<create_vcp_role,vCenterで「VCPロール」を作成します>> （Element Plug-in for vCenter Serverの登録またはアップグレード、およびElementプラグインの管理タスクを実行するための権限を割り当てます。）
 
 [role="tabbed-block"]
 ====
@@ -96,6 +98,90 @@ IMPORTANT: VMware vSphere 6.0 のサポートは 2020 年 3 月 12 日に終了�
 == ネットワークポートの要件
 
 システムをリモートから管理し、データセンターの外部のクライアントがリソースに接続できるようにするには、データセンターのエッジファイアウォールで一部の TCP ポートを許可する必要があります。NetApp HCI および SolidFire システムで使用されるポートの包括的なリストについては、こちらを参照してください link:https://docs.netapp.com/us-en/hci/docs/hci_prereqs_required_network_ports.html["ページ"]。
+
+
+
+== （オプション）vCenterで「VCPロール」を作成します
+
+vCenter Server 8.0および7.0では、vCenterでElementプラグインユーザアカウント用の「VCPロール」を作成し、Element Plug-in for vCenter Serverを登録またはアップグレードし、Elementプラグインの管理タスクを実行するための権限を割り当てることができます。
+
+.手順
+. vSphere Web Clientに管理者としてログインします。
+. [管理]*を選択します。
+. [シングルサインオン]*>*[ユーザーとグループ]*を選択します。
+. [ユーザ]タブを選択し、[ドメイン]リストからターゲットドメインを選択します。
+. 「 * 追加」を選択します。
+. [ユーザの追加]*画面のフィールドに入力し、*[追加]*を選択します。
++
+image:vcp_add_user.PNG["[Add User]フィールドのスクリーンショット"]
+
+. [アクセス制御]*>*[ロール]*を選択し、*[新規]*を選択します。
+. [New role]*画面で、次の手順を実行します。
++
+.. [ロール名]*に「VCProle」と入力します。
+.. エンダーA概要 。
+.. [Show（表示）]*リストから、vCenter Serverのバージョンに対応する権限を選択します。
++
+... vCenter Server 8.0の権限を選択します。
++
+**** [Cryptographic operations]>[Register VM
+**** [Datastore]>[Select All
+**** [Extension]>[Select All
+**** [Host]>[Configuration]>[Change settings]
+**** [ホスト]>[設定]>[接続]をクリック
+**** [ホスト]>[設定]>[メンテナンス]をクリック
+**** [Host]>[Configuration]>[Storage partition configuration]を選択します
+**** [Host]>[Configuration]>[System Management]を選択します
+**** [Host]>[Configuration]>[System resources]の順に選択
+**** Privilege.Task.Update.Task.Update.label > privilege.Task.Update.Task.Update.label
+**** [タスク]>[すべて選択
+**** [Virtual machine]>[Edit Inventory]>[Register]
+**** [VM storage policies]>[VM storage policies]ビュー権限>[View VM storage policies]
+
+
+... vCenter Server 7.xの権限を選択します。
++
+**** [Cryptographic operations]>[Register VM
+**** [Datastore]>[Select All
+**** [Extension]>[Select All
+**** [Host]>[Configuration]>[Change settings]
+**** [ホスト]>[設定]>[接続]をクリック
+**** [ホスト]>[設定]>[メンテナンス]をクリック
+**** [Host]>[Configuration]>[Storage partition configuration]を選択します
+**** [Host]>[Configuration]>[System Management]を選択します
+**** [Host]>[Configuration]>[System Resources]を選択します
+**** Plugin > Select Allの順に選択します
+**** スケジュールされたタスク>すべて選択
+**** [Storage Views]>[Select All]をクリックします
+**** [タスク]>[すべて選択
+
+
+
+
+.. 「 * Create * 」を選択します。
+
+
++
+image:vcp_create_vcprole.PNG["[New Role]フィールドのスクリーンショット"]
+
+. [グローバル権限]*を選択し、*[追加]*を選択します。
+. [権限の追加]画面で、次の手順を実行します。
++
+--
+.. [ドメイン]*リストからターゲットドメインを選択します。
+.. [User/Group]フィールドに、ElementプラグインのユーザIDを入力します。
+.. [Role]*リストから[VCProle]*を選択します。
+.. [子に伝播（Propagate to Children）]*を選択し、*[OK]*を選択します。
+
+
+--
++
+image:vcp_assign_vcprole.PNG["[Add Permission]フィールドのスクリーンショット"]
+
++
+「vcpuser」アカウントを使用してvSphere Web Clientにログインできるようになりました。
+
+
 
 
 
