@@ -16,7 +16,7 @@ keywords: netapp, hci, kubernetes, on premise, cloud services
 [role="lead"]
 NetApp Element Plug-in for VMware vCenter Serverを使用してNetApp HCI またはSolidFire オールフラッシュアレイストレージを管理するには、システムがプラグインで使用するための要件を満たしていることを確認する必要があります。
 
-vCenter Server 8.0および7.0では、を実行できます <<create_vcp_role,vCenterで「VCPロール」を作成します>> （Element Plug-in for vCenter Serverの登録またはアップグレード、およびElementプラグインの管理タスクを実行するための権限を割り当てます。）
+vCenter Server 8.0および7.0では、を実行できます <<create_vcp_role,vCenterで「VCPロール」を作成します>> を選択し、Element Plug-in for vCenter Serverを登録またはアップグレードする権限を割り当て、Elementプラグインの管理タスクを実行する。
 
 [role="tabbed-block"]
 ====

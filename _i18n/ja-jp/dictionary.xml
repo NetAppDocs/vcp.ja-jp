@@ -1836,7 +1836,6 @@
   <block id="2ec6f218bc83c2a96b3b46b4129035ce" category="list-text">管理ノードの IP アドレスです。</block>
   <block id="fed10c03fd9268ddc7b341e40d9c715c" category="list-text">プラグインの登録を解除する vCenter の URL とクレデンシャル。</block>
   <block id="5617def599e541c405b22ef75873704d" category="inline-link-macro">プラグインを削除しています</block>
-  <block id="cd708195daf8513502a5c6123fefd3c6" category="paragraph">vSphere 6.7 以前では、プラグインの登録を解除すると無効にした場合と同じ効果がありますが、ローカルにインストールされている関連するファイルやフォルダはすべて削除されません。すべてのプラグインファイルを削除するには、の手順を参照してください <block ref="fa2a18d6b355d33b924c5f0014a5db48" category="inline-link-macro-rx"></block>。</block>
   <block id="813c5122bf2d07b9b768db0d36befa54" category="paragraph">vSphere 7.0 では、プラグインの登録を解除するとすべてのファイルが自動的に削除されます。</block>
   <block id="784cf7d40eae83cddfd178b52d838922" category="list-text">プラグインの登録を解除するには、インストールされているバージョンに対応する手順に従います。</block>
   <block id="e1d6ab3742be1ecd22328a3e8fd20c7d" category="list-text">vCenter Plug-in 3.0 以降では、 vCenter Plug-in 登録ユーティリティを使用してプラグインの登録を解除します。</block>
@@ -2203,8 +2202,6 @@
   <block id="abf7eef6bed0197895c3bf534495b705" category="list-text">Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Cluster *を選択します。</block>
   <block id="cffb1f002f64dfacc3e64e76675874ca" category="paragraph">プラグイン拡張ポイントから、ClusterタブのDrivesページのActiveビューを使用して、クラスタ内のアクティブドライブのリストを表示できます。ドロップダウンフィルタを使用して使用可能なオプションを選択すると、ビューを変更できます。</block>
   <block id="fbde2570c577c83970a1770f2bbb6b86" category="paragraph">プラグイン拡張ポイントを使用して、クラスタからドライブを削除できます。この操作は、クラスタの容量を減らしたり、サービス寿命の終わりに近づいているドライブの交換準備を行ったりするときに実行できます。削除したドライブはオフラインになります。ドライブをクラスタから削除する前に、ドライブ上のデータがすべて削除され、クラスタ内の他のドライブに移行されます。システム内の他のアクティブドライブへのデータ移行には、クラスタの容量利用率とアクティブな I/O に応じて、数分から 1 時間かかります。</block>
-  <block id="abb08438372677f826c66c2cf08946ee" category="paragraph">バージョン5.0より前のNetApp Element Plug-in for VMware vCenter Serverのリリースに関するドキュメントも参照できます。</block>
-  <block id="aa6c9b02197698bcb50fa64860739d2c" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> Element vCenterプラグイン5.0には、バージョン4.6、4.7、4.8、4.9、および4.10も含まれています。</block>
   <block id="30dcb9c22f4d8eee8411cf243edfe0c6" category="cell">4.10</block>
   <block id="d4b8b3b5c408146a8aaffd739bb70e85" category="cell"><block ref="d4b8b3b5c408146a8aaffd739bb70e85" category="inline-link-rx"></block></block>
   <block id="cdac12e8444404de524af6aed2665f45" category="inline-link">2.21.61</block>
@@ -2284,9 +2281,7 @@
   <block id="41850a9e782a9a5deffba88f60da5f86" category="paragraph">プラグイン拡張ポイントを使用して、NetApp Element クラスタから1つ以上のボリュームを削除できます。</block>
   <block id="11e419c2947b7d06f69508696bb8366b" category="summary">vCenter Plug-in拡張ポイントを使用して、ストレージクラスタを管理できます。</block>
   <block id="3b0772681519f05a669fc19a78db2094" category="paragraph">プラグイン拡張ポイントのClusterタブでは、クラスタ全体の設定を表示および変更したり、ドライブ、ノード、およびVLANに関するクラスタ固有のタスクを実行したりできます。</block>
-  <block id="f4c3b5c3b03a03813a4efc0d9b5c4948" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.0は、管理サービスバンドルの一部として、ElementリリースおよびNetApp HCI リリースに含まれていないバージョンで使用できます。</block>
   <block id="9a4f689e4a76aad8186d3bc65ad401fb" category="list-text">Element Plug-in for vCenter 5.0以降では、VMware vSphere 8.0および7.0のみがサポートされます。</block>
-  <block id="8ca6efece2cd741765d7545cfba33f66" category="list-text">Element Plug-in for vCenter 4.xから5.0にアップグレードすると、すでにプラグインが設定されているクラスタが失われます。これは、vCenterインスタンスからリモートプラグインにデータをコピーできないためです。クラスタをリモートプラグインに再度追加する必要があります。これは、ローカルプラグインからリモートプラグインへのアップグレード時の1回限りのアクティビティです。</block>
   <block id="6b777567daa827d5b0665b94c630539f" category="inline-link">vCenter Plug-in 5.0リリースノート</block>
   <block id="0e051271241f0648ba45a8ad135d030c" category="list-text"><block ref="0e051271241f0648ba45a8ad135d030c" category="inline-link-rx"></block></block>
   <block id="c1117ceebc72342e257fe6e0c4bc9865" category="paragraph">プラグインを使用して、を追加できます<block ref="63488b15d8c0b0f8bf9dc0423b45e226" category="inline-link-rx"></block> クラスタを作成する場合やストレージの追加が必要な場合。Elementソフトウェアを実行しているストレージノードを追加することもできます。NetApp HCI コンピューティングノードは、vSphereのプラグイン以外の場所に追加する必要があります。</block>
@@ -2301,7 +2296,6 @@
   <block id="703b4a90cb83eeedcd9f21fb666993cf" category="list-text">vCenter Plug-in 4.0から4.10</block>
   <block id="13730b6c187c8aa8f92956aeb6cd01e2" category="paragraph">Plug-in拡張ポイントを使用すると、次のタスクを実行してQoSSIOCを設定および管理できます。</block>
   <block id="15829086740e5d8d6ada7649920234b9" category="list-text">[*概要*（Overview *）]ページでデータを監視します。</block>
-  <block id="1e001803864a5eeb813e6a85e53f7e2b" category="paragraph">NetApp Element Plug-in for vCenter Server 5.0には、プラグインのリモートアーキテクチャが含まれています。このアーキテクチャは、vCenter Server内でプラグインを実行することなく、vSphere Clientにプラグイン機能を統合するように設計されています。リモートアーキテクチャではプラグインの分離がサポートされており、大規模なvSphere環境で動作するプラグインのスケールアウトが可能です。リモートのElement Plug-inは、管理サービスとともに管理ノード内のDockerコンテナに導入されます。 <block ref="2629dee4a3682efc27bf42f47699460e" category="inline-link-macro-rx"></block></block>
   <block id="c5d233b22f0e1d750ac78f2bfaa4bf45" category="paragraph">Element vCenterプラグイン5.0は、VMware vSphere 8.0、7.0、7.0 Update 1、2、3（vCenter Server、ESXi、vSphere HTML5 Web Clientを含む）をサポートしています。</block>
   <block id="ceec7b007b80cc66468eacb4ee0fa069" category="inline-link">管理サービスリリースノート2.1.61</block>
   <block id="e0527e4365aa99f086c41c1e111702c3" category="paragraph">Element vCenterプラグイン5.0は、管理サービスの2.22.7リリースで使用できます。このプラグインを使用しない場合、他のすべてのサービスと機能はバージョン2.2.61と同じであるため、このアップグレードはオプションです。管理サービスの最新の更新情報については、を参照してください<block ref="f3a45f13dd8f4769c4d441aacd935790" category="inline-link-rx"></block>。</block>
@@ -2410,7 +2404,6 @@
   <block id="eb56b88cdd81d40633d568a23d3857eb" category="paragraph">Element vCenterプラグインを使用するには、vCenterとESXiを搭載し、ソフトウェアiSCSIアダプタとiSCSIネットワークが設定されたVMware vSphere 7.0、6.7、または6.5が必要です。</block>
   <block id="d97bbd8656e24ccefc431a8efa7d71b1" category="admonition">このプラグインは、vCenter 4.6、4.7、および4.8向けElementプラグインバージョン6.5とは互換性がありません。</block>
   <block id="2485371e710ec4ea8989c22e13c02067" category="list-text"><block ref="2485371e710ec4ea8989c22e13c02067" category="inline-link-rx"></block></block>
-  <block id="6e965491616fff846a7ae36b0c989a99" category="list-text"><block ref="0e051271241f0648ba45a8ad135d030c" category="inline-link-rx"></block> _ 新規 _</block>
   <block id="e15eb9592751e0df97c69e856ffc178a" category="list-text"><block ref="e15eb9592751e0df97c69e856ffc178a" category="inline-link-rx"></block></block>
   <block id="e8158506d71c28d8d821c3acbeb0f97d" category="list-text"><block ref="e8158506d71c28d8d821c3acbeb0f97d" category="inline-link-rx"></block></block>
   <block id="bfc8310ead2967e2e87ebf3b95c4457e" category="list-text">vCenter Plug-inで、* Protection *タブを開きます。</block>
@@ -2762,9 +2755,7 @@
   <block id="f18e735235d5a307ceb3e60d3161fa15" category="list-text">* volumesOffline *</block>
   <block id="bd0e78ee6b3a04179ae19c5baa7233f3" category="paragraph">ストレージクラスタ内の 1 つ以上のボリュームがオフラインです。「 * volumeDegraded 」 * エラーも発生します。</block>
   <block id="644c5c3e42ab1df305052c80680df2ca" category="inline-xref">vCenterで「VCPロール」を作成します</block>
-  <block id="d64a2b92e4ea6060988dc03f5e5113fa" category="paragraph">vCenter Server 8.0および7.0では、を実行できます <block ref="80e1b054839423dbd44653f6cd7557e3" category="inline-xref-macro-rx"></block> （Element Plug-in for vCenter Serverの登録またはアップグレード、およびElementプラグインの管理タスクを実行するための権限を割り当てます。）</block>
   <block id="7cc7fd4493e163c595e2dabf484d9c9a" category="section-title">（オプション）vCenterで「VCPロール」を作成します</block>
-  <block id="050119bbf4fa875736755d8256c34fed" category="paragraph">vCenter Server 8.0および7.0では、vCenterでElementプラグインユーザアカウント用の「VCPロール」を作成し、Element Plug-in for vCenter Serverを登録またはアップグレードし、Elementプラグインの管理タスクを実行するための権限を割り当てることができます。</block>
   <block id="d5bb073b6bd682a668721b757a9e61de" category="list-text">vSphere Web Clientに管理者としてログインします。</block>
   <block id="8524fc8052d7c8f5a5557839d96cd0f7" category="list-text">[管理]*を選択します。</block>
   <block id="bc729d3b22ea3e08238255fb733b75e4" category="list-text">[シングルサインオン]*&gt;*[ユーザーとグループ]*を選択します。</block>
@@ -2809,4 +2800,21 @@
   <block id="94ca762adece646829ae29b252ee07c1" category="inline-image-macro">[Add Permission]フィールドのスクリーンショット</block>
   <block id="5e636586f9af12688faa4fc928306db1" category="paragraph"><block ref="5e636586f9af12688faa4fc928306db1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="091b350d4631df39f5b5dc80970dd512" category="paragraph">「vcpuser」アカウントを使用してvSphere Web Clientにログインできるようになりました。</block>
+  <block id="b66c8a9d68bd0aeaa399e0f8ae04a674" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.1は、ElementおよびNetApp HCI リリースに含まれていませんが、管理サービスバンドルの一部として提供されています。</block>
+  <block id="9fbd9fb1c98fdc3b7aeb8cf30510365b" category="list-text">Element Plug-in for vCenter 4.xを5.xにアップグレードすると、vCenterインスタンスからリモートプラグインにデータをコピーできないため、プラグインが設定されているクラスタは失われます。クラスタをリモートプラグインに再度追加する必要があります。これは、ローカルプラグインからリモートプラグインへのアップグレード時の1回限りのアクティビティです。</block>
+  <block id="54db42757b5d75d2f660dc70f35850cf" category="inline-link">vCenter Plug-in 5.1リリースノート</block>
+  <block id="410ecb079e286058eeb2bc6b56d9379c" category="list-text"><block ref="410ecb079e286058eeb2bc6b56d9379c" category="inline-link-rx"></block></block>
+  <block id="a03e0fc189a20ac61004659572cb08f7" category="paragraph">vSphere 6.7 以前では、プラグインの登録を解除すると無効にした場合と同じ効果がありますが、ローカルにインストールされている関連するファイルやフォルダはすべて削除されません。すべてのプラグインファイルを削除するには、の手順を参照してください <block ref="fa2a18d6b355d33b924c5f0014a5db48" category="inline-link-macro-rx"></block>。</block>
+  <block id="892ff8e8ba8a88084fa51c3657a81ab8" category="paragraph">NetApp Element Plug-in for VMware vCenter Server 5.1より前のリリースのドキュメントも用意されています。</block>
+  <block id="5fd41756fdaa6f29377e51f411e6ef7b" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> for Element vCenterプラグイン5.1には、バージョン4.6、4.7、4.8、4.9、4.10も含まれています。 および5.0。</block>
+  <block id="336669dbe720233ed5577ddf81b653d3" category="cell">5.0</block>
+  <block id="ccdedb9c7dac93213366653d125b0ffe" category="cell"><block ref="ccdedb9c7dac93213366653d125b0ffe" category="inline-link-rx"></block></block>
+  <block id="33417a1ff438d871e2168ee3476b8b19" category="cell"><block ref="33417a1ff438d871e2168ee3476b8b19" category="inline-link-rx"></block></block>
+  <block id="db26a1619b3544de39b9ae935f1f5853" category="paragraph">vCenter Server 8.0および7.0では、を実行できます <block ref="80e1b054839423dbd44653f6cd7557e3" category="inline-xref-macro-rx"></block> を選択し、Element Plug-in for vCenter Serverを登録またはアップグレードする権限を割り当て、Elementプラグインの管理タスクを実行する。</block>
+  <block id="905117ce83c2d95fd055b77e296e775c" category="paragraph">vCenter Server 8.0および7.0では、vCenterでElementプラグインユーザアカウント用の「VCPロール」を作成し、Element Plug-in for vCenter Serverを登録またはアップグレードし、Elementプラグインの管理タスクを実行するための権限を割り当てることができます。</block>
+  <block id="61ad36f15eb6ab7927cdc50f6e089a98" category="list-text"><block ref="410ecb079e286058eeb2bc6b56d9379c" category="inline-link-rx"></block> _ 新規 _</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link">詳細はこちら。</block>
+  <block id="29d500d8439e3dd944e651a8cafac013" category="paragraph">NetApp Element Plug-in for vCenter Server 5.1を使用すると、セキュリティとパフォーマンスが向上します。<block ref="8f4569e0d2bf7d4026fc97d3aaa16f27" category="inline-link-rx"></block>。</block>
+  <block id="91b1f6d002234f22dafb0acd912c78a9" category="section-title">vCenter Server 5.0向けNetApp Element プラグイン</block>
+  <block id="1f9b4aab4a12232cc23a810bf4cafc23" category="paragraph">NetApp Element Plug-in for vCenter Server 5.0には、プラグインのリモートアーキテクチャが含まれています。このアーキテクチャは、vCenter Server内でプラグインを実行することなく、vSphere Clientにプラグイン機能を統合するように設計されています。リモートアーキテクチャではプラグインの分離がサポートされており、大規模なvSphere環境で動作するプラグインのスケールアウトが可能です。リモートのElement Plug-inは、管理サービスとともに管理ノード内のDockerコンテナに導入されます。 <block ref="87219cf69889d249e3cece46c871efe3" category="inline-link-macro-rx"></block>。</block>
 </blocks>

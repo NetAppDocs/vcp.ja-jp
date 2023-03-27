@@ -14,12 +14,12 @@ keywords: netapp, vcp, vcenter, plugin, element, upgrade
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.0は、管理サービスバンドルの一部として、ElementリリースおよびNetApp HCI リリースに含まれていないバージョンで使用できます。
+NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.1は、ElementおよびNetApp HCI リリースに含まれていませんが、管理サービスバンドルの一部として提供されています。
 
 [NOTE]
 ====
 * Element Plug-in for vCenter 5.0以降では、VMware vSphere 8.0および7.0のみがサポートされます。
-* Element Plug-in for vCenter 4.xから5.0にアップグレードすると、すでにプラグインが設定されているクラスタが失われます。これは、vCenterインスタンスからリモートプラグインにデータをコピーできないためです。クラスタをリモートプラグインに再度追加する必要があります。これは、ローカルプラグインからリモートプラグインへのアップグレード時の1回限りのアクティビティです。
+* Element Plug-in for vCenter 4.xを5.xにアップグレードすると、vCenterインスタンスからリモートプラグインにデータをコピーできないため、プラグインが設定されているクラスタは失われます。クラスタをリモートプラグインに再度追加する必要があります。これは、ローカルプラグインからリモートプラグインへのアップグレード時の1回限りのアクティビティです。
 
 
 ====
@@ -34,7 +34,7 @@ NetApp Element Plug-in for vCenter Server をアップグレードする手順�
 
 == 詳細については、こちらをご覧ください
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["vCenter Plug-in 5.0リリースノート"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["vCenter Plug-in 5.1リリースノート"^]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["『 Hybrid Cloud Control and Management Services Release Notes 』を参照してください"^]
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
 * http://mysupport.netapp.com/hci/resources["NetApp HCI のリソースページ"^]
