@@ -47,6 +47,7 @@ https://www.netapp.com/us/legal/privacypolicy/index.aspx[]
 
 通知ファイルには、ネットアップソフトウェアで使用されるサードパーティの著作権およびライセンスに関する情報が記載されています。
 
+* link:media/mgmt_svcs_2.23_notice.pdf["管理サービス2.23.64（NetApp Element Plug-in for VMware vCenter Server 5.1.12）に関する注意事項"^]
 * link:media/mgmt_svcs_2.22_notice.pdf["管理サービス2.22.7（VMware vCenter Server 5.337用NetApp Element プラグイン）に関する注意事項"^]
 * link:media/mgmt_svcs_2.21_notice.pdf["管理サービス2.2.1.61（NetApp Element Plug-in for VMware vCenter Server 4.10.12）に関する注意事項"^]
 * link:media/mgmt_svcs_2.20_notice.pdf["管理サービス2.20.69（VMware vCenter Server 4.9.14用NetApp Element プラグイン）に関する注意事項"^]

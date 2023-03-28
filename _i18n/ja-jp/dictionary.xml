@@ -2817,4 +2817,6 @@
   <block id="29d500d8439e3dd944e651a8cafac013" category="paragraph">NetApp Element Plug-in for vCenter Server 5.1を使用すると、セキュリティとパフォーマンスが向上します。<block ref="8f4569e0d2bf7d4026fc97d3aaa16f27" category="inline-link-rx"></block>。</block>
   <block id="91b1f6d002234f22dafb0acd912c78a9" category="section-title">vCenter Server 5.0向けNetApp Element プラグイン</block>
   <block id="1f9b4aab4a12232cc23a810bf4cafc23" category="paragraph">NetApp Element Plug-in for vCenter Server 5.0には、プラグインのリモートアーキテクチャが含まれています。このアーキテクチャは、vCenter Server内でプラグインを実行することなく、vSphere Clientにプラグイン機能を統合するように設計されています。リモートアーキテクチャではプラグインの分離がサポートされており、大規模なvSphere環境で動作するプラグインのスケールアウトが可能です。リモートのElement Plug-inは、管理サービスとともに管理ノード内のDockerコンテナに導入されます。 <block ref="87219cf69889d249e3cece46c871efe3" category="inline-link-macro-rx"></block>。</block>
+  <block id="bddb591f0b60efba3de48f954b55f287" category="inline-link-macro">管理サービス2.23.64（NetApp Element Plug-in for VMware vCenter Server 5.1.12）に関する注意事項</block>
+  <block id="c427a8a16f088c999b45d089d225b2dc" category="list-text"><block ref="c427a8a16f088c999b45d089d225b2dc" category="inline-link-macro-rx"></block></block>
 </blocks>
