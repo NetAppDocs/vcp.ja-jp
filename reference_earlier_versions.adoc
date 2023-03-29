@@ -24,7 +24,7 @@ NOTE: これ link:index.html["マニュアルへのリンク"] for Element vCent
 | バージョン | プラグインのリリースノート | 管理サービスリリースノート | ユーザーガイド 
 
 
-| 5.0 | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["PDF"^] | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["2.21.61"^] | link:index.html["リンク"] 
+| 5.0 | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["PDF"^] | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["2.22.7"^] | link:index.html["リンク"] 
 
 
 | 4.10 | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884458["PDF"^] | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884458["2.21.61"^] | link:index.html["リンク"] 
