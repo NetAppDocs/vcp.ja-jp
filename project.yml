@@ -128,16 +128,14 @@ homepage:
   tiles:
   - title: はじめに
     links:
+    - title: リリースノート
+      url: "/rn_relatedrn_vcp.html"
+    - title: 新機能
+      url: "/rn_whatsnew_vcp.html"
     - title: 製品の概要
       url: "/concept_vcp_product_overview.html"
     - title: プラグインをインストールして導入します
-      url: "/vcp_task_getstarted.html"
-  - title: 詳細はこちら
-    links:
-    - title: 新機能
-      url: "/rn_whatsnew_vcp.html"
-    - title: リリースノート
-      url: "/rn_relatedrn_vcp.html"
+      url: "/vcp_task_getstarted_5_0.html"
   - title: SolidFire オールフラッシュストレージシステム
     links:
     - title: NetApp Element ソフトウェアの新機能
@@ -148,6 +146,8 @@ homepage:
       url: https://docs.netapp.com/us-en/element-software/upgrade/task_sf_upgrade_all_vsphere.html
   - title: NetApp HCI システム
     links:
+    - title: NetApp HCI の新機能
+      url: https://docs.netapp.com/us-en/hci/docs/rn_whatsnew.html
     - title: Element Plug-inをアップグレードします
       url: https://docs.netapp.com/us-en/hci/docs/task_vcp_upgrade_plugin.html
     - title: vSphereコンポーネントをアップグレードします

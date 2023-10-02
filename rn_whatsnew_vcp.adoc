@@ -14,6 +14,16 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 
 
 [role="lead"]
+NetApp Element Plug-in for vCenter Server 5.2では、サポート性が向上し、カスタムの保護ドメイン表示が強化されています。
+
+バージョン5.2では、Elementソフトウェアクラスタにカスタム保護ドメインが設定されている場合、プラグインに[Custom Protection Domain Health]情報が表示されます。 link:vcp_task_reports_overview.html#reporting-overview-page-data["詳細はこちら。"]。
+
+Element vCenter Plug-in 5.2は、管理サービスの2.24.40リリースで使用できます。
+
+
+
+== vCenter Server 5.1向けNetApp Elementプラグイン
+
 NetApp Element Plug-in for vCenter Server 5.1を使用すると、セキュリティとパフォーマンスが向上します。 https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["詳細はこちら。"^]。
 
 

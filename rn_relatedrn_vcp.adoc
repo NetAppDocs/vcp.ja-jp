@@ -35,7 +35,7 @@ NOTE: ネットアップサポートサイトのクレデンシャルでログ�
 
 == NetApp Element ソフトウェア
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2884468["NetApp Element ソフトウェア12.7リリースノート"^] _ 新規 _
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2884468["NetApp Element ソフトウェア12.7リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2882193["NetApp Element ソフトウェア12.5リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2881056["NetApp Element ソフトウェア 12.3.2 リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2878089["NetApp Element ソフトウェア 12.3.1 リリースノート"^]
@@ -59,7 +59,8 @@ NOTE: ネットアップサポートサイトのクレデンシャルでログ�
 
 == VMware vCenter Server向けNetApp Element プラグイン
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["vCenter Plug-in 5.1リリースノート"^] _ 新規 _
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2886272["vCenter Plug-in 5.2リリースノート"^] _ 新規 _
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["vCenter Plug-in 5.1リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["vCenter Plug-in 5.0リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2884458["vCenter Plug-in 4.10リリースノート"^]
 * https://library.netapp.com/ecm/ecm_download_file/ECMLP2881904["vCenter Plug-in 4.9リリースノート"^]

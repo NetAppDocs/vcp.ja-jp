@@ -14,14 +14,17 @@ summary: NetApp Element Plug-in for VMware vCenter Server 4.6より前のリリ�
 
 
 [role="lead"]
-NetApp Element Plug-in for VMware vCenter Server 5.1より前のリリースのドキュメントも用意されています。
+NetApp Element Plug-in for VMware vCenter Serverのバージョン5.2より前のリリースのドキュメントも用意されています。
 
 
-NOTE: これ link:index.html["マニュアルへのリンク"] for Element vCenterプラグイン5.1には、バージョン4.6、4.7、4.8、4.9、4.10も含まれています。 および5.0。
+NOTE: これ link:index.html["マニュアルへのリンク"] for Element vCenterプラグイン5.2には、バージョン5.1、5.0、4.10、4.9、4.8も含まれています。 4.7および4.6。
 
 [cols="4*"]
 |===
 | バージョン | プラグインのリリースノート | 管理サービスリリースノート | ユーザーガイド 
+
+
+| 5.1 | https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["PDF"^] | https://library.netapp.com/ecm/ecm_download_file/ECMLP2885734["2.23.64"^] | link:index.html["リンク"] 
 
 
 | 5.0 | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["PDF"^] | https://library.netapp.com/ecm/ecm_download_file/ECMLP2884992["2.22.7"^] | link:index.html["リンク"] 

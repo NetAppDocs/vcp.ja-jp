@@ -30,7 +30,7 @@ Element vCenterプラグインを使用するには、vCenterおよびESXiを搭
 .プラグインでサポートされている VMware vSphere のバージョン
 次のメジャーバージョンの VMware ソフトウェアをサポートします。
 
-* vSphere 8.0：vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む
+* vSphere 8.0 Update 1（vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含む）
 * vCenter Server、ESXi、VMFS5およびVMFS6のデータストアを含むvSphere 7.0および7.0 Update 1、2、3
 
 
