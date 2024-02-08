@@ -1,0 +1,46 @@
+---
+indexpage:
+  lead: NetApp Element Plug-in for VMware vCenter Serverは、VMware vSphereインターフェイスのプラグインです。このプラグインを使用して、NetApp
+    Elementソフトウェアを実行しているストレージクラスタを管理および監視できます。このドキュメントサイトを使用して、プラグインの詳細と使用方法を確認できます。このドキュメントサイトでは、リモートのElement
+    Plug-in for vCenter 5.0以降およびローカルのElement Plug-in for vCenter 4.6~4.10について説明します。
+  tiles:
+  - title: はじめに
+    links:
+    - title: リリースノート
+      url: "/rn_relatedrn_vcp.html"
+    - title: 新機能
+      url: "/rn_whatsnew_vcp.html"
+    - title: 製品の概要
+      url: "/concept_vcp_product_overview.html"
+    - title: プラグインをインストールして導入します
+      url: "/vcp_task_getstarted_5_0.html"
+  - title: SolidFire オールフラッシュストレージシステム
+    links:
+    - title: NetApp Element ソフトウェアの新機能
+      url: https://docs.netapp.com/us-en/element-software/concepts/concept_rn_whats_new_element.html
+    - title: Element Plug-inをアップグレードします
+      url: https://docs.netapp.com/us-en/element-software/upgrade/task_vcp_upgrade_plugin.html
+    - title: vSphereコンポーネントをアップグレードします
+      url: https://docs.netapp.com/us-en/element-software/upgrade/task_sf_upgrade_all_vsphere.html
+  - title: NetApp HCI システム
+    links:
+    - title: NetApp HCI の新機能
+      url: https://docs.netapp.com/us-en/hci/docs/rn_whatsnew.html
+    - title: Element Plug-inをアップグレードします
+      url: https://docs.netapp.com/us-en/hci/docs/task_vcp_upgrade_plugin.html
+    - title: vSphereコンポーネントをアップグレードします
+      url: https://docs.netapp.com/us-en/hci/docs/task_hci_upgrade_all_vsphere.html
+  - title: 以前のバージョン
+    links:
+    - title: NetApp Element Plug-in 4.5以前のドキュメント
+      url: "/reference_earlier_versions.html"
+  - title: リソースの追加
+    links:
+    - title: SolidFire およびElementのドキュメント
+      url: https://www.netapp.com/data-storage/solidfire/documentation
+    - title: NetApp HCI のドキュメント
+      url: https://www.netapp.com/hybrid-cloud/hci-documentation/
+    - title: NetApp Hybrid Cloud Control and Management ServicesリリースノートKB
+      url: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes
+    - title: ネットアップの製品マニュアル
+      url: https://www.netapp.com/support-and-training/documentation/

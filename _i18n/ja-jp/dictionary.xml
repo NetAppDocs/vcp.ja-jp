@@ -2845,4 +2845,5 @@
   <block id="cc3e6fea6638b2b1b2791804af52ec8c" category="paragraph">Element vCenter Plug-in 5.2は、管理サービスの2.24.40リリースで使用できます。</block>
   <block id="910e8449099d39f06d7f2cd8d6feea1c" category="section-title">vCenter Server 5.1向けNetApp Elementプラグイン</block>
   <block id="6b51db420393cbff0d9f09dfeb229ecb" category="sidebar">NetApp HCI の新機能</block>
+  <block id="bf2765efb2720c4592beeec5c6bf386c" category="sidebar">NetApp Element Plug-in for VMware vCenter Serverは、VMware vSphereインターフェイスのプラグインです。このプラグインを使用して、NetApp Elementソフトウェアを実行しているストレージクラスタを管理および監視できます。このドキュメントサイトを使用して、プラグインの詳細と使用方法を確認できます。このドキュメントサイトでは、リモートのElement Plug-in for vCenter 5.0以降およびローカルのElement Plug-in for vCenter 4.6~4.10について説明します。</block>
 </blocks>
