@@ -27,10 +27,8 @@
   <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">「 * 次へ * 」を選択します。</block>
   <block id="9dbdab54470930bcd90fc6a8b9dacf15" category="list-text">データストアに必要なホストを 1 つ以上選択します。</block>
   <block id="ff51ebefd280ca27ec34709c2afb8006" category="admonition">新しいデータストアを作成するには、ホストが少なくとも 1 つ接続されている必要があります。ホストに複数のイニシエータがある場合は、 1 つのイニシエータまたはホストを選択してすべてのイニシエータを選択します。vCenter リンクモードを使用している場合は、クラスタが割り当てられている vCenter Server で使用可能なホストのみを選択できます。</block>
-  <block id="bacf21a423bfde2c1eb26fc08d7bdc62" category="list-text">Configure Volume （ボリュームの設定） * ペインで、既存のボリュームを選択して次の手順に進むか、新しいデータストア用の新しいボリュームを作成します。</block>
   <block id="b8a1cad4a50c9260122967b830aa2f1e" category="inline-link">VMFS データストアのコピーをマウントしています</block>
   <block id="d79c3c87976b8fd24486c760b99214ec" category="inline-link">重複する VMFS データストアの管理</block>
-  <block id="0f030e88335aefb9eac88487443396e2" category="admonition">既存のボリュームを選択して新しいデータストアを作成すると、既存のデータは失われます。既存の VMFS ボリュームについては、 VMware のドキュメントを参照してください<block ref="be550d2037a470ce38c4e9b1205adbd3" category="inline-link-rx"></block> および<block ref="e78925c5281376a20450a24207e06cd4" category="inline-link-rx"></block>。</block>
   <block id="9b4855f94b52191a1a75d475396f12a1" category="list-text">データストアの基盤となるボリュームの名前を入力します。</block>
   <block id="f344eae662ec1ec943e20eea1abbf748" category="list-text">アカウントリストからユーザアカウントを選択します。</block>
   <block id="f35c2266c9134e65354b7bac8eb01f5a" category="list-text">作成するボリュームの合計サイズを入力します。</block>
@@ -2846,4 +2844,18 @@
   <block id="910e8449099d39f06d7f2cd8d6feea1c" category="section-title">vCenter Server 5.1向けNetApp Elementプラグイン</block>
   <block id="6b51db420393cbff0d9f09dfeb229ecb" category="sidebar">NetApp HCI の新機能</block>
   <block id="bf2765efb2720c4592beeec5c6bf386c" category="sidebar">NetApp Element Plug-in for VMware vCenter Serverは、VMware vSphereインターフェイスのプラグインです。このプラグインを使用して、NetApp Elementソフトウェアを実行しているストレージクラスタを管理および監視できます。このドキュメントサイトを使用して、プラグインの詳細と使用方法を確認できます。このドキュメントサイトでは、リモートのElement Plug-in for vCenter 5.0以降およびローカルのElement Plug-in for vCenter 4.6~4.10について説明します。</block>
+  <block id="d80d65153da9f647c1ae66ee2e9b710f" category="list-text">[ボリュームの設定]*ペインで、既存のボリュームを選択するか、新しいデータストア用に新しいボリュームを作成します。</block>
+  <block id="b0593ca7b0e91ef1a450ba78bba4194b" category="open-title">既存のボリュームを選択する</block>
+  <block id="a97aaeb15fa07b573c01cd843d650936" category="paragraph">既存のボリュームを選択する場合は、次の前提条件を満たす必要があります。</block>
+  <block id="c7857ac5cc7266a638970bba9e2b2004" category="list-text">ボリュームアクセスグループを使用する手順は、次のとおりです。</block>
+  <block id="380d0774a372417aac38043e2915ac37" category="list-text">512eを有効にして新しいボリュームを作成します。</block>
+  <block id="77960d964e75337a6bb83aef1ceb795a" category="list-text">1つ以上のターゲットホストイニシエータを含むアクセスグループにボリュームを追加します。</block>
+  <block id="8b9144d3ca30a3b9d4bb0cb90305f7b2" category="list-text">CHAPを使用するには：</block>
+  <block id="d239fbec99786f06b158cd7eedf51a08" category="list-text">各ターゲットホストiSCSIアダプタに対してCHAPが構成されていることを確認します。</block>
+  <block id="36a821057cd0ff678a617d89d48fbc98" category="list-text">次のいずれかのオプションを使用して、512eを有効にして新しいボリュームを作成します。</block>
+  <block id="f3c1df40f5b3b7b499caddeebcf7577e" category="list-text">各ターゲットホストに適切なCHAP設定を持つアカウントを使用します。</block>
+  <block id="13360f9beb5e70b1a3911ee48b55a553" category="list-text">アカウントを作成し、ターゲットシークレットとイニシエータシークレットを設定します。</block>
+  <block id="9314e5acbbfd0a4b95d982565586c95f" category="list-text">ボリュームの詳細を表示します。</block>
+  <block id="0fae033b7f8a2552a2db93253ae48448" category="list-text">各ターゲットホストiSCSIアダプタの静的検出テーブルにボリュームIQNを追加します。</block>
+  <block id="ce8c852278bf664e34483c6a3fbd4194" category="open-title">新しいボリュームを作成する</block>
 </blocks>
