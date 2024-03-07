@@ -1,0 +1,2992 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>データストアを管理します</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="データストアを管理します" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/vcp/vcp_task_datastores_manage.html" />
+	<meta property="og:description" content="プラグインを使用して、 Element ボリュームに作成された管理用データストアを追加できます。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/vcp/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="プラグインを使用して、 Element ボリュームに作成された管理用データストアを追加できます。">
+  <meta name="keywords" content=" netapp, datastore, vcp, vcenter, element"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/vcp/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/vcp/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/ja-jp/vcp/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/vcp/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/ja-jp/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/vcp/vcp_task_datastores_manage.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/vcp/vcp_task_datastores_manage.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/vcp/js/na-search.js'></script><script src='/ja-jp/vcp/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/ja-jp/vcp/js/custom-dropdown.js'></script>
+  <script src='/ja-jp/vcp/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/vcp/js/jszip.min.js'></script><script src='/ja-jp/vcp/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/ja-jp/vcp/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/ja/">
+                <image id="ie-header-logo" src="/ja-jp/vcp/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/ja/support-and-training/documentation/">ドキュメント</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/ja-jp/vcp/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">日本語</span>
+                    <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/ja-jp/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/vcp/vcp_task_datastores_manage.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/ja-jp/vcp/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">すべてのNetApp</span>
+                    <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/ja/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">サポート</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb-ja.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">ナレッジ ベース</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">トレーニング</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/ja-jp/vcp/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/ja-jp/vcp/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">すべてのドキュメント</a>
+    </li>
+    
+    
+
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/ja-jp/vcp/">-->
+      VCP
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/ja-jp/vcp/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/ja-jp/vcp/search.html" 
+        data-type="widget"
+        data-placeholder="ドキュメントを検索"
+        data-no-results-found="{query}に一致する結果は見つかりませんでした"
+        data-did-you-mean="{suggestion}で検索しています。"
+        data-no-results-found-did-you-mean="{query}に一致する結果は見つかりませんでした。{suggestion}で検索しますか？"
+        data-results-found="{hitCount}件の結果が見つかりました"
+        data-error-message="エラーが発生しました。もう一度お試しください。"
+        data-error-reset="検索をリセット"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for VMware vCenter Serverのドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/index.html">
+        NetApp Element Plug-in for VMware vCenter Serverのドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for VMware vCenter Serverの製品概要"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/concept_vcp_product_overview.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/concept_vcp_product_overview.html">
+        NetApp Element Plug-in for VMware vCenter Serverの製品概要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リリースノート"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> リリースノート</div>-->
+         リリースノート
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for VMware vCenter Serverの新機能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/rn_whatsnew_vcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/rn_whatsnew_vcp.html">
+        NetApp Element Plug-in for VMware vCenter Serverの新機能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="その他のリリース情報"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/rn_relatedrn_vcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/rn_relatedrn_vcp.html">
+        その他のリリース情報
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for VMware vCenter Server 5.0以降"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> NetApp Element Plug-in for VMware vCenter Server 5.0以降</div>-->
+         NetApp Element Plug-in for VMware vCenter Server 5.0以降
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リモートプラグインのアーキテクチャの概要"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_remote_plugin_architecture.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/vcp/vcp_concept_remote_plugin_architecture.html">
+        リモートプラグインのアーキテクチャの概要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element リモートプラグイン拡張ポイント"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_remote_plugin_extension_point.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/vcp/vcp_concept_remote_plugin_extension_point.html">
+        NetApp Element リモートプラグイン拡張ポイント
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for VMware vCenter Server 4.10以前"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> NetApp Element Plug-in for VMware vCenter Server 4.10以前</div>-->
+         NetApp Element Plug-in for VMware vCenter Server 4.10以前
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Configuration 拡張ポイント"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_config_extension_point.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/vcp/vcp_concept_config_extension_point.html">
+        NetApp Element Configuration 拡張ポイント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Management 拡張ポイント"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_management_extension_point.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/vcp/vcp_concept_management_extension_point.html">
+        NetApp Element Management 拡張ポイント
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザアカウント"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_accounts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_concept_accounts.html">
+        ユーザアカウント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保護ドメイン"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_protection_domains.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_concept_protection_domains.html">
+        保護ドメイン
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="リンクモードとvCenter Plug-in"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_linkedmode.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_concept_linkedmode.html">
+        リンクモードとvCenter Plug-in
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="QoSSIOC"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_qossioc.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_concept_qossioc.html">
+        QoSSIOC
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="仮想ボリューム（ VVOL ）"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_concept_vvols.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_concept_vvols.html">
+        仮想ボリューム（ VVOL ）
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="導入前の要件"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/reference_requirements_vcp.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/reference_requirements_vcp.html">
+        導入前の要件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="NetApp Element Plug-in for vCenter Server をインストールして設定します"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> NetApp Element Plug-in for vCenter Server をインストールして設定します</div>-->
+         NetApp Element Plug-in for vCenter Server をインストールして設定します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Server 7.0以降にElement Plug-in 5.0以降をインストールして設定します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_getstarted_5_0.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_getstarted_5_0.html">
+        vCenter Server 7.0以降にElement Plug-in 5.0以降をインストールして設定します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Element Plug-in 4.10以前をインストールして設定します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_getstarted.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_getstarted.html">
+        Element Plug-in 4.10以前をインストールして設定します
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プラグインをアップグレードします"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/task_vcp_upgrades.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/task_vcp_upgrades.html">
+        プラグインをアップグレードします
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Plug-in を使用してストレージを管理します"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> vCenter Plug-in を使用してストレージを管理します</div>-->
+         vCenter Plug-in を使用してストレージを管理します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_clusters_manage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_clusters_manage.html">
+        クラスタを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="データストアを管理します"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_datastores_manage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_datastores_manage.html">
+        データストアを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ボリュームを管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_volumes_manage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_volumes_manage.html">
+        ボリュームを管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ユーザアカウントを作成および管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_create_manage_user_accounts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_create_manage_user_accounts.html">
+        ユーザアカウントを作成および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="アクセスグループを作成および管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_create_manage_access_groups.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_create_manage_access_groups.html">
+        アクセスグループを作成および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="イニシエータを作成および管理する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_create_manage_initiators.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_create_manage_initiators.html">
+        イニシエータを作成および管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_qossioc.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_qossioc.html">
+        Element ボリュームと VMware データストアに対して QoSSIOC をセットアップおよび管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ボリュームの QoS ポリシーの作成と管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_qos_policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_qos_policies.html">
+        ボリュームの QoS ポリシーの作成と管理
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタハードウェアおよび仮想ネットワークを管理します"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> クラスタハードウェアおよび仮想ネットワークを管理します</div>-->
+         クラスタハードウェアおよび仮想ネットワークを管理します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタのハードウェアと仮想ネットワークの概要を管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_manage_cluster_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_manage_cluster_overview.html">
+        クラスタのハードウェアと仮想ネットワークの概要を管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ドライブを追加および管理する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_add_manage_drive.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_add_manage_drive.html">
+        ドライブを追加および管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ノードを追加および管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_add_manage_nodes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_add_manage_nodes.html">
+        ノードを追加および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="仮想ネットワークを作成および管理する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_create_manage_vlans.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_create_manage_vlans.html">
+        仮想ネットワークを作成および管理する
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="システムパフォーマンスを監視"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> システムパフォーマンスを監視</div>-->
+         システムパフォーマンスを監視
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="レポートオプションを使用して、システムパフォーマンスを監視します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_intro.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_intro.html">
+        レポートオプションを使用して、システムパフォーマンスを監視します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概要ページでクラスタ全体の健全性を監視します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_overview.html">
+        概要ページでクラスタ全体の健全性を監視します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="システムアラートを監視する"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_alerts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_alerts.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> システムアラートを監視する</div>-->
+         システムアラートを監視する
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="システムアラートのリスト"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_reference_reports_alert_errors.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/ja-jp/vcp/vcp_reference_reports_alert_errors.html">
+        システムアラートのリスト
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="イベントログを監視してトラブルシューティングを行う"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_event_logs.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_event_logs.html">
+        イベントログを監視してトラブルシューティングを行う
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ボリュームのパフォーマンスを監視"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_volume_performance.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_volume_performance.html">
+        ボリュームのパフォーマンスを監視
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="iSCSI セッションを監視して接続ステータスを確認"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_iscsi.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_iscsi.html">
+        iSCSI セッションを監視して接続ステータスを確認
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="QOSSIOC イベントで VM のパフォーマンスを監視する"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_reports_qossioc.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_reports_qossioc.html">
+        QOSSIOC イベントで VM のパフォーマンスを監視する
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Plug-in を使用してデータを保護します"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/ja-jp/vcp/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/ja-jp/vcp/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> vCenter Plug-in を使用してデータを保護します</div>-->
+         vCenter Plug-in を使用してデータを保護します
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Plug-in の概要を使用してデータを保護します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_protect_overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_protect_overview.html">
+        vCenter Plug-in の概要を使用してデータを保護します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="ボリューム Snapshot を作成および管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_protect_snapshots_volume.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_protect_snapshots_volume.html">
+        ボリューム Snapshot を作成および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="グループ Snapshot を作成および管理します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_protect_snapshots_group.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_protect_snapshots_group.html">
+        グループ Snapshot を作成および管理します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Snapshot スケジュールを作成します"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_protect_snapshots_schedules.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_protect_snapshots_schedules.html">
+        Snapshot スケジュールを作成します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="クラスタ間でリモートレプリケーションを実行"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_protect_remote_replication.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/ja-jp/vcp/vcp_task_protect_remote_replication.html">
+        クラスタ間でリモートレプリケーションを実行
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="vCenter Plug-in を使用して仮想ボリュームをセットアップおよび管理する"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_task_configure_manage_vvols.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/vcp_task_configure_manage_vvols.html">
+        vCenter Plug-in を使用して仮想ボリュームをセットアップおよび管理する
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プラグインの登録を解除します"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/task_vcp_unregister.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/task_vcp_unregister.html">
+        プラグインの登録を解除します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プラグインを削除します"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/task_vcp_remove.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/task_vcp_remove.html">
+        プラグインを削除します
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="プラグインのトラブルシューティングを行います"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/vcp_reference_troubleshoot_vcp.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/vcp_reference_troubleshoot_vcp.html">
+        プラグインのトラブルシューティングを行います
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="以前のバージョンの NetApp Element プラグインのドキュメント"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/reference_earlier_versions.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/reference_earlier_versions.html">
+        以前のバージョンの NetApp Element プラグインのドキュメント
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法的通知"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/vcp_task_datastores_manage.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/ja-jp/vcp/legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/ja-jp/vcp"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/ja-jp/vcp"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/ja-jp/vcp/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">データストアを管理します</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-07 06:23:10 +0000">03/07/2024</time>
+        
+    
+    
+        <span>共同作成者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/ja-jp/vcp/images/discuss-sm.svg" alt="" class="github-icon" />変更を提案</span>
+        <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/ja-jp/vcp/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/vcp.ja-jp/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/ja-jp/vcp/vcp_task_datastores_manage.html&page-title=データストアを管理します" class="page-nav-contribute-link" role="button">ドキュメントの変更をリクエスト</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/vcp/blob/main/vcp_task_datastores_manage.adoc" class="page-nav-contribute-link" role="button">このページを編集</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >フィードバックを送るには</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/ja-jp/vcp/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/ja-jp/vcp/pdfs/fullsite-sidebar/NetApp_Element_Plug_in_for_VMware_vCenter_Serverのドキュメント.pdf" >
+                    <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>このドキュメント ページのPDF</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/リリースノート.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            リリースノート
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/NetApp_Element_Plug_in_for_VMware_vCenter_Server_5_0以降.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            NetApp Element Plug-in for VMware vCenter Server 5.0以降
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/NetApp_Element_Plug_in_for_VMware_vCenter_Server_4_10以前.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            NetApp Element Plug-in for VMware vCenter Server 4.10以前
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/NetApp_Element_Plug_in_for_vCenter_Server_をインストールして設定します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            NetApp Element Plug-in for vCenter Server をインストールして設定します
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してストレージを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            vCenter Plug-in を使用してストレージを管理します
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/クラスタハードウェアおよび仮想ネットワークを管理します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            クラスタハードウェアおよび仮想ネットワークを管理します
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムパフォーマンスを監視.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            システムパフォーマンスを監視
+          </a>
+          
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/システムアラートを監視する.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            システムアラートを監視する
+          </a>
+          
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/ja-jp/vcp/pdfs/sidebar/vCenter_Plug_in_を使用してデータを保護します.pdf" 
+            
+          >
+            <img src="/ja-jp/vcp/images/pdf-icon.png" alt="" width="16" height="16"/>
+            vCenter Plug-in を使用してデータを保護します
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/ja-jp/vcp/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>PDF版ドキュメントのセット<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>NetApp Element Plug-in for VMware vCenter Serverでは、Elementボリュームに基づくデータストアを管理できます。データストアを作成、拡張、クローニング、共有、削除できます。また、 VAAI UNMAP 機能を使用して、シンプロビジョニングされた VMFS データストアから解放されたブロックスペースをクラスタで再生することもできます。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>データストアを作成および管理するには、最初に少なくとも 1 つのユーザアカウントを作成する必要があります。</p>
+</li>
+<li>
+<p>データストアでQoSSIOCサービスを使用するには、まずプラグイン拡張ポイントのQoSSIOC設定ページで設定を行う必要があります。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in">"Element vCenterプラグイン5.0以降を使用して設定を行います"</a></p>
+</li>
+<li>
+<p><a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"Element vCenter Plug-in 4.10以前を使用して設定を行います"</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>データストアの作成には選択した ESXi ホストでサポートされる最も高い VMFS バージョンが使用されるため、 VMFS の互換性に関する問題を防ぐために、実行する vSphere および ESXi のバージョンをすべてのクラスタメンバーで統一する必要があります。</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">オプション（ Options ）</div>
+<ul>
+<li>
+<p><a href="#データストアを作成">データストアを作成</a></p>
+</li>
+<li>
+<p><a href="#データストアリストを表示します">データストアリストを表示します</a></p>
+</li>
+<li>
+<p><a href="#データストアを拡張する">データストアを拡張する</a></p>
+</li>
+<li>
+<p><a href="#データストアのクローニング">データストアのクローニング</a></p>
+</li>
+<li>
+<p><a href="#データストアを共有する">データストアを共有する</a></p>
+</li>
+<li>
+<p><a href="#vaai-unmap-を実行します">VAAI UNMAP を実行します</a></p>
+</li>
+<li>
+<p><a href="#データストアを削除する">データストアを削除する</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+vSphere のタスク監視を使用して、データストア処理の進捗状況を監視します。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアを作成">データストアを作成</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>データストアはプラグインの拡張機能を使用して作成できます。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>vCenter Server にホストが少なくとも 1 つ接続されている必要があります。</p>
+</li>
+<li>
+<p>クラスタが少なくとも 1 つ追加されて実行されている必要があります。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+vCenter リンクモードを使用している場合は、クラスタが追加されている vCenter Server が正しいことを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>少なくとも 1 つのユーザアカウントを作成する必要があります。</p>
+</li>
+<li>
+<p>データストアでQoSSIOCサービスを使用するには、プラグイン拡張ポイントからQoSSIOCの設定ページで最初に設定を行う必要があります。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in">"Element vCenter Plug-in 5.0以降を使用して設定を行います"</a></p>
+</li>
+<li>
+<p><a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"Element vCenter Plug-in 4.10以前を使用して設定を行います"</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、このタスクに使用するクラスタがナビゲーションバーで選択されていることを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>データストアページで、 * データストアの作成 * を選択します。</p>
+</li>
+<li>
+<p>データストアの名前を入力します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+データセンター内のデータストアごとに一意の名前を使用します。複数のクラスタや vCenter Server を使用する環境では、わかりやすい名前のベストプラクティスを使用してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>データストアに必要なホストを 1 つ以上選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+新しいデータストアを作成するには、ホストが少なくとも 1 つ接続されている必要があります。ホストに複数のイニシエータがある場合は、 1 つのイニシエータまたはホストを選択してすべてのイニシエータを選択します。vCenter リンクモードを使用している場合は、クラスタが割り当てられている vCenter Server で使用可能なホストのみを選択できます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>[ボリュームの設定]*ペインで、既存のボリュームを選択するか、新しいデータストア用に新しいボリュームを作成します。</p>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">既存のボリュームを選択する</div>
+<div class="content">
+<div class="paragraph">
+<p>既存のボリュームを選択する場合は、次の前提条件を満たす必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ボリュームアクセスグループを使用する手順は、次のとおりです。</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>512eを有効にして新しいボリュームを作成します。</p>
+</li>
+<li>
+<p>1つ以上のターゲットホストイニシエータを含むアクセスグループにボリュームを追加します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>CHAPを使用するには：</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>各ターゲットホストiSCSIアダプタに対してCHAPが構成されていることを確認します。</p>
+</li>
+<li>
+<p>次のいずれかのオプションを使用して、512eを有効にして新しいボリュームを作成します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>各ターゲットホストに適切なCHAP設定を持つアカウントを使用します。</p>
+</li>
+<li>
+<p>アカウントを作成し、ターゲットシークレットとイニシエータシークレットを設定します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>ボリュームの詳細を表示します。</p>
+</li>
+<li>
+<p>各ターゲットホストiSCSIアダプタの静的検出テーブルにボリュームIQNを追加します。</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">新しいボリュームを作成する</div>
+<div class="content">
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>データストアの基盤となるボリュームの名前を入力します。</p>
+</li>
+<li>
+<p>アカウントリストからユーザアカウントを選択します。</p>
+</li>
+<li>
+<p>作成するボリュームの合計サイズを入力します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+デフォルトで選択されているボリュームサイズの単位は GB です。ボリュームは、 GB または GiB 単位のサイズを使用して作成できます。 1GB = 1 000 000 000 バイト 1GiB = 1 073 741 824 バイト
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>デフォルトでは、すべての新しいボリュームについて、 512 バイトエミュレーションが ON に設定されます。</p>
+</div>
+</li>
+<li>
+<p>[* Quality of Service* （サービス品質 * ） ] 領域で、次のいずれかを実行します。</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>* Policy * で、既存の QoS ポリシーを選択します。</p>
+</li>
+<li>
+<p>カスタム設定 * で、 IOPS の最小値、最大値、バースト値をカスタマイズするか、デフォルトの QoS 値を使用します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>次のいずれかを選択して、ホストアクセスの認証タイプを設定します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* ボリュームアクセスグループを使用 * ：ボリュームを認識できるイニシエータを明示的に制限する場合に選択します。</p>
+</li>
+<li>
+<p>* Use CHAP * ：イニシエータを制限しないセキュアなシークレットベースのアクセスの場合に選択します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>ボリュームアクセスグループを使用するを選択した場合は、選択したホストのボリュームアクセスグループを設定します。</p>
+<div class="paragraph">
+<p>「選択したイニシエータで必要」にリストされているボリュームアクセスグループは、前の手順で選択した 1 つ以上のホストイニシエータにすでに関連付けられています</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>追加のボリュームアクセスグループを選択するか、または新しいグループを作成して、使用可能なイニシエータに関連付けます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* available * ：クラスタ内のその他のボリュームアクセスグループオプション。</p>
+</li>
+<li>
+<p>* 新しいアクセスグループの作成 <strong>: 新しいアクセスグループの名前を入力し、 *Add</strong> を選択します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>[Configure Hosts' Access * （ホストのアクセスの設定） ] ペインで、前のペインで選択したボリュームアクセスグループに、使用可能なホストイニシエータ（ IQN または WWPN ）を関連付けます。ボリュームアクセスグループがすでに関連付けられているホストイニシエータの場合、このフィールドは読み取り専用です。ボリュームアクセスグループに関連付けられていない場合は、イニシエータの横にあるリストから該当するオプションを選択します。</p>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>QoSSIOC 自動化を有効にする場合は、 QoS と SIOC を有効にする * をオンにしてから、 QoSSIOC を設定します。</p>
+<div class="openblock">
+<div class="content">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>QoSSIOCサービスを使用できない場合は、最初にQoSSIOCを設定する必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in">"Element vCenterプラグイン5.0以降を使用して設定を行います"</a></p>
+</li>
+<li>
+<p><a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"Element vCenter Plug-in 4.10以前を使用して設定を行います"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>「 QoS と SIOC を有効にする」を選択します。</p>
+</li>
+<li>
+<p>* バースト係数 * を設定します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+バースト係数は、 VMDK の IOPS 制限（ SIOC ）設定を乗算する係数です。デフォルト値を変更する場合は、すべての VMDK について、 IOPS 制限にこの係数を掛けても Element ボリュームの最大バースト制限を超えない値を指定してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>（任意） [*Override default QoS] を選択し、設定を行います。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+データストアに対して「デフォルトの QoS 設定を上書き」が無効になっている場合は、各 VM のデフォルトの SIOC 設定に基づいて、共有 IOPS と制限 IOPS の値が自動的に設定されます。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+SIOC シェア制限をカスタマイズするときは、 SIOC IOPS 制限も必ずカスタマイズしてください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+デフォルトでは、 SIOC のディスク共有の最大数は「無制限」に設定されています。VDI などの大規模な VM 環境では、クラスタの最大 IOPS がオーバーコミットされる可能性があります。QoSSIOC を有効にするときは、常にデフォルト QoS を上書きするオプションをオンにして、 IOPS 制限オプションを適切な値に設定してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>選択を確定し、 * 完了 * をクリックします。</p>
+</li>
+<li>
+<p>タスクの進捗状況を表示するには、 vSphere のタスク監視を使用します。データストアがリストに表示されない場合は、ビューを更新します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアリストを表示します">データストアリストを表示します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Plug-in拡張ポイントからは、Datastoresページ上の使用可能なデータストアを表示できます。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>データストアのリストを確認します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のボリュームにまたがるデータストア（混在データストア）はリストに表示されません。データストアビューには、選択した NetApp Element クラスタの ESXi ホストで使用可能なデータストアのみが表示されます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>次の点について確認</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* Name * ：データストアに割り当てられた名前。</p>
+</li>
+<li>
+<p>* ホスト名 * ：関連付けられている各ホストデバイスのアドレス。</p>
+</li>
+<li>
+<p>* ステータス * ：「 accessible 」または「 Inaccessible 」の値は、データストアが現在 vSphere に接続されているかどうかを示します。</p>
+</li>
+<li>
+<p>* タイプ * ： VMware ファイルシステムのデータストアタイプ。</p>
+</li>
+<li>
+<p>* ボリューム名 * ：関連付けられたボリュームに割り当てられている名前。</p>
+</li>
+<li>
+<p>* Volume NAA * ： NAA IEEE Registered Extended フォーマットで関連付けられたボリュームのグローバル一意 SCSI デバイス ID 。</p>
+</li>
+<li>
+<p>* 合計容量（ GB ） * ：データストアのフォーマット後の総容量。</p>
+</li>
+<li>
+<p>* 空き容量（ GB ） * ：データストアで使用可能なスペース。</p>
+</li>
+<li>
+<p>* QoSSIOC 自動化 * ： QoSSIOC 自動化が有効になっているかどうか。有効な値は次のとおり</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[Enabled （有効） ] ： QoSSIOC は有効です。</p>
+</li>
+<li>
+<p>「 Disabled 」： QoSSIOC は無効です。</p>
+</li>
+<li>
+<p>「最大 QoS を超えました」：ボリュームの最大 QoS が指定された制限値を超えました。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアを拡張する">データストアを拡張する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラグインの拡張ポイントを使用して、データストアを拡張してボリュームのサイズを大きくすることができます。データストアを拡張すると、そのデータストアに関連する VMFS ボリュームも拡張されます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Datastores ページで、拡張するデータストアのチェックボックスを選択します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>表示されたメニューで、 * 延長 * を選択します。</p>
+</li>
+<li>
+<p>New Datastore Size （新しいデータストアのサイズ）フィールドに、新しいデータストアに必要なサイズを入力し、 GB または GiB を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+データストアの拡張では、ボリューム全体のサイズが消費されます。新しいデータストアのサイズは、選択したクラスタで利用できるプロビジョニングされていないスペースよりも大きくすることはできません。また、クラスタで許容される最大ボリュームサイズ以下でなければなりません。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * OK 」を選択します。</p>
+</li>
+<li>
+<p>ページをリフレッシュしてください</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアのクローニング">データストアのクローニング</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラグインを使用してデータストアをクローニングできます。これには、目的の ESXi サーバまたはクラスタに新しいデータストアをマウントする作業が含まれます。作成したデータストアのクローンに名前を付け、 QoSSIOC 、ボリューム、ホスト、および認証タイプを設定できます。</p>
+</div>
+<div class="paragraph">
+<p>ソースデータストアに仮想マシンが存在する場合は、クローンデータストア上の仮想マシンが新しい名前でインベントリに格納されます。</p>
+</div>
+<div class="paragraph">
+<p>クローンデータストアのボリュームサイズは、ソースデータストアを構成するボリュームのサイズと同じになります。デフォルトでは、すべての新しいボリュームについて、 512 バイトエミュレーションが ON に設定されます。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>vCenter Server にホストが少なくとも 1 つ接続されている必要があります。</p>
+</li>
+<li>
+<p>クラスタが少なくとも 1 つ追加されて実行されている必要があります。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+vCenter リンクモードを使用している場合は、クラスタが追加されている vCenter Server が正しいことを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>ソースボリュームのサイズと同じかそれ以上のプロビジョニングされていない利用可能なスペースが必要です。</p>
+</li>
+<li>
+<p>少なくとも 1 つのユーザアカウントを作成する必要があります。</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[* Datastores * （データストア * ） ] ページで、クローニングするデータストアのチェックボックスを選択します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>表示されたメニューで、 * Clone * を選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+クローニングするデータストアにそのデータストアにないディスクが接続された仮想マシンが含まれている場合、クローンの作成後、その仮想マシンのコピーは仮想マシンインベントリに追加されません。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>データストア名を入力します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+データセンター内のデータストアごとに一意の名前を使用します。複数のクラスタや vCenter Server を使用する環境では、わかりやすい名前のベストプラクティスを使用してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>データストアに必要なホストを 1 つ以上選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+新しいデータストアを作成するには、ホストが少なくとも 1 つ接続されている必要があります。ホストに複数のイニシエータがある場合は、 1 つのイニシエータまたはホストを選択してすべてのイニシエータを選択します。vCenter リンクモードを使用している場合は、クラスタが割り当てられている vCenter Server で使用可能なホストのみを選択できます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>[Configure Volume] ペインで、次の操作を行います。</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>クローンデータストアを構成する新しい NetApp Element の名前を入力します。</p>
+</li>
+<li>
+<p>アカウントリストからユーザアカウントを選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+ボリュームを作成するには、既存のユーザアカウントが少なくとも 1 つ必要です。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[* Quality of Service* （サービス品質 * ） ] 領域で、次のいずれかを実行します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>「 * Policy 」で、既存の QoS ポリシーがある場合は選択します。</p>
+</li>
+<li>
+<p>カスタム設定 * で、 IOPS の最小値、最大値、バースト値をカスタマイズするか、デフォルトの QoS 値を使用します。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+QoS ポリシーは、データベースサーバ、アプリケーションサーバ、インフラサーバなど、ほとんどリブートされずにストレージへの常時アクセスが必要となるサービス環境に最適です。カスタム QoSSIOC 自動化は、仮想デスクトップや専用キオスクタイプの VM など、毎日または数回、リブート、電源オン、電源オフが可能な軽量の VM に最適です。QoSSIOC 自動化ポリシーと QoS ポリシーを一緒に使用しないでください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+最大 IOPS またはバースト IOPS の値が 20 、 000 IOPS を超える場合、単一のボリュームでこのレベルの IOPS を実現するには、キュー深度を深くするか、複数のセッションが必要になる場合があります。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>次のいずれかのオプションを選択して、ホストアクセスの認証タイプを設定します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* ボリュームアクセスグループを使用 * ：ボリュームを認識できるイニシエータを明示的に制限する場合に選択します。</p>
+</li>
+<li>
+<p>* Use CHAP * ：イニシエータを制限しないセキュアなシークレットベースのアクセスの場合に選択します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>ボリュームアクセスグループを使用するを選択した場合は、選択したホストのボリュームアクセスグループを設定します。</p>
+<div class="paragraph">
+<p>「選択したイニシエータで必要」にリストされているボリュームアクセスグループは、前の手順で選択した 1 つ以上のホストイニシエータにすでに関連付けられています。</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>追加のボリュームアクセスグループを選択するか、または新しいグループを作成して、使用可能なイニシエータに関連付けます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* available * ：クラスタ内のその他のボリュームアクセスグループオプション。</p>
+</li>
+<li>
+<p>* 新しいアクセスグループの作成 <strong>: 新しいアクセスグループの名前を入力し、 *Add</strong> をクリックします。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>[Configure Hosts' Access * （ホストのアクセスの設定） ] ペインで、前のペインで選択したボリュームアクセスグループに、使用可能なホストイニシエータ（ IQN または WWPN ）を関連付けます。</p>
+<div class="paragraph">
+<p>ボリュームアクセスグループがすでに関連付けられているホストイニシエータの場合、このフィールドは読み取り専用です。ボリュームアクセスグループに関連付けられていない場合は、イニシエータの横にあるドロップダウンリストから該当するオプションを選択します。</p>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>QoSSIOC 自動化を有効にする場合は、「 QoS と SIOC を有効にする」チェックボックスをオンにしてから、 QoSSIOC を設定します。</p>
+<div class="openblock">
+<div class="content">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/important.svg" alt="重要">
+</td>
+<td class="content">
+QoS ポリシーを使用する場合は、 QoSSIOC を有効にしないでください。QoSSIOC は上書きされ、ボリュームの QoS 設定の QoS 値が調整されます。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>QoSSIOCサービスを使用できない場合は、プラグイン拡張ポイントからQoSSIOCの設定ページで最初に設定する必要があります。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="vcp_task_getstarted_5_0.html#configure-qossioc-settings-using-the-plug-in">"Element vCenterプラグイン5.0以降を使用して設定を行います"</a></p>
+</li>
+<li>
+<p><a href="vcp_task_getstarted.html#configure-qossioc-settings-using-the-plug-in">"Element vCenter Plug-in 4.10以前を使用して設定を行います"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>「 QoS と SIOC を有効にする」を選択します。</p>
+</li>
+<li>
+<p>* バースト係数 * を設定します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+バースト係数は、 VMDK の IOPS 制限（ SIOC ）設定を乗算する係数です。デフォルト値を変更する場合は、すべての VMDK について、 IOPS 制限にこの係数を掛けても NetApp Element ボリュームの最大バースト制限を超えない値を指定してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>* オプション * ： [* Override default QoS] を選択し、設定を行います。</p>
+<div class="paragraph">
+<p>データストアに対して「デフォルトの QoS 設定を上書き」が無効になっている場合は、各 VM のデフォルトの SIOC 設定に基づいて、共有 IOPS と制限 IOPS の値が自動的に設定されます。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+SIOC シェア制限をカスタマイズするときは、 SIOC IOPS 制限も必ずカスタマイズしてください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+デフォルトでは、 SIOC のディスク共有の最大数は「無制限」に設定されています。VDI などの大規模な VM 環境では、クラスタの最大 IOPS がオーバーコミットされる可能性があります。QoSSIOC を有効にするときは、常にデフォルト QoS を上書きするオプションをオンにして、 IOPS 制限オプションを適切な値に設定してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>選択を確定し、 * 完了 * を選択します。</p>
+</li>
+<li>
+<p>ページをリフレッシュしてください</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアを共有する">データストアを共有する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラグインの拡張ポイントを使用して、データストアを1つ以上のホストと共有できます。</p>
+</div>
+<div class="paragraph">
+<p>データストアは、同じデータセンター内のホスト間でのみ共有できます。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>クラスタが少なくとも 1 つ追加されて実行されている必要があります。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+vCenter リンクモードを使用している場合は、クラスタが追加されている vCenter Server が正しいことを確認してください。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>選択したデータセンターに複数のホストがある。</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[* Datastores] ページで、共有するデータストアのチェックボックスを選択します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>表示されたメニューで、「 * 共有」を選択します。</p>
+</li>
+<li>
+<p>次のいずれかのオプションを選択して、ホストアクセスの認証タイプを設定します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* ボリュームアクセスグループを使用 * ：このオプションは、どのイニシエータがボリュームを認識できるかを明示的に制限する場合に選択します。</p>
+</li>
+<li>
+<p>* Use CHAP * ：イニシエータを制限せずにシークレットベースのセキュアなアクセスを行う場合に選択します。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>データストアに必要なホストを 1 つ以上選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+新しいデータストアを作成するには、ホストが少なくとも 1 つ接続されている必要があります。ホストに複数のイニシエータがある場合は、いずれかのイニシエータを選択するか、またはホストを選択してすべてのイニシエータvCenter リンクモードを使用している場合は、クラスタが割り当てられている vCenter Server で使用可能なホストのみを選択できます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>ボリュームアクセスグループを使用するを選択した場合は、選択したホストのボリュームアクセスグループを設定します。</p>
+<div class="paragraph">
+<p>「選択したイニシエータで必要」にリストされているボリュームアクセスグループは、前の手順で選択した 1 つ以上のホストイニシエータにすでに関連付けられています。</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>追加のボリュームアクセスグループを選択するか、または新しいグループを作成して、使用可能なイニシエータに関連付けます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>* available * ：クラスタ内のその他のボリュームアクセスグループオプション。</p>
+</li>
+<li>
+<p>* 新しいアクセスグループの作成 <strong>: 新しいアクセスグループの名前を入力し、 *Add</strong> をクリックします。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>「 * 次へ * 」を選択します。</p>
+</li>
+<li>
+<p>[Configure Hosts' Access * （ホストのアクセスの設定） ] ペインで、前のペインで選択したボリュームアクセスグループに、使用可能なホストイニシエータ（ IQN または WWPN ）を関連付けます。</p>
+<div class="paragraph">
+<p>ボリュームアクセスグループがすでに関連付けられているホストイニシエータの場合、このフィールドは読み取り専用です。ボリュームアクセスグループに関連付けられていない場合は、イニシエータの横にあるドロップダウンリストから該当するオプションを選択します。</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>選択を確定し、 * 完了 * を選択します。</p>
+</li>
+<li>
+<p>ページをリフレッシュしてください</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vaai-unmap-を実行します">VAAI UNMAP を実行します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>シンプロビジョニングされた VMFS5 データストアから解放されたブロックスペースをクラスタで再生するには、 VAAI UNMAP 機能を使用します。</p>
+</div>
+<div class="ulist">
+<div class="title">必要なもの</div>
+<ul>
+<li>
+<p>タスクに使用するデータストアが VMFS5 以前のものであることを確認します。VMFS6 では、 ESXi で自動的に実行されるため、 VAAI UNMAP は使用できません</p>
+</li>
+<li>
+<p>ESXi ホストのシステム設定で VAAI UNMAP が有効になっていることを確認します。</p>
+<div class="paragraph">
+<p>esxcli system settings advanced list -o /VMFS3/EnableBlockDelete ’</p>
+</div>
+<div class="paragraph">
+<p>有効にするには、整数値を 1 に設定する必要があります。</p>
+</div>
+</li>
+<li>
+<p>ESXi ホストのシステム設定で VAAI UNMAP が有効になっていない場合は、次のコマンドを使用して値を 1 に設定します。</p>
+<div class="paragraph">
+<p>esxcli system settings advanced set -i 1 -o /VMFS3/EnableBlockDelete 」を参照してください</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[* Datastores] ページで、 VAAI UNMAP を使用するデータストアのチェックボックスを選択します。</p>
+</li>
+<li>
+<p>表示されたメニューで、 * アクション * を選択します。</p>
+</li>
+<li>
+<p>VAAI Unmap * を選択します。</p>
+</li>
+<li>
+<p>名前または IP アドレスでホストを選択します。</p>
+</li>
+<li>
+<p>ホストのユーザ名とパスワードを入力します。</p>
+</li>
+<li>
+<p>選択を確定し、 * OK * を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="データストアを削除する">データストアを削除する</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>プラグイン拡張ポイントを使用して、データストアを削除できます。この処理を実行すると、データストア上の、削除する VM に関連付けられているすべてのファイルが完全に削除されます。プラグインでは、登録済みの VM を含むデータストアは削除されません。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>vSphere Web Clientで、* Management *タブを開きます。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Element vCenterプラグイン5.0以降では、* NetApp Element リモートプラグイン&gt;管理&gt;管理*を選択します。</p>
+</li>
+<li>
+<p>Element vCenterプラグイン4.10以前の場合は、* NetApp Element Management &gt; Management *を選択します。</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+複数のクラスタが追加されている場合は、ナビゲーションバーで使用するクラスタを選択します。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>[* Datastores * （データストア * ） ] ページで、削除するデータストアのチェックボックスを選択します。</p>
+</li>
+<li>
+<p>[ * アクション * ] を選択します。</p>
+</li>
+<li>
+<p>表示されたメニューで、 * 削除 * を選択します。</p>
+</li>
+<li>
+<p>（オプション）データストアに関連付けられている NetApp Element ボリュームを削除する場合は、関連するボリュームの削除 * チェックボックスを選択します。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/vcp/images/note.svg" alt="メモ">
+</td>
+<td class="content">
+ボリュームを削除せずに残し、あとで別のデータストアに関連付けることもできます。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>「 * はい * 」を選択します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="詳細についてはこちらをご覧ください">詳細については、こちらをご覧ください</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/hci/index.html" target="_blank" rel="noopener">"NetApp HCI のドキュメント"</a></p>
+</li>
+<li>
+<p><a href="https://www.netapp.com/data-storage/solidfire/documentation" target="_blank" rel="noopener">"SolidFire and Element Resources ページにアクセスします"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/ja-jp/vcp/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/ja-jp/vcp/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">このページ</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">ご利用規約</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">プライバシー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">クッキー ポリシー</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">クッキーの設定</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">このページに関するフィードバックをお寄せください</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/vcp/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/vcp/js/ie-tabbed-blocks.js'></script>
+    <script src='/ja-jp/vcp/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
