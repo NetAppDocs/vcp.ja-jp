@@ -14,7 +14,7 @@ keywords: netapp, vcp, vcenter, plugin, element, upgrade
 
 
 [role="lead"]
-NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.2は、ElementおよびNetApp HCIリリースに含まれていませんが、管理サービスバンドルの一部として提供されています。
+NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.3は、ElementおよびNetApp HCIリリースに含まれていませんが、管理サービスバンドルの一部として提供されています。
 
 [NOTE]
 ====
@@ -34,7 +34,7 @@ NetApp Element Plug-in for vCenter Server をアップグレードする手順�
 
 == 詳細については、こちらをご覧ください
 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP2886272["vCenter Plug-in 5.2リリースノート"^]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3316480["vCenter Plug-in 5.3リリースノート"^]
 * https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/Management_services_for_Element_Software_and_NetApp_HCI/Management_Services_Release_Notes["『 Hybrid Cloud Control and Management Services Release Notes 』を参照してください"^]
 * https://docs.netapp.com/us-en/hci/index.html["NetApp HCI のドキュメント"^]
 * http://mysupport.netapp.com/hci/resources["NetApp HCI のリソースページ"^]
