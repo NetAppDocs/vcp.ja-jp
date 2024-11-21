@@ -2853,9 +2853,6 @@
   <block id="0fae033b7f8a2552a2db93253ae48448" category="list-text">各ターゲットホストiSCSIアダプタの静的検出テーブルにボリュームIQNを追加します。</block>
   <block id="ce8c852278bf664e34483c6a3fbd4194" category="open-title">新しいボリュームを作成する</block>
   <block id="d3c4a89052a32dd9783dd119f30d6d47" category="inline-link">vCenter Plug-in 5.3リリースノート</block>
-  <block id="0c21440ced3ddae10d1eea32870fdf02" category="list-text"><block ref="ce90fd614158a5c7e0a42a5908fa1cd7" category="inline-link-rx"></block> _ 新規 _</block>
-  <block id="724cde13f8f34ec9a75aa3a5949a7bae" category="paragraph">NetApp Element Plug-in for VMware vCenter Serverのバージョン5.3より前のリリースのドキュメントも用意されています。</block>
-  <block id="b91ca928498ebf0173fb7e3d48992a66" category="admonition">これ <block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block> for Element vCenterプラグイン5.3には、バージョン5.2、5.1、5.0、4.10、4.9も含まれています。 4.8、4.7、および4.6。</block>
   <block id="d3fc3e6e42d7ebd71ce2e5001c965277" category="cell">5.2</block>
   <block id="a87975cd874f3995aa0f5b8e9914d6ac" category="cell"><block ref="a87975cd874f3995aa0f5b8e9914d6ac" category="inline-link-rx"></block></block>
   <block id="1b96174d42a2f1a016196aced05ce205" category="inline-link">2.24.40</block>
@@ -2867,6 +2864,20 @@
   <block id="4dc24cec9c06f3bd0c6f458b16afede8" category="paragraph">NetApp Element Plug-in for vCenter Server 5.3では、セキュリティとパフォーマンスが向上しています。<block ref="ca5ac7a1ab671f72eb64321851616ed9" category="inline-link-rx"></block>。</block>
   <block id="04f2e4cbd56c4588624b04a1aa9d7bf7" category="paragraph">Element vCenter Plug-in 5.3は、管理サービスの2.25.42リリースで使用できます。</block>
   <block id="7d85b43ddb7107e1d89d5c5b6d8d7f2a" category="section-title">vCenter Server 5.2向けNetApp Elementプラグイン</block>
-  <block id="85cde91596c6febafca64baa345a0163" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.3は、ElementおよびNetApp HCIリリースに含まれていませんが、管理サービスバンドルの一部として提供されています。</block>
   <block id="ce90fd614158a5c7e0a42a5908fa1cd7" category="list-text"><block ref="ce90fd614158a5c7e0a42a5908fa1cd7" category="inline-link-rx"></block></block>
+  <block id="c4891769f65182d5fc5a37494844c496" category="inline-link">『 vCenter Plug-in 5.4 Release Notes 』を参照してください</block>
+  <block id="230e88f97688d3fb971fe1a76f5b2a13" category="list-text"><block ref="912995e99772bb097b2c7b32940725bb" category="inline-link-rx"></block>新規_</block>
+  <block id="6f00c58e2f26b2ef4542eb663cdb651d" category="inline-link-macro">管理サービス2.26.30（NetApp Element Plug-in for VMware vCenter Server 5.4.1）に関するお知らせ</block>
+  <block id="259fc2bd6b04fc8a21b613b56a906692" category="list-text"><block ref="259fc2bd6b04fc8a21b613b56a906692" category="inline-link-macro-rx"></block></block>
+  <block id="1ecb042cd2d9b7c6155b611ddef0aadb" category="paragraph">NetApp Element Plug-in for VMware vCenter Serverのバージョン5.4より前のリリースのドキュメントも用意されています。</block>
+  <block id="171b8232112384b5a3a5a57c0e78fcf7" category="admonition"><block ref="f85d5f4f47d1b49f55d365d260fa53d2" category="inline-link-macro-rx"></block>Element vCenterプラグイン5.4向けのバージョンには、5.3、5.2、5.1、5.0、4.10、4.9、4.8、4.7、4.6も含まれています。</block>
+  <block id="02e299f5ec237798b763a1565169ed12" category="cell">5.3</block>
+  <block id="7c7819454c75ce386e388573f32eef41" category="cell"><block ref="7c7819454c75ce386e388573f32eef41" category="inline-link-rx"></block></block>
+  <block id="459e2f01e24235345878cd014c3c9359" category="inline-link">2.25.42</block>
+  <block id="daa279b52678c9d3b826eed668f69813" category="cell"><block ref="daa279b52678c9d3b826eed668f69813" category="inline-link-rx"></block></block>
+  <block id="20231df9fd53e3950c8610c2e563490d" category="paragraph">Element vCenterプラグイン5.4リリースでは、新しい機能拡張はありません。</block>
+  <block id="de5ac3881c3498b47f9d93eb49e3fbfe" category="paragraph">Element vCenter Plug-in 5.4は、管理サービスの2.26.30リリースで使用できます。 <block ref="ead5713b1da2c7d4ae63ee6ef1fd469b" category="inline-link-macro-rx"></block></block>
+  <block id="7cf6790535f5cb85bde6ce82d5227fce" category="section-title">vCenter Server 5.3向けNetApp Elementプラグイン</block>
+  <block id="e6282772fca5835069b1c98cf6db2c43" category="paragraph">NetApp Element Plug-in for vCenter Server をアップグレードする手順については、環境に応じた手順に従ってください。NetApp Element vCenterプラグイン5.4は、ElementおよびNetApp HCIリリースに含まれていませんが、管理サービスバンドルの一部として提供されています。</block>
+  <block id="912995e99772bb097b2c7b32940725bb" category="list-text"><block ref="912995e99772bb097b2c7b32940725bb" category="inline-link-rx"></block></block>
 </blocks>

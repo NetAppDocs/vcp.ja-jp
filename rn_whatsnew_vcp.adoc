@@ -14,6 +14,14 @@ keywords: netapp, vcp, vcenter, plugin, element, new, whats new
 
 
 [role="lead"]
+Element vCenterプラグイン5.4リリースでは、新しい機能拡張はありません。
+
+Element vCenter Plug-in 5.4は、管理サービスの2.26.30リリースで使用できます。 link:https://library.netapp.com/ecm/ecm_download_file/ECMLP3330676["詳細はこちら。"^]
+
+
+
+== vCenter Server 5.3向けNetApp Elementプラグイン
+
 NetApp Element Plug-in for vCenter Server 5.3では、セキュリティとパフォーマンスが向上しています。 https://library.netapp.com/ecm/ecm_download_file/ECMLP3316480["詳細はこちら。"^]。
 
 Element vCenter Plug-in 5.3は、管理サービスの2.25.42リリースで使用できます。
