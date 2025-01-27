@@ -165,9 +165,6 @@ Plug-in拡張ポイントを使用して、vCenter Plug-inでの管理対象か�
 
 プラグイン拡張ポイントを使用して、保存データの暗号化（EAR）機能を手動で有効にすることができます。
 
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
-
 .手順
 . vSphere Web Clientで、*クラスタ*タブを開きます。
 +
@@ -206,9 +203,6 @@ NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタで�
 
 プラグイン拡張ポイントを使用して、Secure Shell（SSH）セッションを手動で有効にすることができます。SSH を有効にすると、ネットアップのテクニカルサポートエンジニアが指定された期間にストレージノードにアクセスしてトラブルシューティングを行うことができます。
 
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
-
 .手順
 . vSphere Web Clientで、*クラスタ*タブを開きます。
 +
@@ -232,9 +226,6 @@ NOTE: 続行するには、値を入力する必要があります。
 == SSH の制限時間を変更します
 
 SSH セッションの新しい期間を入力できます。
-
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
 .手順
 . vSphere Web Clientで、*クラスタ*タブを開きます。
@@ -262,9 +253,6 @@ NOTE: 続行するには、値を入力する必要があります。
 == SSH を無効にする
 
 Plug-in拡張ポイントを使用して、ストレージクラスタ内のノードへのSecure Shell（SSH）アクセスを手動で無効にすることができます。
-
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
 .手順
 . vSphere Web Clientで、*クラスタ*タブを開きます。
@@ -319,9 +307,6 @@ Plug-in拡張ポイントを使用して、ストレージクラスタ内のす�
 
 状況 link:vcp_task_add_manage_nodes.html#restart-a-node["再起動します"] クラスタをシャットダウンする代わりに、 NetApp Element Management 拡張ポイントのクラスタページですべてのノードを選択して、再起動を実行できます。
 
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
-
 .必要なもの
 I/O を停止し、すべての iSCSI セッションを切断しておきます。
 
@@ -349,9 +334,6 @@ NetApp HCI を使用してノードを追加することにより、 NetApp HCI 
 * Element vCenterプラグイン5.0以降では、NetApp Element リモートプラグイン>管理を選択します。
 * Element vCenter Plug-in 4.10以前では、NetApp Element Management拡張ポイントを選択します。
 
-
-
-NOTE: この機能は、 SolidFire エンタープライズ SDS クラスタでは使用できません。
 
 .手順
 . vSphere Web Clientで、*クラスタ*タブを開きます。
